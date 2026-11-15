@@ -66,9 +66,10 @@ def parse_nse_equities(text):
     out=[]
     for row in reader:
         data={str(k or "").strip().upper():v for k,v in row.items()}
-        if _clean(data.get("SERIES")).upper() != "EQ":
+        series = _clean(data.get("SERIES")).upper()
+        if not series:
             continue
-        record=_record(data.get("SYMBOL"),data.get("NAME OF COMPANY"),"IN","NSE","Equity",NSE_EQUITY_URL,data.get("ISIN NUMBER"))
+        record=_record(data.get("SYMBOL"),data.get("NAME OF COMPANY"),"IN","NSE",f"Equity / Series {series}",NSE_EQUITY_URL,data.get("ISIN NUMBER"))
         if record:
             out.append(record)
         if len(out) > MAX_ROWS:
