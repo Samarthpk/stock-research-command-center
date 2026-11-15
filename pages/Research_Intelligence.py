@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import streamlit as st
 import intelligence
-if getattr(intelligence, '_INTELLIGENCE_VERSION', None) != '4.1':
+if getattr(intelligence, '_INTELLIGENCE_VERSION', None) != '4.2':
     intelligence = importlib.reload(intelligence)
 from intelligence import build_research, llm_evidence_review
 
@@ -94,6 +94,14 @@ if 'evidence_research' in st.session_state:
     st.json(r.get('fundamentals', {}).get('metrics', {}))
     if r.get('fundamentals', {}).get('warning'):
         st.caption(r['fundamentals']['warning'])
+    if r.get('missing_data'):
+        st.subheader('Missing / Unverified Data (Explicitly Disclosed)')
+        for m_item in r['missing_data']:
+            st.markdown(f'- ⚠️ {m_item}')
+    if r.get('unsupported_conclusions'):
+        st.subheader('Unsupported Conclusions (Explicitly Withheld)')
+        for u_item in r['unsupported_conclusions']:
+            st.markdown(f'- 🚫 {u_item}')
     st.caption('Period lengths and accounting standards (US-GAAP vs IND-AS) differ; these facts do not establish valuation or investability.')
     st.download_button('Download evidence JSON', __import__('json').dumps(r, indent=2), 'research_evidence.json', 'application/json')
     st.divider()
