@@ -1,0 +1,145 @@
+name: Autonomous Post-Close Equity Research
+
+on:
+  schedule:
+    # India: 16:30 IST, Monday-Friday. Market calendar and session lock guard holidays.
+    - cron: "0 11 * * 1-5"
+    # US: 17:30 EST / 18:30 EDT, Monday-Friday; after market close in both seasons.
+    - cron: "30 22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      market:
+        description: "US, India (IN), or both (ALL)"
+        required: true
+        default: "US"
+        type: choice
+        options:
+          - US
+          - IN
+          - ALL
+      watchlist:
+        description: "Optional single-market ticker list, e.g. AAPL or RELIANCE (leave empty for defaults)"
+        required: false
+        type: string
+      force_rerun_session:
+        description: "Allow manual rerun of an already completed market session"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stock-research-post-close
+  cancel-in-progress: false
+
+jobs:
+  research:
+    name: Run evidence-gated public market research
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      US_RESEARCH_WATCHLIST: ${{ vars.US_RESEARCH_WATCHLIST }}
+      INDIA_RESEARCH_WATCHLIST: ${{ vars.INDIA_RESEARCH_WATCHLIST }}
+      DISPATCH_MARKET: ${{ inputs.market }}
+      DISPATCH_WATCHLIST: ${{ inputs.watchlist }}
+      FORCE_RERUN_SESSION: ${{ inputs.force_rerun_session }}
+      TRIGGER_SCHEDULE: ${{ github.event.schedule }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Prepare Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify configuration without displaying secrets
+        shell: bash
+        run: |
+          if [ -z "$ALPHAVANTAGE_API_KEY" ]; then
+            echo "::error::ALPHAVANTAGE_API_KEY is not configured in GitHub Actions Secrets"
+            exit 1
+          fi
+          if [ -z "$SEC_USER_AGENT" ]; then
+            echo "::error::SEC_USER_AGENT is not configured in GitHub Actions Secrets"
+            exit 1
+          fi
+          if [ "$TRIGGER_SCHEDULE" = "0 11 * * 1-5" ]; then
+            echo "RESEARCH_TARGET=IN" >> "$GITHUB_ENV"
+          elif [ "$TRIGGER_SCHEDULE" = "30 22 * * 1-5" ]; then
+            echo "RESEARCH_TARGET=US" >> "$GITHUB_ENV"
+          else
+            echo "RESEARCH_TARGET=${DISPATCH_MARKET:-US}" >> "$GITHUB_ENV"
+          fi
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Run offline regressions
+        run: python -m unittest discover -s tests -q
+
+      - name: Fetch evidence and update US / India research
+        shell: bash
+        run: |
+          args=(--market "$RESEARCH_TARGET")
+          if [[ -n "$DISPATCH_WATCHLIST" ]]; then
+            if [[ "$RESEARCH_TARGET" == "ALL" ]]; then
+              echo "::error::Custom watchlist requires a single market (US or IN)"
+              exit 1
+            fi
+            args+=(--watchlist "$DISPATCH_WATCHLIST")
+          fi
+          if [[ "$FORCE_RERUN_SESSION" != "true" ]]; then
+            args+=(--enforce-session-lock)
+          fi
+          python autonomous_agents.py "${args[@]}"
+
+      - name: Check reports for credential leakage
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from autonomous_agents import verify_report_sanitized
+          import os
+          files = list(Path("reports/autonomous").glob("*.json")) + list(Path("reports/autonomous").glob("*.md"))
+          for file in files:
+              content = file.read_text(encoding="utf-8")
+              verify_report_sanitized(content)
+              for secret in ("ALPHAVANTAGE_API_KEY", "SEC_USER_AGENT", "GROQ_API_KEY"):
+                  value = os.environ.get(secret, "")
+                  if value and value in content:
+                      raise RuntimeError("A configured credential appeared in a research report")
+          print(f"Sanitized reports checked: {len(files)}")
+          PY
+
+      - name: Commit updated public research reports
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f reports/autonomous/us_latest.json reports/autonomous/india_latest.json reports/autonomous/global_latest.json
+          git add -f reports/autonomous/us_daily_brief.md reports/autonomous/india_daily_brief.md reports/autonomous/global_daily_brief.md
+          git add -f reports/autonomous/us_status.json reports/autonomous/india_status.json reports/autonomous/latest.json reports/autonomous/status.json
+          if git diff --cached --quiet; then
+            echo "No new research report changes"
+            exit 0
+          fi
+          git commit -m "chore(research): update post-close evidence reports [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Upload research snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-reports-${{ github.run_id }}
+          path: reports/autonomous/
+          if-no-files-found: ignore
+          retention-days: 14
