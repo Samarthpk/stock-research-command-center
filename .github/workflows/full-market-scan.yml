@@ -1,0 +1,42 @@
+name: Licensed Full-Market Screening
+
+on:
+  workflow_dispatch:
+    inputs:
+      market:
+        description: 'US, IN, or ALL'
+        required: true
+        type: choice
+        options: [US, IN, ALL]
+        default: ALL
+  schedule:
+    - cron: '0 3 * * 2-6'
+
+permissions:
+  contents: read
+
+jobs:
+  scanner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      LICENSED_BULK_CSV_URL: ${{ secrets.LICENSED_BULK_CSV_URL }}
+      LICENSED_BULK_CSV_TOKEN: ${{ secrets.LICENSED_BULK_CSV_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run official-universe scan with licensed feed or explicit NOT_CONFIGURED status
+        env:
+          TARGET_MARKET: ${{ inputs.market || 'ALL' }}
+        run: python scheduled_market_scan.py --market "$TARGET_MARKET"
+      - name: Upload private scan artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-scan-${{ github.run_id }}
+          path: reports/scanner/market_scan_latest.json
+          retention-days: 7
+          if-no-files-found: error
