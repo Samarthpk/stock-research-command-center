@@ -82,6 +82,11 @@ def is_company_specific_text(text: str, inst: dict) -> bool:
         return False
     haystack = text.strip()
 
+    # A naked ticker is not evidence of identity for an unverified company.
+    # E.g., "TCL" refers to different enterprises on different exchanges.
+    if inst.get('identity_verified') is False:
+        return False
+
     for excl in inst.get('exclude_phrases') or []:
         if excl and re.search(re.escape(excl), haystack, flags=re.IGNORECASE):
             # Only allow if 'Reliance Industries' or 'RIL' is also explicitly named in the title
@@ -144,6 +149,8 @@ def news_for(ticker, fetch=fetch_bytes, limit=8, market='US'):
 
     if mkt == 'IN':
         inst = resolve_instrument(clean_ticker, market='IN')
+        if inst.get('identity_verified') is not True:
+            return []
         short_company = re.sub(r'\b(Limited|Ltd\.?)\b', '', inst['company'], flags=re.IGNORECASE).strip()
         # Parenthesize OR terms so Google News RSS does not return unrelated NSE/BSE articles
         q_str = f'("{short_company}" OR "{inst["symbol"]}") (NSE OR BSE OR stock OR results) when:14d'
@@ -439,6 +446,13 @@ def india_disclosures_for(ticker, fetch=fetch_bytes, limit=8):
        misrepresented as primary official filings.
     """
     inst = resolve_instrument(ticker, market='IN')
+    if inst.get('identity_verified') is not True:
+        return {
+            'filings': [],
+            'secondary_disclosure_mentions': [],
+            'official_exchange_portals': {},
+            'warning': 'Ticker identity not verified against an official India listing; unrelated news and filings withheld.',
+        }
     sym = inst['symbol']
     company = inst['company']
     short_company = re.sub(r'\b(Limited|Ltd\.?)\b', '', company, flags=re.IGNORECASE).strip()
@@ -634,6 +648,10 @@ def build_research(ticker, fetch=fetch_bytes, user_agent=None, include_sec=True,
         ],
         'assessment': 'INSUFFICIENT_EVIDENCE',
     }
+    if mkt == 'IN' and inst.get('identity_verified') is not True:
+        output['missing_data'].append('Ticker identity not verified against NSE/BSE listing; research blocked to prevent cross-company contamination.')
+        output['unsupported_conclusions'].append('Unknown NSE/BSE ticker cannot be matched to a verified issuer; no research synthesized.')
+        return output
     try:
         output['news'] = news_for(canon, fetch, market=mkt)
     except Exception as exc:
