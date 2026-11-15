@@ -30,7 +30,8 @@ DEFAULT = list(US_WATCHLIST_DEFAULT)
 DEFAULT_INDIA = list(INDIA_WATCHLIST_DEFAULT)
 MIN_REQUEST_INTERVAL = 1.5
 DEFAULT_CACHE_TTL_SECONDS = 12 * 3600  # 12 hours
-_ENGINE_VERSION = '4'
+PRICE_BASIS = 'UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)'
+_ENGINE_VERSION = '4.2'
 
 class RateLimitError(RuntimeError):
     """Base error for Alpha Vantage rate limiting."""
@@ -180,23 +181,32 @@ def init_db():
             'symbol TEXT, asof TEXT, close REAL, change20 REAL, ma20 REAL, ma50 REAL, '
             'volatility REAL, stance TEXT, rationale TEXT, source TEXT, '
             'fetched_at_utc TEXT, data_origin TEXT, market TEXT, currency TEXT, '
-            'exchange TEXT, provider_symbol TEXT, '
+            'exchange TEXT, provider_symbol TEXT, price_basis TEXT, '
             'PRIMARY KEY(symbol,asof))'
         )
         cols = {r[1] for r in db.execute('PRAGMA table_info(results)')}
-        for col_name in ('fetched_at_utc', 'data_origin', 'market', 'currency', 'exchange', 'provider_symbol'):
+        for col_name in ('fetched_at_utc', 'data_origin', 'market', 'currency', 'exchange', 'provider_symbol', 'price_basis'):
             if col_name not in cols:
                 db.execute(f'ALTER TABLE results ADD COLUMN {col_name} TEXT')
 
         db.execute(
             'CREATE TABLE IF NOT EXISTS daily_cache ('
             'symbol TEXT PRIMARY KEY, rows_json TEXT, source TEXT, '
-            'fetched_at_utc TEXT, latest_asof TEXT, market TEXT, currency TEXT, provider_symbol TEXT)'
+            'fetched_at_utc TEXT, latest_asof TEXT, market TEXT, currency TEXT, provider_symbol TEXT, price_basis TEXT)'
         )
         cache_cols = {r[1] for r in db.execute('PRAGMA table_info(daily_cache)')}
-        for col_name in ('market', 'currency', 'provider_symbol'):
+        for col_name in ('market', 'currency', 'provider_symbol', 'price_basis'):
             if col_name not in cache_cols:
                 db.execute(f'ALTER TABLE daily_cache ADD COLUMN {col_name} TEXT')
+
+        db.execute(
+            'CREATE TABLE IF NOT EXISTS price_discrepancies ('
+            'id INTEGER PRIMARY KEY AUTOINCREMENT, '
+            'symbol TEXT, market TEXT, asof TEXT, '
+            'previous_close REAL, previous_fetched_at_utc TEXT, previous_source TEXT, '
+            'observed_close REAL, observed_fetched_at_utc TEXT, observed_source TEXT, '
+            'price_basis TEXT, status TEXT)'
+        )
 
         db.execute('CREATE TABLE IF NOT EXISTS watchlist(symbol TEXT PRIMARY KEY)')
         if not db.execute('SELECT 1 FROM watchlist LIMIT 1').fetchone():
@@ -305,19 +315,92 @@ def format_freshness_label(asof_str, fetched_at_utc=None, data_origin='cached', 
         return f'Live fetch ({ts_short})'
     return f'Cached ({ts_short})'
 
+def record_price_discrepancy(
+    symbol,
+    asof,
+    previous_close,
+    observed_close,
+    *,
+    market='US',
+    previous_fetched_at_utc='',
+    previous_source='',
+    observed_fetched_at_utc=None,
+    observed_source='',
+    price_basis=PRICE_BASIS,
+    status='UNRESOLVED_DISCREPANCY',
+):
+    init_db()
+    sym = symbol.strip().upper()
+    mkt = normalize_market(market)
+    obs_ts = observed_fetched_at_utc or _now_utc().isoformat()
+    with _connect_db() as db:
+        db.execute(
+            'INSERT INTO price_discrepancies '
+            '(symbol, market, asof, previous_close, previous_fetched_at_utc, previous_source, '
+            'observed_close, observed_fetched_at_utc, observed_source, price_basis, status) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (
+                sym,
+                mkt,
+                asof,
+                float(previous_close),
+                previous_fetched_at_utc or '',
+                previous_source or '',
+                float(observed_close),
+                obs_ts,
+                observed_source or '',
+                price_basis,
+                status,
+            ),
+        )
+    return {
+        'symbol': sym,
+        'market': mkt,
+        'asof': asof,
+        'previous_close': float(previous_close),
+        'previous_fetched_at_utc': previous_fetched_at_utc or '',
+        'previous_source': previous_source or '',
+        'observed_close': float(observed_close),
+        'observed_fetched_at_utc': obs_ts,
+        'observed_source': observed_source or '',
+        'price_basis': price_basis,
+        'status': status,
+    }
+
+
+def get_price_discrepancies(symbol=None, asof=None, market=None):
+    init_db()
+    clauses = []
+    params = []
+    if symbol:
+        clauses.append('symbol = ?')
+        params.append(symbol.strip().upper())
+    if asof:
+        clauses.append('asof = ?')
+        params.append(str(asof).strip())
+    if market:
+        clauses.append('market = ?')
+        params.append(normalize_market(market))
+    where = (' WHERE ' + ' AND '.join(clauses)) if clauses else ''
+    with _connect_db() as db:
+        db.row_factory = sqlite3.Row
+        rows = db.execute(f'SELECT * FROM price_discrepancies{where} ORDER BY id DESC', params).fetchall()
+    return [dict(r) for r in rows]
+
+
 def get_cached_daily(symbol, max_age_seconds=DEFAULT_CACHE_TTL_SECONDS, now_utc=None, market=None):
     init_db()
     sym = symbol.strip().upper()
     now_utc = now_utc or _now_utc()
     with _connect_db() as db:
         row = db.execute(
-            'SELECT rows_json, source, fetched_at_utc, latest_asof, market, currency, provider_symbol '
+            'SELECT rows_json, source, fetched_at_utc, latest_asof, market, currency, provider_symbol, price_basis '
             'FROM daily_cache WHERE symbol = ?',
             (sym,)
         ).fetchone()
     if not row:
         return None
-    rows_json, source, fetched_at_utc, latest_asof, row_mkt, row_curr, prov_sym = row
+    rows_json, source, fetched_at_utc, latest_asof, row_mkt, row_curr, prov_sym, p_basis = row
     if market and row_mkt and normalize_market(market) != normalize_market(row_mkt):
         return None
     try:
@@ -345,9 +428,20 @@ def get_cached_daily(symbol, max_age_seconds=DEFAULT_CACHE_TTL_SECONDS, now_utc=
         'market': row_mkt or (market or 'US'),
         'currency': row_curr or currency_for_market(row_mkt or market or 'US'),
         'provider_symbol': prov_sym or sym,
+        'price_basis': p_basis or PRICE_BASIS,
     }
 
-def save_cached_daily(symbol, rows, source, fetched_at_utc=None, market='US', currency=None, provider_symbol=None):
+
+def save_cached_daily(
+    symbol,
+    rows,
+    source,
+    fetched_at_utc=None,
+    market='US',
+    currency=None,
+    provider_symbol=None,
+    allow_overwrite_on_conflict=False,
+):
     init_db()
     sym = symbol.strip().upper()
     mkt = normalize_market(market)
@@ -355,12 +449,36 @@ def save_cached_daily(symbol, rows, source, fetched_at_utc=None, market='US', cu
     prov = provider_symbol or sym
     fetched_at_utc = fetched_at_utc or _now_utc().isoformat()
     latest_asof = rows[-1][0] if rows else ''
+
+    # Data Integrity Guard: Check whether an existing cached series for the same symbol/market
+    # has a materially different close price for the same trading session date.
+    existing = get_cached_daily(sym, max_age_seconds=None, market=mkt)
+    if existing and existing.get('rows') and rows:
+        existing_map = dict(existing['rows'])
+        for d, new_p in rows:
+            if d in existing_map and abs(float(existing_map[d]) - float(new_p)) > 0.005:
+                record_price_discrepancy(
+                    sym,
+                    d,
+                    existing_map[d],
+                    new_p,
+                    market=mkt,
+                    previous_fetched_at_utc=existing.get('fetched_at_utc') or '',
+                    previous_source=existing.get('source') or '',
+                    observed_fetched_at_utc=fetched_at_utc,
+                    observed_source=source,
+                    price_basis=PRICE_BASIS,
+                )
+                if not allow_overwrite_on_conflict:
+                    # Do NOT silently overwrite inconsistent cached evidence
+                    return existing.get('fetched_at_utc') or fetched_at_utc
+
     with _connect_db() as db:
         db.execute(
             'INSERT OR REPLACE INTO daily_cache '
-            '(symbol, rows_json, source, fetched_at_utc, latest_asof, market, currency, provider_symbol) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-            (sym, json.dumps(rows), source, fetched_at_utc, latest_asof, mkt, curr, prov)
+            '(symbol, rows_json, source, fetched_at_utc, latest_asof, market, currency, provider_symbol, price_basis) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (sym, json.dumps(rows), source, fetched_at_utc, latest_asof, mkt, curr, prov, PRICE_BASIS)
         )
     return fetched_at_utc
 
@@ -630,13 +748,21 @@ def analyze(symbol, rows, source, fetched_at_utc=None, data_origin='live', marke
     fetched_at_utc = fetched_at_utc or _now_utc().isoformat()
     stale = is_data_stale(asof, fetched_at_utc=fetched_at_utc, market=mkt)
     freshness = format_freshness_label(asof, fetched_at_utc=fetched_at_utc, data_origin=data_origin, market=mkt)
+    discrepancies = get_price_discrepancies(symbol=symbol, asof=asof, market=mkt)
+    if discrepancies:
+        stance = 'Unresolved price discrepancy'
+        ranking = 'INSUFFICIENT_EVIDENCE'
     rationale=f'Close {curr_sym}{last:.2f} ({curr}); MA20 {curr_sym}{ma20:.2f}; MA50 {curr_sym}{ma50:.2f}; 20-session return {momentum:+.1%}; annualized recent volatility {vol:.1%}. Technical trend only; no valuation or news analysis.'
+    if discrepancies:
+        d0 = discrepancies[0]
+        rationale += f" [DATA INTEGRITY ALERT: conflicting close prices observed for {asof}: {d0['previous_close']} vs {d0['observed_close']}. Ranking withheld.]"
     return dict(
         symbol=symbol,
         market=mkt,
         currency=curr,
         exchange=exchange or ('BSE/NSE' if mkt == 'IN' else 'NYSE/NASDAQ'),
         provider_symbol=provider_symbol or (f'{symbol}.BSE' if mkt == 'IN' else symbol),
+        price_basis=PRICE_BASIS,
         asof=asof,
         close=round(last,2),
         change20=round(momentum*100,2),
@@ -651,14 +777,15 @@ def analyze(symbol, rows, source, fetched_at_utc=None, data_origin='live', marke
         data_origin=data_origin,
         stale=stale,
         freshness=freshness,
+        data_discrepancy=discrepancies[0] if discrepancies else None,
     )
 
-def store(row):
+def store(row, allow_overwrite_on_conflict=False):
     init_db()
     keys=[
         'symbol','asof','close','change20','ma20','ma50','volatility',
         'stance','rationale','source','fetched_at_utc','data_origin',
-        'market','currency','exchange','provider_symbol'
+        'market','currency','exchange','provider_symbol','price_basis'
     ]
     vals = [row.get(k) for k in keys]
     if not vals[10]:
@@ -673,12 +800,36 @@ def store(row):
         vals[14] = 'BSE/NSE' if vals[12] == 'IN' else 'NYSE/NASDAQ'
     if not vals[15]:
         vals[15] = f"{vals[0]}.BSE" if vals[12] == 'IN' else vals[0]
+    if not vals[16]:
+        vals[16] = PRICE_BASIS
+
+    with _connect_db() as db:
+        existing = db.execute(
+            'SELECT close, fetched_at_utc, source FROM results WHERE symbol = ? AND asof = ?',
+            (vals[0], vals[1]),
+        ).fetchone()
+    if existing and vals[2] is not None and existing[0] is not None and abs(float(existing[0]) - float(vals[2])) > 0.005:
+        record_price_discrepancy(
+            vals[0],
+            vals[1],
+            existing[0],
+            vals[2],
+            market=vals[12],
+            previous_fetched_at_utc=existing[1] or '',
+            previous_source=existing[2] or '',
+            observed_fetched_at_utc=vals[10],
+            observed_source=vals[9] or '',
+            price_basis=vals[16],
+        )
+        if not allow_overwrite_on_conflict:
+            return
+
     with _connect_db() as db:
         db.execute(
             'INSERT OR REPLACE INTO results '
             '(symbol,asof,close,change20,ma20,ma50,volatility,stance,rationale,source,'
-            'fetched_at_utc,data_origin,market,currency,exchange,provider_symbol) '
-            'VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+            'fetched_at_utc,data_origin,market,currency,exchange,provider_symbol,price_basis) '
+            'VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
             vals
         )
 
@@ -702,6 +853,7 @@ def latest(market=None):
         r['currency'] = r.get('currency') or currency_for_market(row_mkt)
         r['exchange'] = r.get('exchange') or ('BSE/NSE' if row_mkt == 'IN' else 'NYSE/NASDAQ')
         r['provider_symbol'] = r.get('provider_symbol') or (f"{r['symbol']}.BSE" if row_mkt == 'IN' else r['symbol'])
+        r['price_basis'] = r.get('price_basis') or PRICE_BASIS
         if target_mkt and target_mkt != 'ALL' and row_mkt != target_mkt:
             continue
         origin = r.get('data_origin') or 'cached'
@@ -709,6 +861,10 @@ def latest(market=None):
         r['stale'] = is_data_stale(r.get('asof'), fetched_at_utc=fetched_at, now_utc=now_utc, market=row_mkt)
         r['freshness'] = format_freshness_label(r.get('asof'), fetched_at_utc=fetched_at, data_origin=origin, now_utc=now_utc, market=row_mkt)
         r['ranking'] = 'INSUFFICIENT_EVIDENCE'
+        discs = get_price_discrepancies(symbol=r['symbol'], asof=r.get('asof'), market=row_mkt)
+        r['data_discrepancy'] = discs[0] if discs else None
+        if discs:
+            r['stance'] = 'Unresolved price discrepancy'
         filtered.append(r)
     return filtered
 

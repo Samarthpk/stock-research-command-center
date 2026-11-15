@@ -12,7 +12,7 @@ import global_markets
 if getattr(global_markets, '_GLOBAL_MARKETS_VERSION', None) != '4.1':
     global_markets = importlib.reload(global_markets)
 import engine
-if getattr(engine, '_ENGINE_VERSION', None) != '4':
+if getattr(engine, '_ENGINE_VERSION', None) != '4.2':
     engine = importlib.reload(engine)
 
 from engine import (
@@ -326,11 +326,16 @@ if rows:
         price_str = format_price(r.get('close'), r.get('currency', 'USD'))
         ranking_label = r.get('ranking', 'WATCH')
         with st.expander(f"[{r.get('market', 'US')}] {r['symbol']} ({r.get('currency', 'USD')}) — {ranking_label} / {r['stance']} — Close {price_str} as of {r['asof']} [{badge}]"):
+            if r.get('data_discrepancy'):
+                st.error(
+                    f"⚠️ Unresolved Price Discrepancy for {r['asof']}: cached close {r['data_discrepancy'].get('previous_close')} "
+                    f"vs observed close {r['data_discrepancy'].get('observed_close')}. Existing evidence is preserved and ranking is withheld."
+                )
             st.write(r['rationale'])
             st.caption(
                 f"Exchange: {r.get('exchange', 'NYSE/NASDAQ')} • Provider Symbol: {r.get('provider_symbol', r['symbol'])} • "
-                f"Currency: {r.get('currency', 'USD')} • Status: {r.get('freshness', 'Cached')} • "
-                f"Stored timestamp (UTC): {r.get('fetched_at_utc', 'unknown')}"
+                f"Currency: {r.get('currency', 'USD')} • Basis: {r.get('price_basis', 'UNADJUSTED_DAILY_OHLCV')} • "
+                f"Status: {r.get('freshness', 'Cached')} • Stored timestamp (UTC): {r.get('fetched_at_utc', 'unknown')}"
             )
             st.markdown(f"[Data-method documentation]({r['source']})")
 else:

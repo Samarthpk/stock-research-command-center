@@ -349,6 +349,125 @@ class GlobalPhase4Tests(unittest.TestCase):
         self.assertFalse(unsupported["ohlcv_verified"])
         self.assertEqual(unsupported["status"], "UNSUPPORTED_BY_PROVIDER")
 
+    def test_price_discrepancy_never_silently_overwrites_and_withholds_ranking(self):
+        # 1. Seed verified 2026-11-13 session for AAPL with close 356.27
+        series_356 = [(f"2026-09-{i:02d}", 330.0 + i * 0.2) for i in range(1, 30)] + [
+            (f"2026-10-{i:02d}", 340.0 + i * 0.3) for i in range(1, 31)
+        ] + [("2026-11-13", 356.27)]
+        saved_initial_ts = engine.save_cached_daily(
+            "AAPL",
+            series_356,
+            "https://www.alphavantage.co/documentation/#daily",
+            fetched_at_utc="2026-11-15T01:58:43+00:00",
+            market="US",
+            currency="USD",
+        )
+        self.assertEqual(saved_initial_ts, "2026-11-15T01:58:43+00:00")
+        self.assertEqual(engine.get_price_discrepancies("AAPL", asof="2026-11-13", market="US"), [])
+
+        initial_row = engine.analyze("AAPL", series_356, "https://www.alphavantage.co/documentation/#daily", market="US", currency="USD")
+        engine.store(initial_row)
+
+        # 2. Attempt to overwrite the same 2026-11-13 session with conflicting close 272.41
+        series_272 = series_356[:-1] + [("2026-11-13", 272.41)]
+        conflict_ts = engine.save_cached_daily(
+            "AAPL",
+            series_272,
+            "https://www.alphavantage.co/documentation/#daily",
+            fetched_at_utc="2026-11-15T02:10:00+00:00",
+            market="US",
+            currency="USD",
+        )
+        # Returns the preserved timestamp rather than overwriting with the conflicting 02:10:00 timestamp
+        self.assertEqual(conflict_ts, "2026-11-15T01:58:43+00:00")
+        discs = engine.get_price_discrepancies("AAPL", asof="2026-11-13", market="US")
+        self.assertEqual(len(discs), 1)
+        self.assertEqual(discs[0]["previous_close"], 356.27)
+        self.assertEqual(discs[0]["observed_close"], 272.41)
+
+        # Verify original cached close (356.27) was NOT overwritten
+        cached_after = engine.get_cached_daily("AAPL", max_age_seconds=None, market="US")
+        self.assertEqual(dict(cached_after["rows"])["2026-11-13"], 356.27)
+
+        # Verify engine.latest() flags the discrepancy and withholds any ranking
+        latest_rows = engine.latest(market="US")
+        self.assertEqual(len(latest_rows), 1)
+        self.assertEqual(latest_rows[0]["close"], 356.27)
+        self.assertEqual(latest_rows[0]["ranking"], "INSUFFICIENT_EVIDENCE")
+        self.assertEqual(latest_rows[0]["stance"], "Unresolved price discrepancy")
+        self.assertIsNotNone(latest_rows[0]["data_discrepancy"])
+
+        # Verify autonomous_agents.decide_signal also forces INSUFFICIENT_EVIDENCE on price discrepancy
+        sig = aa.decide_signal({
+            "market": "US",
+            "currency": "USD",
+            "quality": "PRIMARY_EVIDENCE_PRESENT",
+            "price": {
+                "status": "DATA_DISCREPANCY_UNRESOLVED",
+                "as_of": "2026-11-13",
+                "reason": "Conflicting close for 2026-11-13: cached 356.27 vs fetched 272.41",
+            },
+        })
+        self.assertEqual(sig["label"], "INSUFFICIENT_EVIDENCE")
+        self.assertIn("discrepancy", sig["reason"].lower())
+
+    def test_general_news_never_primary_and_missing_data_explicit(self):
+        # Even if a news headline item is passed inside 'filings', _is_valid_primary_filing_item rejects it
+        news_item_disguised = {
+            "source": "Google News RSS (headline only)",
+            "title": "AAPL stock rises",
+            "url": "https://news.google.com/rss/articles/123",
+            "published": "Fri, 13 Nov 2026 20:00:00 GMT",
+            "is_primary_regulatory_evidence": False,
+        }
+        self.assertFalse(aa._is_valid_primary_filing_item(news_item_disguised))
+
+        rec = aa.analyze_symbol(
+            "RELIANCE",
+            fetch=lambda url, **kw: SAMPLE_INDIA_MIXED_RSS_XML,
+            market="IN",
+        )
+        self.assertEqual(rec["signal"]["label"], "INSUFFICIENT_EVIDENCE")
+        self.assertTrue(len(rec.get("missing_data", [])) >= 1)
+        self.assertTrue(len(rec.get("unsupported_conclusions", [])) >= 1)
+
+    def test_duplicate_session_prevention_lock(self):
+        out_dir = Path(self.tmp.name) / "dup_reports"
+        fixed_now = dt.datetime(2026, 11, 14, 12, 0, tzinfo=ZoneInfo("UTC"))
+        calls = []
+
+        def _fake_analyze(sym, **kwargs):
+            calls.append(sym)
+            return {
+                "ticker": sym,
+                "market": "US",
+                "exchange": "NYSE/NASDAQ",
+                "currency": "USD",
+                "agents": {},
+                "price": {"status": "OK", "as_of": "2026-11-13", "close": 356.27, "currency": "USD", "trend": "POSITIVE"},
+                "news": [],
+                "filings": {"filings": []},
+                "fundamentals": {"metrics": {}},
+                "pillars": {},
+                "five_pillar_summary": {},
+                "missing_data": [],
+                "unsupported_conclusions": [],
+                "quality": "PARTIAL_EVIDENCE",
+                "research_outcome": "PARTIAL",
+                "signal": {"label": "INSUFFICIENT_EVIDENCE", "reason": "Test", "as_of": "2026-11-13", "currency": "USD", "evidence_citations": []},
+                "ai": {"status": "NOT_CONFIGURED"},
+            }
+
+        with patch.object(aa, "analyze_symbol", side_effect=_fake_analyze):
+            m1 = aa.run_mission(["AAPL"], output_dir=out_dir, market="US", enforce_once_per_session=True, now_utc=fixed_now, sleep=lambda _: None)
+            self.assertFalse(m1.get("skipped_duplicate_session", False))
+            self.assertEqual(len(calls), 1)
+
+            # Second scheduled run for the same 2026-11-13 session is skipped automatically
+            m2 = aa.run_mission(["AAPL"], output_dir=out_dir, market="US", enforce_once_per_session=True, now_utc=fixed_now, sleep=lambda _: None)
+            self.assertTrue(m2.get("skipped_duplicate_session", False))
+            self.assertEqual(len(calls), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

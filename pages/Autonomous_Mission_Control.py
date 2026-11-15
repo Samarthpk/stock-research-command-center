@@ -140,8 +140,20 @@ for rec in data.get('results', []):
     with st.expander(header):
         st.markdown(f"**Research Outcome:** `{outcome}` | **Evidence Quality:** `{rec.get('quality', 'INSUFFICIENT_EVIDENCE')}`")
         st.markdown(f"**Signal Rationale:** {sig.get('reason', 'N/A')}")
-        st.markdown(f"**As-Of Date:** `{sig.get('as_of') or 'N/A'}`")
+        st.markdown(f"**As-Of Date:** `{sig.get('as_of') or 'N/A'}` | **Price Basis:** `{rec.get('price', {}).get('price_basis', 'UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)')}`")
         st.markdown(f"**Uncertainty Disclosure:** {sig.get('uncertainty', 'Historical end-of-day evidence only.')}")
+
+        missing_items = rec.get('missing_data') or []
+        if missing_items:
+            st.markdown('**Missing / Unverified Data (Explicitly Disclosed)**')
+            for m_item in missing_items:
+                st.markdown(f"- ⚠️ {m_item}")
+
+        unsupported_items = rec.get('unsupported_conclusions') or []
+        if unsupported_items:
+            st.markdown('**Unsupported Conclusions (Explicitly Withheld)**')
+            for u_item in unsupported_items:
+                st.markdown(f"- 🚫 {u_item}")
 
         pillars = rec.get('five_pillar_summary') or rec.get('pillars') or {}
         if pillars:

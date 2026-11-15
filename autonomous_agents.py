@@ -92,19 +92,23 @@ def do_with_retries(fn: Callable, attempts: int = 2, sleep: Callable = time.slee
             sleep(2 ** attempt)
 
 
-def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
+def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US', check_cache_consistency: bool = True):
     """One Alpha Vantage request; validates historical OHLCV and preserves USD (US) and INR (India BSE).
 
     If Indian BSE OHLCV data is unavailable from Alpha Vantage, explicitly marks status as
     UNSUPPORTED_BY_PROVIDER rather than claiming Indian market-data functionality.
+    Cross-checks against SQLite daily_cache so conflicting closes for the same session are flagged
+    as DATA_DISCREPANCY_UNRESOLVED and never silently overwritten.
     """
     mkt = normalize_market(market)
     curr = currency_for_market(mkt)
+    price_basis = 'UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)'
     if not api_key:
         return {
             'status': 'UNSUPPORTED_NOT_CONFIGURED' if mkt == 'IN' else 'NOT_CONFIGURED',
             'market': mkt,
             'currency': curr,
+            'price_basis': price_basis,
             'ohlcv_verified': False,
         }
     opener = opener or _default_urlopen
@@ -136,6 +140,7 @@ def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
                 'reason': safe_error(exc),
                 'market': mkt,
                 'currency': curr,
+                'price_basis': price_basis,
                 'ohlcv_verified': False,
             }
         if 'Time Series (Daily)' in body:
@@ -148,6 +153,7 @@ def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
                 'market': mkt,
                 'currency': curr,
                 'provider_symbol': used_provider_symbol,
+                'price_basis': price_basis,
                 'ohlcv_verified': False,
             }
 
@@ -158,6 +164,7 @@ def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
             'market': mkt,
             'currency': curr,
             'provider_symbol': used_provider_symbol,
+            'price_basis': price_basis,
             'ohlcv_verified': False,
         }
 
@@ -171,6 +178,7 @@ def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
                 'sessions': len(closes),
                 'market': mkt,
                 'currency': curr,
+                'price_basis': price_basis,
                 'ohlcv_verified': False,
             }
         latest_bar = series[dates[-1]]
@@ -185,6 +193,46 @@ def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
         } if has_full_ohlcv else None
 
         close = closes[-1]
+        as_of_date = dates[-1]
+        retrieved_ts = now_iso()
+
+        if check_cache_consistency:
+            try:
+                import engine
+                cached = engine.get_cached_daily(inst['symbol'], max_age_seconds=None, market=mkt)
+                cached_rows = (cached or {}).get('rows') or (cached or {}).get('series')
+                if cached and cached_rows:
+                    cached_map = {str(d): float(c) for d, c in cached_rows}
+                    if as_of_date in cached_map and abs(cached_map[as_of_date] - close) > 0.005:
+                        disc = engine.record_price_discrepancy(
+                            inst['symbol'],
+                            as_of_date,
+                            cached_map[as_of_date],
+                            round(close, 4),
+                            market=mkt,
+                            previous_fetched_at_utc=cached.get('fetched_at_utc', 'unknown'),
+                            previous_source=cached.get('source', 'SQLite daily_cache'),
+                            observed_fetched_at_utc=retrieved_ts,
+                            observed_source='https://www.alphavantage.co/documentation/',
+                            price_basis=price_basis,
+                        )
+                        return {
+                            'status': 'DATA_DISCREPANCY_UNRESOLVED',
+                            'reason': f"Conflicting close for {as_of_date}: cached {cached_map[as_of_date]} vs fetched {round(close, 4)}",
+                            'market': mkt,
+                            'currency': curr,
+                            'provider_symbol': used_provider_symbol,
+                            'price_basis': price_basis,
+                            'ohlcv_verified': False,
+                            'as_of': as_of_date,
+                            'close': round(close, 4),
+                            'cached_close': cached_map[as_of_date],
+                            'data_discrepancy': disc,
+                            'retrieved_at': retrieved_ts,
+                        }
+            except Exception:
+                pass
+
         ma20 = sum(closes[-20:]) / 20
         ma50 = sum(closes[-50:]) / 50
         ret20 = (close / closes[-21] - 1) * 100 if closes[-21] else None
@@ -196,9 +244,10 @@ def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
             'market': mkt,
             'currency': curr,
             'provider_symbol': used_provider_symbol,
+            'price_basis': price_basis,
             'ohlcv_verified': has_full_ohlcv,
             'latest_ohlcv': latest_ohlcv,
-            'as_of': dates[-1],
+            'as_of': as_of_date,
             'close': round(close, 4),
             'ma20': round(ma20, 4),
             'ma50': round(ma50, 4),
@@ -206,24 +255,33 @@ def fetch_alpha(ticker: str, api_key: str, opener=None, market: str = 'US'):
             'volatility_pct': vol_pct,
             'trend': direction,
             'source_url': 'https://www.alphavantage.co/documentation/',
-            'retrieved_at': now_iso(),
+            'retrieved_at': retrieved_ts,
             'is_realtime': False,
         }
     except (KeyError, ValueError, TypeError, ZeroDivisionError):
-        return {'status': 'INVALID_DATA', 'market': mkt, 'currency': curr, 'ohlcv_verified': False}
+        return {'status': 'INVALID_DATA', 'market': mkt, 'currency': curr, 'price_basis': price_basis, 'ohlcv_verified': False}
 
 
 def _is_valid_primary_filing_item(item: dict) -> bool:
-    """Verify a filing entry is a specific primary regulatory document, not a generic portal homepage."""
+    """Verify a filing entry is a specific primary regulatory document, not a generic portal homepage or general news headline."""
     if not isinstance(item, dict):
+        return False
+    if item.get('is_primary_regulatory_evidence') is False:
+        return False
+    src = (item.get('source') or '').lower()
+    if 'headline' in src or 'secondary' in src or 'google news' in src:
         return False
     url = (item.get('url') or '').strip()
     published = (item.get('published') or '').strip()
     if not url or not published:
         return False
     try:
-        path = urllib.parse.urlparse(url).path or ''
+        parsed = urllib.parse.urlparse(url)
+        host = (parsed.hostname or '').lower()
+        path = parsed.path or ''
     except Exception:
+        return False
+    if 'news.google.com' in host:
         return False
     if path in GENERIC_PORTAL_PATHS:
         return False
@@ -334,6 +392,21 @@ def decide_signal(record: dict):
     as_of = p.get('as_of') or 'unavailable'
     citations = _collect_evidence_citations(record)
 
+    if p.get('status') == 'DATA_DISCREPANCY_UNRESOLVED' or p.get('data_discrepancy') or record.get('data_discrepancy'):
+        return {
+            'label': 'INSUFFICIENT_EVIDENCE',
+            'reason': f"Unresolved price discrepancy for session {as_of} ({p.get('reason') or 'conflicting close observed'}); rankings withheld until resolved",
+            'market': mkt,
+            'currency': curr,
+            'as_of': as_of,
+            'evidence_count': len(citations),
+            'evidence_citations': citations,
+            'uncertainty': (
+                'Conflicting market close prices were observed for the same trading session across cache/provider runs. '
+                'Existing evidence is preserved without overwrite and no ranking is issued.'
+            ),
+        }
+
     if record.get('quality') != 'PRIMARY_EVIDENCE_PRESENT':
         reason = (
             'Primary official exchange filings and verified company-specific IND-AS financial metrics not both present; '
@@ -357,8 +430,8 @@ def decide_signal(record: dict):
 
     if p.get('status') != 'OK':
         return {
-            'label': 'INSUFFICIENT_EVIDENCE' if mkt == 'IN' else 'RESEARCH_ONLY',
-            'reason': 'No usable technical price data',
+            'label': 'INSUFFICIENT_EVIDENCE',
+            'reason': 'No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified',
             'market': mkt,
             'currency': curr,
             'as_of': as_of,
@@ -488,6 +561,49 @@ def build_five_pillar_summary(record: dict) -> dict:
     }
 
 
+def _collect_missing_and_unsupported(record: dict) -> tuple[list[str], list[str]]:
+    """Explicitly enumerate missing data items and unsupported conclusions for a symbol."""
+    mkt = normalize_market(record.get('market', 'US'))
+    p = record.get('price', {}) if isinstance(record.get('price'), dict) else {}
+    filings = record.get('filings', {}) if isinstance(record.get('filings'), dict) else {}
+    fundamentals = record.get('fundamentals', {}) if isinstance(record.get('fundamentals'), dict) else {}
+    news = record.get('news', []) if isinstance(record.get('news'), list) else []
+
+    primary_filings = [f for f in (filings.get('filings') or []) if _is_valid_primary_filing_item(f)]
+    has_metrics = _has_verified_fundamental_metrics(fundamentals)
+
+    missing_data = []
+    if p.get('status') == 'DATA_DISCREPANCY_UNRESOLVED':
+        missing_data.append(f"Unresolved price discrepancy on session {p.get('as_of')}: {p.get('reason')}")
+    elif p.get('status') != 'OK':
+        missing_data.append(f"Verified historical daily OHLCV market data (status: {p.get('status', 'UNAVAILABLE')}).")
+
+    if mkt == 'IN':
+        if not primary_filings:
+            missing_data.append('Company-specific official BSE/NSE PDF or XBRL regulatory filing documents (SEBI LODR Reg 30/33/34).')
+        if not has_metrics:
+            missing_data.append('Verified company-specific IND-AS numerical accounting metrics in INR parsed from official exchange filings.')
+    else:
+        if not primary_filings:
+            missing_data.append('Primary US SEC EDGAR filings (10-K, 10-Q, 8-K).')
+        if not has_metrics:
+            missing_data.append('Verified US-GAAP XBRL companyfacts numerical accounting metrics.')
+
+    if not news:
+        missing_data.append('Recent company-specific news headlines.')
+
+    unsupported_conclusions = [
+        'Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).',
+        'Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).',
+        'Treating general news headlines or secondary media articles as primary regulatory evidence.',
+    ]
+    if record.get('signal', {}).get('label') == 'INSUFFICIENT_EVIDENCE':
+        unsupported_conclusions.append(
+            'Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) — withheld until primary filings, official financial metrics, and consistent market data are all verified.'
+        )
+    return missing_data, unsupported_conclusions
+
+
 def analyze_symbol(ticker, *, fetch=None, sec_user_agent='', cik_map=None, price=None, ai_key='', market='US'):
     """Run agents with isolated failures, market-specific filing pipelines, and no fabricated completion."""
     from intelligence import fetch_bytes
@@ -563,6 +679,9 @@ def analyze_symbol(ticker, *, fetch=None, sec_user_agent='', cik_map=None, price
     record['quality'] = quality_gate(record)
     record['research_outcome'] = classify_research_outcome(record)
     record['signal'] = decide_signal(record)
+    missing_data, unsupported_conclusions = _collect_missing_and_unsupported(record)
+    record['missing_data'] = missing_data
+    record['unsupported_conclusions'] = unsupported_conclusions
     record['pillars'] = build_five_pillar_summary(record)
     record['five_pillar_summary'] = record['pillars']
 
@@ -669,12 +788,24 @@ def render_mission_markdown(mission: dict) -> str:
         ]
         if p.get('status') == 'OK':
             lines.append(
-                f"- **Technical Summary ({rec_curr}):** Close {format_price(p.get('close'), rec_curr)} | "
+                f"- **Technical Summary ({rec_curr} — `{p.get('price_basis', 'UNADJUSTED_DAILY_OHLCV')}`):** Close {format_price(p.get('close'), rec_curr)} | "
                 f"MA20 {format_price(p.get('ma20'), rec_curr)} | MA50 {format_price(p.get('ma50'), rec_curr)} | "
                 f"20D Return {p.get('return20_pct')}% | 20D Ann. Vol {p.get('volatility_pct', 'N/A')}% | Trend: `{p.get('trend')}`"
             )
         else:
             lines.append(f"- **Technical Summary ({rec_curr}):** Status `{p.get('status')}` (no prices fabricated)")
+
+        missing_items = rec.get('missing_data') or []
+        if missing_items:
+            lines.append("- **Missing / Unverified Data:**")
+            for m_item in missing_items:
+                lines.append(f"  - {m_item}")
+
+        unsupported_items = rec.get('unsupported_conclusions') or []
+        if unsupported_items:
+            lines.append("- **Unsupported Conclusions (Explicitly Withheld):**")
+            for u_item in unsupported_items:
+                lines.append(f"  - {u_item}")
 
         citations = sig.get('evidence_citations', [])
         if citations:
@@ -873,26 +1004,62 @@ def run_mission(
     return mission
 
 
+def _resolve_secret(name: str, explicit_val: str = '') -> str:
+    if explicit_val and explicit_val.strip():
+        return explicit_val.strip()
+    env_val = os.getenv(name, '')
+    if env_val and env_val.strip():
+        return env_val.strip()
+    if name == 'ALPHAVANTAGE_API_KEY':
+        try:
+            from engine import get_api_key
+            k = get_api_key()
+            if k and k.strip():
+                return k.strip()
+        except Exception:
+            pass
+    try:
+        import tomllib
+        for sp in (Path(__file__).resolve().parent / '.streamlit' / 'secrets.toml',
+                   Path.home() / '.streamlit' / 'secrets.toml'):
+            if sp.is_file():
+                val = tomllib.loads(sp.read_text(encoding='utf-8')).get(name)
+                if val and str(val).strip():
+                    return str(val).strip()
+    except Exception:
+        pass
+    return ''
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description='Autonomous Post-Close Multi-Market Equity Research')
     parser.add_argument('--market', default=os.getenv('RESEARCH_MARKET', 'US'), help='US, IN, or ALL')
+    parser.add_argument('--watchlist', default='', help='Optional comma-separated watchlist override for targeted runs')
     parser.add_argument('--output-dir', default='reports/autonomous')
     parser.add_argument('--enforce-session-lock', action='store_true', default=False)
     args = parser.parse_args(argv)
 
     target = normalize_market(args.market)
     markets_to_run = ['US', 'IN'] if target == 'ALL' else [target]
+    alpha_key = _resolve_secret('ALPHAVANTAGE_API_KEY')
+    sec_ua = _resolve_secret('SEC_USER_AGENT')
+    groq_key = _resolve_secret('GROQ_API_KEY')
     for mkt in markets_to_run:
         env_var = 'RESEARCH_WATCHLIST_INDIA' if mkt == 'IN' else 'RESEARCH_WATCHLIST'
         default_wl = DEFAULT_INDIA_WATCHLIST if mkt == 'IN' else DEFAULT_WATCHLIST
-        raw_wl = os.getenv(env_var) or os.getenv('INDIA_RESEARCH_WATCHLIST' if mkt == 'IN' else 'US_RESEARCH_WATCHLIST') or default_wl
+        raw_wl = (
+            args.watchlist.strip()
+            or os.getenv(env_var)
+            or os.getenv('INDIA_RESEARCH_WATCHLIST' if mkt == 'IN' else 'US_RESEARCH_WATCHLIST')
+            or default_wl
+        )
         symbols = parse_watchlist(raw_wl, market=mkt)
         mission = run_mission(
             symbols,
             output_dir=args.output_dir,
-            sec_user_agent=os.getenv('SEC_USER_AGENT', ''),
-            alpha_key=os.getenv('ALPHAVANTAGE_API_KEY', ''),
-            groq_key=os.getenv('GROQ_API_KEY', ''),
+            sec_user_agent=sec_ua,
+            alpha_key=alpha_key,
+            groq_key=groq_key,
             market=mkt,
             enforce_once_per_session=args.enforce_session_lock,
         )

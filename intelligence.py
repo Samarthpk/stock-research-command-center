@@ -19,7 +19,7 @@ from pathlib import Path
 
 from global_markets import normalize_market, resolve_instrument
 
-_INTELLIGENCE_VERSION = '4.1'
+_INTELLIGENCE_VERSION = '4.2'
 DEFAULT_UA = 'StockResearchCommandCenter research contact research-team@example.com'
 
 OFFICIAL_INDIA_FILING_HOSTS = (
@@ -168,14 +168,16 @@ def news_for(ticker, fetch=fetch_bytes, limit=8, market='US'):
         if mkt == 'IN' and not is_company_specific_text(title, inst):
             continue
         seen.add(link)
-        results.append(asdict(Evidence(
+        ev = asdict(Evidence(
             source_label,
             title,
             link,
             item.findtext('pubDate') or '',
             utcnow(),
-            'Headline discovery only; article content and claim unverified',
-        )))
+            'Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence',
+        ))
+        ev['is_primary_regulatory_evidence'] = False
+        results.append(ev)
         if len(results) >= limit:
             break
     return results
@@ -212,19 +214,51 @@ def sec_filings(ticker, fetch=fetch_bytes, user_agent=None, ticker_map=None, lim
     lookup = ticker_map if ticker_map is not None else sec_ticker_map(fetch, ua)
     ticker = ticker.upper().strip()
     if ticker not in lookup:
-        return {'company': None, 'filings': [], 'warning': 'SEC ticker/CIK not found (ETF or unsupported filer possible)'}
+        return {
+            'company': None,
+            'filings': [],
+            'warning': 'SEC ticker/CIK not found (ETF or unsupported filer possible)',
+        }
     cik, company = lookup[ticker]
     url = f'https://data.sec.gov/submissions/CIK{cik:010d}.json'
     obj = json.loads(fetch(url, user_agent=ua))
     recent = obj.get('filings', {}).get('recent', {})
+    forms = recent.get('form', [])
+    accessions = recent.get('accessionNumber', [])
+    primaries = recent.get('primaryDocument', [])
+    filing_dates = recent.get('filingDate', [])
+    report_dates = recent.get('reportDate', [])
+    items_list = recent.get('items', [])
+    is_xbrl_list = recent.get('isXBRL', [])
+
     filings = []
-    for idx, form in enumerate(recent.get('form', [])):
-        if form not in ('10-K', '10-Q', '8-K'):
+    for idx, form in enumerate(forms):
+        if form not in ('10-K', '10-Q', '8-K', '10-K/A', '10-Q/A'):
             continue
-        accession = recent['accessionNumber'][idx].replace('-', '')
-        primary = recent['primaryDocument'][idx]
+        raw_accn = accessions[idx] if idx < len(accessions) else ''
+        accession = raw_accn.replace('-', '')
+        primary = primaries[idx] if idx < len(primaries) else ''
+        filing_date = filing_dates[idx] if idx < len(filing_dates) else ''
+        report_date = report_dates[idx] if idx < len(report_dates) else ''
+        items_val = items_list[idx] if idx < len(items_list) else ''
+        is_xbrl = bool(is_xbrl_list[idx]) if idx < len(is_xbrl_list) else False
+
         link = f'https://www.sec.gov/Archives/edgar/data/{cik}/{accession}/{urllib.parse.quote(primary)}'
-        filings.append(asdict(Evidence('SEC EDGAR', form + ' — ' + company, link, recent['filingDate'][idx], utcnow(), 'Filing metadata only; document not analyzed')))
+        items_note = f' | 8-K Items: {items_val}' if items_val else ''
+        period_note = f' | Period End: {report_date}' if report_date else ''
+        summary_str = (
+            f'Official SEC EDGAR {form} filing metadata (Accn: {raw_accn}{period_note}{items_note}); '
+            'full narrative document not parsed'
+        )
+        ev = asdict(Evidence('SEC EDGAR', f'{form} — {company}', link, filing_date, utcnow(), summary_str))
+        ev['form'] = form
+        ev['accession_number'] = raw_accn
+        ev['report_date'] = report_date or None
+        ev['items'] = items_val or None
+        ev['is_xbrl'] = is_xbrl
+        ev['is_primary_regulatory_evidence'] = True
+        ev['document_analyzed'] = False
+        filings.append(ev)
         if len(filings) >= limit:
             break
     return {'company': company, 'cik': cik, 'filings': filings, 'warning': None}
@@ -241,34 +275,70 @@ def company_facts(ticker, fetch=fetch_bytes, user_agent=None, ticker_map=None, m
     if ticker not in lookup:
         return {'metrics': {}, 'warning': 'CIK not found'}
     cik, company = lookup[ticker]
-    obj = json.loads(fetch(f'https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json', user_agent=ua))
+    source_url = f'https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json'
+    obj = json.loads(fetch(source_url, user_agent=ua))
     facts = obj.get('facts', {}).get('us-gaap', {})
-    tags = {
-        'Revenue': 'RevenueFromContractWithCustomerExcludingAssessedTax',
-        'Net income': 'NetIncomeLoss',
-        'Total assets': 'Assets',
-        'Operating cash flow': 'NetCashProvidedByUsedInOperatingActivities',
+    tag_candidates = {
+        'Revenue': [
+            'RevenueFromContractWithCustomerExcludingAssessedTax',
+            'Revenues',
+            'SalesRevenueNet',
+            'RevenuesNetOfInterestExpense',
+        ],
+        'Net income': [
+            'NetIncomeLoss',
+            'ProfitLoss',
+        ],
+        'Operating income': [
+            'OperatingIncomeLoss',
+        ],
+        'Total assets': [
+            'Assets',
+        ],
+        'Stockholders equity': [
+            'StockholdersEquity',
+            'StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest',
+        ],
+        'Cash and equivalents': [
+            'CashAndCashEquivalentsAtCarryingValue',
+            'CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents',
+        ],
+        'Operating cash flow': [
+            'NetCashProvidedByUsedInOperatingActivities',
+        ],
     }
     metrics = {}
-    for label, tag in tags.items():
-        usd = facts.get(tag, {}).get('units', {}).get('USD', [])
-        candidates = [
-            v for v in usd
-            if v.get('form') in ('10-K', '10-Q') and v.get('filed') and v.get('end') and isinstance(v.get('val'), (int, float))
-        ]
-        if candidates:
-            latest = max(candidates, key=lambda v: (v['filed'], v['end']))
+    for label, candidate_tags in tag_candidates.items():
+        best_entry = None
+        best_tag = None
+        for tag in candidate_tags:
+            usd = facts.get(tag, {}).get('units', {}).get('USD', [])
+            candidates = [
+                v for v in usd
+                if v.get('form') in ('10-K', '10-Q') and v.get('filed') and v.get('end') and isinstance(v.get('val'), (int, float))
+            ]
+            if candidates:
+                latest_for_tag = max(candidates, key=lambda v: (v['filed'], v['end']))
+                if best_entry is None or (latest_for_tag['filed'], latest_for_tag['end']) > (best_entry['filed'], best_entry['end']):
+                    best_entry = latest_for_tag
+                    best_tag = tag
+        if best_entry is not None:
             metrics[label] = {
-                'value_usd': latest['val'],
-                'period_start': latest.get('start'),
-                'period_end': latest['end'],
-                'filed': latest['filed'],
-                'form': latest['form'],
-                'accession': latest.get('accn'),
-                'source_url': f'https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json',
+                'value_usd': best_entry['val'],
+                'currency': 'USD',
+                'accounting_standard': 'US-GAAP',
+                'xbrl_tag': best_tag,
+                'period_start': best_entry.get('start'),
+                'period_end': best_entry['end'],
+                'filed': best_entry['filed'],
+                'form': best_entry['form'],
+                'accession': best_entry.get('accn'),
+                'source_url': source_url,
+                'verified_official_document': True,
             }
     return {
         'company': company,
+        'cik': cik,
         'metrics': metrics,
         'warning': 'Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation.',
     }
@@ -281,6 +351,81 @@ def _classify_india_disclosure_category(title: str) -> str:
     if any(k in lower for k in ('annual report', 'agm', 'annual general meeting', 'fy25', 'fy26', 'fy27', 'integrated report')):
         return 'Annual Report / AGM Disclosure (SEBI LODR Reg 34)'
     return 'Corporate Announcement / Filing (SEBI LODR Reg 30)'
+
+
+def _fetch_bse_official_announcements(inst: dict, limit: int = 8) -> list[dict]:
+    """Attempt direct retrieval from official BSE corporate announcements JSON API when scrip code is known.
+
+    Only returns announcements whose title/company explicitly matches the target company and whose attachment
+    resolves to an official BSE PDF document URL (`is_official_india_filing_url`). Falls back silently on network/block errors.
+    """
+    bse_code = inst.get('bse_scrip_code') or ''
+    if not bse_code:
+        return []
+    now_dt = dt.datetime.now(dt.timezone.utc)
+    from_dt = now_dt - dt.timedelta(days=90)
+    params = urllib.parse.urlencode({
+        'pageno': '1',
+        'strCat': '-1',
+        'strPrevDate': from_dt.strftime('%Y%m%d'),
+        'strScrip': bse_code,
+        'strSearch': 'P',
+        'strToDate': now_dt.strftime('%Y%m%d'),
+        'strType': 'C',
+    })
+    api_url = f'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?{params}'
+    req = urllib.request.Request(
+        api_url,
+        headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) StockResearchCommandCenter/0.4',
+            'Accept': 'application/json, text/plain, */*',
+            'Referer': 'https://www.bseindia.com/',
+            'Origin': 'https://www.bseindia.com',
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10, context=_ssl_context()) as resp:
+            raw = resp.read()
+            if resp.headers.get('Content-Encoding', '').lower() == 'gzip' or raw[:2] == b'\x1f\x8b':
+                raw = gzip.decompress(raw)
+            payload = json.loads(raw)
+    except Exception:
+        return []
+
+    table = payload.get('Table') if isinstance(payload, dict) else []
+    if not isinstance(table, list):
+        return []
+    nse_sym = inst.get('nse_symbol') or inst.get('symbol')
+    results = []
+    for row in table:
+        if not isinstance(row, dict):
+            continue
+        headline = (row.get('NEWSSUB') or row.get('HEADLINE') or '').strip()
+        comp_name = (row.get('SLONGNAME') or '').strip()
+        att_name = (row.get('ATTACHMENTNAME') or '').strip()
+        dt_tm = (row.get('NEWS_DT') or row.get('DissemDT') or '').strip()
+        full_title = f'{comp_name} — {headline}' if comp_name and comp_name.lower() not in headline.lower() else headline
+        if not full_title or not att_name:
+            continue
+        if not is_company_specific_text(full_title, inst):
+            continue
+        pdf_url = f'https://www.bseindia.com/xml-data/corpfiling/AttachLive/{urllib.parse.quote(att_name)}'
+        if not is_official_india_filing_url(pdf_url, inst):
+            continue
+        category = _classify_india_disclosure_category(full_title)
+        ev = asdict(Evidence(
+            f'Official BSE Corporate Filing ({category})',
+            full_title,
+            pdf_url,
+            dt_tm,
+            utcnow(),
+            f'Verified company-specific official BSE PDF filing | NSE: {nse_sym} | BSE Scrip: {bse_code} | ISIN: {inst.get("isin") or "N/A"}',
+        ))
+        ev['is_primary_regulatory_evidence'] = True
+        results.append(ev)
+        if len(results) >= limit:
+            break
+    return results
 
 
 def india_disclosures_for(ticker, fetch=fetch_bytes, limit=8):
@@ -300,6 +445,16 @@ def india_disclosures_for(ticker, fetch=fetch_bytes, limit=8):
     bse_code = inst.get('bse_scrip_code') or ''
     nse_sym = inst.get('nse_symbol') or sym
 
+    verified_official_filings = []
+    secondary_mentions = []
+    seen = set()
+
+    if fetch is fetch_bytes:
+        for bse_item in _fetch_bse_official_announcements(inst, limit=limit):
+            if bse_item['url'] not in seen:
+                seen.add(bse_item['url'])
+                verified_official_filings.append(bse_item)
+
     q_str = (
         f'("{short_company}" OR "{sym}") '
         f'("quarterly results" OR "financial results" OR "annual report" OR "board meeting" OR "SEBI LODR" OR "exchange filing") '
@@ -309,9 +464,6 @@ def india_disclosures_for(ticker, fetch=fetch_bytes, limit=8):
     url = f'https://news.google.com/rss/search?{query}'
     root = ET.fromstring(fetch(url))
 
-    verified_official_filings = []
-    secondary_mentions = []
-    seen = set()
     for item in root.findall('.//channel/item'):
         title = (item.findtext('title') or '').strip()
         link = (item.findtext('link') or '').strip()
@@ -323,26 +475,29 @@ def india_disclosures_for(ticker, fetch=fetch_bytes, limit=8):
         seen.add(link)
         category = _classify_india_disclosure_category(title)
         if is_official_india_filing_url(link, inst):
-            verified_official_filings.append(asdict(Evidence(
-                f'Official Indian Exchange Filing ({category})',
-                title,
-                link,
-                item.findtext('pubDate') or '',
-                utcnow(),
-                f'Verified company-specific official document | NSE: {nse_sym} | BSE Scrip: {bse_code or "N/A"} | ISIN: {inst.get("isin") or "N/A"}',
-            )))
-            if len(verified_official_filings) >= limit:
-                break
+            if len(verified_official_filings) < limit:
+                ev = asdict(Evidence(
+                    f'Official Indian Exchange Filing ({category})',
+                    title,
+                    link,
+                    item.findtext('pubDate') or '',
+                    utcnow(),
+                    f'Verified company-specific official document | NSE: {nse_sym} | BSE Scrip: {bse_code or "N/A"} | ISIN: {inst.get("isin") or "N/A"}',
+                ))
+                ev['is_primary_regulatory_evidence'] = True
+                verified_official_filings.append(ev)
         else:
             if len(secondary_mentions) < limit:
-                secondary_mentions.append(asdict(Evidence(
+                ev = asdict(Evidence(
                     f'Secondary Disclosure Mention ({category} — unverified news source)',
                     title,
                     link,
                     item.findtext('pubDate') or '',
                     utcnow(),
                     f'Company-specific secondary mention ({company}); not an official BSE/NSE filing document.',
-                )))
+                ))
+                ev['is_primary_regulatory_evidence'] = False
+                secondary_mentions.append(ev)
 
     official_portals = {
         'bse_corporate_ann_url': f'https://www.bseindia.com/corporates/ann.html?scrip={bse_code}' if bse_code else None,
@@ -359,7 +514,7 @@ def india_disclosures_for(ticker, fetch=fetch_bytes, limit=8):
         'reporting_standard': 'IND-AS (SEBI LODR Regulations 30, 33 & 34)',
         'company_specific_verified': True,
         'official_exchange_portals': official_portals,
-        'filings': verified_official_filings,
+        'filings': verified_official_filings[:limit],
         'secondary_disclosure_mentions': secondary_mentions,
         'warning': (
             None if verified_official_filings else
@@ -471,6 +626,12 @@ def build_research(ticker, fetch=fetch_bytes, user_agent=None, include_sec=True,
         'sec': {},
         'fundamentals': {},
         'errors': [],
+        'missing_data': [],
+        'unsupported_conclusions': [
+            'Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value targets are not computed without verified period-aligned share counts and earnings.',
+            'General news headlines and secondary media mentions are never treated as primary regulatory evidence.',
+            'Full narrative text inside 10-K/10-Q/8-K or SEBI LODR PDF filings is not parsed automatically.',
+        ],
         'assessment': 'INSUFFICIENT_EVIDENCE',
     }
     try:
@@ -487,6 +648,12 @@ def build_research(ticker, fetch=fetch_bytes, user_agent=None, include_sec=True,
             output['errors'].append('india_disclosures: ' + str(exc))
         has_verified_filings = bool(output['sec'].get('filings'))
         has_verified_metrics = bool(output['fundamentals'].get('metrics'))
+        if not has_verified_filings:
+            output['missing_data'].append('Official company-specific BSE/NSE PDF/XBRL filing documents (SEBI LODR Reg 30/33/34).')
+        if not has_verified_metrics:
+            output['missing_data'].append('Verified company-specific IND-AS numerical accounting metrics in INR backed by official exchange filings.')
+        if not output['news']:
+            output['missing_data'].append('Company-specific Indian news headlines.')
         output['assessment'] = (
             'RESEARCH_READY' if (output['news'] and has_verified_filings and has_verified_metrics)
             else 'INSUFFICIENT_EVIDENCE'
@@ -499,7 +666,18 @@ def build_research(ticker, fetch=fetch_bytes, user_agent=None, include_sec=True,
                 output['fundamentals'] = company_facts(canon, fetch, user_agent, mapping, market='US')
             except Exception as exc:
                 output['errors'].append('sec: ' + str(exc))
-        output['assessment'] = 'RESEARCH_READY' if output['news'] and output['sec'].get('filings') else 'INSUFFICIENT_EVIDENCE'
+        has_verified_filings = bool(output['sec'].get('filings'))
+        has_verified_metrics = bool(output['fundamentals'].get('metrics'))
+        if not has_verified_filings:
+            output['missing_data'].append('Primary US SEC EDGAR filings (10-K, 10-Q, 8-K).')
+        if not has_verified_metrics:
+            output['missing_data'].append('Verified US-GAAP XBRL companyfacts numerical metrics.')
+        if not output['news']:
+            output['missing_data'].append('Recent US news headlines.')
+        output['assessment'] = (
+            'RESEARCH_READY' if (output['news'] and has_verified_filings and has_verified_metrics)
+            else 'INSUFFICIENT_EVIDENCE'
+        )
     return output
 
 
