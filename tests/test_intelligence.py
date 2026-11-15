@@ -31,7 +31,7 @@ class ResearchTests(unittest.TestCase):
     def test_unknown_indian_ticker_does_not_trigger_global_news(self):
         def fail_fetch(*args,**kwargs):
             raise AssertionError('Network fetch should not occur for unverified Indian issuer')
-        r=build_research('UNVERIFIED123',fetch=fail_fetch,market='IN')
+        r=build_research('UNKNOWNXYZ',fetch=fail_fetch,market='IN')
         self.assertEqual(r['assessment'],'INSUFFICIENT_EVIDENCE')
         self.assertFalse(r['news'])
         self.assertFalse(r['sec'])
