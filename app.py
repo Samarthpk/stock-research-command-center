@@ -61,8 +61,9 @@ with st.sidebar:
         '📊 Unified Stock Research',
         '🌎 Market Scanner & Signals',
         '🇮🇳 Upstox India Live Research',
+        '💼 Upstox Portfolio Manager',
     ]
-    page_idx = 7 if 'upstox' in qp_page else (6 if 'scanner' in qp_page or 'signals' in qp_page else (5 if 'unified' in qp_page else (4 if 'universe' in qp_page or 'listed' in qp_page else (3 if 'risk' in qp_page or 'decision' in qp_page else (1 if 'mission' in qp_page else (2 if 'intel' in qp_page or 'research' in qp_page else 0))))))
+    page_idx = 8 if 'portfolio' in qp_page else (7 if 'upstox' in qp_page else (6 if 'scanner' in qp_page or 'signals' in qp_page else (5 if 'unified' in qp_page else (4 if 'universe' in qp_page or 'listed' in qp_page else (3 if 'risk' in qp_page or 'decision' in qp_page else (1 if 'mission' in qp_page else (2 if 'intel' in qp_page or 'research' in qp_page else 0)))))))
     active_page = st.radio('Workspace Page', options=page_options, index=page_idx)
     st.divider()
 
@@ -86,6 +87,9 @@ elif active_page == '🌎 Market Scanner & Signals':
     st.stop()
 elif active_page == '🇮🇳 Upstox India Live Research':
     runpy.run_path(str(Path(__file__).resolve().parent / 'pages' / 'Upstox_India.py'), run_name='__main__')
+    st.stop()
+elif active_page == '💼 Upstox Portfolio Manager':
+    runpy.run_path(str(Path(__file__).resolve().parent / 'pages' / 'Upstox_Portfolio.py'), run_name='__main__')
     st.stop()
 
 with st.sidebar:
