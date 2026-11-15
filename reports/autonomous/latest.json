@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "mission_id": "20261115T014417Z-IN",
+  "mission_id": "20261115T014544Z-IN",
   "market": "IN",
   "currency": "INR",
   "market_session_date": "2026-11-13",
@@ -12,8 +12,8 @@
     "timezone": "Asia/Kolkata",
     "tz_abbrev": "IST",
     "is_dst": false,
-    "local_time": "2026-11-15 07:14 IST",
-    "local_time_iso": "2026-11-15T07:14:17.308575+05:30",
+    "local_time": "2026-11-15 07:15 IST",
+    "local_time_iso": "2026-11-15T07:15:44.838793+05:30",
     "local_date": "2026-11-15",
     "is_weekend": true,
     "is_holiday": false,
@@ -25,7 +25,7 @@
     "ready_for_post_close_run": false,
     "latest_completed_session": "2026-11-13"
   },
-  "started_at": "2026-11-15T01:44:17.309498+00:00",
+  "started_at": "2026-11-15T01:45:44.839839+00:00",
   "data_policy": "historical and public sources; native currencies preserved (USD/INR); no trading",
   "symbols": [
     "RELIANCE"
@@ -44,7 +44,19 @@
         "match_aliases": [
           "Reliance Industries",
           "RIL",
-          "RELIANCE"
+          "NSE: RELIANCE",
+          "NSE:RELIANCE",
+          "500325"
+        ],
+        "exclude_phrases": [
+          "Reliance Power",
+          "Reliance Infrastructure",
+          "Reliance Industrial Infrastructure",
+          "Reliance Communications",
+          "Reliance Capital",
+          "Reliance Home Finance",
+          "Reliance Naval",
+          "Reliance Chemotex"
         ],
         "market": "IN",
         "currency": "INR",
@@ -61,21 +73,21 @@
         "provider_symbol": "RELIANCE.BSE",
         "exchange": "BSE (Alpha Vantage .BSE) / NSE (RELIANCE)"
       },
-      "started_at": "2026-11-15T01:44:17.309630+00:00",
+      "started_at": "2026-11-15T01:45:44.840633+00:00",
       "agents": {
         "news": {
           "status": "COMPLETE",
-          "at": "2026-11-15T01:44:17.845247+00:00",
+          "at": "2026-11-15T01:45:44.976445+00:00",
           "market": "IN"
         },
         "filings": {
           "status": "COMPLETE",
-          "at": "2026-11-15T01:44:18.340455+00:00",
+          "at": "2026-11-15T01:45:45.091544+00:00",
           "market": "IN"
         },
         "fundamentals": {
           "status": "COMPLETE",
-          "at": "2026-11-15T01:44:18.340517+00:00",
+          "at": "2026-11-15T01:45:45.091566+00:00",
           "market": "IN"
         },
         "market_data": {
@@ -96,26 +108,10 @@
       "news": [
         {
           "source": "Google News RSS India (company-filtered headline)",
-          "title": "India's Reliance posts best day in over six years as oil business, Jio Platforms lift outlook - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPU0NDNVVlWVpIN1dCT0JQN3ZVYWtBTHVQdkhKZjZwTVE5MmhGc2p6a2gtaF85LUVCY2ZlNlh2Sm5kSExna1ZsdTUyMmdhLXk1WS13U3BEbHVQejFJTVBOblIySFdHSFFRNEJtV1V1clVoSDk4NXE1blNTVEcxNV9MUi13RDZCajY5YnJVVEJPejBKNC1UTXI5dEpISXFzNk9FNEd5STFPOFczQzIteTJXUmthZC0zb29KQmIwUERoLUc?oc=5",
-          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.845151+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        },
-        {
-          "source": "Google News RSS India (company-filtered headline)",
-          "title": "Indian Markets Set for Gap-Up Open as Reliance Beats Estimates - HDFC Sky",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdVgyRzJuLS1HUDk2TTAxcVpicVllQmtSa0NveVlUTnRha2RTRkRFbThibEUzRVZZTzBNYkJzaXBNdUhNRS0wcVVWMjZXNV96cmJ3MTZHNm9HN1pDS2pLb2JEM2p3a3l0dGhwaU45NVpuNGhTMzFlczQ0M3p5Wmtvd3h1ZlFOcU1BaE5iLVYxbWp3UV9paHRnSHF6RnFJN3ptUkVGY21mSEpjbWhob09XaFNXZDViNWZJb0c2TEVYZFo?oc=5",
-          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.845186+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        },
-        {
-          "source": "Google News RSS India (company-filtered headline)",
           "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
           "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5",
           "published": "Sat, 14 Nov 2026 09:05:07 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.845197+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.976074+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         },
         {
@@ -123,15 +119,7 @@
           "title": "Reliance Industries shares jump nearly 12% after record Q2 results; top Nifty gainer, biggest index... - Moneycontrol.com",
           "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQU2IxZFp2SXB5LVpkOElMdjZtckM1VmFaZTlpckNMNlhDd29SVHNUU0V4OFU0RTZHWXVzalJaYXREeVE1V05yOGpETFk1aGhqOE91bWc5SkdUYlJ6NG1HYVdFektOZzdZVjVLSUpGaC1zSjc0X3g3T3JBYVVaYWNJUzk1Wi1HNGRFRTdlaWh3NjdwTThBSHRZV0NkSlBXX3FFS09WTHRkMDZTY1U1VTloTzVGRFRmRHp3LVlINlUzV2RpN0VpLUM2Ung4TlZCVXRhWDY4Q3FYTWV4dWdJU1lLbi1HVVJSbjFiMU8tZ1F1S2NjVWp5THV1NUF1Y3NuNEHSAYQCQVVfeXFMUGVrRU5iX3dDUG5lNWo0MDZNS19XVjRVZzF3U0tybTFrY2NHXzRGMTRGQTlVWWU3ZElsVTRTa3FyLVFfR2xZXzlBOHdFeS1LakcyWHM3cnQ1Q3NtZGYtX2Njd0lPNnpRdzN3M3ZsSUdiTUdWX21WTndXRUJXLTd5UHVHNEh2Vnk1M1JicE16c1RtNXRyYVFMdms1cWlLZlZUdURhLTJvcmtzUm9iTmxLTXY5Sk5oX2dkME5aNEVnczRIXzhtZmpOWFNCTXloMzRjSmZNeVotdTBKRF9WQWdHaWh5R3lsV0ZncHFVWms2OVQtOGJMdDUxaXRvOTRjOWxBZl9XVUM?oc=5",
           "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.845205+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        },
-        {
-          "source": "Google News RSS India (company-filtered headline)",
-          "title": "Reliance shares jump 12% as brokerages maintain bullish view after Q2 results - BusinessLine",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQelRQZVFyMnJPLTZ2MDVhaFl4M0Z6bGpZckwxQ0czcnpjMlFVSHc1MVc5bmtremRVQXB0dUJUaHpialFXOFV4eHlrcWFFRHh6MHUxeGdlMmt5MFZKTGdSd1NENGFBT3N6TkNxdU9EcVZpdmJUT092Tng3T2VnMmtZR3dpN3pHbG5hUlhiVUlCc3h5cW9kYVJmemNNaDZtWlJOT1pTdm9SbGprZjI0RVhGZ2hvRjQtX29fYkJoOWtWSDFLalpCX3BqZ04yVU13aklIbVcxVUgxVdIB3gFBVV95cUxOeC1fSXJXOF9WZU5qV0JWUFJQSlNIM0lkLUw0dnhfM0N1ZHBleGV5ZXU2WFJzbnRta2M2cnpPaVM5UklrR2dhd25SLTRfN2xuNjM2TnFpZGFMWDZxY3RyLXRXc1Y5ZEdZdUk1NXBFLWh0T0ZFb1I5UTBRel9BdnhJbEpxckFqZ0NpM3M4eU9nTGxkZW91Rkl5T2JwRmtZSU1QajFMT0xEYWd6UWVqWUJqdmJCRVdMc0hOaGJPeGdvY1RISXFhUmZjdWZSS295bUJJN0tUeURyb1NHTVdPcUE?oc=5",
-          "published": "Mon, 02 Nov 2026 04:51:15 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.845213+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.976109+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         },
         {
@@ -139,7 +127,31 @@
           "title": "Reliance shares jump over 7%: Why RIL stock is rallying today - India Today",
           "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPX2t2b2lSWnVWV2wzOUxfdFI0QkxUY3JVVUVnR3lCV3dJZ1VFd0gweVE0bmMzcHZBOWhaZl8tX2lTTmhKUmVIb09iUk5ORHE1aUNoY3dzaWJDQlF1aF9Odzd3N0J4aFVCYW5lcFJSRVctRlZFbUlsNTJpdU9NZFZ5LW1QOHBOTlNYaU1YZTc0QWYtV1dLRjZrNEJtcS1qamVaMkM3Z1lZVnR4TlRybjFadTNwQ0ZvbFBNUVZ5VzB2UjgzZTVGcHZwbmhoek0zMm5VV0lBZFo1NlTSAd4BQVVfeXFMTnRRekFCbVJ2YjVUcjQ0TG1RTlJZS1NVaUh5d0hzc0pLRXE4eXlWQ2hMVGVRaVZoZ1l4dFYzV05FVHF5WU5oLTBJcTEySlllUVliMnRxQTRtVkVDUlpkTHk1VUtncHJvR2RCVjVPeWMtVHFOWXRvM2JlcjZtc0VBRE9jYUxUWHVQUl9XNXZTUWk3M2JCOEhlUTc4a29Tb3VOMjNaT1ZUYlAtVHhvZTU0YnZpNUs0SmhEUmJyZlZSeGN5N1RCY3l2Q1hnWWlpQ1VqUlR3dldKZFNOOVk3WC1B?oc=5",
           "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.845221+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.976154+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Reliance Industries shares surge most in 9 months, add over \u20b91 lakh crore to market cap after Q2 results - ET EnergyWorld",
+          "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQdllTUGpuUDg0T3pSdDNDMWM2UUdEa0F2MnJrVVJXZ3FlUW1RTjc3Z25XQy1wSDFqX3NXdXpQRTFJeFhpOUh2cG9jdFFUQmJhSlNLWFM5eTNtVmI2S3ducFdjR1NBMGNMUDJ4c1lhUzhZUUI1eW9QdVZOcHo4aUNVaWF1VnBvRjJLYjBrMG1zcjZndGlEaEdmUHBMS0U5RXAwVWFZTlJwS1NaZGVJT0RoQ1NiZzVLbGRSaXNndGswaTJjNEFnR3NDUjhvNGlyWEFsamMwWVU2a3FUVWc4aUxjdlktZVpnMmhNb29nWGJnYVlhTnpENUNqRUc4RmhIdDJWVVFJ0gGIAkFVX3lxTE15c3VCYUZnZ2xDMmQzcHpDOG14dlFCWjJNdUR3TXJNa0EzNkw3S0pMYTVza3BENE4xVWlnQzBTT3dnRVNFT1k1UDdhR3lBWmFCWHlaQmdWbmJSRVdXelYzdWFvMXlZT1IxTThFLWR5ejhSTkJJZDM2bEd2VGY0UjZTZDltNE5vbEI5U3RjYThMV2FyeHctWWt5UWNsaTdWdURRTVA2aWtUbjhEbTJaSFlKeEZ3QkdkNW4zTHVzbDJrcHJxcXhyYU11QXI2Qzd2WU95dDRUX010TEU1UFpFenlBYmxhU3JOcDBmTWtMMzVFclhuNkRDRTJfTWNKcnhxSkZRYXZXUnZsTw?oc=5",
+          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-15T01:45:44.976193+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "QUICK TAKE | Seven Things to Know About Reliance Industries\u2019 Nearly 12% Share Rally - Open Magazine",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWU1FMTl2TEFEb1hqM3g1TnY0UTVQX2tGb1ZlZ3N0Z05fZjFNbFdsT1hQbjJqZ3ZmVEdlZU1WS1c3Z2FIR0ZSUnAwTHpybVhMRDM2b2lMV281aXpOVElRRG5Za1BDN0l4UHVRcWlIX1ZXUTJScWZuY2FkVEhOMU5uX05LNUd5b2lZZF9aczlyUkZiZ1IweVVIeVV4OTFNeE5qYVBDX1NjUUNxejNCb0J1Si0wRDdRZ3c?oc=5",
+          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-15T01:45:44.976263+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Reliance Industries shares at nine-month high after Q2 results; here's how high the stock can go - CNBC TV18 - LinkedIn",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOLWhOODVvMkdfR0xtZmdwaVZpRkFPOWptbWxjZEY1TExMZ1lKcEQzUE9xbDRBOExZcGNfS0V6WEJvNGQtNmNUYXhpcG0xTXl1bTZNZlhpWXY2SXNNRnRwSHhYZDktLWtOU3BMNWw5NlJrNGVYZjBFaTFBY3FndVV4OHo4ZDFMSjVyekpiakRCZmduZlhrcF9TdGZHRHNfSU9wRUFod2ZBN3cxbF9HNkZhWXpUWnRWZw?oc=5",
+          "published": "Sun, 01 Nov 2026 07:00:00 GMT",
+          "retrieved_at": "2026-11-15T01:45:44.976417+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         }
       ],
@@ -164,23 +176,7 @@
             "title": "Reliance Industries Shares Fall 2% After Jio Platforms Listing; Q2 Results on October 30 - India Infoline",
             "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcDBtOWtWN3NEMjBFRVhoSloyU3JKNG5DNnlHTE5ndFRnZzQ5VmNMQjVULVJOVDRseEU4dnpCb0dSOEdRX1JsZUVCWHVtRjhMRkZvU3lfa2oxemIzZG1CZE80REdRSFpJTU9QWGNMckNZdTJDdE9jRV9XU3YxVVFyS3BacHRkdzFqWU1DRzR5Q0FLTDUtYUY3ZlJIY1BvbzJTR0p1dlI3LVRobnB0b0JYNWF2TmhGZDNLaXRrRENsU3RNaG5uR0MtQW5MQQ?oc=5",
             "published": "Wed, 28 Oct 2026 07:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:44:18.338081+00:00",
-            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
-          },
-          {
-            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
-            "title": "Reliance Jio releases financial results for QE and H1 ended September 30, 2026 - tele.net",
-            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMDUwLVNnVFNmeTJhMmpXSHoxTkk0R3pZRXZnVmk4b2NBaWdiUlQ0Mlg1WTRSMGFaOWJWM0ZZcTQ0NjRsVDdtcmU1V0lsSC1iSDRrQ29vdVFETGRiMG1seWxuY0JIQUN3N1VXbWVyVmxzT0tIdXNabS1qQUhoR0dabnpSdDNheVJYVko0QkdLUU5ybGhrRlJLSnlVa0FscTU0QnIyQXItNjJmazdNcnJndWJUbkNzZmtETkFxVw?oc=5",
-            "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:44:18.338208+00:00",
-            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
-          },
-          {
-            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
-            "title": "Reliance Retail Q2FY27 results: Net profit falls 24.3% to \u20b92,611 crore - Business Standard",
-            "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPaU56X2tvTEVDZmFzbGxOeUxLbG44UmRuWm02REZUMXZzRGhvMjhxVUZmUUM0dVFYd0JkbXQybTdjd2lpQUpOdXZrTXNsZ2p0am5rMjdvUmFLMXNMa1RkX252MDRmeThRQWVQTkJGclIzUlg5QUxZVXBpdTFaWENaQ2JVTmJqNjdzYnRBaWtBZFFMUU9xN045Uk9IUUtRSmF2SmNSNDFGQWZta0NVZzNTWU1tNDRtVnZBWGoxclhQSDJ4Z1llaTB2Q2lkUTVjaEtDd3Y4T3FTTW91UDZrWW9WbjZPZ9IB6AFBVV95cUxNZVh2eHhEUGZrS2pfT0xDRS0yRlVCd0ROcGN5X3NSRjhtRUJCWFlWeWtnbXpGYzRtYUpZN2VKOE5mWUNINFBuMU1rc1RQN2JLY2hiQjVGbHJ4UDU0N3pNYVloUVFtTGpodHlXeUpLYnU3c1VnUWJWaGluNVNuNV9SY1Q5S05KOVRGS0RHWFNfS2JGOFcxZ3pURFRkS0oyOWxMUF8yYlFhMnl3Q3hvMlVrelA0MEg2a05XLTBZT2g2Q0ZodlBEd3FLS1pyN19uZ2lVaW1ESE1lcm5ybWNNM29UMWxuNEN0Sjla?oc=5",
-            "published": "Fri, 30 Oct 2026 07:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:44:18.338358+00:00",
+            "retrieved_at": "2026-11-15T01:45:45.090815+00:00",
             "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
           },
           {
@@ -188,23 +184,15 @@
             "title": "Reliance Industries to consider raising funds via debentures, announce Q2 earnings on October 30 - Moneycontrol.com",
             "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQYXhodVhjaERDUWhvanprazUxV0xpdmx3YXJ0THhUMGlnVmp0bW16N3FPWVJRWmFzcDNsTmZzNkd6WGNlVVV3M2wxUHB5TTJfMm8xcEJteDJDRTZmR0w0ZUdTQzNnUUg3OXdRTm9sSEh3ZlEtMkZfZjZrMXlqc1V2RUhXaFFiVFVuM2VRY3JrNnZ2OU1MZVpoZmhoUHE1c2o3eU1UaEFRbmhiclNWUmdXQnhhZUNlY0lqZWZjeFpJZERPdDF5YUlIMEF1V1hiRUdSMTRnRTRaQ2tZdW96Wl9FUzNVbll6al85ZUJrSXpBQ0k5b1VN0gH6AUFVX3lxTE0wZlRZQW5mU0RtRTY5RnhrZFZVQy0xb1J6N3pXQngzcFlhM1dlZG5kaDNNTTNOQjlhVkZub01pNmw3VXdVNjNZWEhfWU1KR2pFUFFMcWhhTFlTUjVlTC0tdG5QZ1Z0aTljYnk4d1JobW1Vam8ydE4zUXFLWFIySVBKbERmVlB3QVlkUjcyMEluZjZPaTZNRjBZVzZSazlqWmd3akpkY29mZ3lBSWV3SG15dTFhODdOeS1vX2ZmekI3cGs1VXR1Nzk4ZWpGNUY3NmRKbjhDeFp3NnBqdzJsYmtrdkRBUWNobERlNnF1a3gtNDBVLWxGeDJPTmc?oc=5",
             "published": "Tue, 27 Oct 2026 07:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:44:18.338390+00:00",
-            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
-          },
-          {
-            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
-            "title": "Reliance Power seeks reclassification of RIPL and subs to public - scanx.trade",
-            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQREUxLVFWb1U4RWh1ZHQ3c3NqajNxVmRMMkd2UXNyRFRrWXZTRFhGR09sRlJYQ1NUR0NMeWE1T1Ywbzg1YlluQzlsM2Z3bnhrRE5WY1hmUGFMQmtYSEpKNFVTX0RDTkFIM2hjajFRai00cm56QTNrcFlBb2dXQm5reFFtVFZieDlGM21QV3N3NC1seml0em5rRTlMS0lHbGxRWmVhVUQ1ZFRwbUhVWHZMQnJCR01LbnpNcVV5NlVkRDQ?oc=5",
-            "published": "Fri, 13 Nov 2026 22:04:26 GMT",
-            "retrieved_at": "2026-11-15T01:44:18.338420+00:00",
+            "retrieved_at": "2026-11-15T01:45:45.091017+00:00",
             "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
           },
           {
             "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
-            "title": "Reliance Industrial Infrastructure Q2 Results FY27: Revenue Falls - Univest",
-            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNeEZ5UEZDMHdEQkNtdFp1bWlEd01TVHRrYXlFY3BOSnpUT3lUeWVvNGZlZzJiX2czNVhFU1ItNVJqQ1NFWm9sOTdlcl9TVjNySzFzb1RkQWJ6N3ZGT2EyRHhySWpFOFdCMFdDZjR4UzZVMkdYaFJaSlY2aDZJeThRODFHTXcwT19INUtudW9QdU8?oc=5",
-            "published": "Wed, 14 Oct 2026 07:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:44:18.338446+00:00",
+            "title": "Reliance Industries Q2 results 2026 date and time: Mukesh Ambani company's quarterly earnings schedule - Expectations - Livemint",
+            "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOOGg4dUJWNzBBMllSY1g2bVZxMGg5XzRlN2F1ZzZ3M0l5LUhtV21pemktNVowZXdGUnd0V2o1YkJXQ2p0TGxYUjJXQW9BNDZ3RmZrR0FSNGQ3dnFiQTZhZWIySWFUOXNHY3lfZmFpVVk3Z1ZudElNSWhRVWtoY0dNYmFUc29WOTNCdVpyVnprM3pnY1dFdktRdWhOZERwSW9FTF93eE15ekVpQjdTYTM5WjB4eFQ4aHBTdjBLc0tReTh6WDdWdWkyU1JYUWNiZndILUZmWWpBWWRmNDNSZXE1elpNNXlVNjZjcXVscU1YTXRYUVVwNUMyeWV6c29MTkhBUC1RMGFHYzF4SmdNUXdVZdIBlgJBVV95cUxNd01VR19xVTVNZHlLYzYxUFVPSlhJUW5SZXZoOHhHRkVySHBDaTFyOXVoNnNCSTlVeGpoRkpuTUVYRUQzb1F1VnZjR1F3SzhjTmRGajhMUVp5VWRDekZTYWpacGMybHl1UUxaQVN6V0ppVEhDeE02amdkT2Uydy1ZUkF5aDdvd0VpdjBSZ1hnUWpMZjVxbVhSMFNvY0EtMDQyZUppVmx0b25Yb2ZyRHhqR0pRVVJzNld2TGZHS0kzY3NRM1FxVzNBTHpqSTZkUlJlclhlMVVWZFdXVTBHR0dlZ25WWllseFdNU3NmNWxfSjlSLXhuazBRT2Frd3ZlbXRscEtTbzROSEFtNlNtN08yeE1uX0txdw?oc=5",
+            "published": "Wed, 28 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-15T01:45:45.091346+00:00",
             "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
           }
         ],
@@ -223,7 +211,7 @@
         "metrics": {},
         "quarterly_result_disclosures": [],
         "annual_report_disclosures": [],
-        "secondary_disclosure_mentions_count": 6,
+        "secondary_disclosure_mentions_count": 3,
         "official_exchange_portals": {
           "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
           "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
@@ -257,27 +245,27 @@
           },
           {
             "type": "secondary_disclosure_mention",
-            "title": "Reliance Jio releases financial results for QE and H1 ended September 30, 2026 - tele.net",
-            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMDUwLVNnVFNmeTJhMmpXSHoxTkk0R3pZRXZnVmk4b2NBaWdiUlQ0Mlg1WTRSMGFaOWJWM0ZZcTQ0NjRsVDdtcmU1V0lsSC1iSDRrQ29vdVFETGRiMG1seWxuY0JIQUN3N1VXbWVyVmxzT0tIdXNabS1qQUhoR0dabnpSdDNheVJYVko0QkdLUU5ybGhrRlJLSnlVa0FscTU0QnIyQXItNjJmazdNcnJndWJUbkNzZmtETkFxVw?oc=5"
-          },
-          {
-            "type": "headline_discovery",
-            "title": "India's Reliance posts best day in over six years as oil business, Jio Platforms lift outlook - Reuters",
-            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPU0NDNVVlWVpIN1dCT0JQN3ZVYWtBTHVQdkhKZjZwTVE5MmhGc2p6a2gtaF85LUVCY2ZlNlh2Sm5kSExna1ZsdTUyMmdhLXk1WS13U3BEbHVQejFJTVBOblIySFdHSFFRNEJtV1V1clVoSDk4NXE1blNTVEcxNV9MUi13RDZCajY5YnJVVEJPejBKNC1UTXI5dEpISXFzNk9FNEd5STFPOFczQzIteTJXUmthZC0zb29KQmIwUERoLUc?oc=5"
-          },
-          {
-            "type": "headline_discovery",
-            "title": "Indian Markets Set for Gap-Up Open as Reliance Beats Estimates - HDFC Sky",
-            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdVgyRzJuLS1HUDk2TTAxcVpicVllQmtSa0NveVlUTnRha2RTRkRFbThibEUzRVZZTzBNYkJzaXBNdUhNRS0wcVVWMjZXNV96cmJ3MTZHNm9HN1pDS2pLb2JEM2p3a3l0dGhwaU45NVpuNGhTMzFlczQ0M3p5Wmtvd3h1ZlFOcU1BaE5iLVYxbWp3UV9paHRnSHF6RnFJN3ptUkVGY21mSEpjbWhob09XaFNXZDViNWZJb0c2TEVYZFo?oc=5"
+            "title": "Reliance Industries to consider raising funds via debentures, announce Q2 earnings on October 30 - Moneycontrol.com",
+            "as_of": "Tue, 27 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQYXhodVhjaERDUWhvanprazUxV0xpdmx3YXJ0THhUMGlnVmp0bW16N3FPWVJRWmFzcDNsTmZzNkd6WGNlVVV3M2wxUHB5TTJfMm8xcEJteDJDRTZmR0w0ZUdTQzNnUUg3OXdRTm9sSEh3ZlEtMkZfZjZrMXlqc1V2RUhXaFFiVFVuM2VRY3JrNnZ2OU1MZVpoZmhoUHE1c2o3eU1UaEFRbmhiclNWUmdXQnhhZUNlY0lqZWZjeFpJZERPdDF5YUlIMEF1V1hiRUdSMTRnRTRaQ2tZdW96Wl9FUzNVbll6al85ZUJrSXpBQ0k5b1VN0gH6AUFVX3lxTE0wZlRZQW5mU0RtRTY5RnhrZFZVQy0xb1J6N3pXQngzcFlhM1dlZG5kaDNNTTNOQjlhVkZub01pNmw3VXdVNjNZWEhfWU1KR2pFUFFMcWhhTFlTUjVlTC0tdG5QZ1Z0aTljYnk4d1JobW1Vam8ydE4zUXFLWFIySVBKbERmVlB3QVlkUjcyMEluZjZPaTZNRjBZVzZSazlqWmd3akpkY29mZ3lBSWV3SG15dTFhODdOeS1vX2ZmekI3cGs1VXR1Nzk4ZWpGNUY3NmRKbjhDeFp3NnBqdzJsYmtrdkRBUWNobERlNnF1a3gtNDBVLWxGeDJPTmc?oc=5"
           },
           {
             "type": "headline_discovery",
             "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
             "as_of": "Sat, 14 Nov 2026 09:05:07 GMT",
             "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Reliance Industries shares jump nearly 12% after record Q2 results; top Nifty gainer, biggest index... - Moneycontrol.com",
+            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQU2IxZFp2SXB5LVpkOElMdjZtckM1VmFaZTlpckNMNlhDd29SVHNUU0V4OFU0RTZHWXVzalJaYXREeVE1V05yOGpETFk1aGhqOE91bWc5SkdUYlJ6NG1HYVdFektOZzdZVjVLSUpGaC1zSjc0X3g3T3JBYVVaYWNJUzk1Wi1HNGRFRTdlaWh3NjdwTThBSHRZV0NkSlBXX3FFS09WTHRkMDZTY1U1VTloTzVGRFRmRHp3LVlINlUzV2RpN0VpLUM2Ung4TlZCVXRhWDY4Q3FYTWV4dWdJU1lLbi1HVVJSbjFiMU8tZ1F1S2NjVWp5THV1NUF1Y3NuNEHSAYQCQVVfeXFMUGVrRU5iX3dDUG5lNWo0MDZNS19XVjRVZzF3U0tybTFrY2NHXzRGMTRGQTlVWWU3ZElsVTRTa3FyLVFfR2xZXzlBOHdFeS1LakcyWHM3cnQ1Q3NtZGYtX2Njd0lPNnpRdzN3M3ZsSUdiTUdWX21WTndXRUJXLTd5UHVHNEh2Vnk1M1JicE16c1RtNXRyYVFMdms1cWlLZlZUdURhLTJvcmtzUm9iTmxLTXY5Sk5oX2dkME5aNEVnczRIXzhtZmpOWFNCTXloMzRjSmZNeVotdTBKRF9WQWdHaWh5R3lsV0ZncHFVWms2OVQtOGJMdDUxaXRvOTRjOWxBZl9XVUM?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Reliance shares jump over 7%: Why RIL stock is rallying today - India Today",
+            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPX2t2b2lSWnVWV2wzOUxfdFI0QkxUY3JVVUVnR3lCV3dJZ1VFd0gweVE0bmMzcHZBOWhaZl8tX2lTTmhKUmVIb09iUk5ORHE1aUNoY3dzaWJDQlF1aF9Odzd3N0J4aFVCYW5lcFJSRVctRlZFbUlsNTJpdU9NZFZ5LW1QOHBOTlNYaU1YZTc0QWYtV1dLRjZrNEJtcS1qamVaMkM3Z1lZVnR4TlRybjFadTNwQ0ZvbFBNUVZ5VzB2UjgzZTVGcHZwbmhoek0zMm5VV0lBZFo1NlTSAd4BQVVfeXFMTnRRekFCbVJ2YjVUcjQ0TG1RTlJZS1NVaUh5d0hzc0pLRXE4eXlWQ2hMVGVRaVZoZ1l4dFYzV05FVHF5WU5oLTBJcTEySlllUVliMnRxQTRtVkVDUlpkTHk1VUtncHJvR2RCVjVPeWMtVHFOWXRvM2JlcjZtc0VBRE9jYUxUWHVQUl9XNXZTUWk3M2JCOEhlUTc4a29Tb3VOMjNaT1ZUYlAtVHhvZTU0YnZpNUs0SmhEUmJyZlZSeGN5N1RCY3l2Q1hnWWlpQ1VqUlR3dldKZFNOOVk3WC1B?oc=5"
           }
         ],
         "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
@@ -294,7 +282,7 @@
           "currency": "INR",
           "verified_official_filings_count": 0,
           "verified_official_metrics_count": 0,
-          "secondary_disclosure_mentions_count": 6,
+          "secondary_disclosure_mentions_count": 3,
           "metrics": {},
           "official_exchange_portals": {
             "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
@@ -311,7 +299,7 @@
         "sentiment": {
           "status": "HEADLINE_DISCOVERY_ONLY",
           "headlines_count": 6,
-          "latest_published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "latest_published": "Sat, 14 Nov 2026 09:05:07 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
@@ -336,7 +324,7 @@
           "currency": "INR",
           "verified_official_filings_count": 0,
           "verified_official_metrics_count": 0,
-          "secondary_disclosure_mentions_count": 6,
+          "secondary_disclosure_mentions_count": 3,
           "metrics": {},
           "official_exchange_portals": {
             "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
@@ -353,7 +341,7 @@
         "sentiment": {
           "status": "HEADLINE_DISCOVERY_ONLY",
           "headlines_count": 6,
-          "latest_published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "latest_published": "Sat, 14 Nov 2026 09:05:07 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
@@ -366,11 +354,11 @@
           ]
         }
       },
-      "finished_at": "2026-11-15T01:44:18.340585+00:00"
+      "finished_at": "2026-11-15T01:45:45.091605+00:00"
     }
   ],
   "status": "PARTIAL",
-  "finished_at": "2026-11-15T01:44:18.341382+00:00",
+  "finished_at": "2026-11-15T01:45:45.092180+00:00",
   "outcome_counts": {
     "COMPLETE": 0,
     "PARTIAL": 1,

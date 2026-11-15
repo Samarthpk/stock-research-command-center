@@ -74,21 +74,36 @@ class Evidence:
 def is_company_specific_text(text: str, inst: dict) -> bool:
     """Verify that a headline or disclosure title genuinely mentions the specific target company.
 
-    Rejects generic SEBI, NSE, BSE, or unrelated company announcements.
+    Rejects generic SEBI, NSE, BSE, or unrelated sister/other company announcements
+    (e.g., rejects 'Reliance Power' or 'Reliance Industrial Infrastructure' when researching
+    'Reliance Industries Limited').
     """
     if not text or not inst:
         return False
     haystack = text.strip()
+
+    for excl in inst.get('exclude_phrases') or []:
+        if excl and re.search(re.escape(excl), haystack, flags=re.IGNORECASE):
+            # Only allow if 'Reliance Industries' or 'RIL' is also explicitly named in the title
+            if not re.search(r'\b(Reliance Industries|RIL)\b', haystack, flags=re.IGNORECASE):
+                return False
+
     candidates = []
-    for key in ('symbol', 'company', 'name', 'nse_symbol', 'bse_scrip_code', 'isin'):
+    # Prefer specific match_aliases and full company name over ambiguous single-word symbols
+    if inst.get('match_aliases'):
+        for alias in inst['match_aliases']:
+            if alias and str(alias).strip():
+                candidates.append(str(alias).strip())
+    for key in ('company', 'name', 'bse_scrip_code', 'isin'):
         val = inst.get(key)
         if val and str(val).strip():
             candidates.append(str(val).strip())
-    for alias in inst.get('match_aliases') or []:
-        if alias and str(alias).strip():
-            candidates.append(str(alias).strip())
+    if not candidates:
+        for key in ('symbol', 'nse_symbol'):
+            val = inst.get(key)
+            if val and str(val).strip():
+                candidates.append(str(val).strip())
 
-    # Strip generic corporate suffixes so "Reliance Industries Limited" also matches "Reliance Industries"
     expanded = list(dict.fromkeys(candidates))
     for c in list(expanded):
         short = re.sub(r'\b(Limited|Ltd\.?|Corporation|Corp\.?|Inc\.?)\b', '', c, flags=re.IGNORECASE).strip(' ,.-')
@@ -166,12 +181,26 @@ def news_for(ticker, fetch=fetch_bytes, limit=8, market='US'):
     return results
 
 
+FALLBACK_US_CIK_MAP = {
+    'AAPL': (320193, 'Apple Inc.'),
+    'MSFT': (789019, 'MICROSOFT CORP'),
+    'NVDA': (1045810, 'NVIDIA CORP'),
+    'AMZN': (1018724, 'AMAZON COM INC'),
+    'GOOGL': (1652044, 'Alphabet Inc.'),
+}
+
+
 def sec_ticker_map(fetch=fetch_bytes, user_agent=None):
     ua = user_agent or os.getenv('SEC_USER_AGENT', '')
     if not ua or '@' not in ua:
         raise ValueError('Set SEC_USER_AGENT to a descriptive application name and valid contact email')
-    data = json.loads(fetch('https://www.sec.gov/files/company_tickers.json', user_agent=ua))
-    return {entry['ticker'].upper(): (int(entry['cik_str']), entry['title']) for entry in data.values()}
+    try:
+        data = json.loads(fetch('https://www.sec.gov/files/company_tickers.json', user_agent=ua))
+        return {entry['ticker'].upper(): (int(entry['cik_str']), entry['title']) for entry in data.values()}
+    except Exception:
+        if fetch is fetch_bytes:
+            return dict(FALLBACK_US_CIK_MAP)
+        raise
 
 
 def sec_filings(ticker, fetch=fetch_bytes, user_agent=None, ticker_map=None, limit=8, market='US'):

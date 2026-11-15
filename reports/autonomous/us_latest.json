@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "mission_id": "20261115T014416Z-US",
+  "mission_id": "20261115T014543Z-US",
   "market": "US",
   "currency": "USD",
   "market_session_date": "2026-11-13",
@@ -12,8 +12,8 @@
     "timezone": "America/New_York",
     "tz_abbrev": "EST",
     "is_dst": false,
-    "local_time": "2026-11-14 20:44 EST",
-    "local_time_iso": "2026-11-14T20:44:16.346955-05:00",
+    "local_time": "2026-11-14 20:45 EST",
+    "local_time_iso": "2026-11-14T20:45:43.768752-05:00",
     "local_date": "2026-11-14",
     "is_weekend": true,
     "is_holiday": false,
@@ -25,7 +25,7 @@
     "ready_for_post_close_run": false,
     "latest_completed_session": "2026-11-13"
   },
-  "started_at": "2026-11-15T01:44:16.347709+00:00",
+  "started_at": "2026-11-15T01:45:43.770058+00:00",
   "data_policy": "historical and public sources; native currencies preserved (USD/INR); no trading",
   "symbols": [
     "AAPL"
@@ -57,19 +57,19 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-15T01:44:16.779536+00:00",
+      "started_at": "2026-11-15T01:45:44.021886+00:00",
       "agents": {
         "news": {
           "status": "COMPLETE",
-          "at": "2026-11-15T01:44:17.303823+00:00"
+          "at": "2026-11-15T01:45:44.116850+00:00"
         },
         "filings": {
-          "status": "SKIPPED",
-          "reason": "SEC_USER_AGENT missing or CIK map unavailable"
+          "status": "FAILED",
+          "reason": "HTTP 403"
         },
         "fundamentals": {
-          "status": "SKIPPED",
-          "reason": "SEC_USER_AGENT missing or CIK map unavailable"
+          "status": "FAILED",
+          "reason": "HTTP 403"
         },
         "market_data": {
           "status": "SKIPPED",
@@ -92,7 +92,7 @@
           "title": "Apple Shares (AAPL) Look Expensive Heading into 2027 - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5",
           "published": "Wed, 11 Nov 2026 21:15:00 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.303754+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.116775+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         },
         {
@@ -100,7 +100,7 @@
           "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5",
           "published": "Thu, 12 Nov 2026 11:12:44 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.303796+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.116819+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         },
         {
@@ -108,7 +108,7 @@
           "title": "Is Apple Stock a Buy Right Now? - The Motley Fool",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZZzd4WHdhQ2gyRU5BckJfY21JTWhSdXYyZC1sZGlmb0FyZEZUSzVDeWVkbUloU19hR2ItYVhiaXBodGVIUVZTODZtQ1lkdWV1RVlOcDhZOFpJR1Z6bld4TG1YN3BPTUY3ZXhLeGlEaUFOTzNmN3FNbjI3VDVYdw?oc=5",
           "published": "Sat, 14 Nov 2026 00:07:00 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.303803+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.116828+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         },
         {
@@ -116,7 +116,7 @@
           "title": "How Much Capital Gains Tax Does a 61-Year-Old Owe on $750,000 of Inherited Apple Stock? - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOT2FycXlWaUJvRWg0TWozaGhXaU9aYXhuOGVSejJ6N3hhM2VPZl9qRndKX2g3MmlSS2prbUxESVJTTm5JME93b2diOWVnQnZNcHpRSXJndlpUSmdHYmtaSWcybDBwRGpRcVM5dmtyLWstQ3dSZVJPcUlnaUZRdV9pdTN1YUNLaTUyTHFrQlJ2bDRpdlo0alQw?oc=5",
           "published": "Wed, 11 Nov 2026 13:03:52 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.303807+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.116832+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         },
         {
@@ -124,7 +124,7 @@
           "title": "AAPL is Trading at a Premium at 36.15X P/E: Is the Stock Still a Hold? - TradingView",
           "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOS3NWZkRCc2Z2aUNKWGdheDJPLVc0b3l2eldHWmVjcllNMWZrRFRlOWR4bm81LWdGVTR0aDkyLUhDRDRIWDZSVnJNRFpiTUFOeEpIcGVOYU15elJCS3VEY2NCYWlxWUg1RTNaV193ZlhqLVVPVENYRXRjOXBGdklIbGxwbUpTOEFyWm5mTlY5VnRCZUFVazYzQmhydlUzSU9QVGV0OGUxMG5ZcFNKcWdkSDhUVVRKYjg2ZFdlQkpsRDJSdw?oc=5",
           "published": "Fri, 13 Nov 2026 16:59:18 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.303810+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.116835+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         },
         {
@@ -132,7 +132,7 @@
           "title": "Apple: Record Earnings Mask A Growing Margin Problem (NASDAQ:AAPL) - Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdmh3YmNIUHlOT3dJYjFzbjFhc0NGTWJqTmZwRk1xLUZXRHdsSlJyRjNhWTFkNExyakxzdGJGcmIyMUotVGVIMEMtUDlneGcxaVJJR3hTUHdnTFJqNzZxd2VNbEJYbTlES1ZQSEY3bENVUVpGNVQtclUxclpZZDRySzNrLW5vUHp1N2pScmVmTEJjdEpKcTFn?oc=5",
           "published": "Mon, 09 Nov 2026 13:25:10 GMT",
-          "retrieved_at": "2026-11-15T01:44:17.303812+00:00",
+          "retrieved_at": "2026-11-15T01:45:44.116838+00:00",
           "summary": "Headline discovery only; article content and claim unverified"
         }
       ],
@@ -250,11 +250,11 @@
           ]
         }
       },
-      "finished_at": "2026-11-15T01:44:17.303850+00:00"
+      "finished_at": "2026-11-15T01:45:44.826381+00:00"
     }
   ],
   "status": "PARTIAL",
-  "finished_at": "2026-11-15T01:44:17.304169+00:00",
+  "finished_at": "2026-11-15T01:45:44.827775+00:00",
   "outcome_counts": {
     "COMPLETE": 0,
     "PARTIAL": 1,
