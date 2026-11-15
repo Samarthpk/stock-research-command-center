@@ -18,6 +18,30 @@ def fake(url,user_agent=None,timeout=15):
     raise AssertionError('Unexpected URL: '+url)
 
 class ResearchTests(unittest.TestCase):
+    def test_tcl_is_thaai_casting_not_global_tcl_brand(self):
+        from global_markets import resolve_instrument
+        from intelligence import is_company_specific_text
+        inst=resolve_instrument('TCL',market='IN')
+        self.assertEqual(inst['company'],'Thaai Casting Limited')
+        self.assertEqual(inst['isin'],'INE0QJL01014')
+        self.assertTrue(inst['identity_verified'])
+        self.assertTrue(is_company_specific_text('Thaai Casting Limited reports results',inst))
+        self.assertFalse(is_company_specific_text('TCL Electronics quarterly earnings in Hong Kong',inst))
+        self.assertFalse(is_company_specific_text('Transurban Group (ASX:TCL) toll road results',inst))
+    def test_unknown_indian_ticker_does_not_trigger_global_news(self):
+        def fail_fetch(*args,**kwargs):
+            raise AssertionError('Network fetch should not occur for unverified Indian issuer')
+        r=build_research('UNVERIFIED123',fetch=fail_fetch,market='IN')
+        self.assertEqual(r['assessment'],'INSUFFICIENT_EVIDENCE')
+        self.assertFalse(r['news'])
+        self.assertFalse(r['sec'])
+        self.assertIn('Ticker identity not verified',r['missing_data'][0])
+    def test_tcl_news_only_matching_verified_issuer(self):
+        rss=b'<rss><channel><item><title>Thaai Casting Limited half year results</title><link>https://example.org/one</link></item><item><title>TCL Electronics revenue grows</title><link>https://example.org/two</link></item><item><title>Transurban (ASX:TCL) results</title><link>https://example.org/three</link></item></channel></rss>'
+        matches=news_for('TCL',fetch=lambda url:rss,market='IN')
+        self.assertEqual([x['title'] for x in matches],['Thaai Casting Limited half year results'])
+
+
     def test_suzlon_identity_and_bse_mapping(self):
         from global_markets import resolve_instrument
         from intelligence import is_company_specific_text
