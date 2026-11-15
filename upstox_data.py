@@ -183,11 +183,11 @@ def parse_daily_candles(payload,min_bars=60):
                 continue
             if min(o,h,l,c)<=0 or h<max(o,c,l) or l>min(o,c) or v<0:
                 continue
-            if day in rows:
-                raise UpstoxDataError("Duplicate trading session in historical response")
-            rows[day]={"date":day,"open":o,"high":h,"low":l,"close":c,"volume":v}
         except (TypeError,ValueError,IndexError):
             continue
+        if day in rows:
+            raise UpstoxDataError("Duplicate trading session in historical response")
+        rows[day]={"date":day,"open":o,"high":h,"low":l,"close":c,"volume":v}
     ordered=[rows[day] for day in sorted(rows)]
     if len(ordered)<min_bars:
         raise UpstoxDataError("Not enough valid daily candles for reliable indicators")
