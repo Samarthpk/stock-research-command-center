@@ -18,6 +18,17 @@ def fake(url,user_agent=None,timeout=15):
     raise AssertionError('Unexpected URL: '+url)
 
 class ResearchTests(unittest.TestCase):
+    def test_suzlon_identity_and_bse_mapping(self):
+        from global_markets import resolve_instrument
+        from intelligence import is_company_specific_text
+        inst=resolve_instrument('SUZLON',market='IN')
+        self.assertEqual(inst['bse_scrip_code'],'532667')
+        self.assertEqual(inst['isin'],'INE040H01021')
+        self.assertEqual(inst['company'],'Suzlon Energy Limited')
+        self.assertTrue(is_company_specific_text('Suzlon Energy Q2 FY27 results',inst))
+        self.assertFalse(is_company_specific_text('ITC Limited Q2 FY27 results',inst))
+
+
     def test_itc_official_identifiers_and_exclusions(self):
         from global_markets import resolve_instrument
         inst = resolve_instrument('ITC', market='IN')
