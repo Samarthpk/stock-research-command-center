@@ -14,7 +14,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import pandas as pd
 import streamlit as st
 from listed_universe import load_directory,search_directory
-from unified_research import resolve_from_directory,provider_candidates,historical_ohlcv,calculate_technicals
+from unified_research import resolve_from_directory,provider_candidates,link_nse_to_bse_issuer,historical_ohlcv,calculate_technicals
 
 st.title("📊 Unified Stock Research — US + India")
 st.caption("Issuer-verified official exchange listings + historical daily OHLCV technical research. No real-time price, automatic trades, guaranteed predictions or investment recommendations.")
@@ -67,10 +67,16 @@ issuer=found["rows"][options[selected]]
 st.write("**Verified directory issuer:**",issuer["name"]," | **Exchange:**",issuer["exchange"]," | **ID:**",issuer["symbol"]," | **ISIN:**",issuer.get("isin") or "Not supplied")
 st.caption(f"Official listing source: {issuer['source']} (listing verification, not a guarantee of current trading status).")
 
-candidates=provider_candidates(issuer)
+price_issuer=issuer
+if issuer['market']=='IN' and issuer['exchange']=='NSE':
+    linked=link_nse_to_bse_issuer(issuer,catalog['rows'])
+    if linked:
+        price_issuer=linked
+        st.caption(f"Price lookup cross-exchange linkage: same ISIN {issuer['isin']}, BSE scrip code {linked['symbol']}; no ticker guessing.")
+candidates=provider_candidates(price_issuer)
 if not candidates:
     st.warning("No validated Alpha Vantage provider-symbol mapping for this exchange listing. Price and technical metrics withheld — will not substitute an unrelated ticker.")
-    st.info("For NSE-only listings, provider mapping to BSE must be verified from matching ISIN before fetching BSE prices. Full-universe bulk pricing requires a licensed provider.")
+    st.info("This NSE symbol has no unique BSE scrip-code match from the same ISIN, or the BSE feed is unavailable. Full-universe bulk pricing requires an appropriate provider.")
     st.stop()
 if len(candidates)>1:
     st.caption("BSE trading-symbol and numeric scrip-code candidates are linked to the same selected BSE issuer directory record. Failed candidates do not produce data.")
