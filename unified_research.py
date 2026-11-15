@@ -29,6 +29,19 @@ def resolve_from_directory(rows, symbol, market, exchange=None):
         raise ValueError("Issuer name missing in directory")
     return r
 
+def link_nse_to_bse_issuer(nse_issuer, all_listings):
+    """Link NSE to exactly one BSE issuer by identical valid ISIN, never ticker text."""
+    if nse_issuer.get("market")!="IN" or nse_issuer.get("exchange")!="NSE":
+        return None
+    isin=str(nse_issuer.get("isin") or "").strip().upper()
+    if not re.fullmatch(r"IN[A-Z0-9]{10}",isin):
+        return None
+    matches=[r for r in all_listings if r.get("market")=="IN" and
+             r.get("exchange")=="BSE" and str(r.get("isin") or "").strip().upper()==isin]
+    if len(matches)!=1:
+        return None
+    return matches[0]
+
 def provider_candidates(issuer):
     """Use BSE codes for Indian pricing. Never presume NSE ticker maps to BSE."""
     mkt=issuer["market"]
