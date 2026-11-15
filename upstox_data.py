@@ -74,7 +74,7 @@ def parse_instruments(payload, exchange):
         isin=str(item.get("isin") or "").strip().upper()
         if not key or not name or not symbol or not key.startswith(segment+"|"):
             continue
-        if not re.fullmatch(r"[A-Z0-9][A-Z0-9.&_+\\-]{0,29}",symbol):
+        if not re.fullmatch(r"[A-Z0-9][A-Z0-9.&_+\-]{0,29}",symbol):
             continue
         if not re.fullmatch(r"IN[A-Z0-9]{10}",isin):
             continue
