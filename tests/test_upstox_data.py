@@ -50,9 +50,11 @@ class UpstoxTests(unittest.TestCase):
             events.append((url,token))
             return {"status":"success","data":{"NSE_EQ:TCL":{
                 "instrument_token":TCL["instrument_key"],"symbol":"TCL",
-                "timestamp":"2026-11-16T09:30:00+05:30","last_price":151.0,"volume":123}}}
+                "timestamp":"2026-11-13T09:30:00+05:30","last_price":151.0,"volume":123}}}
+        # The quote is intentionally from the last completed session, so it can be stale.
         out=fetch_quote({**TCL,"symbol":"TCL"},"hidden-test-token",fetch=fetch)
         self.assertEqual(out["symbol"],"TCL")
+        self.assertEqual(out["quote_status"],"LAST_REPORTED_NOT_LIVE")
         self.assertIn("/v3/market-quote/quotes?",events[0][0])
         self.assertEqual(events[0][1],"hidden-test-token")
     def test_daily_candles_and_indicator_pipeline(self):
