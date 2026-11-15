@@ -634,6 +634,21 @@ def build_research(ticker, fetch=fetch_bytes, user_agent=None, include_sec=True,
         ],
         'assessment': 'INSUFFICIENT_EVIDENCE',
     }
+    # Do not associate international namesake news with unverified Indian
+    # symbols (e.g. NSE:TCL vs Hong Kong TCL / ASX:TCL).
+    # The unified directory-backed page supports exact issuer lookup for all
+    # symbols; legacy headline connector only covers explicit validated aliases.
+    if mkt == 'IN':
+        from global_markets import INDIA_INSTRUMENTS
+        if canon not in INDIA_INSTRUMENTS:
+            output['missing_data'].append(
+                'Issuer identity/aliases not verified for legacy news connector; '
+                'use Unified Stock Research to select a verified exchange listing.'
+            )
+            output['unsupported_conclusions'].append(
+                'Ticker text alone is not company identity evidence; cross-market news withheld.'
+            )
+            return output
     try:
         output['news'] = news_for(canon, fetch, market=mkt)
     except Exception as exc:
