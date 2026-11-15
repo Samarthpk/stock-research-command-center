@@ -57,6 +57,23 @@ MARKET_CONFIG = {
 # Verified non-interchangeable Indian instrument registry mapping canonical symbol
 # to distinct NSE ticker, BSE scrip code, Alpha Vantage BSE ticker, ISIN, and strict company match aliases.
 INDIA_INSTRUMENTS = {
+    'ITC': {
+        'symbol': 'ITC',
+        'company': 'ITC Limited',
+        'name': 'ITC Limited',
+        'match_aliases': ['ITC Limited', 'ITC Ltd', 'NSE: ITC', 'NSE:ITC', 'BSE:500875', 'ITC'],
+        'exclude_phrases': ['ITC Hotels', 'International Trade Commission', 'Section 337 ITC', '337 ITC Case', 'US ITC Case', 'U.S. ITC Case'],
+        'market': 'IN',
+        'currency': 'INR',
+        'nse_symbol': 'ITC',
+        'bse_scrip_code': '500875',
+        'bse_code': '500875',
+        'bse_ticker': 'ITC.BSE',
+        'bse_symbol': 'ITC.BSE',
+        'bse_numeric_ticker': '500875.BSE',
+        'isin': 'INE154A01025',
+        'nse_bse_interchangeable': False,
+    },
     'RELIANCE': {
         'symbol': 'RELIANCE',
         'company': 'Reliance Industries Limited',
