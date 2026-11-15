@@ -17,6 +17,15 @@ on:
           - US
           - IN
           - ALL
+      watchlist:
+        description: "Optional single-market ticker list, e.g. AAPL or RELIANCE (leave empty for defaults)"
+        required: false
+        type: string
+      force_rerun_session:
+        description: "Allow manual rerun of an already completed market session"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -37,6 +46,8 @@ jobs:
       US_RESEARCH_WATCHLIST: ${{ vars.US_RESEARCH_WATCHLIST }}
       INDIA_RESEARCH_WATCHLIST: ${{ vars.INDIA_RESEARCH_WATCHLIST }}
       DISPATCH_MARKET: ${{ inputs.market }}
+      DISPATCH_WATCHLIST: ${{ inputs.watchlist }}
+      FORCE_RERUN_SESSION: ${{ inputs.force_rerun_session }}
       TRIGGER_SCHEDULE: ${{ github.event.schedule }}
     steps:
       - name: Checkout repository
@@ -75,7 +86,20 @@ jobs:
         run: python -m unittest discover -s tests -q
 
       - name: Fetch evidence and update US / India research
-        run: python autonomous_agents.py --market "$RESEARCH_TARGET" --enforce-session-lock
+        shell: bash
+        run: |
+          args=(--market "$RESEARCH_TARGET")
+          if [[ -n "$DISPATCH_WATCHLIST" ]]; then
+            if [[ "$RESEARCH_TARGET" == "ALL" ]]; then
+              echo "::error::Custom watchlist requires a single market (US or IN)"
+              exit 1
+            fi
+            args+=(--watchlist "$DISPATCH_WATCHLIST")
+          fi
+          if [[ "$FORCE_RERUN_SESSION" != "true" ]]; then
+            args+=(--enforce-session-lock)
+          fi
+          python autonomous_agents.py "${args[@]}"
 
       - name: Check reports for credential leakage
         shell: bash
@@ -107,7 +131,7 @@ jobs:
             echo "No new research report changes"
             exit 0
           fi
-          git commit -m "chore(research): update post-close evidence reports"
+          git commit -m "chore(research): update post-close evidence reports [skip ci]"
           git pull --rebase origin main
           git push origin HEAD:main
 
