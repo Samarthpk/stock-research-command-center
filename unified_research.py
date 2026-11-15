@@ -142,6 +142,25 @@ def calculate_technicals(rows, stop_atr_multiplier=1.5):
     if macd_last>signal:notes.append("MACD above its signal line (historical momentum).")
     else:notes.append("MACD below its signal line (historical momentum).")
     notes.append("No fundamentals, valuations or investment suitability implied by technical data.")
+    positives=[]
+    negatives=[]
+    if close>ma20>ma50:
+        positives.append("MA20 above MA50 and closing price above both: historically positive trend structure.")
+    else:
+        negatives.append("No confirmed bullish MA20 / MA50 trend alignment.")
+    if macd_last>signal:
+        positives.append("MACD above its signal line: recent momentum confirmation.")
+    else:
+        negatives.append("MACD below its signal line: momentum has not confirmed.")
+    if 30<rsi<70:
+        positives.append("RSI is outside commonly used overbought/oversold extremes.")
+    elif rsi>=70:
+        negatives.append("RSI at/above 70 suggests extended recent momentum and possible reversal risk.")
+    else:
+        negatives.append("RSI at/below 30 may signal a weak trend; oversold conditions can persist.")
+    if annual_vol>=45:
+        negatives.append("Elevated realized volatility increases uncertainty around conditional stop levels.")
+    negatives.append("Verified profitability, balance-sheet strength, valuation and corporate filings not assessed.")
     return {
         "as_of":rows[-1]["date"],"close":round(close,4),"volume":int(rows[-1]["volume"]),
         "ma20":round(ma20,4),"ma50":round(ma50,4),"rsi14":round(rsi,2),
@@ -155,6 +174,8 @@ def calculate_technicals(rows, stop_atr_multiplier=1.5):
         "illustrative_downside_pct":round(100*potential_loss/close,2),
         "illustrative_reward_risk":round(rr,2) if rr is not None else None,
         "observations":notes,
+        "technical_bull_factors":positives,
+        "technical_bear_factors":negatives,
         "decision":"RESEARCH_ONLY_NO_RECOMMENDATION",
         "warning":"Historical daily levels only. Not a buy/sell zone, price forecast, or guaranteed stop execution. Prices, fees, gaps and FX may vary.",
     }
