@@ -4,6 +4,7 @@ No server-side persistence: users must save an encrypted backup themselves.
 No broker holdings access, no orders. Holdings require explicit import/entry.
 """
 import json
+import hmac
 import os
 import sys
 from pathlib import Path
@@ -19,7 +20,28 @@ from signal_validation import evaluate_signal
 
 st.title("💼 Upstox Portfolio Manager — India")
 st.caption("Personal read-only NSE/BSE holdings, market valuation, concentration and risk research. Holdings are user supplied, not automatically broker synchronized. No trading or investment recommendations.")
-st.warning("Privacy: This Streamlit app does not have private user authentication. Do not use it on a publicly accessible/shared deployment for confidential holdings unless access is restricted. No permanent server storage; download a backup before closing or restarting your session.")
+st.warning("Private financial data: the portfolio requires an access password; it is not broker-synchronized or stored permanently. Backups are not encrypted by this app.")
+try:
+    expected_password=st.secrets.get("PORTFOLIO_ACCESS_PASSWORD","")
+except Exception:
+    expected_password=os.getenv("PORTFOLIO_ACCESS_PASSWORD","")
+if not expected_password or len(expected_password)<12:
+    st.error("Private portfolio locked: set PORTFOLIO_ACCESS_PASSWORD (at least 12 characters) in Streamlit Secrets, then reload. Do not use your Upstox login/password.")
+    st.stop()
+if not st.session_state.get("portfolio_authorized",False):
+    with st.form("portfolio_login"):
+        entry=st.text_input("Portfolio access password",type="password")
+        signed=st.form_submit_button("Unlock portfolio")
+    if not signed or not hmac.compare_digest(entry,expected_password):
+        if signed:st.error("Wrong portfolio password")
+        st.stop()
+    st.session_state.portfolio_authorized=True
+st.caption("Portfolio access unlocked for this browser session. This password gate is basic access control, not a substitute for private deployment and proper user authentication.")
+if st.button("Lock portfolio"):
+    for key in ("portfolio_authorized","pm_holdings","pm_quotes","pm_events","pm_signal"):
+        st.session_state.pop(key,None)
+    st.rerun()
+
 
 def token():
     try:return st.secrets.get("UPSTOX_ANALYTICS_TOKEN") or os.getenv("UPSTOX_ANALYTICS_TOKEN","")
