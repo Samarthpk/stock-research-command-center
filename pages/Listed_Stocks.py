@@ -22,10 +22,10 @@ for label,status in sources.items():
     if status["status"]=="OK":
         st.success(f"{label}: {status['count']:,} symbols loaded")
     elif status["status"]=="NOT_IMPLEMENTED":
-        st.warning(f"{label}: not yet covered. NSE data does not include every BSE-exclusive company.")
+        st.warning(f"{label}: not currently implemented.")
     else:
         st.error(f"{label}: source unavailable ({status.get('error','unknown')}); results for this exchange are incomplete.")
-st.caption(f"Directory fetched at UTC: {catalog['retrieved_at']}. Listing content may include non-common-share securities; see instrument type. Sources are independent of Alpha Vantage.")
+st.caption(f"Directory fetched at UTC: {catalog['retrieved_at']}. Listing content can include non-common-share securities; see instrument type. Sources are independent of Alpha Vantage. Coverage status reflects each responding source.")
 
 if not catalog["rows"]:
     st.error("No verified directory data is currently available. Please use the source links below or retry later.")
@@ -47,11 +47,12 @@ else:
     if matches["rows"]:
         frame=pd.DataFrame(matches["rows"])
         st.dataframe(frame[["symbol","name","market","exchange","asset_type","isin"]],hide_index=True,use_container_width=True,height=520)
+        st.caption("For BSE, the symbol column is the numeric Scrip Code. The CSV export also includes the trading_symbol field where available.")
         st.download_button("Export current search results CSV",frame.to_csv(index=False).encode("utf-8"),file_name="listed_symbols_search.csv",mime="text/csv")
     else:
         st.info("No matching listings in successfully loaded exchange sources.")
 st.markdown("### Research limitation")
-st.info("Thousands of instruments can be SEARCHED here, but deep-dive price and filing research is quota-limited. The free Alpha Vantage key cannot fetch a full US+India universe daily. Symbols discovered here are not automatically supported by the price provider, and the Indian BSE-exclusive list is still missing.")
+st.info("Thousands of instruments can be SEARCHED here when official feeds are available. Deep-dive price and filing research is quota-limited; free Alpha Vantage cannot fetch a full US+India universe daily. A listed symbol does not guarantee provider pricing or AI coverage. BSE directory availability may vary.")
 st.markdown("### Official directory sources")
 for label,status in sources.items():
     if status.get("source"):
