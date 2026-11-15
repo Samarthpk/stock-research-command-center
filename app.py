@@ -50,10 +50,12 @@ st.caption(
 
 with st.sidebar:
     st.header('Control Panel')
+    qp_mkt = str(st.query_params.get('market', '')).strip().upper()
+    default_idx = 1 if qp_mkt == 'US' else (2 if qp_mkt in ('IN', 'INDIA') else 0)
     market_choice = st.radio(
         'Market Selection',
         options=MARKET_CHOICES,
-        index=0,
+        index=default_idx,
         help='Filter watchlists, market calendars, and research runs by market (All Markets, US, or India).',
     )
     selected_market_code = MARKET_CHOICE_TO_CODE.get(market_choice, 'ALL')
@@ -132,8 +134,14 @@ with st.expander('🇮🇳 India Market Instrument Registry (Non-Interchangeable
     )
     if st.button('Test RELIANCE.BSE Historical OHLCV Support', disabled=not bool(key)):
         with st.spinner('Testing live Alpha Vantage TIME_SERIES_DAILY OHLCV for RELIANCE.BSE...'):
-            bse_check = verify_bse_symbol_support('RELIANCE', key=key)
-        st.json(bse_check)
+            st.session_state['bse_ohlcv_check'] = verify_bse_symbol_support('RELIANCE', key=key)
+
+if str(st.query_params.get('verify_bse', '')) == '1' and 'bse_ohlcv_check' not in st.session_state:
+    st.session_state['bse_ohlcv_check'] = verify_bse_symbol_support('RELIANCE', key=key)
+
+if 'bse_ohlcv_check' in st.session_state:
+    st.subheader('RELIANCE.BSE Historical OHLCV Verification Result')
+    st.json(st.session_state['bse_ohlcv_check'])
 
 st.subheader('Agent desk')
 cols = st.columns(4)
