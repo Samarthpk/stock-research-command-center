@@ -1,10 +1,33 @@
 """Stock research engine. Research signals only; not trading advice."""
-import os, json, sqlite3, urllib.request, urllib.parse, datetime, statistics
+import os, json, ssl, sqlite3, urllib.request, urllib.parse, datetime, statistics
 from pathlib import Path
 
-DB = Path(os.getenv('STOCK_DB', str(Path(__file__).with_name('research.db'))))
+def _resolve_db_path():
+    env_db = os.getenv('STOCK_DB')
+    if env_db:
+        return Path(env_db)
+    local_db = Path(__file__).resolve().with_name('research.db')
+    if os.access(local_db.parent, os.W_OK):
+        return local_db
+    return Path('/tmp/research.db')
+
+DB = _resolve_db_path()
 API = 'https://www.alphavantage.co/query'
 DEFAULT = ['AAPL','MSFT','NVDA','GOOGL','AMZN','SPY']
+
+def get_api_key():
+    key = os.environ.get('ALPHAVANTAGE_API_KEY')
+    if key and key.strip():
+        return key.strip()
+    try:
+        import streamlit as st
+        if 'ALPHAVANTAGE_API_KEY' in st.secrets:
+            val = st.secrets['ALPHAVANTAGE_API_KEY']
+            if val and str(val).strip():
+                return str(val).strip()
+    except Exception:
+        pass
+    return None
 
 def init_db():
     with sqlite3.connect(DB) as db:
@@ -28,17 +51,24 @@ def set_watchlist(symbols):
         db.execute('DELETE FROM watchlist')
         db.executemany('INSERT INTO watchlist VALUES (?)',[(s,) for s in vals])
 
+def _ssl_context():
+    ctx = ssl.create_default_context()
+    if ctx.cert_store_stats()['x509_ca'] == 0 and Path('/etc/ssl/cert.pem').exists():
+        ctx.load_verify_locations(cafile='/etc/ssl/cert.pem')
+    return ctx
+
 def request_json(url):
     req=urllib.request.Request(url,headers={'User-Agent':'StockResearchCommandCenter/0.1 (personal research)'})
-    with urllib.request.urlopen(req,timeout=25) as response:
+    with urllib.request.urlopen(req,timeout=25,context=_ssl_context()) as response:
         return json.load(response)
 
 def fetch_daily(symbol, key=None):
-    key=key or os.environ.get('ALPHAVANTAGE_API_KEY')
+    key=key or get_api_key()
     if not key: raise RuntimeError('Missing ALPHAVANTAGE_API_KEY')
     url=API+'?'+urllib.parse.urlencode({'function':'TIME_SERIES_DAILY','symbol':symbol,'outputsize':'compact','apikey':key})
     obj=request_json(url)
     if 'Note' in obj or 'Information' in obj: raise RuntimeError(obj.get('Note') or obj['Information'])
+    if 'Error Message' in obj: raise RuntimeError(obj['Error Message'])
     data=obj.get('Time Series (Daily)')
     if not data: raise RuntimeError(f'No valid daily data for {symbol}: {str(obj)[:150]}')
     rows=sorted([(d,float(v['4. close'])) for d,v in data.items()],key=lambda x:x[0])
@@ -69,12 +99,12 @@ def latest():
         db.row_factory=sqlite3.Row
         return [dict(r) for r in db.execute('SELECT r.* FROM results r INNER JOIN (SELECT symbol, MAX(asof) AS asof FROM results GROUP BY symbol) q ON r.symbol=q.symbol AND r.asof=q.asof ORDER BY symbol')]
 
-def run(symbols=None):
+def run(symbols=None, key=None):
     symbols= symbols if symbols is not None else watchlist()
     results=[]; errors=[]
     for s in symbols:
         try:
-            rows,source=fetch_daily(s)
+            rows,source=fetch_daily(s, key=key)
             row=analyze(s,rows,source);store(row);results.append(row)
         except Exception as e:
             errors.append({'symbol':s,'error':str(e)})

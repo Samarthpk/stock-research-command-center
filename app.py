@@ -1,7 +1,11 @@
 import os
+import sys
+from pathlib import Path
 import pandas as pd
 import streamlit as st
-from engine import init_db,watchlist,set_watchlist,run,latest,report
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from engine import init_db,watchlist,set_watchlist,run,latest,report,get_api_key
 
 st.set_page_config(page_title='Stock Research Command Center',page_icon='📈',layout='wide')
 init_db()
@@ -15,9 +19,9 @@ with st.sidebar:
         try:
             set_watchlist(tickers.split(','));st.success('Watchlist saved');st.rerun()
         except ValueError as e:st.error(str(e))
-    key=os.environ.get('ALPHAVANTAGE_API_KEY')
+    key=get_api_key()
     st.write('Market data API:', 'Configured ✅' if key else 'Missing key ⚠️')
-    st.caption('Get a key at alphavantage.co/support; put it in an environment variable, not source code.')
+    st.caption('Get a key at alphavantage.co/support; configure it in Streamlit Secrets or an environment variable, not source code.')
 
 st.subheader('Agent desk')
 cols=st.columns(4)
@@ -28,7 +32,7 @@ for col,name,desc in zip(cols,['Market Data Agent','Trend Agent','Risk Agent','R
 
 if st.button('▶ Run research agents',type='primary',disabled=not bool(key)):
     with st.spinner('Fetching and analyzing live API responses...'):
-        result=run()
+        result=run(key=key)
     st.session_state['latest_run']=result
     if result['errors']:st.warning('Some agents could not get valid data; failed symbols are not scored.')
     if result['results']:st.success(f"Fetched {len(result['results'])} ticker(s) successfully")

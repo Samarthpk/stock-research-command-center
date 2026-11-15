@@ -1,0 +1,36 @@
+# API keys, secrets, and environment variables
+.env
+.env.*
+*.env
+.streamlit/secrets.toml
+*secret*
+*apikey*
+*.key
+*.pem
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+research.db
+
+# Generated reports
+reports/
+stock_research_brief.md
+
+# OS artifacts
+.DS_Store
