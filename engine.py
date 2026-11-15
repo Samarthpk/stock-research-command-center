@@ -151,6 +151,16 @@ def get_api_key():
                 return str(val).strip()
     except Exception:
         pass
+    try:
+        import tomllib
+        for sp in (Path(__file__).resolve().parent / '.streamlit' / 'secrets.toml',
+                   Path.home() / '.streamlit' / 'secrets.toml'):
+            if sp.is_file():
+                val = tomllib.loads(sp.read_text(encoding='utf-8')).get('ALPHAVANTAGE_API_KEY')
+                if val and str(val).strip():
+                    return str(val).strip()
+    except Exception:
+        pass
     return None
 
 @contextlib.contextmanager
@@ -610,13 +620,12 @@ def analyze(symbol, rows, source, fetched_at_utc=None, data_origin='live', marke
     vol=statistics.stdev(returns)*(252**0.5) if len(returns)>1 else 0
     if last>ma20>ma50 and momentum>0.02:
         stance='Positive trend'
-        ranking='INVESTIGATE'
     elif last<ma20<ma50 and momentum< -0.02:
         stance='Negative trend'
-        ranking='CAUTION'
     else:
         stance='Mixed / watch'
-        ranking='WATCH'
+    # Price-only technical screening never issues INVESTIGATE/WATCH/CAUTION rankings without verified financial filings & metrics
+    ranking='INSUFFICIENT_EVIDENCE'
     asof = rows[-1][0]
     fetched_at_utc = fetched_at_utc or _now_utc().isoformat()
     stale = is_data_stale(asof, fetched_at_utc=fetched_at_utc, market=mkt)
@@ -699,8 +708,7 @@ def latest(market=None):
         fetched_at = r.get('fetched_at_utc')
         r['stale'] = is_data_stale(r.get('asof'), fetched_at_utc=fetched_at, now_utc=now_utc, market=row_mkt)
         r['freshness'] = format_freshness_label(r.get('asof'), fetched_at_utc=fetched_at, data_origin=origin, now_utc=now_utc, market=row_mkt)
-        st_val = r.get('stance', '')
-        r['ranking'] = 'INVESTIGATE' if st_val == 'Positive trend' else ('CAUTION' if st_val == 'Negative trend' else 'WATCH')
+        r['ranking'] = 'INSUFFICIENT_EVIDENCE'
         filtered.append(r)
     return filtered
 

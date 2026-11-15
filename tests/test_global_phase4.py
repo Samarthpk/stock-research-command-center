@@ -110,7 +110,8 @@ class GlobalPhase4Tests(unittest.TestCase):
         self.assertEqual(in_analysis["provider_symbol"], "RELIANCE.BSE")
         self.assertIn("₹", in_analysis["rationale"])
         self.assertIn("INR", in_analysis["rationale"])
-        self.assertIn(in_analysis["ranking"], {"INVESTIGATE", "WATCH", "CAUTION"})
+        # Price-only technical analysis never ranks a company without primary financial evidence
+        self.assertEqual(in_analysis["ranking"], "INSUFFICIENT_EVIDENCE")
 
     def test_maintainable_calendars_2027_onward_and_special_sessions(self):
         # 2026 & 2027+ US holidays (algorithmic NYSE rules)
