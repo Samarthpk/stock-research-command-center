@@ -57,6 +57,22 @@ MARKET_CONFIG = {
 # Verified non-interchangeable Indian instrument registry mapping canonical symbol
 # to distinct NSE ticker, BSE scrip code, Alpha Vantage BSE ticker, ISIN, and strict company match aliases.
 INDIA_INSTRUMENTS = {
+    'SUZLON': {
+        'symbol': 'SUZLON',
+        'company': 'Suzlon Energy Limited',
+        'name': 'Suzlon Energy Limited',
+        'match_aliases': ['Suzlon Energy', 'Suzlon Energy Limited', 'Suzlon Energy Ltd', 'NSE:SUZLON', 'SUZLON'],
+        'market': 'IN',
+        'currency': 'INR',
+        'nse_symbol': 'SUZLON',
+        'bse_scrip_code': '532667',
+        'bse_code': '532667',
+        'bse_ticker': 'SUZLON.BSE',
+        'bse_symbol': 'SUZLON.BSE',
+        'bse_numeric_ticker': '532667.BSE',
+        'isin': 'INE040H01021',
+        'nse_bse_interchangeable': False,
+    },
     'ITC': {
         'symbol': 'ITC',
         'company': 'ITC Limited',
