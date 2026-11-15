@@ -9,13 +9,16 @@ from __future__ import annotations
 
 import csv
 import io
+import json
 import re
 import urllib.request
+import urllib.parse
 from datetime import datetime, timezone
 
 US_NASDAQ_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
 US_OTHER_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 NSE_EQUITY_URL = "https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv"
+BSE_EQUITY_URL = "https://api.bseindia.com/BseIndiaAPI/api/ListofScripData/w?" + urllib.parse.urlencode({"scripcode":"","Group":"","industry":"","segment":"Equity","status":"Active"})
 SOURCES = {"US Nasdaq": US_NASDAQ_URL, "US other exchanges": US_OTHER_URL, "India NSE EQ": NSE_EQUITY_URL}
 MAX_DOWNLOAD_BYTES = 5_000_000
 MAX_ROWS = 30000
@@ -76,6 +79,33 @@ def parse_nse_equities(text):
             raise ValueError("Directory row limit exceeded")
     return out
 
+def parse_bse_equities(text):
+    """Parse active BSE equity records; scrip code is the unique exchange identifier."""
+    payload = json.loads(text)
+    if not isinstance(payload, list):
+        raise ValueError("Unexpected BSE directory response")
+    out = []
+    for entry in payload:
+        if not isinstance(entry, dict):
+            continue
+        fields = {str(k).casefold():v for k,v in entry.items()}
+        if _clean(fields.get("status")).casefold() != "active":
+            continue
+        if _clean(fields.get("segment")).casefold() != "equity":
+            continue
+        code = _clean(fields.get("scrip_cd"))
+        symbol = _clean(fields.get("scrip_id"))
+        name = _clean(fields.get("scrip_name") or fields.get("issuer_name"))
+        r = _record(code, name, "IN", "BSE", "Equity", BSE_EQUITY_URL, fields.get("isin_number"))
+        if r:
+            r["trading_symbol"] = symbol
+            r["bse_scrip_code"] = code
+            r["group"] = _clean(fields.get("group"))
+            out.append(r)
+        if len(out) > MAX_ROWS:
+            raise ValueError("BSE directory row limit exceeded")
+    return out
+
 def load_directory(fetch=_download):
     """Returns data AND per-source status so partial coverage is never shown as complete."""
     rows=[]
@@ -83,7 +113,8 @@ def load_directory(fetch=_download):
     for label, url, parser in [
         ("US Nasdaq", US_NASDAQ_URL, lambda text:parse_nasdaq_directory(text,other=False)),
         ("US other exchanges", US_OTHER_URL, lambda text:parse_nasdaq_directory(text,other=True)),
-        ("India NSE EQ", NSE_EQUITY_URL, parse_nse_equities),
+        ("India NSE Equity", NSE_EQUITY_URL, parse_nse_equities),
+        ("India BSE Equity", BSE_EQUITY_URL, parse_bse_equities),
     ]:
         try:
             parsed=parser(fetch(url))
@@ -93,11 +124,12 @@ def load_directory(fetch=_download):
             statuses[label]={"status":"OK","count":len(parsed),"source":url}
         except Exception as exc:
             statuses[label]={"status":"UNAVAILABLE","count":0,"source":url,"error":type(exc).__name__}
-    statuses["India BSE exclusive"]={"status":"NOT_IMPLEMENTED","count":0,"source":"","explanation":"BSE-only listings are not covered by NSE EQ. No complete-BSE claim."}
+
     unique={}
     for row in rows:
         unique[(row["market"],row["exchange"],row["symbol"])]=row
-    return {"rows":list(unique.values()),"sources":statuses,"retrieved_at":datetime.now(timezone.utc).isoformat(),"complete_coverage":False}
+    all_ok=all(item["status"]=="OK" for item in statuses.values())
+    return {"rows":list(unique.values()),"sources":statuses,"retrieved_at":datetime.now(timezone.utc).isoformat(),"complete_coverage":all_ok, "coverage_note":"Exchange directory coverage; subject to listings, API availability and instruments not in the selected source files."}
 
 def search_directory(rows, query="",market="ALL",exchange="ALL",limit=500):
     q=_clean(query).casefold()
