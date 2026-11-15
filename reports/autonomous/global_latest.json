@@ -1,0 +1,637 @@
+{
+  "schema_version": 2,
+  "mission_id": "GLOBAL-20261115T014418Z",
+  "market": "ALL",
+  "updated_at": "2026-11-15T01:44:18.344201+00:00",
+  "started_at": "2026-11-15T01:44:16.347709+00:00",
+  "finished_at": "2026-11-15T01:44:18.344220+00:00",
+  "data_policy": "historical and public sources; native currencies preserved (USD/INR); no trading",
+  "markets_included": [
+    "US",
+    "IN"
+  ],
+  "market_summaries": {
+    "US": {
+      "mission_id": "20261115T014416Z-US",
+      "status": "PARTIAL",
+      "outcome_counts": {
+        "COMPLETE": 0,
+        "PARTIAL": 1,
+        "FAILED": 0
+      },
+      "outcomes_by_symbol": {
+        "COMPLETE": [],
+        "PARTIAL": [
+          "AAPL"
+        ],
+        "FAILED": []
+      },
+      "market_session_date": "2026-11-13",
+      "currency": "USD",
+      "symbols": [
+        "AAPL"
+      ],
+      "finished_at": "2026-11-15T01:44:17.304169+00:00"
+    },
+    "IN": {
+      "mission_id": "20261115T014417Z-IN",
+      "status": "PARTIAL",
+      "outcome_counts": {
+        "COMPLETE": 0,
+        "PARTIAL": 1,
+        "FAILED": 0
+      },
+      "outcomes_by_symbol": {
+        "COMPLETE": [],
+        "PARTIAL": [
+          "RELIANCE"
+        ],
+        "FAILED": []
+      },
+      "market_session_date": "2026-11-13",
+      "currency": "INR",
+      "symbols": [
+        "RELIANCE"
+      ],
+      "finished_at": "2026-11-15T01:44:18.341382+00:00"
+    }
+  },
+  "symbols": [
+    "AAPL",
+    "RELIANCE"
+  ],
+  "outcome_counts": {
+    "COMPLETE": 0,
+    "PARTIAL": 2,
+    "FAILED": 0
+  },
+  "outcomes_by_symbol": {
+    "COMPLETE": [],
+    "PARTIAL": [
+      "AAPL",
+      "RELIANCE"
+    ],
+    "FAILED": []
+  },
+  "results": [
+    {
+      "ticker": "AAPL",
+      "company": "Apple Inc.",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "instrument": {
+        "symbol": "AAPL",
+        "company": "Apple Inc.",
+        "name": "Apple Inc.",
+        "match_aliases": [
+          "Apple",
+          "AAPL"
+        ],
+        "market": "US",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "provider_symbol": "AAPL",
+        "nse_symbol": null,
+        "bse_scrip_code": null,
+        "bse_code": null,
+        "bse_ticker": null,
+        "bse_symbol": null,
+        "isin": null,
+        "nse_bse_interchangeable": false
+      },
+      "started_at": "2026-11-15T01:44:16.779536+00:00",
+      "agents": {
+        "news": {
+          "status": "COMPLETE",
+          "at": "2026-11-15T01:44:17.303823+00:00"
+        },
+        "filings": {
+          "status": "SKIPPED",
+          "reason": "SEC_USER_AGENT missing or CIK map unavailable"
+        },
+        "fundamentals": {
+          "status": "SKIPPED",
+          "reason": "SEC_USER_AGENT missing or CIK map unavailable"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "NOT_CONFIGURED",
+          "currency": "USD"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple Shares (AAPL) Look Expensive Heading into 2027 - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5",
+          "published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303754+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5",
+          "published": "Thu, 12 Nov 2026 11:12:44 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303796+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Is Apple Stock a Buy Right Now? - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZZzd4WHdhQ2gyRU5BckJfY21JTWhSdXYyZC1sZGlmb0FyZEZUSzVDeWVkbUloU19hR2ItYVhiaXBodGVIUVZTODZtQ1lkdWV1RVlOcDhZOFpJR1Z6bld4TG1YN3BPTUY3ZXhLeGlEaUFOTzNmN3FNbjI3VDVYdw?oc=5",
+          "published": "Sat, 14 Nov 2026 00:07:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303803+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "How Much Capital Gains Tax Does a 61-Year-Old Owe on $750,000 of Inherited Apple Stock? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOT2FycXlWaUJvRWg0TWozaGhXaU9aYXhuOGVSejJ6N3hhM2VPZl9qRndKX2g3MmlSS2prbUxESVJTTm5JME93b2diOWVnQnZNcHpRSXJndlpUSmdHYmtaSWcybDBwRGpRcVM5dmtyLWstQ3dSZVJPcUlnaUZRdV9pdTN1YUNLaTUyTHFrQlJ2bDRpdlo0alQw?oc=5",
+          "published": "Wed, 11 Nov 2026 13:03:52 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303807+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "AAPL is Trading at a Premium at 36.15X P/E: Is the Stock Still a Hold? - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOS3NWZkRCc2Z2aUNKWGdheDJPLVc0b3l2eldHWmVjcllNMWZrRFRlOWR4bm81LWdGVTR0aDkyLUhDRDRIWDZSVnJNRFpiTUFOeEpIcGVOYU15elJCS3VEY2NCYWlxWUg1RTNaV193ZlhqLVVPVENYRXRjOXBGdklIbGxwbUpTOEFyWm5mTlY5VnRCZUFVazYzQmhydlUzSU9QVGV0OGUxMG5ZcFNKcWdkSDhUVVRKYjg2ZFdlQkpsRDJSdw?oc=5",
+          "published": "Fri, 13 Nov 2026 16:59:18 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303810+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple: Record Earnings Mask A Growing Margin Problem (NASDAQ:AAPL) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdmh3YmNIUHlOT3dJYjFzbjFhc0NGTWJqTmZwRk1xLUZXRHdsSlJyRjNhWTFkNExyakxzdGJGcmIyMUotVGVIMEMtUDlneGcxaVJJR3hTUHdnTFJqNzZxd2VNbEJYbTlES1ZQSEY3bENVUVpGNVQtclUxclpZZDRySzNrLW5vUHp1N2pScmVmTEJjdEpKcTFn?oc=5",
+          "published": "Mon, 09 Nov 2026 13:25:10 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303812+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        }
+      ],
+      "filings": {},
+      "fundamentals": {},
+      "price": {
+        "status": "NOT_CONFIGURED",
+        "market": "US",
+        "currency": "USD",
+        "ohlcv_verified": false
+      },
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "Primary filings and comparable filed metrics not both present",
+        "market": "US",
+        "currency": "USD",
+        "as_of": "unavailable",
+        "evidence_count": 3,
+        "evidence_citations": [
+          {
+            "type": "headline_discovery",
+            "title": "Apple Shares (AAPL) Look Expensive Heading into 2027 - Yahoo Finance",
+            "as_of": "Wed, 11 Nov 2026 21:15:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
+            "as_of": "Thu, 12 Nov 2026 11:12:44 GMT",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Is Apple Stock a Buy Right Now? - The Motley Fool",
+            "as_of": "Sat, 14 Nov 2026 00:07:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZZzd4WHdhQ2gyRU5BckJfY21JTWhSdXYyZC1sZGlmb0FyZEZUSzVDeWVkbUloU19hR2ItYVhiaXBodGVIUVZTODZtQ1lkdWV1RVlOcDhZOFpJR1Z6bld4TG1YN3BPTUY3ZXhLeGlEaUFOTzNmN3FNbjI3VDVYdw?oc=5"
+          }
+        ],
+        "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
+      },
+      "pillars": {
+        "technical": {
+          "status": "NOT_CONFIGURED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 0,
+          "xbrl_metrics_count": 0,
+          "metrics": {},
+          "status": "UNAVAILABLE"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (NOT_CONFIGURED).",
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "NOT_CONFIGURED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 0,
+          "xbrl_metrics_count": 0,
+          "metrics": {},
+          "status": "UNAVAILABLE"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (NOT_CONFIGURED).",
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
+          ]
+        }
+      },
+      "finished_at": "2026-11-15T01:44:17.303850+00:00"
+    },
+    {
+      "ticker": "RELIANCE",
+      "company": "Reliance Industries Limited",
+      "market": "IN",
+      "exchange": "BSE (Alpha Vantage .BSE) / NSE (RELIANCE)",
+      "currency": "INR",
+      "instrument": {
+        "symbol": "RELIANCE",
+        "company": "Reliance Industries Limited",
+        "name": "Reliance Industries Limited",
+        "match_aliases": [
+          "Reliance Industries",
+          "RIL",
+          "RELIANCE"
+        ],
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "RELIANCE",
+        "bse_scrip_code": "500325",
+        "bse_code": "500325",
+        "bse_ticker": "RELIANCE.BSE",
+        "bse_symbol": "RELIANCE.BSE",
+        "bse_numeric_ticker": "500325.BSE",
+        "isin": "INE002A01018",
+        "nse_bse_interchangeable": false,
+        "requested_identifier": "RELIANCE",
+        "requested_exchange": "NSE/BSE",
+        "provider_symbol": "RELIANCE.BSE",
+        "exchange": "BSE (Alpha Vantage .BSE) / NSE (RELIANCE)"
+      },
+      "started_at": "2026-11-15T01:44:17.309630+00:00",
+      "agents": {
+        "news": {
+          "status": "COMPLETE",
+          "at": "2026-11-15T01:44:17.845247+00:00",
+          "market": "IN"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-15T01:44:18.340455+00:00",
+          "market": "IN"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-15T01:44:18.340517+00:00",
+          "market": "IN"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "UNSUPPORTED_NOT_CONFIGURED",
+          "currency": "INR"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "India's Reliance posts best day in over six years as oil business, Jio Platforms lift outlook - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPU0NDNVVlWVpIN1dCT0JQN3ZVYWtBTHVQdkhKZjZwTVE5MmhGc2p6a2gtaF85LUVCY2ZlNlh2Sm5kSExna1ZsdTUyMmdhLXk1WS13U3BEbHVQejFJTVBOblIySFdHSFFRNEJtV1V1clVoSDk4NXE1blNTVEcxNV9MUi13RDZCajY5YnJVVEJPejBKNC1UTXI5dEpISXFzNk9FNEd5STFPOFczQzIteTJXUmthZC0zb29KQmIwUERoLUc?oc=5",
+          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.845151+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Indian Markets Set for Gap-Up Open as Reliance Beats Estimates - HDFC Sky",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdVgyRzJuLS1HUDk2TTAxcVpicVllQmtSa0NveVlUTnRha2RTRkRFbThibEUzRVZZTzBNYkJzaXBNdUhNRS0wcVVWMjZXNV96cmJ3MTZHNm9HN1pDS2pLb2JEM2p3a3l0dGhwaU45NVpuNGhTMzFlczQ0M3p5Wmtvd3h1ZlFOcU1BaE5iLVYxbWp3UV9paHRnSHF6RnFJN3ptUkVGY21mSEpjbWhob09XaFNXZDViNWZJb0c2TEVYZFo?oc=5",
+          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.845186+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5",
+          "published": "Sat, 14 Nov 2026 09:05:07 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.845197+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Reliance Industries shares jump nearly 12% after record Q2 results; top Nifty gainer, biggest index... - Moneycontrol.com",
+          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQU2IxZFp2SXB5LVpkOElMdjZtckM1VmFaZTlpckNMNlhDd29SVHNUU0V4OFU0RTZHWXVzalJaYXREeVE1V05yOGpETFk1aGhqOE91bWc5SkdUYlJ6NG1HYVdFektOZzdZVjVLSUpGaC1zSjc0X3g3T3JBYVVaYWNJUzk1Wi1HNGRFRTdlaWh3NjdwTThBSHRZV0NkSlBXX3FFS09WTHRkMDZTY1U1VTloTzVGRFRmRHp3LVlINlUzV2RpN0VpLUM2Ung4TlZCVXRhWDY4Q3FYTWV4dWdJU1lLbi1HVVJSbjFiMU8tZ1F1S2NjVWp5THV1NUF1Y3NuNEHSAYQCQVVfeXFMUGVrRU5iX3dDUG5lNWo0MDZNS19XVjRVZzF3U0tybTFrY2NHXzRGMTRGQTlVWWU3ZElsVTRTa3FyLVFfR2xZXzlBOHdFeS1LakcyWHM3cnQ1Q3NtZGYtX2Njd0lPNnpRdzN3M3ZsSUdiTUdWX21WTndXRUJXLTd5UHVHNEh2Vnk1M1JicE16c1RtNXRyYVFMdms1cWlLZlZUdURhLTJvcmtzUm9iTmxLTXY5Sk5oX2dkME5aNEVnczRIXzhtZmpOWFNCTXloMzRjSmZNeVotdTBKRF9WQWdHaWh5R3lsV0ZncHFVWms2OVQtOGJMdDUxaXRvOTRjOWxBZl9XVUM?oc=5",
+          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.845205+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Reliance shares jump 12% as brokerages maintain bullish view after Q2 results - BusinessLine",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQelRQZVFyMnJPLTZ2MDVhaFl4M0Z6bGpZckwxQ0czcnpjMlFVSHc1MVc5bmtremRVQXB0dUJUaHpialFXOFV4eHlrcWFFRHh6MHUxeGdlMmt5MFZKTGdSd1NENGFBT3N6TkNxdU9EcVZpdmJUT092Tng3T2VnMmtZR3dpN3pHbG5hUlhiVUlCc3h5cW9kYVJmemNNaDZtWlJOT1pTdm9SbGprZjI0RVhGZ2hvRjQtX29fYkJoOWtWSDFLalpCX3BqZ04yVU13aklIbVcxVUgxVdIB3gFBVV95cUxOeC1fSXJXOF9WZU5qV0JWUFJQSlNIM0lkLUw0dnhfM0N1ZHBleGV5ZXU2WFJzbnRta2M2cnpPaVM5UklrR2dhd25SLTRfN2xuNjM2TnFpZGFMWDZxY3RyLXRXc1Y5ZEdZdUk1NXBFLWh0T0ZFb1I5UTBRel9BdnhJbEpxckFqZ0NpM3M4eU9nTGxkZW91Rkl5T2JwRmtZSU1QajFMT0xEYWd6UWVqWUJqdmJCRVdMc0hOaGJPeGdvY1RISXFhUmZjdWZSS295bUJJN0tUeURyb1NHTVdPcUE?oc=5",
+          "published": "Mon, 02 Nov 2026 04:51:15 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.845213+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Reliance shares jump over 7%: Why RIL stock is rallying today - India Today",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPX2t2b2lSWnVWV2wzOUxfdFI0QkxUY3JVVUVnR3lCV3dJZ1VFd0gweVE0bmMzcHZBOWhaZl8tX2lTTmhKUmVIb09iUk5ORHE1aUNoY3dzaWJDQlF1aF9Odzd3N0J4aFVCYW5lcFJSRVctRlZFbUlsNTJpdU9NZFZ5LW1QOHBOTlNYaU1YZTc0QWYtV1dLRjZrNEJtcS1qamVaMkM3Z1lZVnR4TlRybjFadTNwQ0ZvbFBNUVZ5VzB2UjgzZTVGcHZwbmhoek0zMm5VV0lBZFo1NlTSAd4BQVVfeXFMTnRRekFCbVJ2YjVUcjQ0TG1RTlJZS1NVaUh5d0hzc0pLRXE4eXlWQ2hMVGVRaVZoZ1l4dFYzV05FVHF5WU5oLTBJcTEySlllUVliMnRxQTRtVkVDUlpkTHk1VUtncHJvR2RCVjVPeWMtVHFOWXRvM2JlcjZtc0VBRE9jYUxUWHVQUl9XNXZTUWk3M2JCOEhlUTc4a29Tb3VOMjNaT1ZUYlAtVHhvZTU0YnZpNUs0SmhEUmJyZlZSeGN5N1RCY3l2Q1hnWWlpQ1VqUlR3dldKZFNOOVk3WC1B?oc=5",
+          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.845221+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        }
+      ],
+      "filings": {
+        "company": "Reliance Industries Limited",
+        "symbol": "RELIANCE",
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "RELIANCE",
+        "bse_scrip_code": "500325",
+        "isin": "INE002A01018",
+        "reporting_standard": "IND-AS (SEBI LODR Regulations 30, 33 & 34)",
+        "company_specific_verified": true,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
+        },
+        "filings": [],
+        "secondary_disclosure_mentions": [
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "Reliance Industries Shares Fall 2% After Jio Platforms Listing; Q2 Results on October 30 - India Infoline",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcDBtOWtWN3NEMjBFRVhoSloyU3JKNG5DNnlHTE5ndFRnZzQ5VmNMQjVULVJOVDRseEU4dnpCb0dSOEdRX1JsZUVCWHVtRjhMRkZvU3lfa2oxemIzZG1CZE80REdRSFpJTU9QWGNMckNZdTJDdE9jRV9XU3YxVVFyS3BacHRkdzFqWU1DRzR5Q0FLTDUtYUY3ZlJIY1BvbzJTR0p1dlI3LVRobnB0b0JYNWF2TmhGZDNLaXRrRENsU3RNaG5uR0MtQW5MQQ?oc=5",
+            "published": "Wed, 28 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-15T01:44:18.338081+00:00",
+            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "Reliance Jio releases financial results for QE and H1 ended September 30, 2026 - tele.net",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMDUwLVNnVFNmeTJhMmpXSHoxTkk0R3pZRXZnVmk4b2NBaWdiUlQ0Mlg1WTRSMGFaOWJWM0ZZcTQ0NjRsVDdtcmU1V0lsSC1iSDRrQ29vdVFETGRiMG1seWxuY0JIQUN3N1VXbWVyVmxzT0tIdXNabS1qQUhoR0dabnpSdDNheVJYVko0QkdLUU5ybGhrRlJLSnlVa0FscTU0QnIyQXItNjJmazdNcnJndWJUbkNzZmtETkFxVw?oc=5",
+            "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+            "retrieved_at": "2026-11-15T01:44:18.338208+00:00",
+            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "Reliance Retail Q2FY27 results: Net profit falls 24.3% to \u20b92,611 crore - Business Standard",
+            "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPaU56X2tvTEVDZmFzbGxOeUxLbG44UmRuWm02REZUMXZzRGhvMjhxVUZmUUM0dVFYd0JkbXQybTdjd2lpQUpOdXZrTXNsZ2p0am5rMjdvUmFLMXNMa1RkX252MDRmeThRQWVQTkJGclIzUlg5QUxZVXBpdTFaWENaQ2JVTmJqNjdzYnRBaWtBZFFMUU9xN045Uk9IUUtRSmF2SmNSNDFGQWZta0NVZzNTWU1tNDRtVnZBWGoxclhQSDJ4Z1llaTB2Q2lkUTVjaEtDd3Y4T3FTTW91UDZrWW9WbjZPZ9IB6AFBVV95cUxNZVh2eHhEUGZrS2pfT0xDRS0yRlVCd0ROcGN5X3NSRjhtRUJCWFlWeWtnbXpGYzRtYUpZN2VKOE5mWUNINFBuMU1rc1RQN2JLY2hiQjVGbHJ4UDU0N3pNYVloUVFtTGpodHlXeUpLYnU3c1VnUWJWaGluNVNuNV9SY1Q5S05KOVRGS0RHWFNfS2JGOFcxZ3pURFRkS0oyOWxMUF8yYlFhMnl3Q3hvMlVrelA0MEg2a05XLTBZT2g2Q0ZodlBEd3FLS1pyN19uZ2lVaW1ESE1lcm5ybWNNM29UMWxuNEN0Sjla?oc=5",
+            "published": "Fri, 30 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-15T01:44:18.338358+00:00",
+            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "Reliance Industries to consider raising funds via debentures, announce Q2 earnings on October 30 - Moneycontrol.com",
+            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQYXhodVhjaERDUWhvanprazUxV0xpdmx3YXJ0THhUMGlnVmp0bW16N3FPWVJRWmFzcDNsTmZzNkd6WGNlVVV3M2wxUHB5TTJfMm8xcEJteDJDRTZmR0w0ZUdTQzNnUUg3OXdRTm9sSEh3ZlEtMkZfZjZrMXlqc1V2RUhXaFFiVFVuM2VRY3JrNnZ2OU1MZVpoZmhoUHE1c2o3eU1UaEFRbmhiclNWUmdXQnhhZUNlY0lqZWZjeFpJZERPdDF5YUlIMEF1V1hiRUdSMTRnRTRaQ2tZdW96Wl9FUzNVbll6al85ZUJrSXpBQ0k5b1VN0gH6AUFVX3lxTE0wZlRZQW5mU0RtRTY5RnhrZFZVQy0xb1J6N3pXQngzcFlhM1dlZG5kaDNNTTNOQjlhVkZub01pNmw3VXdVNjNZWEhfWU1KR2pFUFFMcWhhTFlTUjVlTC0tdG5QZ1Z0aTljYnk4d1JobW1Vam8ydE4zUXFLWFIySVBKbERmVlB3QVlkUjcyMEluZjZPaTZNRjBZVzZSazlqWmd3akpkY29mZ3lBSWV3SG15dTFhODdOeS1vX2ZmekI3cGs1VXR1Nzk4ZWpGNUY3NmRKbjhDeFp3NnBqdzJsYmtrdkRBUWNobERlNnF1a3gtNDBVLWxGeDJPTmc?oc=5",
+            "published": "Tue, 27 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-15T01:44:18.338390+00:00",
+            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "Reliance Power seeks reclassification of RIPL and subs to public - scanx.trade",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQREUxLVFWb1U4RWh1ZHQ3c3NqajNxVmRMMkd2UXNyRFRrWXZTRFhGR09sRlJYQ1NUR0NMeWE1T1Ywbzg1YlluQzlsM2Z3bnhrRE5WY1hmUGFMQmtYSEpKNFVTX0RDTkFIM2hjajFRai00cm56QTNrcFlBb2dXQm5reFFtVFZieDlGM21QV3N3NC1seml0em5rRTlMS0lHbGxRWmVhVUQ1ZFRwbUhVWHZMQnJCR01LbnpNcVV5NlVkRDQ?oc=5",
+            "published": "Fri, 13 Nov 2026 22:04:26 GMT",
+            "retrieved_at": "2026-11-15T01:44:18.338420+00:00",
+            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "Reliance Industrial Infrastructure Q2 Results FY27: Revenue Falls - Univest",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNeEZ5UEZDMHdEQkNtdFp1bWlEd01TVHRrYXlFY3BOSnpUT3lUeWVvNGZlZzJiX2czNVhFU1ItNVJqQ1NFWm9sOTdlcl9TVjNySzFzb1RkQWJ6N3ZGT2EyRHhySWpFOFdCMFdDZjR4UzZVMkdYaFJaSlY2aDZJeThRODFHTXcwT19INUtudW9QdU8?oc=5",
+            "published": "Wed, 14 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-15T01:44:18.338446+00:00",
+            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
+          }
+        ],
+        "warning": "No direct official BSE/NSE PDF/XBRL filing documents retrieved in automated feed; secondary news mentions and generic exchange portal links are not counted as primary filings."
+      },
+      "fundamentals": {
+        "company": "Reliance Industries Limited",
+        "symbol": "RELIANCE",
+        "market": "IN",
+        "currency": "INR",
+        "accounting_standard": "IND-AS (Standalone & Consolidated Quarterly/Annual Results in INR)",
+        "nse_symbol": "RELIANCE",
+        "bse_scrip_code": "500325",
+        "isin": "INE002A01018",
+        "verified_against_official_documents": false,
+        "metrics": {},
+        "quarterly_result_disclosures": [],
+        "annual_report_disclosures": [],
+        "secondary_disclosure_mentions_count": 6,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
+        },
+        "warning": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+      },
+      "price": {
+        "status": "UNSUPPORTED_NOT_CONFIGURED",
+        "market": "IN",
+        "currency": "INR",
+        "ohlcv_verified": false
+      },
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "Primary official exchange filings and verified company-specific IND-AS financial metrics not both present; companies are never ranked on portal URLs or news headlines alone",
+        "market": "IN",
+        "currency": "INR",
+        "as_of": "unavailable",
+        "evidence_count": 5,
+        "evidence_citations": [
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "Reliance Industries Shares Fall 2% After Jio Platforms Listing; Q2 Results on October 30 - India Infoline",
+            "as_of": "Wed, 28 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcDBtOWtWN3NEMjBFRVhoSloyU3JKNG5DNnlHTE5ndFRnZzQ5VmNMQjVULVJOVDRseEU4dnpCb0dSOEdRX1JsZUVCWHVtRjhMRkZvU3lfa2oxemIzZG1CZE80REdRSFpJTU9QWGNMckNZdTJDdE9jRV9XU3YxVVFyS3BacHRkdzFqWU1DRzR5Q0FLTDUtYUY3ZlJIY1BvbzJTR0p1dlI3LVRobnB0b0JYNWF2TmhGZDNLaXRrRENsU3RNaG5uR0MtQW5MQQ?oc=5"
+          },
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "Reliance Jio releases financial results for QE and H1 ended September 30, 2026 - tele.net",
+            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMDUwLVNnVFNmeTJhMmpXSHoxTkk0R3pZRXZnVmk4b2NBaWdiUlQ0Mlg1WTRSMGFaOWJWM0ZZcTQ0NjRsVDdtcmU1V0lsSC1iSDRrQ29vdVFETGRiMG1seWxuY0JIQUN3N1VXbWVyVmxzT0tIdXNabS1qQUhoR0dabnpSdDNheVJYVko0QkdLUU5ybGhrRlJLSnlVa0FscTU0QnIyQXItNjJmazdNcnJndWJUbkNzZmtETkFxVw?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "India's Reliance posts best day in over six years as oil business, Jio Platforms lift outlook - Reuters",
+            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPU0NDNVVlWVpIN1dCT0JQN3ZVYWtBTHVQdkhKZjZwTVE5MmhGc2p6a2gtaF85LUVCY2ZlNlh2Sm5kSExna1ZsdTUyMmdhLXk1WS13U3BEbHVQejFJTVBOblIySFdHSFFRNEJtV1V1clVoSDk4NXE1blNTVEcxNV9MUi13RDZCajY5YnJVVEJPejBKNC1UTXI5dEpISXFzNk9FNEd5STFPOFczQzIteTJXUmthZC0zb29KQmIwUERoLUc?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Indian Markets Set for Gap-Up Open as Reliance Beats Estimates - HDFC Sky",
+            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdVgyRzJuLS1HUDk2TTAxcVpicVllQmtSa0NveVlUTnRha2RTRkRFbThibEUzRVZZTzBNYkJzaXBNdUhNRS0wcVVWMjZXNV96cmJ3MTZHNm9HN1pDS2pLb2JEM2p3a3l0dGhwaU45NVpuNGhTMzFlczQ0M3p5Wmtvd3h1ZlFOcU1BaE5iLVYxbWp3UV9paHRnSHF6RnFJN3ptUkVGY21mSEpjbWhob09XaFNXZDViNWZJb0c2TEVYZFo?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
+            "as_of": "Sat, 14 Nov 2026 09:05:07 GMT",
+            "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5"
+          }
+        ],
+        "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
+      },
+      "pillars": {
+        "technical": {
+          "status": "UNSUPPORTED_NOT_CONFIGURED",
+          "as_of": null,
+          "currency": "INR",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 0,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
+          },
+          "status": "SECONDARY_MENTIONS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (UNSUPPORTED_NOT_CONFIGURED).",
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "UNSUPPORTED_NOT_CONFIGURED",
+          "as_of": null,
+          "currency": "INR",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 0,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
+          },
+          "status": "SECONDARY_MENTIONS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (UNSUPPORTED_NOT_CONFIGURED).",
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "finished_at": "2026-11-15T01:44:18.340585+00:00"
+    }
+  ],
+  "status": "PARTIAL"
+}

@@ -1,0 +1,270 @@
+{
+  "schema_version": 2,
+  "mission_id": "20261115T014416Z-US",
+  "market": "US",
+  "currency": "USD",
+  "market_session_date": "2026-11-13",
+  "market_schedule": {
+    "market": "US",
+    "market_name": "United States (NYSE / NASDAQ)",
+    "currency": "USD",
+    "currency_symbol": "$",
+    "timezone": "America/New_York",
+    "tz_abbrev": "EST",
+    "is_dst": false,
+    "local_time": "2026-11-14 20:44 EST",
+    "local_time_iso": "2026-11-14T20:44:16.346955-05:00",
+    "local_date": "2026-11-14",
+    "is_weekend": true,
+    "is_holiday": false,
+    "holiday_name": null,
+    "special_session": null,
+    "is_trading_day": false,
+    "is_open_now": false,
+    "market_phase": "CLOSED_WEEKEND",
+    "ready_for_post_close_run": false,
+    "latest_completed_session": "2026-11-13"
+  },
+  "started_at": "2026-11-15T01:44:16.347709+00:00",
+  "data_policy": "historical and public sources; native currencies preserved (USD/INR); no trading",
+  "symbols": [
+    "AAPL"
+  ],
+  "results": [
+    {
+      "ticker": "AAPL",
+      "company": "Apple Inc.",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "instrument": {
+        "symbol": "AAPL",
+        "company": "Apple Inc.",
+        "name": "Apple Inc.",
+        "match_aliases": [
+          "Apple",
+          "AAPL"
+        ],
+        "market": "US",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "provider_symbol": "AAPL",
+        "nse_symbol": null,
+        "bse_scrip_code": null,
+        "bse_code": null,
+        "bse_ticker": null,
+        "bse_symbol": null,
+        "isin": null,
+        "nse_bse_interchangeable": false
+      },
+      "started_at": "2026-11-15T01:44:16.779536+00:00",
+      "agents": {
+        "news": {
+          "status": "COMPLETE",
+          "at": "2026-11-15T01:44:17.303823+00:00"
+        },
+        "filings": {
+          "status": "SKIPPED",
+          "reason": "SEC_USER_AGENT missing or CIK map unavailable"
+        },
+        "fundamentals": {
+          "status": "SKIPPED",
+          "reason": "SEC_USER_AGENT missing or CIK map unavailable"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "NOT_CONFIGURED",
+          "currency": "USD"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple Shares (AAPL) Look Expensive Heading into 2027 - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5",
+          "published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303754+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5",
+          "published": "Thu, 12 Nov 2026 11:12:44 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303796+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Is Apple Stock a Buy Right Now? - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZZzd4WHdhQ2gyRU5BckJfY21JTWhSdXYyZC1sZGlmb0FyZEZUSzVDeWVkbUloU19hR2ItYVhiaXBodGVIUVZTODZtQ1lkdWV1RVlOcDhZOFpJR1Z6bld4TG1YN3BPTUY3ZXhLeGlEaUFOTzNmN3FNbjI3VDVYdw?oc=5",
+          "published": "Sat, 14 Nov 2026 00:07:00 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303803+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "How Much Capital Gains Tax Does a 61-Year-Old Owe on $750,000 of Inherited Apple Stock? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOT2FycXlWaUJvRWg0TWozaGhXaU9aYXhuOGVSejJ6N3hhM2VPZl9qRndKX2g3MmlSS2prbUxESVJTTm5JME93b2diOWVnQnZNcHpRSXJndlpUSmdHYmtaSWcybDBwRGpRcVM5dmtyLWstQ3dSZVJPcUlnaUZRdV9pdTN1YUNLaTUyTHFrQlJ2bDRpdlo0alQw?oc=5",
+          "published": "Wed, 11 Nov 2026 13:03:52 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303807+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "AAPL is Trading at a Premium at 36.15X P/E: Is the Stock Still a Hold? - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOS3NWZkRCc2Z2aUNKWGdheDJPLVc0b3l2eldHWmVjcllNMWZrRFRlOWR4bm81LWdGVTR0aDkyLUhDRDRIWDZSVnJNRFpiTUFOeEpIcGVOYU15elJCS3VEY2NCYWlxWUg1RTNaV193ZlhqLVVPVENYRXRjOXBGdklIbGxwbUpTOEFyWm5mTlY5VnRCZUFVazYzQmhydlUzSU9QVGV0OGUxMG5ZcFNKcWdkSDhUVVRKYjg2ZFdlQkpsRDJSdw?oc=5",
+          "published": "Fri, 13 Nov 2026 16:59:18 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303810+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple: Record Earnings Mask A Growing Margin Problem (NASDAQ:AAPL) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdmh3YmNIUHlOT3dJYjFzbjFhc0NGTWJqTmZwRk1xLUZXRHdsSlJyRjNhWTFkNExyakxzdGJGcmIyMUotVGVIMEMtUDlneGcxaVJJR3hTUHdnTFJqNzZxd2VNbEJYbTlES1ZQSEY3bENVUVpGNVQtclUxclpZZDRySzNrLW5vUHp1N2pScmVmTEJjdEpKcTFn?oc=5",
+          "published": "Mon, 09 Nov 2026 13:25:10 GMT",
+          "retrieved_at": "2026-11-15T01:44:17.303812+00:00",
+          "summary": "Headline discovery only; article content and claim unverified"
+        }
+      ],
+      "filings": {},
+      "fundamentals": {},
+      "price": {
+        "status": "NOT_CONFIGURED",
+        "market": "US",
+        "currency": "USD",
+        "ohlcv_verified": false
+      },
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "Primary filings and comparable filed metrics not both present",
+        "market": "US",
+        "currency": "USD",
+        "as_of": "unavailable",
+        "evidence_count": 3,
+        "evidence_citations": [
+          {
+            "type": "headline_discovery",
+            "title": "Apple Shares (AAPL) Look Expensive Heading into 2027 - Yahoo Finance",
+            "as_of": "Wed, 11 Nov 2026 21:15:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
+            "as_of": "Thu, 12 Nov 2026 11:12:44 GMT",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Is Apple Stock a Buy Right Now? - The Motley Fool",
+            "as_of": "Sat, 14 Nov 2026 00:07:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZZzd4WHdhQ2gyRU5BckJfY21JTWhSdXYyZC1sZGlmb0FyZEZUSzVDeWVkbUloU19hR2ItYVhiaXBodGVIUVZTODZtQ1lkdWV1RVlOcDhZOFpJR1Z6bld4TG1YN3BPTUY3ZXhLeGlEaUFOTzNmN3FNbjI3VDVYdw?oc=5"
+          }
+        ],
+        "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
+      },
+      "pillars": {
+        "technical": {
+          "status": "NOT_CONFIGURED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 0,
+          "xbrl_metrics_count": 0,
+          "metrics": {},
+          "status": "UNAVAILABLE"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (NOT_CONFIGURED).",
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "NOT_CONFIGURED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 0,
+          "xbrl_metrics_count": 0,
+          "metrics": {},
+          "status": "UNAVAILABLE"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (NOT_CONFIGURED).",
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
+          ]
+        }
+      },
+      "finished_at": "2026-11-15T01:44:17.303850+00:00"
+    }
+  ],
+  "status": "PARTIAL",
+  "finished_at": "2026-11-15T01:44:17.304169+00:00",
+  "outcome_counts": {
+    "COMPLETE": 0,
+    "PARTIAL": 1,
+    "FAILED": 0
+  },
+  "outcomes_by_symbol": {
+    "COMPLETE": [],
+    "PARTIAL": [
+      "AAPL"
+    ],
+    "FAILED": []
+  }
+}

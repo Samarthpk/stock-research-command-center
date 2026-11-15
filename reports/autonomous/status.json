@@ -1,0 +1,19 @@
+{
+  "status": "PARTIAL",
+  "outcome_counts": {
+    "COMPLETE": 0,
+    "PARTIAL": 1,
+    "FAILED": 0
+  },
+  "outcomes_by_symbol": {
+    "COMPLETE": [],
+    "PARTIAL": [
+      "RELIANCE"
+    ],
+    "FAILED": []
+  },
+  "market": "IN",
+  "market_session_date": "2026-11-13",
+  "completed_at": "2026-11-15T01:44:18.341382+00:00",
+  "mission_id": "20261115T014417Z-IN"
+}

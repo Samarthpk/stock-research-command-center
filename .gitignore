@@ -28,8 +28,18 @@ env/
 *.db-shm
 research.db
 
-# Generated reports
-reports/
+# Generated reports (allow tracked autonomous mission reports for dashboard)
+reports/*
+!reports/autonomous/
+reports/autonomous/*
+!reports/autonomous/latest.json
+!reports/autonomous/status.json
+!reports/autonomous/us_latest.json
+!reports/autonomous/india_latest.json
+!reports/autonomous/global_latest.json
+!reports/autonomous/us_daily_brief.md
+!reports/autonomous/india_daily_brief.md
+!reports/autonomous/global_daily_brief.md
 stock_research_brief.md
 
 # OS artifacts
