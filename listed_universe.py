@@ -39,7 +39,7 @@ def _record(symbol, name, market, exchange, asset_type, source, isin=""):
     name = _clean(name)
     if not symbol or not name or len(symbol) > 25 or len(name) > 255:
         return None
-    if not re.fullmatch(r"[A-Z0-9][A-Z0-9.\\-]{0,24}", symbol):
+    if not re.fullmatch(r"[A-Z0-9][A-Z0-9.&_+\\-]{0,24}", symbol):
         return None
     return {"symbol": symbol, "name": name, "market": market, "exchange": exchange, "asset_type": asset_type, "isin": _clean(isin), "source": source}
 
