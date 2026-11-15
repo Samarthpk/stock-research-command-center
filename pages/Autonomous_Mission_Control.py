@@ -11,7 +11,10 @@ if getattr(global_markets, '_GLOBAL_MARKETS_VERSION', None) != '4.1':
     global_markets = importlib.reload(global_markets)
 from global_markets import format_price
 
-st.set_page_config(page_title='Autonomous Mission Control', layout='wide')
+try:
+    st.set_page_config(page_title='Autonomous Mission Control', layout='wide')
+except Exception:
+    pass
 st.title('🛰️ Autonomous Mission Control — Global Intelligence')
 st.caption(
     'Scheduled post-market evidence research for US (NYSE/NASDAQ in USD $) and India (NSE/BSE in INR ₹). '

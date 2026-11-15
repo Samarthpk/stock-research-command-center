@@ -11,7 +11,10 @@ if getattr(intelligence, '_INTELLIGENCE_VERSION', None) != '4.1':
     intelligence = importlib.reload(intelligence)
 from intelligence import build_research, llm_evidence_review
 
-st.set_page_config(page_title='Research Intelligence', layout='wide')
+try:
+    st.set_page_config(page_title='Research Intelligence', layout='wide')
+except Exception:
+    pass
 st.title('🔎 Research Intelligence — US SEC EDGAR, India NSE/BSE Disclosures & News')
 st.caption('Source-backed research · US SEC EDGAR (10-K/10-Q/8-K) & India BSE/NSE (SEBI LODR / IND-AS) · no automated trades')
 
@@ -23,12 +26,19 @@ def secret(name):
         return os.getenv(name, '')
 
 
+qp_intel_mkt = str(st.query_params.get('market', '')).strip().upper()
+qp_intel_sym = str(st.query_params.get('run_intel', '')).strip().upper()
+
 col_m, col_t = st.columns([1, 2])
 with col_m:
-    market_label = st.selectbox('Market Jurisdiction', options=['US (NYSE / NASDAQ — SEC EDGAR)', 'India (NSE / BSE — SEBI LODR / IND-AS)'])
+    market_label = st.selectbox(
+        'Market Jurisdiction',
+        options=['US (NYSE / NASDAQ — SEC EDGAR)', 'India (NSE / BSE — SEBI LODR / IND-AS)'],
+        index=1 if qp_intel_mkt in ('IN', 'INDIA') else 0,
+    )
     market_code = 'IN' if market_label.startswith('India') else 'US'
 with col_t:
-    default_sym = 'RELIANCE' if market_code == 'IN' else 'AAPL'
+    default_sym = qp_intel_sym or ('RELIANCE' if market_code == 'IN' else 'AAPL')
     ticker = st.text_input('Stock ticker', value=default_sym).strip().upper()
 
 sec_identity = secret('SEC_USER_AGENT')
@@ -37,7 +47,7 @@ if market_code == 'US' and not sec_identity:
 elif market_code == 'IN':
     st.info('Indian equity selected: US SEC EDGAR logic is disabled. Using company-specific BSE/NSE disclosure verification and India news discovery.')
 
-if st.button('Run research', type='primary'):
+if st.button('Run research', type='primary') or (qp_intel_sym and st.session_state.get('evidence_research', {}).get('ticker') != qp_intel_sym):
     with st.spinner(f'Retrieving {market_code} company-specific news and regulatory disclosure evidence...'):
         result = build_research(
             ticker,

@@ -1,5 +1,6 @@
 import importlib
 import os
+import runpy
 import sys
 import time
 from pathlib import Path
@@ -49,7 +50,26 @@ st.caption(
 )
 
 with st.sidebar:
-    st.header('Control Panel')
+    st.header('Navigation & Control')
+    qp_page = str(st.query_params.get('page', '')).strip().lower()
+    page_options = [
+        '📈 Stock Command Center',
+        '🛰️ Autonomous Mission Control',
+        '🔎 Research Intelligence',
+    ]
+    page_idx = 1 if 'mission' in qp_page else (2 if 'intel' in qp_page or 'research' in qp_page else 0)
+    active_page = st.radio('Workspace Page', options=page_options, index=page_idx)
+    st.divider()
+
+if active_page == '🛰️ Autonomous Mission Control':
+    runpy.run_path(str(Path(__file__).resolve().parent / 'pages' / 'Autonomous_Mission_Control.py'), run_name='__main__')
+    st.stop()
+elif active_page == '🔎 Research Intelligence':
+    runpy.run_path(str(Path(__file__).resolve().parent / 'pages' / 'Research_Intelligence.py'), run_name='__main__')
+    st.stop()
+
+with st.sidebar:
+    st.subheader('Market & Watchlist Control')
     qp_mkt = str(st.query_params.get('market', '')).strip().upper()
     default_idx = 1 if qp_mkt == 'US' else (2 if qp_mkt in ('IN', 'INDIA') else 0)
     market_choice = st.radio(
@@ -138,6 +158,12 @@ with st.expander('🇮🇳 India Market Instrument Registry (Non-Interchangeable
 
 if str(st.query_params.get('verify_bse', '')) == '1' and 'bse_ohlcv_check' not in st.session_state:
     st.session_state['bse_ohlcv_check'] = verify_bse_symbol_support('RELIANCE', key=key)
+    if key and not latest(market='IN'):
+        try:
+            st.session_state['latest_run'] = run(symbols=['RELIANCE'], key=key, use_cache=True, market='IN')
+            st.session_state['latest_run_market'] = 'IN'
+        except Exception:
+            pass
 
 if 'bse_ohlcv_check' in st.session_state:
     st.subheader('RELIANCE.BSE Historical OHLCV Verification Result')
