@@ -1,3 +1,4 @@
+import importlib
 import os
 import sys
 import time
@@ -6,6 +7,9 @@ import pandas as pd
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import engine
+if getattr(engine, '_ENGINE_VERSION', None) != '2':
+    engine = importlib.reload(engine)
 from engine import (
     init_db,
     watchlist,

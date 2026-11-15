@@ -17,6 +17,7 @@ API = 'https://www.alphavantage.co/query'
 DEFAULT = ['AAPL','MSFT','NVDA','GOOGL','AMZN','SPY']
 MIN_REQUEST_INTERVAL = 1.5
 DEFAULT_CACHE_TTL_SECONDS = 12 * 3600  # 12 hours
+_ENGINE_VERSION = '2'
 
 class RateLimitError(RuntimeError):
     """Base error for Alpha Vantage rate limiting."""
