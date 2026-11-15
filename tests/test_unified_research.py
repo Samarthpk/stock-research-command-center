@@ -2,6 +2,13 @@ import unittest
 from unified_research import resolve_from_directory, provider_candidates, link_nse_to_bse_issuer, historical_ohlcv, calculate_technicals
 
 class UnifiedResearchTests(unittest.TestCase):
+    def test_legacy_india_blocks_unsupported_ticker_global_news(self):
+        from intelligence import build_research
+        def no_fetch(*a,**kw):raise AssertionError("No network for unknown issuer")
+        result=build_research("TCL",fetch=no_fetch,market="IN")
+        self.assertEqual(result["assessment"],"INSUFFICIENT_EVIDENCE")
+        self.assertEqual(result["news"],[])
+        self.assertTrue(any("identity" in m.lower() for m in result["missing_data"]))
     def test_ambiguous_ticker_cross_market_must_use_market(self):
         data=[{"symbol":"TCL","name":"Thaai Casting Limited","market":"IN","exchange":"NSE"},{"symbol":"TCL","name":"Transurban","market":"US","exchange":"NYSE"}]
         self.assertEqual(resolve_from_directory(data,"TCL","IN")["name"],"Thaai Casting Limited")
