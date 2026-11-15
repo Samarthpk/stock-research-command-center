@@ -57,6 +57,22 @@ MARKET_CONFIG = {
 # Verified non-interchangeable Indian instrument registry mapping canonical symbol
 # to distinct NSE ticker, BSE scrip code, Alpha Vantage BSE ticker, ISIN, and strict company match aliases.
 INDIA_INSTRUMENTS = {
+    'TCL': {
+        'symbol': 'TCL',
+        'company': 'Thaai Casting Limited',
+        'name': 'Thaai Casting Limited',
+        'match_aliases': ['Thaai Casting', 'Thaai Casting Limited', 'Thaai Casting Ltd'],
+        'market': 'IN',
+        'currency': 'INR',
+        'nse_symbol': 'TCL',
+        'bse_scrip_code': None,
+        'bse_code': None,
+        'bse_ticker': None,
+        'bse_symbol': None,
+        'bse_numeric_ticker': None,
+        'isin': 'INE0QJL01014',
+        'nse_bse_interchangeable': False,
+    },
     'SUZLON': {
         'symbol': 'SUZLON',
         'company': 'Suzlon Energy Limited',
@@ -579,17 +595,20 @@ def resolve_instrument(raw_symbol: str, market: str = 'US') -> dict:
 
     if clean in INDIA_INSTRUMENTS:
         info = dict(INDIA_INSTRUMENTS[clean])
+        info['identity_verified'] = True
     else:
         by_scrip = next((dict(v) for v in INDIA_INSTRUMENTS.values() if v['bse_scrip_code'] == clean), None)
         if by_scrip:
             if explicit_exchange == 'NSE':
                 raise ValueError(f'BSE scrip code {clean} is not a valid NSE symbol (NSE and BSE identifiers are not interchangeable)')
             info = by_scrip
+            info['identity_verified'] = True
         else:
             if explicit_exchange == 'NSE' and clean.isdigit():
                 raise ValueError(f'Numeric BSE scrip code {clean} cannot be used with .NSE suffix')
             info = {
                 'symbol': clean,
+                'identity_verified': False,
                 'company': clean,
                 'name': clean,
                 'match_aliases': [clean],
@@ -607,7 +626,7 @@ def resolve_instrument(raw_symbol: str, market: str = 'US') -> dict:
 
     info['requested_identifier'] = s
     info['requested_exchange'] = explicit_exchange or 'NSE/BSE'
-    info['provider_symbol'] = info['bse_ticker']
+    info['provider_symbol'] = info.get('bse_ticker')
     info['exchange'] = 'BSE (Alpha Vantage .BSE) / NSE (' + (info.get('nse_symbol') or 'N/A') + ')'
     return info
 
