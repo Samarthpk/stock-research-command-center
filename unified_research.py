@@ -47,13 +47,13 @@ def provider_candidates(issuer):
     mkt=issuer["market"]
     sym=issuer["symbol"]
     if mkt=="US":
-        if not re.fullmatch(r"[A-Z][A-Z0-9.\\-]{0,9}",sym):
+        if not re.fullmatch(r"[A-Z][A-Z0-9.\-]{0,9}",sym):
             return []
         return [sym]
     if issuer.get("exchange")=="BSE":
         candidates=[]
         trading=str(issuer.get("trading_symbol") or "").upper()
-        if trading and re.fullmatch(r"[A-Z0-9.\\-]{2,15}",trading):
+        if trading and re.fullmatch(r"[A-Z0-9.\-]{2,15}",trading):
             candidates.append(trading+".BSE")
         if str(sym).isdigit():
             candidates.append(sym+".BSE")
@@ -66,7 +66,7 @@ def historical_ohlcv(payload):
         raise ValueError("Provider did not return verified daily OHLCV")
     rows=[]
     for day,v in daily.items():
-        if not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}",day):
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}",day):
             continue
         try:
             o,h,l,c,vv=(float(v[k]) for k in ("1. open","2. high","3. low","4. close","5. volume"))
