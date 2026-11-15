@@ -56,8 +56,9 @@ with st.sidebar:
         '📈 Stock Command Center',
         '🛰️ Autonomous Mission Control',
         '🔎 Research Intelligence',
+        '🧭 Risk & Decision Desk',
     ]
-    page_idx = 1 if 'mission' in qp_page else (2 if 'intel' in qp_page or 'research' in qp_page else 0)
+    page_idx = 3 if 'risk' in qp_page or 'decision' in qp_page else (1 if 'mission' in qp_page else (2 if 'intel' in qp_page or 'research' in qp_page else 0))
     active_page = st.radio('Workspace Page', options=page_options, index=page_idx)
     st.divider()
 
@@ -66,6 +67,9 @@ if active_page == '🛰️ Autonomous Mission Control':
     st.stop()
 elif active_page == '🔎 Research Intelligence':
     runpy.run_path(str(Path(__file__).resolve().parent / 'pages' / 'Research_Intelligence.py'), run_name='__main__')
+    st.stop()
+elif active_page == '🧭 Risk & Decision Desk':
+    runpy.run_path(str(Path(__file__).resolve().parent / 'pages' / 'Risk_Decision_Desk.py'), run_name='__main__')
     st.stop()
 
 with st.sidebar:
