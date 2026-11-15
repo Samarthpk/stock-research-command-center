@@ -129,8 +129,17 @@ if current and (current["issuer"]["symbol"],current["issuer"]["exchange"],curren
     b.metric("20-day high (historical resistance screen)",f"{sym}{d['historical_20d_high_resistance']:,.2f}")
     c.metric("Illustrative reward/risk",str(d["illustrative_reward_risk"]) if d["illustrative_reward_risk"] is not None else "N/A")
     st.caption(f"Example only: entry at historical close {sym}{d['close']:,.2f}, hypothetical downside boundary {sym}{d['illustrative_stop_level']:,.2f}, upper 20-session price bound {sym}{d['historical_20d_high_resistance']:,.2f}. Not recommended entry/exit/stop/target.")
-    st.markdown("### Historical positive and negative signals")
-    for observation in d["observations"]:st.write("•",observation)
+    st.markdown("### Technical bull vs bear factors (not investment advice)")
+    bull,bear=st.columns(2)
+    with bull:
+        st.markdown("**Bullish technical evidence**")
+        for point in d["technical_bull_factors"]: st.write("•",point)
+        if not d["technical_bull_factors"]: st.caption("None verified")
+    with bear:
+        st.markdown("**Bearish technical evidence / missing fundamentals**")
+        for point in d["technical_bear_factors"]: st.write("•",point)
+    with st.expander("Calculation rationale"):
+        for observation in d["observations"]:st.write("•",observation)
     st.warning("Why invest / avoid is NOT established: no verified up-to-date issuer financial statements, valuation, cash-flow, leverage or governance facts are supplied by this price-only module. Do not use a positive technical screen as an investment recommendation.")
     st.json({"issuer":current["issuer"],"technical_research":d},expanded=False)
     st.download_button("Export technical research JSON",json.dumps({"issuer":current["issuer"],"technical_research":d},indent=2),file_name="technical_research.json",mime="application/json")
