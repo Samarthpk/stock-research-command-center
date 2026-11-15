@@ -1,5 +1,5 @@
 import unittest
-from listed_universe import parse_nasdaq_directory, parse_nse_equities, load_directory, search_directory, US_NASDAQ_URL,US_OTHER_URL,NSE_EQUITY_URL
+from listed_universe import parse_nasdaq_directory, parse_nse_equities, load_directory, search_directory, US_NASDAQ_URL,US_OTHER_URL,NSE_EQUITY_URL,BSE_EQUITY_URL,parse_bse_equities
 
 class TestListedUniverse(unittest.TestCase):
     def test_nasdaq_equities_and_test_issue_excluded(self):
@@ -15,8 +15,16 @@ class TestListedUniverse(unittest.TestCase):
     def test_nse_equities_series_eq_only(self):
         s="SYMBOL,NAME OF COMPANY,SERIES,DATE OF LISTING,PAID UP VALUE,MARKET LOT,ISIN NUMBER,FACE VALUE\nRELIANCE,Reliance Industries Ltd.,EQ,1990,10,1,INE002A01018,10\nTEST,Test Ltd.,BE,2020,10,1,INE000000001,10\n"
         rows=parse_nse_equities(s)
-        self.assertEqual(len(rows),1)
+        self.assertEqual(len(rows),2)
         self.assertEqual(rows[0]["isin"],"INE002A01018")
+    def test_bse_equity_directory_scrip_code_and_filter(self):
+        sample='[{"SCRIP_CD":"500325","Scrip_Name":"Reliance Industries Ltd","Status":"Active","GROUP":"A","ISIN_NUMBER":"INE002A01018","scrip_id":"RELIANCE","Segment":"Equity"},{"SCRIP_CD":"500000","Scrip_Name":"Delisted","Status":"Delisted","Segment":"Equity"}]'
+        rows=parse_bse_equities(sample)
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]["symbol"],"500325")
+        self.assertEqual(rows[0]["trading_symbol"],"RELIANCE")
+        self.assertEqual(rows[0]["exchange"],"BSE")
+
     def test_unavailable_sources_visible(self):
         def fake(url):
             if url == US_NASDAQ_URL:
@@ -24,7 +32,7 @@ class TestListedUniverse(unittest.TestCase):
             raise OSError("blocked")
         data=load_directory(fetch=fake)
         self.assertEqual(len(data["rows"]),1)
-        self.assertEqual(data["sources"]["India NSE EQ"]["status"],"UNAVAILABLE")
+        self.assertEqual(data["sources"]["India NSE Equity"]["status"],"UNAVAILABLE")
         self.assertFalse(data["complete_coverage"])
         self.assertEqual(search_directory(data["rows"],"apple")["total"],1)
     def test_search_by_isin_case_insensitive(self):
