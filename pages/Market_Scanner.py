@@ -95,8 +95,12 @@ else:
     issuer_opts={f"{r['market']}:{r['exchange']}:{r['symbol']}":r for r in result["ranked"]}
     quote_choice=st.selectbox("Issuer for realtime quote",list(issuer_opts))
     issuer=issuer_opts[quote_choice]
-    endpoint=st.secrets.get("LICENSED_QUOTES_URL","") if hasattr(st,"secrets") else ""
-    token=st.secrets.get("LICENSED_QUOTES_TOKEN","") if hasattr(st,"secrets") else ""
+    try:
+        endpoint=st.secrets.get("LICENSED_QUOTES_URL","")
+        token=st.secrets.get("LICENSED_QUOTES_TOKEN","")
+    except Exception:
+        endpoint=""
+        token=""
     endpoint=endpoint or os.getenv("LICENSED_QUOTES_URL","")
     token=token or os.getenv("LICENSED_QUOTES_TOKEN","")
     if not endpoint or not token:
