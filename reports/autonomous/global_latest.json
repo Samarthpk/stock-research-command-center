@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "mission_id": "GLOBAL-20261115T014545Z",
+  "mission_id": "GLOBAL-20261116T205100Z",
   "market": "ALL",
-  "updated_at": "2026-11-15T01:45:45.094806+00:00",
+  "updated_at": "2026-11-16T20:51:00.653701+00:00",
   "started_at": "2026-11-15T01:45:43.770058+00:00",
-  "finished_at": "2026-11-15T01:45:45.094817+00:00",
+  "finished_at": "2026-11-16T20:51:00.653718+00:00",
   "data_policy": "historical and public sources; native currencies preserved (USD/INR); no trading",
   "markets_included": [
     "US",
@@ -34,42 +34,58 @@
       "finished_at": "2026-11-15T01:45:44.827775+00:00"
     },
     "IN": {
-      "mission_id": "20261115T014544Z-IN",
+      "mission_id": "20261116T205045Z-IN",
       "status": "PARTIAL",
       "outcome_counts": {
         "COMPLETE": 0,
-        "PARTIAL": 1,
+        "PARTIAL": 5,
         "FAILED": 0
       },
       "outcomes_by_symbol": {
         "COMPLETE": [],
         "PARTIAL": [
-          "RELIANCE"
+          "RELIANCE",
+          "TCS",
+          "HDFCBANK",
+          "INFY",
+          "ICICIBANK"
         ],
         "FAILED": []
       },
-      "market_session_date": "2026-11-13",
+      "market_session_date": "2026-11-16",
       "currency": "INR",
       "symbols": [
-        "RELIANCE"
+        "RELIANCE",
+        "TCS",
+        "HDFCBANK",
+        "INFY",
+        "ICICIBANK"
       ],
-      "finished_at": "2026-11-15T01:45:45.092180+00:00"
+      "finished_at": "2026-11-16T20:51:00.640075+00:00"
     }
   },
   "symbols": [
     "AAPL",
-    "RELIANCE"
+    "RELIANCE",
+    "TCS",
+    "HDFCBANK",
+    "INFY",
+    "ICICIBANK"
   ],
   "outcome_counts": {
     "COMPLETE": 0,
-    "PARTIAL": 2,
+    "PARTIAL": 6,
     "FAILED": 0
   },
   "outcomes_by_symbol": {
     "COMPLETE": [],
     "PARTIAL": [
       "AAPL",
-      "RELIANCE"
+      "RELIANCE",
+      "TCS",
+      "HDFCBANK",
+      "INFY",
+      "ICICIBANK"
     ],
     "FAILED": []
   },
@@ -337,26 +353,26 @@
         "provider_symbol": "RELIANCE.BSE",
         "exchange": "BSE (Alpha Vantage .BSE) / NSE (RELIANCE)"
       },
-      "started_at": "2026-11-15T01:45:44.840633+00:00",
+      "started_at": "2026-11-16T20:50:45.765050+00:00",
       "agents": {
         "news": {
           "status": "COMPLETE",
-          "at": "2026-11-15T01:45:44.976445+00:00",
+          "at": "2026-11-16T20:50:46.179611+00:00",
           "market": "IN"
         },
         "filings": {
-          "status": "COMPLETE",
-          "at": "2026-11-15T01:45:45.091544+00:00",
+          "status": "FAILED",
+          "reason": "HTTP 429",
           "market": "IN"
         },
         "fundamentals": {
           "status": "COMPLETE",
-          "at": "2026-11-15T01:45:45.091566+00:00",
+          "at": "2026-11-16T20:50:47.506647+00:00",
           "market": "IN"
         },
         "market_data": {
-          "status": "SKIPPED",
-          "reason": "UNSUPPORTED_NOT_CONFIGURED",
+          "status": "COMPLETE",
+          "reason": "OK",
           "currency": "INR"
         },
         "ai_analyst": {
@@ -374,94 +390,58 @@
           "source": "Google News RSS India (company-filtered headline)",
           "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
           "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5",
-          "published": "Sat, 14 Nov 2026 09:05:07 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.976074+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
+          "published": "Sat, 14 Nov 2026 15:54:11 GMT",
+          "retrieved_at": "2026-11-16T20:50:46.177868+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
         },
         {
           "source": "Google News RSS India (company-filtered headline)",
-          "title": "Reliance Industries shares jump nearly 12% after record Q2 results; top Nifty gainer, biggest index... - Moneycontrol.com",
-          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQU2IxZFp2SXB5LVpkOElMdjZtckM1VmFaZTlpckNMNlhDd29SVHNUU0V4OFU0RTZHWXVzalJaYXREeVE1V05yOGpETFk1aGhqOE91bWc5SkdUYlJ6NG1HYVdFektOZzdZVjVLSUpGaC1zSjc0X3g3T3JBYVVaYWNJUzk1Wi1HNGRFRTdlaWh3NjdwTThBSHRZV0NkSlBXX3FFS09WTHRkMDZTY1U1VTloTzVGRFRmRHp3LVlINlUzV2RpN0VpLUM2Ung4TlZCVXRhWDY4Q3FYTWV4dWdJU1lLbi1HVVJSbjFiMU8tZ1F1S2NjVWp5THV1NUF1Y3NuNEHSAYQCQVVfeXFMUGVrRU5iX3dDUG5lNWo0MDZNS19XVjRVZzF3U0tybTFrY2NHXzRGMTRGQTlVWWU3ZElsVTRTa3FyLVFfR2xZXzlBOHdFeS1LakcyWHM3cnQ1Q3NtZGYtX2Njd0lPNnpRdzN3M3ZsSUdiTUdWX21WTndXRUJXLTd5UHVHNEh2Vnk1M1JicE16c1RtNXRyYVFMdms1cWlLZlZUdURhLTJvcmtzUm9iTmxLTXY5Sk5oX2dkME5aNEVnczRIXzhtZmpOWFNCTXloMzRjSmZNeVotdTBKRF9WQWdHaWh5R3lsV0ZncHFVWms2OVQtOGJMdDUxaXRvOTRjOWxBZl9XVUM?oc=5",
-          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.976109+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
+          "title": "Reliance shares: After massive 12% surge, Mukesh Ambani's RIL stock slips from biggest single-day rally since 2020; buy? - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPQ1FtMUNDSi1YSzY1MUd2TGl5UkRXSnZPd25IeDhwZFptWU5QVjBqekFPa3NCS3Z4MUY4cXlsUlY4cTZQSlNET29FVy13UVVnV0tmcGFKc09GWGpHRzhOSDgwUUF1R0I2SElMWWRiSjA5enlCZDEwREZpX2U2SDBYMXR1N1BXZDRVT2YxYXM4N2dhZ0Q0MFlXR3NuWklLenprd1JpTy15Q2lxQnZKcTdIY2hmb09BSFN4cEZseURuLWh5Ri1hcnNtVjY1ajZ4VlZzZkhyM2xGUnJ6OEVUZTBFSDdER2ktdTduNnJjVGFfRmxjRDg5dl91ck4xRnBRcE83V1E?oc=5",
+          "published": "Tue, 03 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:46.179270+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
         },
         {
           "source": "Google News RSS India (company-filtered headline)",
-          "title": "Reliance shares jump over 7%: Why RIL stock is rallying today - India Today",
-          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPX2t2b2lSWnVWV2wzOUxfdFI0QkxUY3JVVUVnR3lCV3dJZ1VFd0gweVE0bmMzcHZBOWhaZl8tX2lTTmhKUmVIb09iUk5ORHE1aUNoY3dzaWJDQlF1aF9Odzd3N0J4aFVCYW5lcFJSRVctRlZFbUlsNTJpdU9NZFZ5LW1QOHBOTlNYaU1YZTc0QWYtV1dLRjZrNEJtcS1qamVaMkM3Z1lZVnR4TlRybjFadTNwQ0ZvbFBNUVZ5VzB2UjgzZTVGcHZwbmhoek0zMm5VV0lBZFo1NlTSAd4BQVVfeXFMTnRRekFCbVJ2YjVUcjQ0TG1RTlJZS1NVaUh5d0hzc0pLRXE4eXlWQ2hMVGVRaVZoZ1l4dFYzV05FVHF5WU5oLTBJcTEySlllUVliMnRxQTRtVkVDUlpkTHk1VUtncHJvR2RCVjVPeWMtVHFOWXRvM2JlcjZtc0VBRE9jYUxUWHVQUl9XNXZTUWk3M2JCOEhlUTc4a29Tb3VOMjNaT1ZUYlAtVHhvZTU0YnZpNUs0SmhEUmJyZlZSeGN5N1RCY3l2Q1hnWWlpQ1VqUlR3dldKZFNOOVk3WC1B?oc=5",
-          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.976154+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
+          "title": "Powered by Reliance Industries' surge, sensex rallies 1.2k points - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPRWNzWDBVTkVIX1d0aXRtOGxxXzY2dWUzRTdwUDRyWi1jVVY4alFXXzZHbGJxRUNIYzFSWjZGLUN3OXpydXUtcWtFX2dxeHBhQ0dpTzBVSUZralh4NlhYei00c3RfN1l4eDIyUWFaS0U2OGpzanZGN29XSjJpNEVVSzluWmdWWWRSSmI4OExXY1hOeEJaanU3aVlROWx2N0hZd2lnSnU2UTZFSVVTR3VlVGdRajl3VldZc3p1MHV0X18xRjJFZzFGcG5tT3lkODNRUkFkc1pFZDZ2NVFtLXBGTGRPONIB6AFBVV95cUxOanZjRHdpQVpMakxGdUZyZklwNXBTd2JoRUZtaWVRTUYwa3FWNW9xNHpYRkwtQXFZQVJiei1adHEtWXFURFk5N1dkVFBXUmRlZVdBaUtfWDdyZE1oLVJ0YTlmSUIyWktWTkE3X2IzMEtIaWxSR2lVbXFBNVlOdW9Tb1pGUHJtZU9UUEdLRVM0aW9Pb2YwSGVkaUp1R21LRFlveVU4UkpIMG5yeFJicTdONkJwZ0swOE1RZ3FibzRKTEdfVE12bGZXSFZRZ0ZkeGdldm9zYlRIeDBQRGs3T1VaWFVRdkRlaG1o?oc=5",
+          "published": "Tue, 03 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:46.179376+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
         },
         {
           "source": "Google News RSS India (company-filtered headline)",
-          "title": "Reliance Industries shares surge most in 9 months, add over \u20b91 lakh crore to market cap after Q2 results - ET EnergyWorld",
-          "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQdllTUGpuUDg0T3pSdDNDMWM2UUdEa0F2MnJrVVJXZ3FlUW1RTjc3Z25XQy1wSDFqX3NXdXpQRTFJeFhpOUh2cG9jdFFUQmJhSlNLWFM5eTNtVmI2S3ducFdjR1NBMGNMUDJ4c1lhUzhZUUI1eW9QdVZOcHo4aUNVaWF1VnBvRjJLYjBrMG1zcjZndGlEaEdmUHBMS0U5RXAwVWFZTlJwS1NaZGVJT0RoQ1NiZzVLbGRSaXNndGswaTJjNEFnR3NDUjhvNGlyWEFsamMwWVU2a3FUVWc4aUxjdlktZVpnMmhNb29nWGJnYVlhTnpENUNqRUc4RmhIdDJWVVFJ0gGIAkFVX3lxTE15c3VCYUZnZ2xDMmQzcHpDOG14dlFCWjJNdUR3TXJNa0EzNkw3S0pMYTVza3BENE4xVWlnQzBTT3dnRVNFT1k1UDdhR3lBWmFCWHlaQmdWbmJSRVdXelYzdWFvMXlZT1IxTThFLWR5ejhSTkJJZDM2bEd2VGY0UjZTZDltNE5vbEI5U3RjYThMV2FyeHctWWt5UWNsaTdWdURRTVA2aWtUbjhEbTJaSFlKeEZ3QkdkNW4zTHVzbDJrcHJxcXhyYU11QXI2Qzd2WU95dDRUX010TEU1UFpFenlBYmxhU3JOcDBmTWtMMzVFclhuNkRDRTJfTWNKcnhxSkZRYXZXUnZsTw?oc=5",
-          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.976193+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
+          "title": "Diwali stock picks 2026: Reliance Industries, ICICI Bank, Tata Steel, Eternal among 30 stocks to buy for Samvat 2083; brokerages see up to 38% upside- Moneycontrol.com - LinkedIn",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPMVdsbUFRTURBN3lIVHRJMHZFM3FRNkpyWWJzTVlLLXJuQzF2UFJteXZfbldJX3I4MGtibEI0bXlPaDhVQU1IS2tmajJVeE81VnhjX0txSjNxRjQtQWRkRTlCeVFtTkhIdDdsSFAtTjlvajN1S0l3R2RRSG1CNW9fb1J3THc3MFFZN0JWWWFKQXZ3LXdBNzV4M0EtYlZOYWJVTzczaTlRZWhzRmk3T3dzdmlodFpDLWtsY25RSndn?oc=5",
+          "published": "Thu, 05 Nov 2026 09:45:01 GMT",
+          "retrieved_at": "2026-11-16T20:50:46.179424+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
         },
         {
           "source": "Google News RSS India (company-filtered headline)",
-          "title": "QUICK TAKE | Seven Things to Know About Reliance Industries\u2019 Nearly 12% Share Rally - Open Magazine",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWU1FMTl2TEFEb1hqM3g1TnY0UTVQX2tGb1ZlZ3N0Z05fZjFNbFdsT1hQbjJqZ3ZmVEdlZU1WS1c3Z2FIR0ZSUnAwTHpybVhMRDM2b2lMV281aXpOVElRRG5Za1BDN0l4UHVRcWlIX1ZXUTJScWZuY2FkVEhOMU5uX05LNUd5b2lZZF9aczlyUkZiZ1IweVVIeVV4OTFNeE5qYVBDX1NjUUNxejNCb0J1Si0wRDdRZ3c?oc=5",
-          "published": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.976263+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
+          "title": "Diwali stock picks 2026: Reliance Industries, ICICI Bank, Tata Steel, Eternal among 30 stocks to buy for... - Moneycontrol.com",
+          "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPREswVEtSYXZ6UFRZbWxPc3NFT2IwRUJDaXBzWGZwOXRNeTJfeC1NSXREY05CMWVTUnlBakhsc1ExcThSTFBpZDA0SGJWWUZVRVI4WDFFcGdQVThlaW1VaFhLZDJQVHhWNm12c0piMHA0eWhGT2huQXlhOGU5NElXVG9HTDhpY1NyRjZUU3J3U21IY1NlSWU4cU1UYlFWMmptd2lDMmpleF9PWVlUZVVFVjV2SlBvTEs3VV9WRVJrWGlGV0RMSVB4Xzh3SkNldWhFcEtzSmdwTDlYdkZjYWZBOWtZZ0ZINTJfalBpbEpMWlg0Wll4NkdDc0xNN0k2dUtqZGZscGhucmo4NW9GZjNMX2dOaVk2M0tISjZhQ1RRLTRLcHZNZHM0UkcyOXByblF0b3fSAbcCQVVfeXFMTUNuaXd2MHRzbEJpSTRnUEZSVEpkbG13TjBjSWVoc0ZITEI2WUJLM2phbzIxTFpnV09mbTJrbWhqa2Nvb0ZDUldyQy11Uzl3bmo2TXRudkVvN2oyXzlTWk5ZbGhxTnBMZjRtWlFrWDJ3eTRDa0xlQ2h1Y09LNjZMT3JHNGdQbjV3bXh6TV9UdGVXMlkyd1VPZUxnc3hhSGlrc3JuMnpuWmRSMlU1NURRWG5WZEM1WEV1enFocnRYc2lxQ05XSkh2U0FwOHF3LThaWHBfUVFVajFkVkpGZmJQc0ZFQU50blRNZF9GM1N3MkcwUFNoeC1DYmdRRGR4czE1ZWdXNXVPQW03MnlpTjVnYmhFMklVbmlEbVFsbGRyWHpfZ1lMaE5sX0prcEZSZ2Jad05PeTlsOTQ?oc=5",
+          "published": "Thu, 05 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:46.179471+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
         },
         {
           "source": "Google News RSS India (company-filtered headline)",
-          "title": "Reliance Industries shares at nine-month high after Q2 results; here's how high the stock can go - CNBC TV18 - LinkedIn",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOLWhOODVvMkdfR0xtZmdwaVZpRkFPOWptbWxjZEY1TExMZ1lKcEQzUE9xbDRBOExZcGNfS0V6WEJvNGQtNmNUYXhpcG0xTXl1bTZNZlhpWXY2SXNNRnRwSHhYZDktLWtOU3BMNWw5NlJrNGVYZjBFaTFBY3FndVV4OHo4ZDFMSjVyekpiakRCZmduZlhrcF9TdGZHRHNfSU9wRUFod2ZBN3cxbF9HNkZhWXpUWnRWZw?oc=5",
-          "published": "Sun, 01 Nov 2026 07:00:00 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.976417+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
+          "title": "Reliance Industries (NSEI:RELIANCE) Stock Forecast & Analyst Predictions - Simply Wall St",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQODVZTmlNNzAxUlJYYWNvVnlCSk5qNWdpVUM4bUhZNmxVSHhDbExNaDYzVTZzeU9PVUdUSW5ORlBOakRrRUEwSVYta25RaThpdWlZamhPajcyTS1GbjIwQmRiREdCUFpKWWZpbEVxbFFSbW5MZXZKa3BXSkh4YWpMSzd0bmJjTUtSZHE0V1Z3?oc=5",
+          "published": "Fri, 06 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:46.179583+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
         }
       ],
-      "filings": {
-        "company": "Reliance Industries Limited",
-        "symbol": "RELIANCE",
-        "market": "IN",
-        "currency": "INR",
-        "nse_symbol": "RELIANCE",
-        "bse_scrip_code": "500325",
-        "isin": "INE002A01018",
-        "reporting_standard": "IND-AS (SEBI LODR Regulations 30, 33 & 34)",
-        "company_specific_verified": true,
-        "official_exchange_portals": {
-          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
-          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
-        },
-        "filings": [],
-        "secondary_disclosure_mentions": [
-          {
-            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
-            "title": "Reliance Industries Shares Fall 2% After Jio Platforms Listing; Q2 Results on October 30 - India Infoline",
-            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcDBtOWtWN3NEMjBFRVhoSloyU3JKNG5DNnlHTE5ndFRnZzQ5VmNMQjVULVJOVDRseEU4dnpCb0dSOEdRX1JsZUVCWHVtRjhMRkZvU3lfa2oxemIzZG1CZE80REdRSFpJTU9QWGNMckNZdTJDdE9jRV9XU3YxVVFyS3BacHRkdzFqWU1DRzR5Q0FLTDUtYUY3ZlJIY1BvbzJTR0p1dlI3LVRobnB0b0JYNWF2TmhGZDNLaXRrRENsU3RNaG5uR0MtQW5MQQ?oc=5",
-            "published": "Wed, 28 Oct 2026 07:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:45:45.090815+00:00",
-            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
-          },
-          {
-            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
-            "title": "Reliance Industries to consider raising funds via debentures, announce Q2 earnings on October 30 - Moneycontrol.com",
-            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQYXhodVhjaERDUWhvanprazUxV0xpdmx3YXJ0THhUMGlnVmp0bW16N3FPWVJRWmFzcDNsTmZzNkd6WGNlVVV3M2wxUHB5TTJfMm8xcEJteDJDRTZmR0w0ZUdTQzNnUUg3OXdRTm9sSEh3ZlEtMkZfZjZrMXlqc1V2RUhXaFFiVFVuM2VRY3JrNnZ2OU1MZVpoZmhoUHE1c2o3eU1UaEFRbmhiclNWUmdXQnhhZUNlY0lqZWZjeFpJZERPdDF5YUlIMEF1V1hiRUdSMTRnRTRaQ2tZdW96Wl9FUzNVbll6al85ZUJrSXpBQ0k5b1VN0gH6AUFVX3lxTE0wZlRZQW5mU0RtRTY5RnhrZFZVQy0xb1J6N3pXQngzcFlhM1dlZG5kaDNNTTNOQjlhVkZub01pNmw3VXdVNjNZWEhfWU1KR2pFUFFMcWhhTFlTUjVlTC0tdG5QZ1Z0aTljYnk4d1JobW1Vam8ydE4zUXFLWFIySVBKbERmVlB3QVlkUjcyMEluZjZPaTZNRjBZVzZSazlqWmd3akpkY29mZ3lBSWV3SG15dTFhODdOeS1vX2ZmekI3cGs1VXR1Nzk4ZWpGNUY3NmRKbjhDeFp3NnBqdzJsYmtrdkRBUWNobERlNnF1a3gtNDBVLWxGeDJPTmc?oc=5",
-            "published": "Tue, 27 Oct 2026 07:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:45:45.091017+00:00",
-            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
-          },
-          {
-            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
-            "title": "Reliance Industries Q2 results 2026 date and time: Mukesh Ambani company's quarterly earnings schedule - Expectations - Livemint",
-            "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOOGg4dUJWNzBBMllSY1g2bVZxMGg5XzRlN2F1ZzZ3M0l5LUhtV21pemktNVowZXdGUnd0V2o1YkJXQ2p0TGxYUjJXQW9BNDZ3RmZrR0FSNGQ3dnFiQTZhZWIySWFUOXNHY3lfZmFpVVk3Z1ZudElNSWhRVWtoY0dNYmFUc29WOTNCdVpyVnprM3pnY1dFdktRdWhOZERwSW9FTF93eE15ekVpQjdTYTM5WjB4eFQ4aHBTdjBLc0tReTh6WDdWdWkyU1JYUWNiZndILUZmWWpBWWRmNDNSZXE1elpNNXlVNjZjcXVscU1YTXRYUVVwNUMyeWV6c29MTkhBUC1RMGFHYzF4SmdNUXdVZdIBlgJBVV95cUxNd01VR19xVTVNZHlLYzYxUFVPSlhJUW5SZXZoOHhHRkVySHBDaTFyOXVoNnNCSTlVeGpoRkpuTUVYRUQzb1F1VnZjR1F3SzhjTmRGajhMUVp5VWRDekZTYWpacGMybHl1UUxaQVN6V0ppVEhDeE02amdkT2Uydy1ZUkF5aDdvd0VpdjBSZ1hnUWpMZjVxbVhSMFNvY0EtMDQyZUppVmx0b25Yb2ZyRHhqR0pRVVJzNld2TGZHS0kzY3NRM1FxVzNBTHpqSTZkUlJlclhlMVVWZFdXVTBHR0dlZ25WWllseFdNU3NmNWxfSjlSLXhuazBRT2Frd3ZlbXRscEtTbzROSEFtNlNtN08yeE1uX0txdw?oc=5",
-            "published": "Wed, 28 Oct 2026 07:00:00 GMT",
-            "retrieved_at": "2026-11-15T01:45:45.091346+00:00",
-            "summary": "Company-specific secondary mention (Reliance Industries Limited); not an official BSE/NSE filing document."
-          }
-        ],
-        "warning": "No direct official BSE/NSE PDF/XBRL filing documents retrieved in automated feed; secondary news mentions and generic exchange portal links are not counted as primary filings."
-      },
+      "filings": {},
       "fundamentals": {
         "company": "Reliance Industries Limited",
         "symbol": "RELIANCE",
@@ -475,7 +455,7 @@
         "metrics": {},
         "quarterly_result_disclosures": [],
         "annual_report_disclosures": [],
-        "secondary_disclosure_mentions_count": 3,
+        "secondary_disclosure_mentions_count": 7,
         "official_exchange_portals": {
           "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
           "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
@@ -483,10 +463,29 @@
         "warning": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
       },
       "price": {
-        "status": "UNSUPPORTED_NOT_CONFIGURED",
+        "status": "OK",
         "market": "IN",
         "currency": "INR",
-        "ohlcv_verified": false
+        "provider_symbol": "RELIANCE.BSE",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 1337.0,
+          "high": 1351.0,
+          "low": 1324.05,
+          "close": 1339.6,
+          "volume": 1553535
+        },
+        "as_of": "2026-11-13",
+        "close": 1339.6,
+        "ma20": 1249.105,
+        "ma50": 1239.497,
+        "return20_pct": 13.916,
+        "volatility_pct": 46.7,
+        "trend": "POSITIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-16T20:50:45.752675+00:00",
+        "is_realtime": false
       },
       "quality": "PARTIAL_EVIDENCE",
       "research_outcome": "PARTIAL",
@@ -498,61 +497,76 @@
         "reason": "Primary official exchange filings and verified company-specific IND-AS financial metrics not both present; companies are never ranked on portal URLs or news headlines alone",
         "market": "IN",
         "currency": "INR",
-        "as_of": "unavailable",
-        "evidence_count": 5,
+        "as_of": "2026-11-13",
+        "evidence_count": 4,
         "evidence_citations": [
           {
-            "type": "secondary_disclosure_mention",
-            "title": "Reliance Industries Shares Fall 2% After Jio Platforms Listing; Q2 Results on October 30 - India Infoline",
-            "as_of": "Wed, 28 Oct 2026 07:00:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcDBtOWtWN3NEMjBFRVhoSloyU3JKNG5DNnlHTE5ndFRnZzQ5VmNMQjVULVJOVDRseEU4dnpCb0dSOEdRX1JsZUVCWHVtRjhMRkZvU3lfa2oxemIzZG1CZE80REdRSFpJTU9QWGNMckNZdTJDdE9jRV9XU3YxVVFyS3BacHRkdzFqWU1DRzR5Q0FLTDUtYUY3ZlJIY1BvbzJTR0p1dlI3LVRobnB0b0JYNWF2TmhGZDNLaXRrRENsU3RNaG5uR0MtQW5MQQ?oc=5"
-          },
-          {
-            "type": "secondary_disclosure_mention",
-            "title": "Reliance Industries to consider raising funds via debentures, announce Q2 earnings on October 30 - Moneycontrol.com",
-            "as_of": "Tue, 27 Oct 2026 07:00:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQYXhodVhjaERDUWhvanprazUxV0xpdmx3YXJ0THhUMGlnVmp0bW16N3FPWVJRWmFzcDNsTmZzNkd6WGNlVVV3M2wxUHB5TTJfMm8xcEJteDJDRTZmR0w0ZUdTQzNnUUg3OXdRTm9sSEh3ZlEtMkZfZjZrMXlqc1V2RUhXaFFiVFVuM2VRY3JrNnZ2OU1MZVpoZmhoUHE1c2o3eU1UaEFRbmhiclNWUmdXQnhhZUNlY0lqZWZjeFpJZERPdDF5YUlIMEF1V1hiRUdSMTRnRTRaQ2tZdW96Wl9FUzNVbll6al85ZUJrSXpBQ0k5b1VN0gH6AUFVX3lxTE0wZlRZQW5mU0RtRTY5RnhrZFZVQy0xb1J6N3pXQngzcFlhM1dlZG5kaDNNTTNOQjlhVkZub01pNmw3VXdVNjNZWEhfWU1KR2pFUFFMcWhhTFlTUjVlTC0tdG5QZ1Z0aTljYnk4d1JobW1Vam8ydE4zUXFLWFIySVBKbERmVlB3QVlkUjcyMEluZjZPaTZNRjBZVzZSazlqWmd3akpkY29mZ3lBSWV3SG15dTFhODdOeS1vX2ZmekI3cGs1VXR1Nzk4ZWpGNUY3NmRKbjhDeFp3NnBqdzJsYmtrdkRBUWNobERlNnF1a3gtNDBVLWxGeDJPTmc?oc=5"
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (RELIANCE.BSE)",
+            "as_of": "2026-11-13",
+            "url": "https://www.alphavantage.co/documentation/"
           },
           {
             "type": "headline_discovery",
             "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
-            "as_of": "Sat, 14 Nov 2026 09:05:07 GMT",
+            "as_of": "Sat, 14 Nov 2026 15:54:11 GMT",
             "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5"
           },
           {
             "type": "headline_discovery",
-            "title": "Reliance Industries shares jump nearly 12% after record Q2 results; top Nifty gainer, biggest index... - Moneycontrol.com",
-            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQU2IxZFp2SXB5LVpkOElMdjZtckM1VmFaZTlpckNMNlhDd29SVHNUU0V4OFU0RTZHWXVzalJaYXREeVE1V05yOGpETFk1aGhqOE91bWc5SkdUYlJ6NG1HYVdFektOZzdZVjVLSUpGaC1zSjc0X3g3T3JBYVVaYWNJUzk1Wi1HNGRFRTdlaWh3NjdwTThBSHRZV0NkSlBXX3FFS09WTHRkMDZTY1U1VTloTzVGRFRmRHp3LVlINlUzV2RpN0VpLUM2Ung4TlZCVXRhWDY4Q3FYTWV4dWdJU1lLbi1HVVJSbjFiMU8tZ1F1S2NjVWp5THV1NUF1Y3NuNEHSAYQCQVVfeXFMUGVrRU5iX3dDUG5lNWo0MDZNS19XVjRVZzF3U0tybTFrY2NHXzRGMTRGQTlVWWU3ZElsVTRTa3FyLVFfR2xZXzlBOHdFeS1LakcyWHM3cnQ1Q3NtZGYtX2Njd0lPNnpRdzN3M3ZsSUdiTUdWX21WTndXRUJXLTd5UHVHNEh2Vnk1M1JicE16c1RtNXRyYVFMdms1cWlLZlZUdURhLTJvcmtzUm9iTmxLTXY5Sk5oX2dkME5aNEVnczRIXzhtZmpOWFNCTXloMzRjSmZNeVotdTBKRF9WQWdHaWh5R3lsV0ZncHFVWms2OVQtOGJMdDUxaXRvOTRjOWxBZl9XVUM?oc=5"
+            "title": "Reliance shares: After massive 12% surge, Mukesh Ambani's RIL stock slips from biggest single-day rally since 2020; buy? - TradingView",
+            "as_of": "Tue, 03 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPQ1FtMUNDSi1YSzY1MUd2TGl5UkRXSnZPd25IeDhwZFptWU5QVjBqekFPa3NCS3Z4MUY4cXlsUlY4cTZQSlNET29FVy13UVVnV0tmcGFKc09GWGpHRzhOSDgwUUF1R0I2SElMWWRiSjA5enlCZDEwREZpX2U2SDBYMXR1N1BXZDRVT2YxYXM4N2dhZ0Q0MFlXR3NuWklLenprd1JpTy15Q2lxQnZKcTdIY2hmb09BSFN4cEZseURuLWh5Ri1hcnNtVjY1ajZ4VlZzZkhyM2xGUnJ6OEVUZTBFSDdER2ktdTduNnJjVGFfRmxjRDg5dl91ck4xRnBRcE83V1E?oc=5"
           },
           {
             "type": "headline_discovery",
-            "title": "Reliance shares jump over 7%: Why RIL stock is rallying today - India Today",
-            "as_of": "Mon, 02 Nov 2026 08:00:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPX2t2b2lSWnVWV2wzOUxfdFI0QkxUY3JVVUVnR3lCV3dJZ1VFd0gweVE0bmMzcHZBOWhaZl8tX2lTTmhKUmVIb09iUk5ORHE1aUNoY3dzaWJDQlF1aF9Odzd3N0J4aFVCYW5lcFJSRVctRlZFbUlsNTJpdU9NZFZ5LW1QOHBOTlNYaU1YZTc0QWYtV1dLRjZrNEJtcS1qamVaMkM3Z1lZVnR4TlRybjFadTNwQ0ZvbFBNUVZ5VzB2UjgzZTVGcHZwbmhoek0zMm5VV0lBZFo1NlTSAd4BQVVfeXFMTnRRekFCbVJ2YjVUcjQ0TG1RTlJZS1NVaUh5d0hzc0pLRXE4eXlWQ2hMVGVRaVZoZ1l4dFYzV05FVHF5WU5oLTBJcTEySlllUVliMnRxQTRtVkVDUlpkTHk1VUtncHJvR2RCVjVPeWMtVHFOWXRvM2JlcjZtc0VBRE9jYUxUWHVQUl9XNXZTUWk3M2JCOEhlUTc4a29Tb3VOMjNaT1ZUYlAtVHhvZTU0YnZpNUs0SmhEUmJyZlZSeGN5N1RCY3l2Q1hnWWlpQ1VqUlR3dldKZFNOOVk3WC1B?oc=5"
+            "title": "Powered by Reliance Industries' surge, sensex rallies 1.2k points - The Times of India",
+            "as_of": "Tue, 03 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPRWNzWDBVTkVIX1d0aXRtOGxxXzY2dWUzRTdwUDRyWi1jVVY4alFXXzZHbGJxRUNIYzFSWjZGLUN3OXpydXUtcWtFX2dxeHBhQ0dpTzBVSUZralh4NlhYei00c3RfN1l4eDIyUWFaS0U2OGpzanZGN29XSjJpNEVVSzluWmdWWWRSSmI4OExXY1hOeEJaanU3aVlROWx2N0hZd2lnSnU2UTZFSVVTR3VlVGdRajl3VldZc3p1MHV0X18xRjJFZzFGcG5tT3lkODNRUkFkc1pFZDZ2NVFtLXBGTGRPONIB6AFBVV95cUxOanZjRHdpQVpMakxGdUZyZklwNXBTd2JoRUZtaWVRTUYwa3FWNW9xNHpYRkwtQXFZQVJiei1adHEtWXFURFk5N1dkVFBXUmRlZVdBaUtfWDdyZE1oLVJ0YTlmSUIyWktWTkE3X2IzMEtIaWxSR2lVbXFBNVlOdW9Tb1pGUHJtZU9UUEdLRVM0aW9Pb2YwSGVkaUp1R21LRFlveVU4UkpIMG5yeFJicTdONkJwZ0swOE1RZ3FibzRKTEdfVE12bGZXSFZRZ0ZkeGdldm9zYlRIeDBQRGs3T1VaWFVRdkRlaG1o?oc=5"
           }
         ],
         "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
       },
+      "missing_data": [
+        "Company-specific official BSE/NSE PDF or XBRL regulatory filing documents (SEBI LODR Reg 30/33/34).",
+        "Verified company-specific IND-AS numerical accounting metrics in INR parsed from official exchange filings."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
       "pillars": {
         "technical": {
-          "status": "UNSUPPORTED_NOT_CONFIGURED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
           "currency": "INR",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "INR \u20b91,339.60",
+          "ma20_formatted": "INR \u20b91,249.11",
+          "ma50_formatted": "INR \u20b91,239.50",
+          "return20_pct": 13.916,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 1337.0,
+            "high": 1351.0,
+            "low": 1324.05,
+            "close": 1339.6,
+            "volume": 1553535
+          }
         },
         "fundamental": {
           "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
           "currency": "INR",
           "verified_official_filings_count": 0,
           "verified_official_metrics_count": 0,
-          "secondary_disclosure_mentions_count": 3,
+          "secondary_disclosure_mentions_count": 0,
           "metrics": {},
           "official_exchange_portals": {
             "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
             "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
           },
-          "status": "SECONDARY_MENTIONS_ONLY",
+          "status": "UNAVAILABLE",
           "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
         },
         "valuation": {
@@ -563,38 +577,48 @@
         "sentiment": {
           "status": "HEADLINE_DISCOVERY_ONLY",
           "headlines_count": 6,
-          "latest_published": "Sat, 14 Nov 2026 09:05:07 GMT",
+          "latest_published": "Sat, 14 Nov 2026 15:54:11 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 46.7,
           "data_quality_tier": "PARTIAL_EVIDENCE",
           "research_outcome": "PARTIAL",
           "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (UNSUPPORTED_NOT_CONFIGURED).",
             "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
           ]
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "UNSUPPORTED_NOT_CONFIGURED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
           "currency": "INR",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "INR \u20b91,339.60",
+          "ma20_formatted": "INR \u20b91,249.11",
+          "ma50_formatted": "INR \u20b91,239.50",
+          "return20_pct": 13.916,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 1337.0,
+            "high": 1351.0,
+            "low": 1324.05,
+            "close": 1339.6,
+            "volume": 1553535
+          }
         },
         "fundamental": {
           "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
           "currency": "INR",
           "verified_official_filings_count": 0,
           "verified_official_metrics_count": 0,
-          "secondary_disclosure_mentions_count": 3,
+          "secondary_disclosure_mentions_count": 0,
           "metrics": {},
           "official_exchange_portals": {
             "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500325",
             "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=RELIANCE"
           },
-          "status": "SECONDARY_MENTIONS_ONLY",
+          "status": "UNAVAILABLE",
           "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
         },
         "valuation": {
@@ -605,20 +629,1687 @@
         "sentiment": {
           "status": "HEADLINE_DISCOVERY_ONLY",
           "headlines_count": 6,
-          "latest_published": "Sat, 14 Nov 2026 09:05:07 GMT",
+          "latest_published": "Sat, 14 Nov 2026 15:54:11 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 46.7,
           "data_quality_tier": "PARTIAL_EVIDENCE",
           "research_outcome": "PARTIAL",
           "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (UNSUPPORTED_NOT_CONFIGURED).",
             "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
           ]
         }
       },
-      "finished_at": "2026-11-15T01:45:45.091605+00:00"
+      "finished_at": "2026-11-16T20:50:47.506708+00:00"
+    },
+    {
+      "ticker": "TCS",
+      "company": "Tata Consultancy Services Limited",
+      "market": "IN",
+      "exchange": "BSE (Alpha Vantage .BSE) / NSE (TCS)",
+      "currency": "INR",
+      "instrument": {
+        "symbol": "TCS",
+        "company": "Tata Consultancy Services Limited",
+        "name": "Tata Consultancy Services Limited",
+        "match_aliases": [
+          "Tata Consultancy Services",
+          "Tata Consultancy",
+          "TCS"
+        ],
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "TCS",
+        "bse_scrip_code": "532540",
+        "bse_code": "532540",
+        "bse_ticker": "TCS.BSE",
+        "bse_symbol": "TCS.BSE",
+        "bse_numeric_ticker": "532540.BSE",
+        "isin": "INE467B01029",
+        "nse_bse_interchangeable": false,
+        "requested_identifier": "TCS",
+        "requested_exchange": "NSE/BSE",
+        "provider_symbol": "TCS.BSE",
+        "exchange": "BSE (Alpha Vantage .BSE) / NSE (TCS)"
+      },
+      "started_at": "2026-11-16T20:50:49.565779+00:00",
+      "agents": {
+        "news": {
+          "status": "FAILED",
+          "reason": "HTTP 429",
+          "market": "IN"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:50:50.817189+00:00",
+          "market": "IN"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:50:50.817245+00:00",
+          "market": "IN"
+        },
+        "market_data": {
+          "status": "COMPLETE",
+          "reason": "OK",
+          "currency": "INR"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [],
+      "filings": {
+        "company": "Tata Consultancy Services Limited",
+        "symbol": "TCS",
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "TCS",
+        "bse_scrip_code": "532540",
+        "isin": "INE467B01029",
+        "reporting_standard": "IND-AS (SEBI LODR Regulations 30, 33 & 34)",
+        "company_specific_verified": true,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532540",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=TCS"
+        },
+        "filings": [
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "Tata Consultancy Services Ltd \u2014 Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
+            "published": "2026-11-09T16:59:25.653",
+            "retrieved_at": "2026-11-16T20:50:50.418687+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: TCS | BSE Scrip: 532540 | ISIN: INE467B01029",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "Tata Consultancy Services Ltd \u2014 Press Release - TCS Enterprise AI Study: 84% Say Productivity Is AI'S Top Benefit; Just 10% Let AI Act Without Human Oversight",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4b1ab7e2-a0c4-40d9-8758-64975aea90d9.pdf",
+            "published": "2026-11-04T11:00:53.177",
+            "retrieved_at": "2026-11-16T20:50:50.418755+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: TCS | BSE Scrip: 532540 | ISIN: INE467B01029",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "Tata Consultancy Services Ltd \u2014 Announcement under Regulation 30 (LODR)-Newspaper Publication",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/878869fb-5e51-4867-b640-2120edd34b6c.pdf",
+            "published": "2026-11-03T18:44:23.97",
+            "retrieved_at": "2026-11-16T20:50:50.418788+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: TCS | BSE Scrip: 532540 | ISIN: INE467B01029",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "Tata Consultancy Services Ltd \u2014 Press Release - TCS Bancs For Treasury Marks Its Entry Into Sri Lanka With Indian Bank",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b12e07f0-028d-4c07-a018-036951644a15.pdf",
+            "published": "2026-10-19T11:30:41.537",
+            "retrieved_at": "2026-11-16T20:50:50.418818+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: TCS | BSE Scrip: 532540 | ISIN: INE467B01029",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "Tata Consultancy Services Ltd \u2014 Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/18a00aec-26f8-4738-9e5b-d33abe1ff616.pdf",
+            "published": "2026-10-16T16:29:42.633",
+            "retrieved_at": "2026-11-16T20:50:50.418846+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: TCS | BSE Scrip: 532540 | ISIN: INE467B01029",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "Tata Consultancy Services Ltd \u2014 Announcement under Regulation 30 (LODR)-Updates on Acquisition",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ad952e13-3c76-410e-81f8-4fe3d108a196.pdf",
+            "published": "2026-10-15T13:28:35.827",
+            "retrieved_at": "2026-11-16T20:50:50.418875+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: TCS | BSE Scrip: 532540 | ISIN: INE467B01029",
+            "is_primary_regulatory_evidence": true
+          }
+        ],
+        "secondary_disclosure_mentions": [
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "India's TCS rises as margins steady despite AI investments - Reuters",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNckdwSjZhV3lYaVBsMFlkbHZqbHg3ejNwLXJRTjJCRUxvQk5jUXlyQ3NybURhWGliZE5kY0JKaml3RU9TeHlUM1E3OWZIa2tfNUIzSVdrMHVpcFpOVnBtX1Zmb3FYejBuUW1qbW1FQnFLNDZOVldPOG45aEoyZGVkaloyVmg4SF9YN3pjU3Q3Uk5QZFRZX3pGenJmYTFPNGhYem51SG9Uc3paeG9QUGU5dlk3aXRua1ZQaTNfdXZB?oc=5",
+            "published": "Fri, 09 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:50.810664+00:00",
+            "summary": "Company-specific secondary mention (Tata Consultancy Services Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "Tata Consultancy's AI strategy has key-man risk - Breakingviews",
+            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQd003WTFHUy1lWjFKQ0xMUjkwODBzLWR4cHk1ZVR5VzRPNTFKZ0g3dG9YcXJoamU2MXBoLWd3ZWs5aVgtLUx6cFY3ZGZVV3ctcHdWeS1ZZktreWVraTlqS1M3cXo4RzZWMmc0Y2JleVc2dXdMZjJJMEo2TU5OSGZXcVp1OFF2N3BZX0prV2ZSYTNCaHl5S2ljMUkyZXFzUVExaXJibmFmbVVfWFNWamJ3?oc=5",
+            "published": "Fri, 09 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:50.810729+00:00",
+            "summary": "Company-specific secondary mention (Tata Consultancy Services Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "TCS Q2 results: Net profit rises 15% to \u20b913,884 crore, revenue up 11.2% - Business Standard",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSFBHNDA1MEVqUC1PYXhoR0pPNC1zSGZnbFpJRngwWTFYQ2pOSEJNYUNmUkVoY0swNGMxTy1RaU03eE1PR0NxYzRpUXRLTGczVUZpRlBHVFQtRFFoLXhka01KSk1fZHRoWnFvOWU5eVJzb0hBazFRWGVKR09Fd3hIemt4M1hlRVdqX3BRNExkZjNVSjdTdGlnZzc5YlNCa094NlpGay1MLTljMXV2WU9jWHYtTThReFU4bE9oQ3VBZkdqM3V4M0hVVGEwVHdKb2hwdVlFcUNxUkhZRTJud295RkNn0gHnAUFVX3lxTFAyRkQ0ZG82c2dyVmZDaHBPeWZvWXdWMVRhVElYUlQ4dWowbWlmSFcyNVZubEFqbnFjd1E1bnNVOHYwQndpV21Ib3RBN1lIU1E5ZTNvZEVMc0w4LXBfVWs0SWJ1YlRVMFZCbEx5YTNBQ0xOVktwdTQ2Ymw0dzdXd3h2UGcyWGtNVGlBRzZGMXNmOUVra1NDZ25fRGt5bDN2aTJRd3hmQms5MXBtQXdNSWFzM1BVY3JTLVpPNkNjaEduY1VUNUpRTkkwaHJvLUhpWVBqbEVwWVZIemtTUjJINjVFaUhacU8yWQ?oc=5",
+            "published": "Thu, 08 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:50.810774+00:00",
+            "summary": "Company-specific secondary mention (Tata Consultancy Services Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "IT leads rebound in Indian shares; TCS jumps on quarterly results - TradingView",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPbElIN3k5Y1lSLUNCelJ5QWMxblJqY0p4RXBBeloxX1g0ZGRIakVNOUNfSkR0UjFhUWJnamxYWlduT3gyaHhQTjZQYWNZNVh1X1k3UlpOVFVOTENGQ0padVd5Z2xubXJpdlVtak1pUk04aVF1ODdwZ3pEc2tfWGd2SThXYThkRVJic2syZEZNclNLaFlSSEFDb2pwaWRqSHR5UHFOd2pqa1ZPVG5MUWJaTjZmMlBnLWNCZHQ1MmJWSE9MemFBdU10TmhneDd1R0U?oc=5",
+            "published": "Thu, 08 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:50.810809+00:00",
+            "summary": "Company-specific secondary mention (Tata Consultancy Services Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "TCS Q2 Results FY27: October 8 Date, Revenue, Margin and Porsche Deal Expectations - NiftyTrader",
+            "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE51amhCNFBDTXBIU3JySndCbEtGM2liNG1CSkU3YTM0U1VWaTZSSjhtYWNJTy1GaWxuclFUTFQxNXhkRkxPY3lNUDd1S1Z1aThlb1RCSGRYcC1laHNHUWxZck1lT2UySGQwelZZZkE1M0VpbXlfT0d2dGxEdHFKdw?oc=5",
+            "published": "Thu, 01 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:50.810843+00:00",
+            "summary": "Company-specific secondary mention (Tata Consultancy Services Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "TCS Outlook for the Week - Equitypandit",
+            "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9SNFp3SFI0WTNJcElOelBiT2I0Tzd2SDIzZWMzNzZTM21qeHpEWGVfTVkwaU4tTWJsakdKRHVVdGpzb21HS3JWcXlsMWZiYk1qSXUxcVZSX2k2Y1J6M3RFZ3lGYjk?oc=5",
+            "published": "Fri, 13 Nov 2026 08:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:50.810876+00:00",
+            "summary": "Company-specific secondary mention (Tata Consultancy Services Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "Tata Consultancy Services Limited",
+        "symbol": "TCS",
+        "market": "IN",
+        "currency": "INR",
+        "accounting_standard": "IND-AS (Standalone & Consolidated Quarterly/Annual Results in INR)",
+        "nse_symbol": "TCS",
+        "bse_scrip_code": "532540",
+        "isin": "INE467B01029",
+        "verified_against_official_documents": false,
+        "metrics": {},
+        "quarterly_result_disclosures": [],
+        "annual_report_disclosures": [],
+        "secondary_disclosure_mentions_count": 6,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532540",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=TCS"
+        },
+        "warning": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+      },
+      "price": {
+        "status": "OK",
+        "market": "IN",
+        "currency": "INR",
+        "provider_symbol": "TCS.BSE",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 2441.95,
+          "high": 2450.0,
+          "low": 2400.0,
+          "close": 2410.0,
+          "volume": 164904
+        },
+        "as_of": "2026-11-13",
+        "close": 2410.0,
+        "ma20": 2475.58,
+        "ma50": 2284.953,
+        "return20_pct": 4.692,
+        "volatility_pct": 27.41,
+        "trend": "MIXED",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-16T20:50:49.564979+00:00",
+        "is_realtime": false
+      },
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "Primary official exchange filings and verified company-specific IND-AS financial metrics not both present; companies are never ranked on portal URLs or news headlines alone",
+        "market": "IN",
+        "currency": "INR",
+        "as_of": "2026-11-13",
+        "evidence_count": 7,
+        "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (TCS.BSE)",
+            "as_of": "2026-11-13",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "Tata Consultancy Services Ltd \u2014 Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+            "as_of": "2026-11-09T16:59:25.653",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "Tata Consultancy Services Ltd \u2014 Press Release - TCS Enterprise AI Study: 84% Say Productivity Is AI'S Top Benefit; Just 10% Let AI Act Without Human Oversight",
+            "as_of": "2026-11-04T11:00:53.177",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4b1ab7e2-a0c4-40d9-8758-64975aea90d9.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "Tata Consultancy Services Ltd \u2014 Announcement under Regulation 30 (LODR)-Newspaper Publication",
+            "as_of": "2026-11-03T18:44:23.97",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/878869fb-5e51-4867-b640-2120edd34b6c.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "Tata Consultancy Services Ltd \u2014 Press Release - TCS Bancs For Treasury Marks Its Entry Into Sri Lanka With Indian Bank",
+            "as_of": "2026-10-19T11:30:41.537",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b12e07f0-028d-4c07-a018-036951644a15.pdf"
+          },
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "India's TCS rises as margins steady despite AI investments - Reuters",
+            "as_of": "Fri, 09 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNckdwSjZhV3lYaVBsMFlkbHZqbHg3ejNwLXJRTjJCRUxvQk5jUXlyQ3NybURhWGliZE5kY0JKaml3RU9TeHlUM1E3OWZIa2tfNUIzSVdrMHVpcFpOVnBtX1Zmb3FYejBuUW1qbW1FQnFLNDZOVldPOG45aEoyZGVkaloyVmg4SF9YN3pjU3Q3Uk5QZFRZX3pGenJmYTFPNGhYem51SG9Uc3paeG9QUGU5dlk3aXRua1ZQaTNfdXZB?oc=5"
+          },
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "Tata Consultancy's AI strategy has key-man risk - Breakingviews",
+            "as_of": "Fri, 09 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQd003WTFHUy1lWjFKQ0xMUjkwODBzLWR4cHk1ZVR5VzRPNTFKZ0g3dG9YcXJoamU2MXBoLWd3ZWs5aVgtLUx6cFY3ZGZVV3ctcHdWeS1ZZktreWVraTlqS1M3cXo4RzZWMmc0Y2JleVc2dXdMZjJJMEo2TU5OSGZXcVp1OFF2N3BZX0prV2ZSYTNCaHl5S2ljMUkyZXFzUVExaXJibmFmbVVfWFNWamJ3?oc=5"
+          }
+        ],
+        "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
+      },
+      "missing_data": [
+        "Verified company-specific IND-AS numerical accounting metrics in INR parsed from official exchange filings.",
+        "Recent company-specific news headlines."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b92,410.00",
+          "ma20_formatted": "INR \u20b92,475.58",
+          "ma50_formatted": "INR \u20b92,284.95",
+          "return20_pct": 4.692,
+          "trend": "MIXED",
+          "latest_ohlcv": {
+            "open": 2441.95,
+            "high": 2450.0,
+            "low": 2400.0,
+            "close": 2410.0,
+            "volume": 164904
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 6,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532540",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=TCS"
+          },
+          "status": "OFFICIAL_FILINGS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 27.41,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b92,410.00",
+          "ma20_formatted": "INR \u20b92,475.58",
+          "ma50_formatted": "INR \u20b92,284.95",
+          "return20_pct": 4.692,
+          "trend": "MIXED",
+          "latest_ohlcv": {
+            "open": 2441.95,
+            "high": 2450.0,
+            "low": 2400.0,
+            "close": 2410.0,
+            "volume": 164904
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 6,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532540",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=TCS"
+          },
+          "status": "OFFICIAL_FILINGS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 27.41,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "finished_at": "2026-11-16T20:50:50.817337+00:00"
+    },
+    {
+      "ticker": "HDFCBANK",
+      "company": "HDFC Bank Limited",
+      "market": "IN",
+      "exchange": "BSE (Alpha Vantage .BSE) / NSE (HDFCBANK)",
+      "currency": "INR",
+      "instrument": {
+        "symbol": "HDFCBANK",
+        "company": "HDFC Bank Limited",
+        "name": "HDFC Bank Limited",
+        "match_aliases": [
+          "HDFC Bank",
+          "HDFCBANK"
+        ],
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "HDFCBANK",
+        "bse_scrip_code": "500180",
+        "bse_code": "500180",
+        "bse_ticker": "HDFCBANK.BSE",
+        "bse_symbol": "HDFCBANK.BSE",
+        "bse_numeric_ticker": "500180.BSE",
+        "isin": "INE040A01034",
+        "nse_bse_interchangeable": false,
+        "requested_identifier": "HDFCBANK",
+        "requested_exchange": "NSE/BSE",
+        "provider_symbol": "HDFCBANK.BSE",
+        "exchange": "BSE (Alpha Vantage .BSE) / NSE (HDFCBANK)"
+      },
+      "started_at": "2026-11-16T20:50:52.688804+00:00",
+      "agents": {
+        "news": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:50:53.044050+00:00",
+          "market": "IN"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:50:53.934157+00:00",
+          "market": "IN"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:50:53.934203+00:00",
+          "market": "IN"
+        },
+        "market_data": {
+          "status": "COMPLETE",
+          "reason": "OK",
+          "currency": "INR"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "HDFC Bank Limited (HDFCBANK.NS) stock price, news, quote and history - Yahoo Finance Australia",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE80THE4Tnh0UmxseTFGd0VrenBtcFp6VVNNWHE3aEUtd0x0dDluMUstTUI2MUx5Q1hiek9HWGs2QXhRRUZ0bS1xM1FGZVNMY19jZmZyX09LSjZ6SmM?oc=5",
+          "published": "Fri, 13 Nov 2026 17:50:29 GMT",
+          "retrieved_at": "2026-11-16T20:50:53.043683+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "HDFC Bank shares surges 2.86%, lead Nifty 50 gainers - BusinessLine",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPUUpXLTVMN1BUWEdILWZlS3NsSWtfU3NKc0JrdFJsUFlMRnJSUE0xNmh2S2FKd2lSMHdrWnU0ZDk5LWhLV1hZYXpDU3pLOU9ETGkzYl8wOUJyM2RHekhzWkRVdzBFQTBUVFVxUWxMeWtFUER0N2NtcmFjY1NZNHNDU2hfMGhsRjdLcW1lY3NnRmxJMHoyeEE1U3NFS244LVhBVXo2cVlKQURWa1FQV3B6YW9lOXdXdUNZLVZGNk9LdGNqeGstblVv0gHOAUFVX3lxTE15QTlYNFBTVkxxV3ZrZ1VRSzRwLUJ5N1RvdnJKS0IzZW4zeEllWUItOGhHM1U2czFqX04xdTdEVDRzYTZxUWVIWWVvQXdQcHh5N0t5aVFOaUdPeV9SZVlwUDNZRzdBZEhYeXQycHRLVzFGdW9JYWZPNUd6a1REOERHWXV3N0hraWM2VEctbkNUeEEzREpZYlVONUlwODFleVJYNmw5eENHVFpZamdncTEyeTM4MjUtUUpva3dsS1NoS2NBRUdFWUd5NFhzS0ln?oc=5",
+          "published": "Tue, 03 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:53.043728+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "HDFC Bank Share Price Rises 2.46% to \u20b9817.75, Hits 3-Month High: 5 Factors Driving the Rally - India Infoline",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPbjI2UGZOWG9mUF8wa0dPWV9oTnZkZEZWTEtaNFVLcHAzLVJZZjJIcGxsTW8zMXN4VWlNdGN6elExNUlpc1hPTENOakk2N1VIbWFUUnkyT1NXcWNWTjU2WmxiOGo0a0RqRGpHbU9pTEp4cmlONU5IdHE3QU1XeTE5ckIwY19xQmQ3cTVlYnRIb0hYVXJQMXlheVhzcGlxaHJwSXBkLXFIV2h6S3Z1ODZtamp2M0lweUI0V1NXNVZzdXItWkFnV0hZVXVfek9EZw?oc=5",
+          "published": "Wed, 11 Nov 2026 06:19:25 GMT",
+          "retrieved_at": "2026-11-16T20:50:53.043747+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Up in 8 of last 10 sessions, HDFC Bank share price jumps 22% in this period - Why should you still buy the bank stock? - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPcEJ0TWVRcW1KOWVfNnFHNC1XUGNTS2NoWGFGT1FCWWFCUnA0YjgtMjJUQXJEbl9sclRhRlVYbllQVjhUMHhWTGFEMW43NkdsTnZrejhxWE1oRkdHamlRSGpWdWU3OXlxX1BOQUFROUxiSWxBbzRNRmp1ZzlrTWxyam1kYWlPa0trcGNYTnhkVWlwMVR2ZUlsaUl0NDdIaXNib3ZnTzFMLTdLdjBPSEczSEoyMmFmblpXbHcyaUo2d0M2RFdqSV91c1prMlgyajhOdkZSZ0hKOGR2cUVYOWU4V05hMy1rVDlDYzZxNTdQc21VNFIxdEJFeGkyNGlZNDg?oc=5",
+          "published": "Thu, 12 Nov 2026 15:32:40 GMT",
+          "retrieved_at": "2026-11-16T20:50:53.043762+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Diwali stock picks 2026: Titan, ICICI Bank, HDFC Bank, BSE, Eternal among 25 stocks with up to 46% upside... - Moneycontrol.com",
+          "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxPejN5Z0dBRHFUY3JtYlBlWU9talUwNGJ6TUowa3FSY1F5QlRQMFNCSGVkS29sbTNkMF9tbzVfYXRwMHNwRnRBWEVUelJHcURJUFlyWmNabEM2OURneGI2NWl0amI4eUwyZ1U5UVdmaGRrbHN6M3U3RWZZa2hwX0pod0kxZ1dncEFUcHNrZEdHMFltUGs3eGd2LVJoajlhNXQ5Z2pmYXJxRHBQMUVzRmN3RVVrSEdPTXJpSlRsY3Z3ZXdYMzhvRUlDQnlUNXFhUzJqUlJyX0U2ZFd2OWNjU01WcDZCV3R4NHZkaFEwT1hwWmNqc29qSXJWWklEaUhBSEtfTVNFaWl1SVNHSWp3bDBaZUxhMnlZdmdEMENFRDlLTlZ3VngtTmdR0gGsAkFVX3lxTE9MNDgybkJ0ODNEWjluMmE2Umk4NVA2d0c3UFp1LXdoeGE1SlVqd0xTY1E3ek4zajJpclowZk03d1dSb0kyMVVmX3dYSmlhZ1hWZkotYXVaeXJMS19JMkFJczlXTl9yR2IxWmdfbWdpcmZxZWIwbTYwWlZGa1RoVi1DaVptM3gtb0R3SlFseHlQVEhUTHRfNnZJRmlKVzlhTE9sR0JyMHdvTTBWMm9CY2ZqTHFBaFRIQl84SlFDQWdVWjZvZjVwM3N2ZGI4VVQ2ZW16UU9FQzIyU2lMSHlGb2phRGM3d25td3NBcUwwZlNsRkw4cmNaM0t0VG1VcG80cmp4T2JHX3RvQmE1M194RVV5ZWltUWJhcThpaWhRckZhZF9GdHlaRWtDMGpXMg?oc=5",
+          "published": "Fri, 06 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:53.043777+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "HDFCBANK Outlook for the Week - Equitypandit",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5aN1hUNVlDOTVoMVpJZ2lrQ2ZhdmhQTnUzakVpNWRCQ0Z1eXVFZnNJYy1zSlBqNFJEMlpJbFhMV01tYWFocXY0UUtaUU5ocm9jNTV4RllWbGp5MlZhaTYyeXB1RDFSU2t6NW93?oc=5",
+          "published": "Fri, 13 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:53.044023+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
+      "filings": {
+        "company": "HDFC Bank Limited",
+        "symbol": "HDFCBANK",
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "HDFCBANK",
+        "bse_scrip_code": "500180",
+        "isin": "INE040A01034",
+        "reporting_standard": "IND-AS (SEBI LODR Regulations 30, 33 & 34)",
+        "company_specific_verified": true,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500180",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=HDFCBANK"
+        },
+        "filings": [
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "HDFC Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Change in Directorate",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+            "published": "2026-11-13T16:30:11.85",
+            "retrieved_at": "2026-11-16T20:50:53.437482+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: HDFCBANK | BSE Scrip: 500180 | ISIN: INE040A01034",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "HDFC Bank Ltd \u2014 Disclosure Under Regulation 30 Of The SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
+            "published": "2026-11-12T17:27:27.333",
+            "retrieved_at": "2026-11-16T20:50:53.437545+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: HDFCBANK | BSE Scrip: 500180 | ISIN: INE040A01034",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "HDFC Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
+            "published": "2026-11-12T14:21:58.547",
+            "retrieved_at": "2026-11-16T20:50:53.437575+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: HDFCBANK | BSE Scrip: 500180 | ISIN: INE040A01034",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "HDFC Bank Ltd \u2014 Shareholder Meeting / Postal Ballot-Outcome of Postal_Ballot",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0926e958-96d9-4537-ae2b-188dfe3eb1d1.pdf",
+            "published": "2026-11-06T22:28:09.337",
+            "retrieved_at": "2026-11-16T20:50:53.437602+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: HDFCBANK | BSE Scrip: 500180 | ISIN: INE040A01034",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "HDFC Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Change in Management",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
+            "published": "2026-10-31T22:14:41.877",
+            "retrieved_at": "2026-11-16T20:50:53.437627+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: HDFCBANK | BSE Scrip: 500180 | ISIN: INE040A01034",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "HDFC Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/38dab330-ca6e-4311-9679-7b47cebb7993.pdf",
+            "published": "2026-10-30T13:24:55.717",
+            "retrieved_at": "2026-11-16T20:50:53.437649+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: HDFCBANK | BSE Scrip: 500180 | ISIN: INE040A01034",
+            "is_primary_regulatory_evidence": true
+          }
+        ],
+        "secondary_disclosure_mentions": [
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "HDFC Bank Q2 results: Net profit rises 4.7% to Rs 19,510 crore, broadly meets estimates; asset quality... - Moneycontrol.com",
+            "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOZjQ0dnpBQ2JjWEVTMnc1MWxyTFcyY0NJTW4tVFhub3AzVERNX2xFbWp2M25GWFlpSnVFXzZRUUgwc2NOTW9XY2xXazF0ZEVXWm12Q0ZOaTdvdWtIbzdST0dpTDVOWTlsbThHcVkySk1SQTZSUk43R3J3MFg2ZXFIQ2VKY2tOY0FSemdQY1UtS2hZMFl3UkpWTDlFZTFPUWp1R0VWWWZEVmtsWERIVTNCRDQ1dkx1SUlZLVFEZF95MEZTZkxNbHJna3hqZ0p6UGdaMXNfYm1ycFdid3VoWm8tajhITmZoNVd60gHuAUFVX3lxTFBjcmtVZnM2MjdpV3hCMkxGalNIeHUtX0Z6NnlqSHlNLXE5azd1c2F5aW5vUXRWczJtTHZ6SVhkUFAtd3hwd292RG5HTk9keUo3NUFuZDhLbG1DUnB6Mm1iM25XQmxnMmtaX3Y1bVZ3RDgzRWNOUU1QeF93MGs3VUlzQktUaUM1NTJHZGRzZk1ZYk9FdWtjZFpFS1JWMTNvT19rR0ZnLTNucDZjT0NfYTJ6OEUtdXlFOE1qQm5aamlBZXhCaVBlYzZabUItV1pBVnpvSEgzRllGc2dkU08xLXVpRnRlWnpUajlWXzRjUmc?oc=5",
+            "published": "Sat, 17 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:53.933451+00:00",
+            "summary": "Company-specific secondary mention (HDFC Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "HDFC Bank Q2 net profit rises 4.7% to \u20b919,510 crore as NII grows - Business Standard",
+            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPMWhQRUJwV3c3QWNDWk9rVGdVb2M1RWZkdWJNaDhfek05aFpuR19GbVBzMExmcEZBdEszWUU2RWF5TGx3WElWUnN5Ty1LbFVKNmhIWHlRVFN5Z25lVndPT1FoOWZHUGVJMGhxd2JNeEh4ZjZNbHRRWVRXdXpaSmNtWWFmdkI5WlhoYkxhTkw5bUYtTWpCUFoxbzBYYnpBWXhRTXVmSXpEMzBOYTlZbHBZRHU0TkRqT0FaYzdxaDVwMER6ZDB5SXFucm85YjJBZHNXcGpSdUZLYWpFN0ZqX3ZsZ3g3ZDPSAeoBQVVfeXFMTUlSVFphdmpSeWhfMkhOUnZybUVMSWxjcmRNd0d5ZTZsZUxhXzAySEtuVzg0eHgtcUo1ZzZLNlVvOXNiYTh0ejJOVVFEd0V5YVhXRFIyMXJKM01hcXlpcGN4NExsVmVTaXcwenVLR2YyUG51cTVfQ3hXRnkwSnJFM19pOEl3QkVBRXpOeVdFNVFiR2FiZ1k1VnU3RDFJbXJYaXotMXphMUpsVG9HLTRhU25TanlUcnA3M1JJejJqcjRlUURFNTkxSzUzQUsyTVI4YzRqUjJTVEh4SHpzNUdzV010enNiNWhmcU5n?oc=5",
+            "published": "Sat, 17 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:53.933512+00:00",
+            "summary": "Company-specific secondary mention (HDFC Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "Anup Bagchi takes charge as HDFC Bank CEO and MD - People Matters - HR News",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQYW1ITEl4YndzVlFYN1ZLS0RKSnpwZVhDQVQwMHBNX2c5dGNuY3pMb0p6OEtaMkc0TGQteHBreXROd3BIU0xqZGNMOWRmeDU0LTBSLVBKRkduQ0NJWGlTSW9kVV9CRkRLb0JiUzhsLWFCMVUtUmp1Mk95eUVvWGd5YmlQY3Q1dDctcDV2WG1JSFJETWdzQUpKSm12NFpJWTgzZlIw?oc=5",
+            "published": "Mon, 26 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:53.933544+00:00",
+            "summary": "Company-specific secondary mention (HDFC Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "HDFC Bank to appoint Anup Bagchi as next CEO for three-year term - India Today",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOE1DRGppMlptUFc2OGFFdTVuN3VETVZybUFEZEJGS1BjQUZDRHBveW11NWFNakNjTWxiczcxVF82UzVqSmR4ak5xYWl3NlktNU1OQnhHZG5ITmkzd1pwNEIzTzFGQkR3LV9VZUpLRHBlaEZRenFDVHROd21SWUhWX3JEdy1WWm83V3U4Ykw2YWVLbGlxblJXZzh0aEtjTHkyRWw5aWhaakhQOF9ldFNJZl85dEJKbC1OZEh2aFNTaTVFUdIBxwFBVV95cUxQNkhKMWVEQWFHVlpEbGhJeDhTeUhJNWpIU0dvUk94SWozMWJzRGx5SHltXzJjN0FnTHBSb216emxtcVlRaXV2SFFwM041aWgxdVJDMWt6OXFFQXprZVpnS2l1dVBrd0NUUFUtdklORXBGTTBBeTJseDhVYmdGTi1xUWRUR0JMY1JrUkhzdmJSUi1hSFB5M1Vic1VjdEo1RkJWWXVjMUxPVlhZTXFBWmlEeHM1S0FTWU9CdXFtZlFMSVRxeWJ3VmdJ?oc=5",
+            "published": "Thu, 01 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:53.933572+00:00",
+            "summary": "Company-specific secondary mention (HDFC Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "Anup Bagchi takes charge as HDFC Bank CEO and MD - The Hindu",
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONFlfSTBNWV9VcjdLMTY5UmM4eDFyZ0lPR0RnSmhYbnJTRVd3ZXd0ZXBQSmNTaUpzUGJtblJpY3BGNGVuVUdKUHo1SElDMnVKdEtfUHJoQ3FBd2tLVnM0UHM5MWxSLWpFdllmcDhFdGE0ZjhYYlZmTEMzdUlSQ29QTnItT0o2U1ljUmU5NXNqVG82QzdBc0dVNm11dV9qckhNWlJhU9IBqwFBVV95cUxQYUlRejF6R1VtQ3VZWllMMEZXYXYzc0dmeEJPajJWbGVobDFIUlpDcjZqTHZZT0FNRlBlZF81bzltNDJYaUQyWGtHa3EwMXVhNjI5bGtNS2tuS045N3dtN3ZWdFdqRVBYYW56YWdGZnNDSi1mQVZ6OWFjMjVzOFJabEtQQ2VFUHo4bGJXd2pVamNnWTJ2eFN0TmhHOUhEa2R6ZUJwQjlwQTMwQ00?oc=5",
+            "published": "Tue, 27 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:53.933596+00:00",
+            "summary": "Company-specific secondary mention (HDFC Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "Anup Bagchi takes charge as HDFC Bank MD & CEO amid growth, governance challenges - Fortune India",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNekJ5cjA2aVdBbGVzT1lRdmhSWktXb0xrM2lrSzJWdTNkM3lfN3R3dU4tMWRnVzZqOTBIcGRjYzZaRlJvSnM3NDdGc01nZHluZ3JERjQ5bGszR2ZNUGZUSGRLTDU5YVA5M2tDUFpRbXVCbEthalpoVHdVRVVJU1dmUVExMmVZTWRlNkJnWlQxSlVVVGZGUWRGWUJRYlZrRGhRdTBhTzgxeEkyQjM0U2pOOHhqY19LaWNIQXkzemdWc1QyVHVuWnl30gHUAUFVX3lxTFBMeEx0YXR3RVM3aXVidl9mYzZPV3lBTXJha1VxRU9wRl8xeVc0OVdBWUw2dm9kcmJDQUhWOFp2SnZxdk9lSm9sRGRGUGtpTXZWTllHb0lqYVJKOEFYd05ZNEUxRklTQ3RhRWhxZHNKdGZnTGZMMFdlODg3dXpsYm5YSWM3c2JyZnV2ekdOdV9xV0ZCNUcwakhEbFRuNV81aVY4a2kyRlVXcnhrVG9UV2tQZFpvQ0FTd29uR3ZyekFtVlExNXU4cUVQNko2WTJ1c2JCd2lJ?oc=5",
+            "published": "Tue, 27 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:50:53.933622+00:00",
+            "summary": "Company-specific secondary mention (HDFC Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "HDFC Bank Limited",
+        "symbol": "HDFCBANK",
+        "market": "IN",
+        "currency": "INR",
+        "accounting_standard": "IND-AS (Standalone & Consolidated Quarterly/Annual Results in INR)",
+        "nse_symbol": "HDFCBANK",
+        "bse_scrip_code": "500180",
+        "isin": "INE040A01034",
+        "verified_against_official_documents": false,
+        "metrics": {},
+        "quarterly_result_disclosures": [],
+        "annual_report_disclosures": [],
+        "secondary_disclosure_mentions_count": 6,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500180",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=HDFCBANK"
+        },
+        "warning": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+      },
+      "price": {
+        "status": "OK",
+        "market": "IN",
+        "currency": "INR",
+        "provider_symbol": "HDFCBANK.BSE",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 809.85,
+          "high": 809.85,
+          "low": 797.95,
+          "close": 803.05,
+          "volume": 742335
+        },
+        "as_of": "2026-11-13",
+        "close": 803.05,
+        "ma20": 733.7025,
+        "ma50": 722.063,
+        "return20_pct": 10.226,
+        "volatility_pct": 27.37,
+        "trend": "POSITIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-16T20:50:52.688078+00:00",
+        "is_realtime": false
+      },
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "Primary official exchange filings and verified company-specific IND-AS financial metrics not both present; companies are never ranked on portal URLs or news headlines alone",
+        "market": "IN",
+        "currency": "INR",
+        "as_of": "2026-11-13",
+        "evidence_count": 10,
+        "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (HDFCBANK.BSE)",
+            "as_of": "2026-11-13",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "HDFC Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Change in Directorate",
+            "as_of": "2026-11-13T16:30:11.85",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "HDFC Bank Ltd \u2014 Disclosure Under Regulation 30 Of The SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+            "as_of": "2026-11-12T17:27:27.333",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "HDFC Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+            "as_of": "2026-11-12T14:21:58.547",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "HDFC Bank Ltd \u2014 Shareholder Meeting / Postal Ballot-Outcome of Postal_Ballot",
+            "as_of": "2026-11-06T22:28:09.337",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0926e958-96d9-4537-ae2b-188dfe3eb1d1.pdf"
+          },
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "HDFC Bank Q2 results: Net profit rises 4.7% to Rs 19,510 crore, broadly meets estimates; asset quality... - Moneycontrol.com",
+            "as_of": "Sat, 17 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOZjQ0dnpBQ2JjWEVTMnc1MWxyTFcyY0NJTW4tVFhub3AzVERNX2xFbWp2M25GWFlpSnVFXzZRUUgwc2NOTW9XY2xXazF0ZEVXWm12Q0ZOaTdvdWtIbzdST0dpTDVOWTlsbThHcVkySk1SQTZSUk43R3J3MFg2ZXFIQ2VKY2tOY0FSemdQY1UtS2hZMFl3UkpWTDlFZTFPUWp1R0VWWWZEVmtsWERIVTNCRDQ1dkx1SUlZLVFEZF95MEZTZkxNbHJna3hqZ0p6UGdaMXNfYm1ycFdid3VoWm8tajhITmZoNVd60gHuAUFVX3lxTFBjcmtVZnM2MjdpV3hCMkxGalNIeHUtX0Z6NnlqSHlNLXE5azd1c2F5aW5vUXRWczJtTHZ6SVhkUFAtd3hwd292RG5HTk9keUo3NUFuZDhLbG1DUnB6Mm1iM25XQmxnMmtaX3Y1bVZ3RDgzRWNOUU1QeF93MGs3VUlzQktUaUM1NTJHZGRzZk1ZYk9FdWtjZFpFS1JWMTNvT19rR0ZnLTNucDZjT0NfYTJ6OEUtdXlFOE1qQm5aamlBZXhCaVBlYzZabUItV1pBVnpvSEgzRllGc2dkU08xLXVpRnRlWnpUajlWXzRjUmc?oc=5"
+          },
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "HDFC Bank Q2 net profit rises 4.7% to \u20b919,510 crore as NII grows - Business Standard",
+            "as_of": "Sat, 17 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPMWhQRUJwV3c3QWNDWk9rVGdVb2M1RWZkdWJNaDhfek05aFpuR19GbVBzMExmcEZBdEszWUU2RWF5TGx3WElWUnN5Ty1LbFVKNmhIWHlRVFN5Z25lVndPT1FoOWZHUGVJMGhxd2JNeEh4ZjZNbHRRWVRXdXpaSmNtWWFmdkI5WlhoYkxhTkw5bUYtTWpCUFoxbzBYYnpBWXhRTXVmSXpEMzBOYTlZbHBZRHU0TkRqT0FaYzdxaDVwMER6ZDB5SXFucm85YjJBZHNXcGpSdUZLYWpFN0ZqX3ZsZ3g3ZDPSAeoBQVVfeXFMTUlSVFphdmpSeWhfMkhOUnZybUVMSWxjcmRNd0d5ZTZsZUxhXzAySEtuVzg0eHgtcUo1ZzZLNlVvOXNiYTh0ejJOVVFEd0V5YVhXRFIyMXJKM01hcXlpcGN4NExsVmVTaXcwenVLR2YyUG51cTVfQ3hXRnkwSnJFM19pOEl3QkVBRXpOeVdFNVFiR2FiZ1k1VnU3RDFJbXJYaXotMXphMUpsVG9HLTRhU25TanlUcnA3M1JJejJqcjRlUURFNTkxSzUzQUsyTVI4YzRqUjJTVEh4SHpzNUdzV010enNiNWhmcU5n?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "HDFC Bank Limited (HDFCBANK.NS) stock price, news, quote and history - Yahoo Finance Australia",
+            "as_of": "Fri, 13 Nov 2026 17:50:29 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE80THE4Tnh0UmxseTFGd0VrenBtcFp6VVNNWHE3aEUtd0x0dDluMUstTUI2MUx5Q1hiek9HWGs2QXhRRUZ0bS1xM1FGZVNMY19jZmZyX09LSjZ6SmM?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "HDFC Bank shares surges 2.86%, lead Nifty 50 gainers - BusinessLine",
+            "as_of": "Tue, 03 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPUUpXLTVMN1BUWEdILWZlS3NsSWtfU3NKc0JrdFJsUFlMRnJSUE0xNmh2S2FKd2lSMHdrWnU0ZDk5LWhLV1hZYXpDU3pLOU9ETGkzYl8wOUJyM2RHekhzWkRVdzBFQTBUVFVxUWxMeWtFUER0N2NtcmFjY1NZNHNDU2hfMGhsRjdLcW1lY3NnRmxJMHoyeEE1U3NFS244LVhBVXo2cVlKQURWa1FQV3B6YW9lOXdXdUNZLVZGNk9LdGNqeGstblVv0gHOAUFVX3lxTE15QTlYNFBTVkxxV3ZrZ1VRSzRwLUJ5N1RvdnJKS0IzZW4zeEllWUItOGhHM1U2czFqX04xdTdEVDRzYTZxUWVIWWVvQXdQcHh5N0t5aVFOaUdPeV9SZVlwUDNZRzdBZEhYeXQycHRLVzFGdW9JYWZPNUd6a1REOERHWXV3N0hraWM2VEctbkNUeEEzREpZYlVONUlwODFleVJYNmw5eENHVFpZamdncTEyeTM4MjUtUUpva3dsS1NoS2NBRUdFWUd5NFhzS0ln?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "HDFC Bank Share Price Rises 2.46% to \u20b9817.75, Hits 3-Month High: 5 Factors Driving the Rally - India Infoline",
+            "as_of": "Wed, 11 Nov 2026 06:19:25 GMT",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPbjI2UGZOWG9mUF8wa0dPWV9oTnZkZEZWTEtaNFVLcHAzLVJZZjJIcGxsTW8zMXN4VWlNdGN6elExNUlpc1hPTENOakk2N1VIbWFUUnkyT1NXcWNWTjU2WmxiOGo0a0RqRGpHbU9pTEp4cmlONU5IdHE3QU1XeTE5ckIwY19xQmQ3cTVlYnRIb0hYVXJQMXlheVhzcGlxaHJwSXBkLXFIV2h6S3Z1ODZtamp2M0lweUI0V1NXNVZzdXItWkFnV0hZVXVfek9EZw?oc=5"
+          }
+        ],
+        "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
+      },
+      "missing_data": [
+        "Verified company-specific IND-AS numerical accounting metrics in INR parsed from official exchange filings."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b9803.05",
+          "ma20_formatted": "INR \u20b9733.70",
+          "ma50_formatted": "INR \u20b9722.06",
+          "return20_pct": 10.226,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 809.85,
+            "high": 809.85,
+            "low": 797.95,
+            "close": 803.05,
+            "volume": 742335
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 6,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500180",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=HDFCBANK"
+          },
+          "status": "OFFICIAL_FILINGS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Fri, 13 Nov 2026 17:50:29 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 27.37,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b9803.05",
+          "ma20_formatted": "INR \u20b9733.70",
+          "ma50_formatted": "INR \u20b9722.06",
+          "return20_pct": 10.226,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 809.85,
+            "high": 809.85,
+            "low": 797.95,
+            "close": 803.05,
+            "volume": 742335
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 6,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=500180",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=HDFCBANK"
+          },
+          "status": "OFFICIAL_FILINGS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Fri, 13 Nov 2026 17:50:29 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 27.37,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "finished_at": "2026-11-16T20:50:53.934285+00:00"
+    },
+    {
+      "ticker": "INFY",
+      "company": "Infosys Limited",
+      "market": "IN",
+      "exchange": "BSE (Alpha Vantage .BSE) / NSE (INFY)",
+      "currency": "INR",
+      "instrument": {
+        "symbol": "INFY",
+        "company": "Infosys Limited",
+        "name": "Infosys Limited",
+        "match_aliases": [
+          "Infosys",
+          "INFY"
+        ],
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "INFY",
+        "bse_scrip_code": "500209",
+        "bse_code": "500209",
+        "bse_ticker": "INFY.BSE",
+        "bse_symbol": "INFY.BSE",
+        "bse_numeric_ticker": "500209.BSE",
+        "isin": "INE009A01021",
+        "nse_bse_interchangeable": false,
+        "requested_identifier": "INFY",
+        "requested_exchange": "NSE/BSE",
+        "provider_symbol": "INFY.BSE",
+        "exchange": "BSE (Alpha Vantage .BSE) / NSE (INFY)"
+      },
+      "started_at": "2026-11-16T20:50:55.766962+00:00",
+      "agents": {
+        "news": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:50:56.142737+00:00",
+          "market": "IN"
+        },
+        "filings": {
+          "status": "FAILED",
+          "reason": "HTTP 429",
+          "market": "IN"
+        },
+        "fundamentals": {
+          "status": "FAILED",
+          "reason": "HTTP 429",
+          "market": "IN"
+        },
+        "market_data": {
+          "status": "COMPLETE",
+          "reason": "OK",
+          "currency": "INR"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "INFY Outlook for the Week - Equitypandit",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5kS1diXzYtdHFHS3d2QnlYTHpYSkpqRnJER2FlSGFjeWpkVXF6MEtxNnBfMUlSRDZDQktianllTDlIVVBSc2N5QURTbjQzdmtFSHhqQ1FEeHZXcEw5bEtpVWRZQkZTZw?oc=5",
+          "published": "Sun, 08 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:56.142604+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Infosys Q4 FY26 Results: Audited Financials, Net Profit \u20b98,509 Crore, Revenue \u20b946,402 Crore - scanx.trade",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPbFdUVGtPMlNXZFF1RzlRQkt6SGdBQ1VVTjZlVXAwYnE0U25wSE5hN2U2TDJkVlM2VU9wdWEyc0ljMEVnc2J0cUVsbzZJX2hONW9DYW9pLTcwTTdGa1BOQWhITjdTbFUzanBGV2lIeThPSzU0VXdmNHBvSWpIMGtlYlBGMW9MZDdjNUxqc2tVNF95TE4tZ2V3SVdmMHBKWVBkVUh4M3JlaFhGdi02M3RyTHlxTTlsNmhzV01wSEJ5LUs1cnoxajFWWGRNZXBvOTBWVkZXNg?oc=5",
+          "published": "Sun, 15 Nov 2026 11:47:05 GMT",
+          "retrieved_at": "2026-11-16T20:50:56.142651+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Jefferies reiterates Hold on Infosys stock, INR1,140 target By Investing.com - Investing.com India",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQVVYtZDdYWkdVMUdOeEtST2VfdzFyNFZRY1dzTngxZDNQaVRjMHRUcURWbUV6NmgtVUFJblNLQ3pOR3c4RlBpMnVfSFQyYktnUU5FR0VHQnk3MTI4UWxybGJqNldaMUdSUzkwVHR0d0NaRkpDSUtMMnNDSlAxLUJ3ZGNVdlhpQnUzTUFLdVRfVWxzbVZsQ2tzeFA5RDV1aDF0aXpHMzhaNmw5WXozVzdHOHI0UW5BYWI2M1E?oc=5",
+          "published": "Wed, 11 Nov 2026 15:06:31 GMT",
+          "retrieved_at": "2026-11-16T20:50:56.142669+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Infosys (NSEI:INFY) Stock Forecast & Analyst Predictions - Simply Wall St",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9pWGY1ejMtTF9ReVF2elpXWm9jR1pXbnptd3dUa1BUSlRpUmlMTnZodVljRkpRd3BIS2lUbW5tOG5KTUZNc1EwNERhXzdOcmlMazlub0VSM0ZSS3YtUnFqVzJ1RTZhdm5JbG5yMXJZY09OczNhbUhDQVRGQQ?oc=5",
+          "published": "Fri, 13 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:56.142683+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Infosys joins the club:12 companies that have minted the most billionaires - Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNZlFyTlZkV2xnMmRuNlAzVHFrSDhrd3ZudkJTRVJuMEtrR08taUg4LWItYm56ZmVJYUJ3dG9ScmtnOXFIZThQeGx1VG9Uc3dCaEhMLVpQcC0telFsVzV1WTJQR2Y5WllCemg5eUdGcVQzdlRQQ0F6WEsyUWNZOHAzWDR6ZGFMRm1NYWRURXh2UllPaElRY0puSkhjM0xnX2djMFEwTTB3WkVRZ2FzSWNIZUxfTWRkOGVhVEt0TUNibGFHdDZKczdjWVpBNERvbW44eEw1N21FSDB3R05EV3RXdEExVGFHdEtn0gHuAUFVX3lxTE1kUV8td0F1TGxpdU84eUJlREtydFhmYVhGUjI3RUl2ZjJrNVNudGV2Wi16UkJrMmxxTlRLTDFLSHdRYUh1eHFsd21LLU1BUE1jMElGSXpQb21rZFVBb0RObEVYYzk5N0Y1Q3FZVFdidGpRVGpPY3FJRWx3Y0F4dUpJMEdrSkRoRHZld2o5N2pOaElFekRhWWhsU0VRWTVzMUZqSERUdnBEZzJwTGtEQU1GaEVlN296S2tSZTFHWk9MNWxFa0sweGlYdzUweFNUTy1xandmVVVFMUpoZmNBZmhleDNUT3c0ZEpiekI1S3c?oc=5",
+          "published": "Fri, 13 Nov 2026 03:45:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:56.142696+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Infosys Share Price Prediction for Tomorrow: 17 Nov 2026 Levels - Univest",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5JQ3ZTMHVRYnUxMjNUY2J0emJ6cDItWTlXRl96M19CT0pLU2laRUMwM20zRkRWXzlQUFpCSGJEZmdmb1QxcUUxNGVrV0NWQ25rdjgzdktsaE9BTENESmJsUmdEdFo2UTViemt2VTdfODJMUUpNeXAxUG9QUzR5R2s?oc=5",
+          "published": "Mon, 16 Nov 2026 11:12:39 GMT",
+          "retrieved_at": "2026-11-16T20:50:56.142709+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
+      "filings": {},
+      "fundamentals": {},
+      "price": {
+        "status": "OK",
+        "market": "IN",
+        "currency": "INR",
+        "provider_symbol": "INFY.BSE",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 1154.1,
+          "high": 1155.0,
+          "low": 1135.5,
+          "close": 1140.0,
+          "volume": 221167
+        },
+        "as_of": "2026-11-13",
+        "close": 1140.0,
+        "ma20": 1151.435,
+        "ma50": 1088.919,
+        "return20_pct": 4.693,
+        "volatility_pct": 36.3,
+        "trend": "MIXED",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-16T20:50:55.766191+00:00",
+        "is_realtime": false
+      },
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "Primary official exchange filings and verified company-specific IND-AS financial metrics not both present; companies are never ranked on portal URLs or news headlines alone",
+        "market": "IN",
+        "currency": "INR",
+        "as_of": "2026-11-13",
+        "evidence_count": 4,
+        "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (INFY.BSE)",
+            "as_of": "2026-11-13",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "INFY Outlook for the Week - Equitypandit",
+            "as_of": "Sun, 08 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5kS1diXzYtdHFHS3d2QnlYTHpYSkpqRnJER2FlSGFjeWpkVXF6MEtxNnBfMUlSRDZDQktianllTDlIVVBSc2N5QURTbjQzdmtFSHhqQ1FEeHZXcEw5bEtpVWRZQkZTZw?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Infosys Q4 FY26 Results: Audited Financials, Net Profit \u20b98,509 Crore, Revenue \u20b946,402 Crore - scanx.trade",
+            "as_of": "Sun, 15 Nov 2026 11:47:05 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPbFdUVGtPMlNXZFF1RzlRQkt6SGdBQ1VVTjZlVXAwYnE0U25wSE5hN2U2TDJkVlM2VU9wdWEyc0ljMEVnc2J0cUVsbzZJX2hONW9DYW9pLTcwTTdGa1BOQWhITjdTbFUzanBGV2lIeThPSzU0VXdmNHBvSWpIMGtlYlBGMW9MZDdjNUxqc2tVNF95TE4tZ2V3SVdmMHBKWVBkVUh4M3JlaFhGdi02M3RyTHlxTTlsNmhzV01wSEJ5LUs1cnoxajFWWGRNZXBvOTBWVkZXNg?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Jefferies reiterates Hold on Infosys stock, INR1,140 target By Investing.com - Investing.com India",
+            "as_of": "Wed, 11 Nov 2026 15:06:31 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQVVYtZDdYWkdVMUdOeEtST2VfdzFyNFZRY1dzTngxZDNQaVRjMHRUcURWbUV6NmgtVUFJblNLQ3pOR3c4RlBpMnVfSFQyYktnUU5FR0VHQnk3MTI4UWxybGJqNldaMUdSUzkwVHR0d0NaRkpDSUtMMnNDSlAxLUJ3ZGNVdlhpQnUzTUFLdVRfVWxzbVZsQ2tzeFA5RDV1aDF0aXpHMzhaNmw5WXozVzdHOHI0UW5BYWI2M1E?oc=5"
+          }
+        ],
+        "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
+      },
+      "missing_data": [
+        "Company-specific official BSE/NSE PDF or XBRL regulatory filing documents (SEBI LODR Reg 30/33/34).",
+        "Verified company-specific IND-AS numerical accounting metrics in INR parsed from official exchange filings."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b91,140.00",
+          "ma20_formatted": "INR \u20b91,151.43",
+          "ma50_formatted": "INR \u20b91,088.92",
+          "return20_pct": 4.693,
+          "trend": "MIXED",
+          "latest_ohlcv": {
+            "open": 1154.1,
+            "high": 1155.0,
+            "low": 1135.5,
+            "close": 1140.0,
+            "volume": 221167
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 0,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 0,
+          "metrics": {},
+          "official_exchange_portals": {},
+          "status": "UNAVAILABLE",
+          "note": null
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Sun, 08 Nov 2026 08:00:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 36.3,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b91,140.00",
+          "ma20_formatted": "INR \u20b91,151.43",
+          "ma50_formatted": "INR \u20b91,088.92",
+          "return20_pct": 4.693,
+          "trend": "MIXED",
+          "latest_ohlcv": {
+            "open": 1154.1,
+            "high": 1155.0,
+            "low": 1135.5,
+            "close": 1140.0,
+            "volume": 221167
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 0,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 0,
+          "metrics": {},
+          "official_exchange_portals": {},
+          "status": "UNAVAILABLE",
+          "note": null
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Sun, 08 Nov 2026 08:00:00 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 36.3,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "finished_at": "2026-11-16T20:50:57.578262+00:00"
+    },
+    {
+      "ticker": "ICICIBANK",
+      "company": "ICICI Bank Limited",
+      "market": "IN",
+      "exchange": "BSE (Alpha Vantage .BSE) / NSE (ICICIBANK)",
+      "currency": "INR",
+      "instrument": {
+        "symbol": "ICICIBANK",
+        "company": "ICICI Bank Limited",
+        "name": "ICICI Bank Limited",
+        "match_aliases": [
+          "ICICI Bank",
+          "ICICIBANK"
+        ],
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "ICICIBANK",
+        "bse_scrip_code": "532174",
+        "bse_code": "532174",
+        "bse_ticker": "ICICIBANK.BSE",
+        "bse_symbol": "ICICIBANK.BSE",
+        "bse_numeric_ticker": "532174.BSE",
+        "isin": "INE090A01021",
+        "nse_bse_interchangeable": false,
+        "requested_identifier": "ICICIBANK",
+        "requested_exchange": "NSE/BSE",
+        "provider_symbol": "ICICIBANK.BSE",
+        "exchange": "BSE (Alpha Vantage .BSE) / NSE (ICICIBANK)"
+      },
+      "started_at": "2026-11-16T20:50:59.426206+00:00",
+      "agents": {
+        "news": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:50:59.777803+00:00",
+          "market": "IN"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:51:00.638078+00:00",
+          "market": "IN"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-16T20:51:00.638130+00:00",
+          "market": "IN"
+        },
+        "market_data": {
+          "status": "COMPLETE",
+          "reason": "OK",
+          "currency": "INR"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "ICICI Bank Limited (ICICIBANK.NS) stock price, news, quote and history - Yahoo Finance Singapore",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9EVVRSQlplSWZyOFo3czdOblYtX2JISDdXVDk0S3F6OVh4TnlTTEtHX3VmV0l3djlZb2JrZ0tMSXdmOWpBSWZPVzlSbGd6OGRRUllzeTJJZTNHTnNz?oc=5",
+          "published": "Thu, 12 Nov 2026 07:13:37 GMT",
+          "retrieved_at": "2026-11-16T20:50:59.777676+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "ICICI Bank extends rally, soars 10% in 4 days; market cap nears \u20b911 trn - Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSmlYWHhPZXVzNy1JcHhOY3VMcm5TWUMwSktab2FZbjM1UDAtQVRKNTRVQ3RDblliSU82bnJvSUQ1Y0ViWWxXLTktSXBjaGZ6VW1wekRfV2FqTHhEdVRnTHYxWm4tM3VFb09jamprOUw4bG85WDVXUGhxOExham5qM0VVdUFPSEVkV1h6emFHaTNOMl8wemh1bFhoWTdzd0pIdXpwYW5SRnVDYVVVbTIxUEdIVDFWelZyNFJTRTJMcWdSN0NVLWQ0WElUbXJRdGvSAdQBQVVfeXFMTTV5QTByQ0tGQWdndkNubTdTQ3h4RS0xbzRfZTA1a2JlOFVJZTVNOXNVQzcwamk5RVlvUFNMLVlzdUdRMDBXUUF3d1RTYTNMWE13cHNibWx1VHVyMHJiZmNvZ29XRGVycWdRX3RTdTlTRXpLd1U5ZXpWX1dvZDZmdEQ4cWdqbnBGVTZuVzZEWERVeEtjdWEtWFR6a1V6ZkRxNy0wbWl0Tkh1QXZHdUhJbTl6VnU1RGhXZGJoRlExOXVzVi1vUmVvdjM2aEFZRmRqa2ljaUI?oc=5",
+          "published": "Fri, 06 Nov 2026 06:16:19 GMT",
+          "retrieved_at": "2026-11-16T20:50:59.777723+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "ICICI Bank Ltd Share/Stock Price Live Today | The HinduBusinessLine - BusinessLine",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5IUnhfR1ZTZjNYVWZRMkptZTg5Zy1MblZmc2hyQk90RzNVanMyUjNLX0EwMFMyVFhvNEdBT1FNbTlzRVhuMmdtSFk4VGhZM2hieHljX0t0RGk0SU1ielkyaWRqMWYxNXhFQlhB?oc=5",
+          "published": "Fri, 13 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-16T20:50:59.777739+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "ICICIBANK Share Price Today - ICICI Bank on NSE/BSE - scanx.trade",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAtenFscnpQOFlPM21KMjdXWFAwdlhfdjNib3Vkamx3X3VqdXhNN1NIckRUZEt2RVdwSGlVQld4RVZDcFNEMGhlM2ZxNjZqUERvVG1sTQ?oc=5",
+          "published": "Sat, 14 Nov 2026 06:52:29 GMT",
+          "retrieved_at": "2026-11-16T20:50:59.777755+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "Diwali stock picks 2026: Reliance Industries, ICICI Bank, Tata Steel, Eternal among 30 stocks to buy for Samvat 2083; brokerages see up to 38% upside- Moneycontrol.com - LinkedIn",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPMVdsbUFRTURBN3lIVHRJMHZFM3FRNkpyWWJzTVlLLXJuQzF2UFJteXZfbldJX3I4MGtibEI0bXlPaDhVQU1IS2tmajJVeE81VnhjX0txSjNxRjQtQWRkRTlCeVFtTkhIdDdsSFAtTjlvajN1S0l3R2RRSG1CNW9fb1J3THc3MFFZN0JWWWFKQXZ3LXdBNzV4M0EtYlZOYWJVTzczaTlRZWhzRmk3T3dzdmlodFpDLWtsY25RSndn?oc=5",
+          "published": "Thu, 05 Nov 2026 09:45:01 GMT",
+          "retrieved_at": "2026-11-16T20:50:59.777769+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS India (company-filtered headline)",
+          "title": "ICICI Bank Allots Shares Under Employee Stock Option Scheme - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc3pVSkhSc0Nyb21jRlpoRmY0blRBN2FtRW9BNUtWSzMyVjcwXy1wUm1MM2duZXRoM1dGNzJfZkg1NlA2Mno2YVNZRnRSMFYxTFhBVlJrRDI2UkJBNjc0Y1JJdVlXWUdFYzBIekVjcTlycXpJclFGZWFzaGtLT3I1NDlDNE1yOEtoUTQteGFpWVVnYzVVMTB4ejVFdmpGR2JrYmVDUVVKdlVOd2tRRHRfcGNB?oc=5",
+          "published": "Mon, 16 Nov 2026 05:53:38 GMT",
+          "retrieved_at": "2026-11-16T20:50:59.777782+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
+      "filings": {
+        "company": "ICICI Bank Limited",
+        "symbol": "ICICIBANK",
+        "market": "IN",
+        "currency": "INR",
+        "nse_symbol": "ICICIBANK",
+        "bse_scrip_code": "532174",
+        "isin": "INE090A01021",
+        "reporting_standard": "IND-AS (SEBI LODR Regulations 30, 33 & 34)",
+        "company_specific_verified": true,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532174",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=ICICIBANK"
+        },
+        "filings": [
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "ICICI Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9fb8687a-b17e-425c-945c-ec6d4c76ef06.pdf",
+            "published": "2026-11-16T10:09:56.327",
+            "retrieved_at": "2026-11-16T20:51:00.273438+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: ICICIBANK | BSE Scrip: 532174 | ISIN: INE090A01021",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "ICICI Bank Ltd \u2014 Disclosure Under Regulation 30 Read With Para A Of Schedule III And Regulation 46(2) Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fc247b09-13fa-455a-90ab-e43e40f21412.pdf",
+            "published": "2026-11-12T18:04:39.797",
+            "retrieved_at": "2026-11-16T20:51:00.273503+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: ICICIBANK | BSE Scrip: 532174 | ISIN: INE090A01021",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "ICICI Bank Ltd \u2014 Disclosure Under Regulation 30 Read With Para A Of Schedule III And Regulation 46(2) Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5d528b54-cd3f-477f-9539-fff4ab659b43.pdf",
+            "published": "2026-11-09T13:32:31.887",
+            "retrieved_at": "2026-11-16T20:51:00.273536+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: ICICIBANK | BSE Scrip: 532174 | ISIN: INE090A01021",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "ICICI Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1bef81c5-3757-44f3-a2c9-8abc7629ebe6.pdf",
+            "published": "2026-11-05T11:17:32.88",
+            "retrieved_at": "2026-11-16T20:51:00.273562+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: ICICIBANK | BSE Scrip: 532174 | ISIN: INE090A01021",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "ICICI Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/11412c86-bb83-44e5-bd5d-4c5ec3b415bb.pdf",
+            "published": "2026-11-03T10:17:49.063",
+            "retrieved_at": "2026-11-16T20:51:00.273585+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: ICICIBANK | BSE Scrip: 532174 | ISIN: INE090A01021",
+            "is_primary_regulatory_evidence": true
+          },
+          {
+            "source": "Official BSE Corporate Filing (Corporate Announcement / Filing (SEBI LODR Reg 30))",
+            "title": "ICICI Bank Ltd \u2014 Disclosure Under Regulation 30 Of The SEBI (Listing Obligations                             And Disclosure Requirements) Regulations, 2015",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0b2bb991-d0b5-491a-ab93-08cd260db05e.pdf",
+            "published": "2026-11-01T09:35:06.27",
+            "retrieved_at": "2026-11-16T20:51:00.273612+00:00",
+            "summary": "Verified company-specific official BSE PDF filing | NSE: ICICIBANK | BSE Scrip: 532174 | ISIN: INE090A01021",
+            "is_primary_regulatory_evidence": true
+          }
+        ],
+        "secondary_disclosure_mentions": [
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "ICICI Bank Q2 Results FY27: NII, NIM and Asset Quality in Focus Before Oct 17 - NiftyTrader",
+            "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE81dzRrWkJwMHlhSG5FOWlqS05JaXYydEZlVUdoWkFWcVZwa3habnl6T2puZHktcko4WHY2REhGOVdEVFFJOVdvLVBXTkdsSWU3Yi1rZ1BCOUYwSlgweXVRbXR0MEpPeThXZ3ZyME0xWllkYkdXNm1KOQ?oc=5",
+            "published": "Tue, 06 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:51:00.636723+00:00",
+            "summary": "Company-specific secondary mention (ICICI Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "India's TCC Concept backs Pepperfry overdraft with ICICI Bank - TradingView",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOM3dTRlNnUHNOR0s0V2FlYU1RLUJFUlVQREVIMnhUR2tLQjdSZlB0a0w5YzlLWXhLOXF2YWJRcFZmTC1XaGVaZ0x5STVkN25xa1RIaVV5dlB5RVBaX1dKM2gzdl9uMVlyRHduUkIwNWl2Y3I1amVlak5xM2JpNmVuQ3dON1VzVTltWnI1OGh0N0FoS2tYdlJRLVFXdERtY3IxTlNfNTJRdEdLYnRSRWtFaFZXZ3lNeWdndlE?oc=5",
+            "published": "Tue, 10 Nov 2026 04:09:00 GMT",
+            "retrieved_at": "2026-11-16T20:51:00.636785+00:00",
+            "summary": "Company-specific secondary mention (ICICI Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Quarterly Financial Results (SEBI LODR Reg 33) \u2014 unverified news source)",
+            "title": "ICICI Bank Q2 net rises 20% to \u20b914,843 crore as provisions fall - Business Standard",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNSGZSWjZ4MmxMcV9NSkJ2OFZzdGljblo1dno5eU55NmhCTWJLaDl5Tlk5clc1ai1aY3RaNGFTVE1JRktSbURKUDlQeExfSGM0bWwxSzJUS3l5eG1oVlQwcGZDZXdZVTk3T0RueVR5NnpTOU41eUtzNEsxOWR3RWNlSXN1QmlDZGJPMUNzRUFXYnBVTUxuYS15M1dCN1RtOVhPdVFYaTY0Zi1sOFcybmNubXFuc25hanlqNVR0Z044UHY3S2F0WTJzUm9wQUh1Ny1EZEdNcExyODVpQjdjaVHSAeMBQVVfeXFMTnAzNHB3aEs3NWdzSjV1cTVtVVczNGpKT1hwZjZldmhnN21pZU9VcF90Vk9uVWlmUmZBcjVKYlVRZ21CUW5XdmJsRlEwOUJidjR1UW9EZ2Zqa3JNcDdWVDN2dVlwMkRRUF9CeFNyUUJ1eTAtUTA1a3FjdUFCLWs4Z2xTbUtzNTVMTWJ4Nm1qai1ZY0lhb3B6bm56VGNaWl83S2wwVlhMSkNwUktzamxucy1URzZuN1FBM1B1bDNtN1dNY1VkNFpTYTFWMFZiRlhXcWJPdWRSUzhDbEJqSzNHc2xObEk?oc=5",
+            "published": "Sat, 17 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:51:00.636819+00:00",
+            "summary": "Company-specific secondary mention (ICICI Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "ICICIBANK Outlook for the Week - Equitypandit",
+            "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9kYVhJNHdOWnMwcEkwMTVPZ0lMSm52Nzg0SlZEVHpBc2tNV2VkelBkcU95NnRLck13OGVLRlpHc0U2d1FQZ2tSTm1rM2U2SV9Na05SNS13RlNIOS1LZUstQk9vQlhDZlhVY0lhVw?oc=5",
+            "published": "Fri, 13 Nov 2026 08:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:51:00.637200+00:00",
+            "summary": "Company-specific secondary mention (ICICI Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "SENSEX, NIFTY50 edge lower dragged down by HDFC Bank, ICICI Bank; IT stocks outperform - Upstox",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQOVFPMlJ0RHNKT1VhOFRXWms4a1hwYTItMFctVUp2cm42M1JCYnN5b2dUTVZ0RlBaWXNsZXpYLVVQSFAtTHBqQVpuQ1RnbFkxY3RYaFF1TGxGT0Y2SUVSVENlU1p4dUxNZThYMFVHQjZOSjhjbFBiTGMyd1kwQjhTZEZqcThRWF9lNlRBWUlrMTI1S0VUelgzZ2UxbEFwZmRpV1hTalJoc0I5cnFfLVdObFJGRzFURThkeXpnSG8xQ0pFS1ppWkdOS25qUXU1WHlfSnF1MnJlUEtBMGc?oc=5",
+            "published": "Tue, 13 Oct 2026 07:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:51:00.637876+00:00",
+            "summary": "Company-specific secondary mention (ICICI Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          },
+          {
+            "source": "Secondary Disclosure Mention (Corporate Announcement / Filing (SEBI LODR Reg 30) \u2014 unverified news source)",
+            "title": "ICICI Bank (NSEI:ICICIBANK) Stock Forecast & Analyst Predictions - Simply Wall St",
+            "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNeHNnTVJKMndzb19YZUFPNlRKNTNUblBKUjEwUnhtQkJwRVZ3TE5Jd3Jwc3Mxd2Y5UURxNjd5R1pSdzR5Tzh1b0QwR0dNTUpUWk01ZHAxRXlLbHUxdjFfQnlTbjQyT2VGa2dmTjNKZkxOUlI3dXR6VVBWNTFhYW11WGJR?oc=5",
+            "published": "Fri, 06 Nov 2026 08:00:00 GMT",
+            "retrieved_at": "2026-11-16T20:51:00.637923+00:00",
+            "summary": "Company-specific secondary mention (ICICI Bank Limited); not an official BSE/NSE filing document.",
+            "is_primary_regulatory_evidence": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "ICICI Bank Limited",
+        "symbol": "ICICIBANK",
+        "market": "IN",
+        "currency": "INR",
+        "accounting_standard": "IND-AS (Standalone & Consolidated Quarterly/Annual Results in INR)",
+        "nse_symbol": "ICICIBANK",
+        "bse_scrip_code": "532174",
+        "isin": "INE090A01021",
+        "verified_against_official_documents": false,
+        "metrics": {},
+        "quarterly_result_disclosures": [],
+        "annual_report_disclosures": [],
+        "secondary_disclosure_mentions_count": 6,
+        "official_exchange_portals": {
+          "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532174",
+          "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=ICICIBANK"
+        },
+        "warning": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+      },
+      "price": {
+        "status": "OK",
+        "market": "IN",
+        "currency": "INR",
+        "provider_symbol": "ICICIBANK.BSE",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 1578.4,
+          "high": 1585.85,
+          "low": 1566.05,
+          "close": 1584.0,
+          "volume": 120446
+        },
+        "as_of": "2026-11-13",
+        "close": 1584.0,
+        "ma20": 1446.0975,
+        "ma50": 1393.871,
+        "return20_pct": 18.28,
+        "volatility_pct": 28.3,
+        "trend": "POSITIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-16T20:50:59.425426+00:00",
+        "is_realtime": false
+      },
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "Primary official exchange filings and verified company-specific IND-AS financial metrics not both present; companies are never ranked on portal URLs or news headlines alone",
+        "market": "IN",
+        "currency": "INR",
+        "as_of": "2026-11-13",
+        "evidence_count": 10,
+        "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (ICICIBANK.BSE)",
+            "as_of": "2026-11-13",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "ICICI Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+            "as_of": "2026-11-16T10:09:56.327",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9fb8687a-b17e-425c-945c-ec6d4c76ef06.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "ICICI Bank Ltd \u2014 Disclosure Under Regulation 30 Read With Para A Of Schedule III And Regulation 46(2) Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+            "as_of": "2026-11-12T18:04:39.797",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fc247b09-13fa-455a-90ab-e43e40f21412.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "ICICI Bank Ltd \u2014 Disclosure Under Regulation 30 Read With Para A Of Schedule III And Regulation 46(2) Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+            "as_of": "2026-11-09T13:32:31.887",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5d528b54-cd3f-477f-9539-fff4ab659b43.pdf"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "ICICI Bank Ltd \u2014 Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+            "as_of": "2026-11-05T11:17:32.88",
+            "url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1bef81c5-3757-44f3-a2c9-8abc7629ebe6.pdf"
+          },
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "ICICI Bank Q2 Results FY27: NII, NIM and Asset Quality in Focus Before Oct 17 - NiftyTrader",
+            "as_of": "Tue, 06 Oct 2026 07:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE81dzRrWkJwMHlhSG5FOWlqS05JaXYydEZlVUdoWkFWcVZwa3habnl6T2puZHktcko4WHY2REhGOVdEVFFJOVdvLVBXTkdsSWU3Yi1rZ1BCOUYwSlgweXVRbXR0MEpPeThXZ3ZyME0xWllkYkdXNm1KOQ?oc=5"
+          },
+          {
+            "type": "secondary_disclosure_mention",
+            "title": "India's TCC Concept backs Pepperfry overdraft with ICICI Bank - TradingView",
+            "as_of": "Tue, 10 Nov 2026 04:09:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOM3dTRlNnUHNOR0s0V2FlYU1RLUJFUlVQREVIMnhUR2tLQjdSZlB0a0w5YzlLWXhLOXF2YWJRcFZmTC1XaGVaZ0x5STVkN25xa1RIaVV5dlB5RVBaX1dKM2gzdl9uMVlyRHduUkIwNWl2Y3I1amVlak5xM2JpNmVuQ3dON1VzVTltWnI1OGh0N0FoS2tYdlJRLVFXdERtY3IxTlNfNTJRdEdLYnRSRWtFaFZXZ3lNeWdndlE?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "ICICI Bank Limited (ICICIBANK.NS) stock price, news, quote and history - Yahoo Finance Singapore",
+            "as_of": "Thu, 12 Nov 2026 07:13:37 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9EVVRSQlplSWZyOFo3czdOblYtX2JISDdXVDk0S3F6OVh4TnlTTEtHX3VmV0l3djlZb2JrZ0tMSXdmOWpBSWZPVzlSbGd6OGRRUllzeTJJZTNHTnNz?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "ICICI Bank extends rally, soars 10% in 4 days; market cap nears \u20b911 trn - Business Standard",
+            "as_of": "Fri, 06 Nov 2026 06:16:19 GMT",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSmlYWHhPZXVzNy1JcHhOY3VMcm5TWUMwSktab2FZbjM1UDAtQVRKNTRVQ3RDblliSU82bnJvSUQ1Y0ViWWxXLTktSXBjaGZ6VW1wekRfV2FqTHhEdVRnTHYxWm4tM3VFb09jamprOUw4bG85WDVXUGhxOExham5qM0VVdUFPSEVkV1h6emFHaTNOMl8wemh1bFhoWTdzd0pIdXpwYW5SRnVDYVVVbTIxUEdIVDFWelZyNFJTRTJMcWdSN0NVLWQ0WElUbXJRdGvSAdQBQVVfeXFMTTV5QTByQ0tGQWdndkNubTdTQ3h4RS0xbzRfZTA1a2JlOFVJZTVNOXNVQzcwamk5RVlvUFNMLVlzdUdRMDBXUUF3d1RTYTNMWE13cHNibWx1VHVyMHJiZmNvZ29XRGVycWdRX3RTdTlTRXpLd1U5ZXpWX1dvZDZmdEQ4cWdqbnBGVTZuVzZEWERVeEtjdWEtWFR6a1V6ZkRxNy0wbWl0Tkh1QXZHdUhJbTl6VnU1RGhXZGJoRlExOXVzVi1vUmVvdjM2aEFZRmRqa2ljaUI?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "ICICI Bank Ltd Share/Stock Price Live Today | The HinduBusinessLine - BusinessLine",
+            "as_of": "Fri, 13 Nov 2026 08:00:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5IUnhfR1ZTZjNYVWZRMkptZTg5Zy1MblZmc2hyQk90RzNVanMyUjNLX0EwMFMyVFhvNEdBT1FNbTlzRVhuMmdtSFk4VGhZM2hieHljX0t0RGk0SU1ielkyaWRqMWYxNXhFQlhB?oc=5"
+          }
+        ],
+        "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
+      },
+      "missing_data": [
+        "Verified company-specific IND-AS numerical accounting metrics in INR parsed from official exchange filings."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b91,584.00",
+          "ma20_formatted": "INR \u20b91,446.10",
+          "ma50_formatted": "INR \u20b91,393.87",
+          "return20_pct": 18.28,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 1578.4,
+            "high": 1585.85,
+            "low": 1566.05,
+            "close": 1584.0,
+            "volume": 120446
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 6,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532174",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=ICICIBANK"
+          },
+          "status": "OFFICIAL_FILINGS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Thu, 12 Nov 2026 07:13:37 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 28.3,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-13",
+          "currency": "INR",
+          "close_formatted": "INR \u20b91,584.00",
+          "ma20_formatted": "INR \u20b91,446.10",
+          "ma50_formatted": "INR \u20b91,393.87",
+          "return20_pct": 18.28,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 1578.4,
+            "high": 1585.85,
+            "low": 1566.05,
+            "close": 1584.0,
+            "volume": 120446
+          }
+        },
+        "fundamental": {
+          "accounting_standard": "IND-AS (SEBI LODR Reg 30/33/34)",
+          "currency": "INR",
+          "verified_official_filings_count": 6,
+          "verified_official_metrics_count": 0,
+          "secondary_disclosure_mentions_count": 6,
+          "metrics": {},
+          "official_exchange_portals": {
+            "bse_corporate_ann_url": "https://www.bseindia.com/corporates/ann.html?scrip=532174",
+            "nse_corporate_filings_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=ICICIBANK"
+          },
+          "status": "OFFICIAL_FILINGS_ONLY",
+          "note": "Indian equities report under IND-AS in INR via BSE/NSE SEBI LODR Reg 33/34 filings. No company-specific official IND-AS XBRL/PDF filing document was parsed in this run; numerical metrics are left empty rather than inferred from news headlines or generic portal URLs."
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "INR",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Thu, 12 Nov 2026 07:13:37 GMT",
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": 28.3,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "No verified company-specific official IND-AS financial document metrics parsed; stock ranking withheld (INSUFFICIENT_EVIDENCE)."
+          ]
+        }
+      },
+      "finished_at": "2026-11-16T20:51:00.638212+00:00"
     }
   ],
   "status": "PARTIAL"
