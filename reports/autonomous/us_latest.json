@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "mission_id": "20261115T014543Z-US",
+  "mission_id": "20261117T044336Z-US",
   "market": "US",
   "currency": "USD",
-  "market_session_date": "2026-11-13",
+  "market_session_date": "2026-11-16",
   "market_schedule": {
     "market": "US",
     "market_name": "United States (NYSE / NASDAQ)",
@@ -12,23 +12,28 @@
     "timezone": "America/New_York",
     "tz_abbrev": "EST",
     "is_dst": false,
-    "local_time": "2026-11-14 20:45 EST",
-    "local_time_iso": "2026-11-14T20:45:43.768752-05:00",
-    "local_date": "2026-11-14",
-    "is_weekend": true,
+    "local_time": "2026-11-16 23:43 EST",
+    "local_time_iso": "2026-11-16T23:43:36.249378-05:00",
+    "local_date": "2026-11-16",
+    "is_weekend": false,
     "is_holiday": false,
     "holiday_name": null,
     "special_session": null,
-    "is_trading_day": false,
+    "is_trading_day": true,
     "is_open_now": false,
-    "market_phase": "CLOSED_WEEKEND",
-    "ready_for_post_close_run": false,
-    "latest_completed_session": "2026-11-13"
+    "market_phase": "POST_CLOSE",
+    "ready_for_post_close_run": true,
+    "latest_completed_session": "2026-11-16"
   },
-  "started_at": "2026-11-15T01:45:43.770058+00:00",
+  "started_at": "2026-11-17T04:43:36.249779+00:00",
   "data_policy": "historical and public sources; native currencies preserved (USD/INR); no trading",
   "symbols": [
-    "AAPL"
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "GOOGL",
+    "SPY"
   ],
   "results": [
     {
@@ -57,23 +62,23 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-15T01:45:44.021886+00:00",
+      "started_at": "2026-11-17T04:43:36.417253+00:00",
       "agents": {
         "news": {
-          "status": "COMPLETE",
-          "at": "2026-11-15T01:45:44.116850+00:00"
+          "status": "FAILED",
+          "reason": "HTTP 503"
         },
         "filings": {
-          "status": "FAILED",
-          "reason": "HTTP 403"
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:43:52.617429+00:00"
         },
         "fundamentals": {
-          "status": "FAILED",
-          "reason": "HTTP 403"
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:43:52.694657+00:00"
         },
         "market_data": {
           "status": "SKIPPED",
-          "reason": "NOT_CONFIGURED",
+          "reason": "RATE_LIMITED",
           "currency": "USD"
         },
         "ai_analyst": {
@@ -82,70 +87,2855 @@
         },
         "validator": {
           "status": "COMPLETE",
-          "quality": "PARTIAL_EVIDENCE",
+          "quality": "PRIMARY_EVIDENCE_PRESENT",
           "research_outcome": "PARTIAL"
         }
       },
-      "news": [
-        {
-          "source": "Google News RSS (headline only)",
-          "title": "Apple Shares (AAPL) Look Expensive Heading into 2027 - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5",
-          "published": "Wed, 11 Nov 2026 21:15:00 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.116775+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
+      "news": [],
+      "filings": {
+        "company": "Apple Inc.",
+        "cik": 320193,
+        "filings": [
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 Apple Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126042798/ef20085077_8k.htm",
+            "published": "2026-11-09",
+            "retrieved_at": "2026-11-17T04:43:52.617224+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001140361-26-042798 | Period End: 2026-11-05 | 8-K Items: 8.01,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001140361-26-042798",
+            "report_date": "2026-11-05",
+            "items": "8.01,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-K \u2014 Apple Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+            "published": "2026-11-03",
+            "retrieved_at": "2026-11-17T04:43:52.617271+00:00",
+            "summary": "Official SEC EDGAR 10-K filing metadata (Accn: 0000320193-26-000026 | Period End: 2026-09-26); full narrative document not parsed",
+            "form": "10-K",
+            "accession_number": "0000320193-26-000026",
+            "report_date": "2026-09-26",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 Apple Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm",
+            "published": "2026-11-02",
+            "retrieved_at": "2026-11-17T04:43:52.617281+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0000320193-26-000024 | Period End: 2026-11-02 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0000320193-26-000024",
+            "report_date": "2026-11-02",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 Apple Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+            "published": "2026-07-31",
+            "retrieved_at": "2026-11-17T04:43:52.617290+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0000320193-26-000020 | Period End: 2026-06-27); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0000320193-26-000020",
+            "report_date": "2026-06-27",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 Apple Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm",
+            "published": "2026-07-30",
+            "retrieved_at": "2026-11-17T04:43:52.617297+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0000320193-26-000018 | Period End: 2026-07-30 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0000320193-26-000018",
+            "report_date": "2026-07-30",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 Apple Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+            "published": "2026-05-01",
+            "retrieved_at": "2026-11-17T04:43:52.617303+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0000320193-26-000013 | Period End: 2026-03-28); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0000320193-26-000013",
+            "report_date": "2026-03-28",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "Apple Inc.",
+        "cik": 320193,
+        "metrics": {
+          "Revenue": {
+            "value_usd": 478834000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "period_start": "2025-09-28",
+            "period_end": "2026-09-26",
+            "filed": "2026-11-03",
+            "form": "10-K",
+            "accession": "0000320193-26-000026",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+            "verified_official_document": true
+          },
+          "Net income": {
+            "value_usd": 132175000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetIncomeLoss",
+            "period_start": "2025-09-28",
+            "period_end": "2026-09-26",
+            "filed": "2026-11-03",
+            "form": "10-K",
+            "accession": "0000320193-26-000026",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+            "verified_official_document": true
+          },
+          "Operating income": {
+            "value_usd": 158063000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "OperatingIncomeLoss",
+            "period_start": "2025-09-28",
+            "period_end": "2026-09-26",
+            "filed": "2026-11-03",
+            "form": "10-K",
+            "accession": "0000320193-26-000026",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+            "verified_official_document": true
+          },
+          "Total assets": {
+            "value_usd": 404548000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "Assets",
+            "period_start": null,
+            "period_end": "2026-09-26",
+            "filed": "2026-11-03",
+            "form": "10-K",
+            "accession": "0000320193-26-000026",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+            "verified_official_document": true
+          },
+          "Stockholders equity": {
+            "value_usd": 112093000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "StockholdersEquity",
+            "period_start": null,
+            "period_end": "2026-09-26",
+            "filed": "2026-11-03",
+            "form": "10-K",
+            "accession": "0000320193-26-000026",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+            "verified_official_document": true
+          },
+          "Cash and equivalents": {
+            "value_usd": 36305000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+            "period_start": null,
+            "period_end": "2026-09-26",
+            "filed": "2026-11-03",
+            "form": "10-K",
+            "accession": "0000320193-26-000026",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+            "verified_official_document": true
+          },
+          "Operating cash flow": {
+            "value_usd": 145097000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+            "period_start": "2025-09-28",
+            "period_end": "2026-09-26",
+            "filed": "2026-11-03",
+            "form": "10-K",
+            "accession": "0000320193-26-000026",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+            "verified_official_document": true
+          }
         },
-        {
-          "source": "Google News RSS (headline only)",
-          "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5",
-          "published": "Thu, 12 Nov 2026 11:12:44 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.116819+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        },
-        {
-          "source": "Google News RSS (headline only)",
-          "title": "Is Apple Stock a Buy Right Now? - The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZZzd4WHdhQ2gyRU5BckJfY21JTWhSdXYyZC1sZGlmb0FyZEZUSzVDeWVkbUloU19hR2ItYVhiaXBodGVIUVZTODZtQ1lkdWV1RVlOcDhZOFpJR1Z6bld4TG1YN3BPTUY3ZXhLeGlEaUFOTzNmN3FNbjI3VDVYdw?oc=5",
-          "published": "Sat, 14 Nov 2026 00:07:00 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.116828+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        },
-        {
-          "source": "Google News RSS (headline only)",
-          "title": "How Much Capital Gains Tax Does a 61-Year-Old Owe on $750,000 of Inherited Apple Stock? - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOT2FycXlWaUJvRWg0TWozaGhXaU9aYXhuOGVSejJ6N3hhM2VPZl9qRndKX2g3MmlSS2prbUxESVJTTm5JME93b2diOWVnQnZNcHpRSXJndlpUSmdHYmtaSWcybDBwRGpRcVM5dmtyLWstQ3dSZVJPcUlnaUZRdV9pdTN1YUNLaTUyTHFrQlJ2bDRpdlo0alQw?oc=5",
-          "published": "Wed, 11 Nov 2026 13:03:52 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.116832+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        },
-        {
-          "source": "Google News RSS (headline only)",
-          "title": "AAPL is Trading at a Premium at 36.15X P/E: Is the Stock Still a Hold? - TradingView",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOS3NWZkRCc2Z2aUNKWGdheDJPLVc0b3l2eldHWmVjcllNMWZrRFRlOWR4bm81LWdGVTR0aDkyLUhDRDRIWDZSVnJNRFpiTUFOeEpIcGVOYU15elJCS3VEY2NCYWlxWUg1RTNaV193ZlhqLVVPVENYRXRjOXBGdklIbGxwbUpTOEFyWm5mTlY5VnRCZUFVazYzQmhydlUzSU9QVGV0OGUxMG5ZcFNKcWdkSDhUVVRKYjg2ZFdlQkpsRDJSdw?oc=5",
-          "published": "Fri, 13 Nov 2026 16:59:18 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.116835+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        },
-        {
-          "source": "Google News RSS (headline only)",
-          "title": "Apple: Record Earnings Mask A Growing Margin Problem (NASDAQ:AAPL) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdmh3YmNIUHlOT3dJYjFzbjFhc0NGTWJqTmZwRk1xLUZXRHdsSlJyRjNhWTFkNExyakxzdGJGcmIyMUotVGVIMEMtUDlneGcxaVJJR3hTUHdnTFJqNzZxd2VNbEJYbTlES1ZQSEY3bENVUVpGNVQtclUxclpZZDRySzNrLW5vUHp1N2pScmVmTEJjdEpKcTFn?oc=5",
-          "published": "Mon, 09 Nov 2026 13:25:10 GMT",
-          "retrieved_at": "2026-11-15T01:45:44.116838+00:00",
-          "summary": "Headline discovery only; article content and claim unverified"
-        }
-      ],
-      "filings": {},
-      "fundamentals": {},
+        "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
+      },
       "price": {
-        "status": "NOT_CONFIGURED",
+        "status": "RATE_LIMITED",
+        "reason": "Provider quota/response unavailable",
+        "market": "US",
+        "currency": "USD",
+        "provider_symbol": "AAPL",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": false
+      },
+      "quality": "PRIMARY_EVIDENCE_PRESENT",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "market": "US",
+        "currency": "USD",
+        "as_of": "unavailable",
+        "evidence_count": 4,
+        "evidence_citations": [
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 Apple Inc.",
+            "as_of": "2026-11-09",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126042798/ef20085077_8k.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "10-K \u2014 Apple Inc.",
+            "as_of": "2026-11-03",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 Apple Inc.",
+            "as_of": "2026-11-02",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "10-Q \u2014 Apple Inc.",
+            "as_of": "2026-07-31",
+            "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
+          }
+        ],
+        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+      },
+      "missing_data": [
+        "Verified historical daily OHLCV market data (status: RATE_LIMITED).",
+        "Recent company-specific news headlines."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "RATE_LIMITED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 478834000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 132175000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 158063000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 404548000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 112093000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 36305000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 145097000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (RATE_LIMITED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "RATE_LIMITED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 478834000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 132175000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 158063000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 404548000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 112093000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 36305000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 145097000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "filed": "2026-11-03",
+              "form": "10-K",
+              "accession": "0000320193-26-000026",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (RATE_LIMITED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "finished_at": "2026-11-17T04:43:52.694833+00:00"
+    },
+    {
+      "ticker": "MSFT",
+      "company": "Microsoft Corporation",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "instrument": {
+        "symbol": "MSFT",
+        "company": "Microsoft Corporation",
+        "name": "Microsoft Corporation",
+        "match_aliases": [
+          "Microsoft",
+          "MSFT"
+        ],
+        "market": "US",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "provider_symbol": "MSFT",
+        "nse_symbol": null,
+        "bse_scrip_code": null,
+        "bse_code": null,
+        "bse_ticker": null,
+        "bse_symbol": null,
+        "isin": null,
+        "nse_bse_interchangeable": false
+      },
+      "started_at": "2026-11-17T04:43:52.695456+00:00",
+      "agents": {
+        "news": {
+          "status": "FAILED",
+          "reason": "HTTP 503"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:08.880943+00:00"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:08.977394+00:00"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "QUOTA_BLOCKED",
+          "currency": "USD"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [],
+      "filings": {
+        "company": "MICROSOFT CORP",
+        "cik": 789019,
+        "filings": [
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm",
+            "published": "2026-11-05",
+            "retrieved_at": "2026-11-17T04:44:08.880795+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-448357 | Period End: 2026-11-04 | 8-K Items: 5.02); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001193125-26-448357",
+            "report_date": "2026-11-04",
+            "items": "5.02",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm",
+            "published": "2026-11-04",
+            "retrieved_at": "2026-11-17T04:44:08.880828+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-447173 | Period End: 2026-10-29 | 8-K Items: 8.01,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001193125-26-447173",
+            "report_date": "2026-10-29",
+            "items": "8.01,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm",
+            "published": "2026-10-28",
+            "retrieved_at": "2026-11-17T04:44:08.880835+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-436149 | Period End: 2026-10-28 | 8-K Items: 8.01,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001193125-26-436149",
+            "report_date": "2026-10-28",
+            "items": "8.01,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 MICROSOFT CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+            "published": "2026-10-28",
+            "retrieved_at": "2026-11-17T04:44:08.880840+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001193125-26-436133 | Period End: 2026-09-30); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0001193125-26-436133",
+            "report_date": "2026-09-30",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
+            "published": "2026-10-28",
+            "retrieved_at": "2026-11-17T04:44:08.880845+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-436122 | Period End: 2026-10-28 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001193125-26-436122",
+            "report_date": "2026-10-28",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526380280/d291965d8k.htm",
+            "published": "2026-09-02",
+            "retrieved_at": "2026-11-17T04:44:08.880853+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-380280 | Period End: 2026-09-02 | 8-K Items: 7.01,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001193125-26-380280",
+            "report_date": "2026-09-02",
+            "items": "7.01,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "MICROSOFT CORP",
+        "cik": 789019,
+        "metrics": {
+          "Revenue": {
+            "value_usd": 92279000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-28",
+            "form": "10-Q",
+            "accession": "0001193125-26-436133",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+            "verified_official_document": true
+          },
+          "Net income": {
+            "value_usd": 36629000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetIncomeLoss",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-28",
+            "form": "10-Q",
+            "accession": "0001193125-26-436133",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+            "verified_official_document": true
+          },
+          "Operating income": {
+            "value_usd": 45915000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "OperatingIncomeLoss",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-28",
+            "form": "10-Q",
+            "accession": "0001193125-26-436133",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+            "verified_official_document": true
+          },
+          "Total assets": {
+            "value_usd": 779403000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "Assets",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-28",
+            "form": "10-Q",
+            "accession": "0001193125-26-436133",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+            "verified_official_document": true
+          },
+          "Stockholders equity": {
+            "value_usd": 470509000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "StockholdersEquity",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-28",
+            "form": "10-Q",
+            "accession": "0001193125-26-436133",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+            "verified_official_document": true
+          },
+          "Cash and equivalents": {
+            "value_usd": 20281000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-28",
+            "form": "10-Q",
+            "accession": "0001193125-26-436133",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+            "verified_official_document": true
+          },
+          "Operating cash flow": {
+            "value_usd": 58000000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-28",
+            "form": "10-Q",
+            "accession": "0001193125-26-436133",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+            "verified_official_document": true
+          }
+        },
+        "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
+      },
+      "price": {
+        "status": "QUOTA_BLOCKED",
         "market": "US",
         "currency": "USD",
         "ohlcv_verified": false
       },
-      "quality": "PARTIAL_EVIDENCE",
+      "quality": "PRIMARY_EVIDENCE_PRESENT",
       "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "market": "US",
+        "currency": "USD",
+        "as_of": "unavailable",
+        "evidence_count": 4,
+        "evidence_citations": [
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "as_of": "2026-11-05",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "as_of": "2026-11-04",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 MICROSOFT CORP",
+            "as_of": "2026-10-28",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "10-Q \u2014 MICROSOFT CORP",
+            "as_of": "2026-10-28",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm"
+          }
+        ],
+        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+      },
+      "missing_data": [
+        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
+        "Recent company-specific news headlines."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 92279000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 36629000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 45915000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 779403000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 470509000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 20281000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 58000000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 92279000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 36629000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 45915000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 779403000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 470509000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 20281000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 58000000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2026-07-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-28",
+              "form": "10-Q",
+              "accession": "0001193125-26-436133",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "finished_at": "2026-11-17T04:44:08.977579+00:00"
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA Corporation",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "instrument": {
+        "symbol": "NVDA",
+        "company": "NVIDIA Corporation",
+        "name": "NVIDIA Corporation",
+        "match_aliases": [
+          "NVIDIA",
+          "NVDA"
+        ],
+        "market": "US",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "provider_symbol": "NVDA",
+        "nse_symbol": null,
+        "bse_scrip_code": null,
+        "bse_code": null,
+        "bse_ticker": null,
+        "bse_symbol": null,
+        "isin": null,
+        "nse_bse_interchangeable": false
+      },
+      "started_at": "2026-11-17T04:44:08.978673+00:00",
+      "agents": {
+        "news": {
+          "status": "FAILED",
+          "reason": "HTTP 503"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:24.977777+00:00"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:25.145167+00:00"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "QUOTA_BLOCKED",
+          "currency": "USD"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [],
+      "filings": {
+        "company": "NVIDIA CORP",
+        "cik": 1045810,
+        "filings": [
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+            "published": "2026-11-12",
+            "retrieved_at": "2026-11-17T04:44:24.977603+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000082 | Period End: 2026-11-11 | 8-K Items: 5.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001045810-26-000082",
+            "report_date": "2026-11-11",
+            "items": "5.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
+            "published": "2026-09-03",
+            "retrieved_at": "2026-11-17T04:44:24.977646+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000078 | Period End: 2026-09-02 | 8-K Items: 8.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001045810-26-000078",
+            "report_date": "2026-09-02",
+            "items": "8.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 NVIDIA CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+            "published": "2026-08-26",
+            "retrieved_at": "2026-11-17T04:44:24.977654+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001045810-26-000075 | Period End: 2026-07-26); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0001045810-26-000075",
+            "report_date": "2026-07-26",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+            "published": "2026-08-26",
+            "retrieved_at": "2026-11-17T04:44:24.977660+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000073 | Period End: 2026-08-26 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001045810-26-000073",
+            "report_date": "2026-08-26",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm",
+            "published": "2026-08-17",
+            "retrieved_at": "2026-11-17T04:44:24.977666+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000069 | Period End: 2026-08-17 | 8-K Items: 1.01,2.03,7.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001045810-26-000069",
+            "report_date": "2026-08-17",
+            "items": "1.01,2.03,7.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
+            "published": "2026-07-02",
+            "retrieved_at": "2026-11-17T04:44:24.977672+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000060 | Period End: 2026-06-28 | 8-K Items: 5.02); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001045810-26-000060",
+            "report_date": "2026-06-28",
+            "items": "5.02",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "NVIDIA CORP",
+        "cik": 1045810,
+        "metrics": {
+          "Revenue": {
+            "value_usd": 177837000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "Revenues",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "filed": "2026-08-26",
+            "form": "10-Q",
+            "accession": "0001045810-26-000075",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "verified_official_document": true
+          },
+          "Net income": {
+            "value_usd": 118010000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetIncomeLoss",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "filed": "2026-08-26",
+            "form": "10-Q",
+            "accession": "0001045810-26-000075",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "verified_official_document": true
+          },
+          "Operating income": {
+            "value_usd": 117270000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "OperatingIncomeLoss",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "filed": "2026-08-26",
+            "form": "10-Q",
+            "accession": "0001045810-26-000075",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "verified_official_document": true
+          },
+          "Total assets": {
+            "value_usd": 320272000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "Assets",
+            "period_start": null,
+            "period_end": "2026-07-26",
+            "filed": "2026-08-26",
+            "form": "10-Q",
+            "accession": "0001045810-26-000075",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "verified_official_document": true
+          },
+          "Stockholders equity": {
+            "value_usd": 228984000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "StockholdersEquity",
+            "period_start": null,
+            "period_end": "2026-07-26",
+            "filed": "2026-08-26",
+            "form": "10-Q",
+            "accession": "0001045810-26-000075",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "verified_official_document": true
+          },
+          "Cash and equivalents": {
+            "value_usd": 22443000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+            "period_start": null,
+            "period_end": "2026-07-26",
+            "filed": "2026-08-26",
+            "form": "10-Q",
+            "accession": "0001045810-26-000075",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "verified_official_document": true
+          },
+          "Operating cash flow": {
+            "value_usd": 74421000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+            "period_start": "2026-01-26",
+            "period_end": "2026-07-26",
+            "filed": "2026-08-26",
+            "form": "10-Q",
+            "accession": "0001045810-26-000075",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+            "verified_official_document": true
+          }
+        },
+        "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
+      },
+      "price": {
+        "status": "QUOTA_BLOCKED",
+        "market": "US",
+        "currency": "USD",
+        "ohlcv_verified": false
+      },
+      "quality": "PRIMARY_EVIDENCE_PRESENT",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "market": "US",
+        "currency": "USD",
+        "as_of": "unavailable",
+        "evidence_count": 4,
+        "evidence_citations": [
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "as_of": "2026-11-12",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "as_of": "2026-09-03",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "10-Q \u2014 NVIDIA CORP",
+            "as_of": "2026-08-26",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "as_of": "2026-08-26",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm"
+          }
+        ],
+        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+      },
+      "missing_data": [
+        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
+        "Recent company-specific news headlines."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 177837000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Revenues",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 118010000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 117270000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 320272000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 228984000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 22443000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 74421000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 177837000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Revenues",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 118010000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 117270000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 320272000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 228984000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 22443000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 74421000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2026-01-26",
+              "period_end": "2026-07-26",
+              "filed": "2026-08-26",
+              "form": "10-Q",
+              "accession": "0001045810-26-000075",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "finished_at": "2026-11-17T04:44:25.145298+00:00"
+    },
+    {
+      "ticker": "AMZN",
+      "company": "Amazon.com, Inc.",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "instrument": {
+        "symbol": "AMZN",
+        "company": "Amazon.com, Inc.",
+        "name": "Amazon.com, Inc.",
+        "match_aliases": [
+          "Amazon",
+          "AMZN"
+        ],
+        "market": "US",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "provider_symbol": "AMZN",
+        "nse_symbol": null,
+        "bse_scrip_code": null,
+        "bse_code": null,
+        "bse_ticker": null,
+        "bse_symbol": null,
+        "isin": null,
+        "nse_bse_interchangeable": false
+      },
+      "started_at": "2026-11-17T04:44:25.146666+00:00",
+      "agents": {
+        "news": {
+          "status": "FAILED",
+          "reason": "HTTP 429"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:32.152465+00:00"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:32.311855+00:00"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "QUOTA_BLOCKED",
+          "currency": "USD"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [],
+      "filings": {
+        "company": "AMAZON COM INC",
+        "cik": 1018724,
+        "filings": [
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 AMAZON COM INC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm",
+            "published": "2026-10-30",
+            "retrieved_at": "2026-11-17T04:44:32.152272+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001018724-26-000040 | Period End: 2026-09-30); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0001018724-26-000040",
+            "report_date": "2026-09-30",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 AMAZON COM INC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm",
+            "published": "2026-10-29",
+            "retrieved_at": "2026-11-17T04:44:32.152310+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001018724-26-000038 | Period End: 2026-10-29 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001018724-26-000038",
+            "report_date": "2026-10-29",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 AMAZON COM INC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm",
+            "published": "2026-09-14",
+            "retrieved_at": "2026-11-17T04:44:32.152317+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001104659-26-107526 | Period End: 2026-09-14 | 8-K Items: 8.01,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001104659-26-107526",
+            "report_date": "2026-09-14",
+            "items": "8.01,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 AMAZON COM INC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+            "published": "2026-09-09",
+            "retrieved_at": "2026-11-17T04:44:32.152323+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001018724-26-000036 | Period End: 2026-09-08 | 8-K Items: 5.02); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001018724-26-000036",
+            "report_date": "2026-09-08",
+            "items": "5.02",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 AMAZON COM INC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+            "published": "2026-07-31",
+            "retrieved_at": "2026-11-17T04:44:32.152330+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001018724-26-000026 | Period End: 2026-06-30); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0001018724-26-000026",
+            "report_date": "2026-06-30",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 AMAZON COM INC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm",
+            "published": "2026-07-30",
+            "retrieved_at": "2026-11-17T04:44:32.152336+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001018724-26-000024 | Period End: 2026-07-30 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001018724-26-000024",
+            "report_date": "2026-07-30",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "AMAZON COM INC",
+        "cik": 1018724,
+        "metrics": {
+          "Revenue": {
+            "value_usd": 584069000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "period_start": "2026-01-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-30",
+            "form": "10-Q",
+            "accession": "0001018724-26-000040",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+            "verified_official_document": true
+          },
+          "Net income": {
+            "value_usd": 134779000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetIncomeLoss",
+            "period_start": "2025-10-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-30",
+            "form": "10-Q",
+            "accession": "0001018724-26-000040",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+            "verified_official_document": true
+          },
+          "Operating income": {
+            "value_usd": 79389000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "OperatingIncomeLoss",
+            "period_start": "2026-01-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-30",
+            "form": "10-Q",
+            "accession": "0001018724-26-000040",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+            "verified_official_document": true
+          },
+          "Total assets": {
+            "value_usd": 1243390000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "Assets",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-30",
+            "form": "10-Q",
+            "accession": "0001018724-26-000040",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+            "verified_official_document": true
+          },
+          "Stockholders equity": {
+            "value_usd": 613601000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "StockholdersEquity",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-30",
+            "form": "10-Q",
+            "accession": "0001018724-26-000040",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+            "verified_official_document": true
+          },
+          "Cash and equivalents": {
+            "value_usd": 55783000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-30",
+            "form": "10-Q",
+            "accession": "0001018724-26-000040",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+            "verified_official_document": true
+          },
+          "Operating cash flow": {
+            "value_usd": 168300000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+            "period_start": "2025-10-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-30",
+            "form": "10-Q",
+            "accession": "0001018724-26-000040",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+            "verified_official_document": true
+          }
+        },
+        "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
+      },
+      "price": {
+        "status": "QUOTA_BLOCKED",
+        "market": "US",
+        "currency": "USD",
+        "ohlcv_verified": false
+      },
+      "quality": "PRIMARY_EVIDENCE_PRESENT",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "market": "US",
+        "currency": "USD",
+        "as_of": "unavailable",
+        "evidence_count": 4,
+        "evidence_citations": [
+          {
+            "type": "regulatory_filing",
+            "title": "10-Q \u2014 AMAZON COM INC",
+            "as_of": "2026-10-30",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 AMAZON COM INC",
+            "as_of": "2026-10-29",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 AMAZON COM INC",
+            "as_of": "2026-09-14",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 AMAZON COM INC",
+            "as_of": "2026-09-09",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm"
+          }
+        ],
+        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+      },
+      "missing_data": [
+        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
+        "Recent company-specific news headlines."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 584069000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 134779000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2025-10-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 79389000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 1243390000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 613601000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 55783000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 168300000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2025-10-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 584069000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 134779000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2025-10-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 79389000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 1243390000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 613601000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 55783000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 168300000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2025-10-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-30",
+              "form": "10-Q",
+              "accession": "0001018724-26-000040",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "finished_at": "2026-11-17T04:44:32.311987+00:00"
+    },
+    {
+      "ticker": "GOOGL",
+      "company": "Alphabet Inc.",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "instrument": {
+        "symbol": "GOOGL",
+        "company": "Alphabet Inc.",
+        "name": "Alphabet Inc.",
+        "match_aliases": [
+          "Alphabet",
+          "Google",
+          "GOOGL"
+        ],
+        "market": "US",
+        "exchange": "NASDAQ",
+        "currency": "USD",
+        "provider_symbol": "GOOGL",
+        "nse_symbol": null,
+        "bse_scrip_code": null,
+        "bse_code": null,
+        "bse_ticker": null,
+        "bse_symbol": null,
+        "isin": null,
+        "nse_bse_interchangeable": false
+      },
+      "started_at": "2026-11-17T04:44:32.313720+00:00",
+      "agents": {
+        "news": {
+          "status": "FAILED",
+          "reason": "HTTP 503"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:44.476220+00:00"
+        },
+        "fundamentals": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:44.623701+00:00"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "QUOTA_BLOCKED",
+          "currency": "USD"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL"
+        }
+      },
+      "news": [],
+      "filings": {
+        "company": "Alphabet Inc.",
+        "cik": 1652044,
+        "filings": [
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 Alphabet Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm",
+            "published": "2026-11-05",
+            "retrieved_at": "2026-11-17T04:44:44.476058+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-449835 | Period End: 2026-11-05 | 8-K Items: 8.01,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001193125-26-449835",
+            "report_date": "2026-11-05",
+            "items": "8.01,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 Alphabet Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
+            "published": "2026-10-29",
+            "retrieved_at": "2026-11-17T04:44:44.476101+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001652044-26-000084 | Period End: 2026-09-30); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0001652044-26-000084",
+            "report_date": "2026-09-30",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 Alphabet Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm",
+            "published": "2026-10-28",
+            "retrieved_at": "2026-11-17T04:44:44.476109+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001652044-26-000080 | Period End: 2026-10-28 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001652044-26-000080",
+            "report_date": "2026-10-28",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 Alphabet Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526342390/d171253d8k.htm",
+            "published": "2026-08-10",
+            "retrieved_at": "2026-11-17T04:44:44.476117+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-342390 | Period End: 2026-08-10 | 8-K Items: 8.01,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001193125-26-342390",
+            "report_date": "2026-08-10",
+            "items": "8.01,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "10-Q \u2014 Alphabet Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+            "published": "2026-07-23",
+            "retrieved_at": "2026-11-17T04:44:44.476124+00:00",
+            "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001652044-26-000071 | Period End: 2026-06-30); full narrative document not parsed",
+            "form": "10-Q",
+            "accession_number": "0001652044-26-000071",
+            "report_date": "2026-06-30",
+            "items": null,
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 Alphabet Inc.",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm",
+            "published": "2026-07-22",
+            "retrieved_at": "2026-11-17T04:44:44.476129+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001652044-26-000066 | Period End: 2026-07-22 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001652044-26-000066",
+            "report_date": "2026-07-22",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          }
+        ],
+        "warning": null
+      },
+      "fundamentals": {
+        "company": "Alphabet Inc.",
+        "cik": 1652044,
+        "metrics": {
+          "Revenue": {
+            "value_usd": 357269000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "Revenues",
+            "period_start": "2026-01-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-29",
+            "form": "10-Q",
+            "accession": "0001652044-26-000084",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+            "verified_official_document": true
+          },
+          "Net income": {
+            "value_usd": 201239000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetIncomeLoss",
+            "period_start": "2026-01-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-29",
+            "form": "10-Q",
+            "accession": "0001652044-26-000084",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+            "verified_official_document": true
+          },
+          "Operating income": {
+            "value_usd": 121042000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "OperatingIncomeLoss",
+            "period_start": "2026-01-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-29",
+            "form": "10-Q",
+            "accession": "0001652044-26-000084",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+            "verified_official_document": true
+          },
+          "Total assets": {
+            "value_usd": 1003312000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "Assets",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-29",
+            "form": "10-Q",
+            "accession": "0001652044-26-000084",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+            "verified_official_document": true
+          },
+          "Stockholders equity": {
+            "value_usd": 677549000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "StockholdersEquity",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-29",
+            "form": "10-Q",
+            "accession": "0001652044-26-000084",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+            "verified_official_document": true
+          },
+          "Cash and equivalents": {
+            "value_usd": 56334000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+            "period_start": null,
+            "period_end": "2026-09-30",
+            "filed": "2026-10-29",
+            "form": "10-Q",
+            "accession": "0001652044-26-000084",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+            "verified_official_document": true
+          },
+          "Operating cash flow": {
+            "value_usd": 127149000000,
+            "currency": "USD",
+            "accounting_standard": "US-GAAP",
+            "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+            "period_start": "2026-01-01",
+            "period_end": "2026-09-30",
+            "filed": "2026-10-29",
+            "form": "10-Q",
+            "accession": "0001652044-26-000084",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+            "verified_official_document": true
+          }
+        },
+        "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
+      },
+      "price": {
+        "status": "QUOTA_BLOCKED",
+        "market": "US",
+        "currency": "USD",
+        "ohlcv_verified": false
+      },
+      "quality": "PRIMARY_EVIDENCE_PRESENT",
+      "research_outcome": "PARTIAL",
+      "ai": {
+        "status": "NOT_CONFIGURED"
+      },
+      "signal": {
+        "label": "INSUFFICIENT_EVIDENCE",
+        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "market": "US",
+        "currency": "USD",
+        "as_of": "unavailable",
+        "evidence_count": 4,
+        "evidence_citations": [
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 Alphabet Inc.",
+            "as_of": "2026-11-05",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "10-Q \u2014 Alphabet Inc.",
+            "as_of": "2026-10-29",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 Alphabet Inc.",
+            "as_of": "2026-10-28",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 Alphabet Inc.",
+            "as_of": "2026-08-10",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526342390/d171253d8k.htm"
+          }
+        ],
+        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+      },
+      "missing_data": [
+        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
+        "Recent company-specific news headlines."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
+      "pillars": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 357269000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Revenues",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 201239000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 121042000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 1003312000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 677549000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 56334000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 127149000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "five_pillar_summary": {
+        "technical": {
+          "status": "QUOTA_BLOCKED",
+          "as_of": null,
+          "currency": "USD",
+          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+        },
+        "fundamental": {
+          "accounting_standard": "US-GAAP (SEC EDGAR)",
+          "currency": "USD",
+          "sec_filings_count": 6,
+          "xbrl_metrics_count": 7,
+          "metrics": {
+            "Revenue": {
+              "value_usd": 357269000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Revenues",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Net income": {
+              "value_usd": 201239000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetIncomeLoss",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Operating income": {
+              "value_usd": 121042000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "OperatingIncomeLoss",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Total assets": {
+              "value_usd": 1003312000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "Assets",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Stockholders equity": {
+              "value_usd": 677549000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "StockholdersEquity",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Cash and equivalents": {
+              "value_usd": 56334000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "CashAndCashEquivalentsAtCarryingValue",
+              "period_start": null,
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            },
+            "Operating cash flow": {
+              "value_usd": 127149000000,
+              "currency": "USD",
+              "accounting_standard": "US-GAAP",
+              "xbrl_tag": "NetCashProvidedByUsedInOperatingActivities",
+              "period_start": "2026-01-01",
+              "period_end": "2026-09-30",
+              "filed": "2026-10-29",
+              "form": "10-Q",
+              "accession": "0001652044-26-000084",
+              "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+              "verified_official_document": true
+            }
+          },
+          "status": "VERIFIED_XBRL_AND_FILINGS"
+        },
+        "valuation": {
+          "status": "NOT_COMPUTED_INSUFFICIENT_VERIFIED_INPUTS",
+          "currency": "USD",
+          "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
+        },
+        "sentiment": {
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
+          "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
+        },
+        "risk": {
+          "annualized_volatility_20d_pct": null,
+          "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
+          "research_outcome": "PARTIAL",
+          "uncertainties": [
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No recent company-specific news headlines retrieved."
+          ]
+        }
+      },
+      "finished_at": "2026-11-17T04:44:44.623884+00:00"
+    },
+    {
+      "ticker": "SPY",
+      "company": "SPDR S&P 500 ETF Trust",
+      "market": "US",
+      "exchange": "NYSE Arca",
+      "currency": "USD",
+      "instrument": {
+        "symbol": "SPY",
+        "company": "SPDR S&P 500 ETF Trust",
+        "name": "SPDR S&P 500 ETF Trust",
+        "match_aliases": [
+          "SPDR S&P 500",
+          "SPY"
+        ],
+        "market": "US",
+        "exchange": "NYSE Arca",
+        "currency": "USD",
+        "provider_symbol": "SPY",
+        "nse_symbol": null,
+        "bse_scrip_code": null,
+        "bse_code": null,
+        "bse_ticker": null,
+        "bse_symbol": null,
+        "isin": null,
+        "nse_bse_interchangeable": false
+      },
+      "started_at": "2026-11-17T04:44:44.625888+00:00",
+      "agents": {
+        "news": {
+          "status": "FAILED",
+          "reason": "HTTP 429"
+        },
+        "filings": {
+          "status": "COMPLETE",
+          "at": "2026-11-17T04:44:44.947100+00:00"
+        },
+        "fundamentals": {
+          "status": "FAILED",
+          "reason": "HTTP 404"
+        },
+        "market_data": {
+          "status": "SKIPPED",
+          "reason": "QUOTA_BLOCKED",
+          "currency": "USD"
+        },
+        "ai_analyst": {
+          "status": "SKIPPED",
+          "reason": "No API key or insufficient primary evidence"
+        },
+        "validator": {
+          "status": "COMPLETE",
+          "quality": "INSUFFICIENT_EVIDENCE",
+          "research_outcome": "FAILED"
+        }
+      },
+      "news": [],
+      "filings": {
+        "company": "SPDR S&P 500 ETF TRUST",
+        "cik": 884394,
+        "filings": [],
+        "warning": null
+      },
+      "fundamentals": {},
+      "price": {
+        "status": "QUOTA_BLOCKED",
+        "market": "US",
+        "currency": "USD",
+        "ohlcv_verified": false
+      },
+      "quality": "INSUFFICIENT_EVIDENCE",
+      "research_outcome": "FAILED",
       "ai": {
         "status": "NOT_CONFIGURED"
       },
@@ -155,32 +2945,25 @@
         "market": "US",
         "currency": "USD",
         "as_of": "unavailable",
-        "evidence_count": 3,
-        "evidence_citations": [
-          {
-            "type": "headline_discovery",
-            "title": "Apple Shares (AAPL) Look Expensive Heading into 2027 - Yahoo Finance",
-            "as_of": "Wed, 11 Nov 2026 21:15:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM2lsenhVYnFXTUNRUHVQUkVxVEVMUDNwSzdFcDNnNWNRU3F2dDVGTHh2Zkh1N2laS1FtZHdzb2hQN3B6bHhrcUUxa2VFOWxzY1NlZTVwRFB5YkE4MGxjUHBueG1WQjRjUExnanJaZGZFSTQzX1Y0YTU3bmJ6UGNZYjNyaVdPenFDZHVhU0JlMUZySFBONHVDU2wxNnNIUQ?oc=5"
-          },
-          {
-            "type": "headline_discovery",
-            "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
-            "as_of": "Thu, 12 Nov 2026 11:12:44 GMT",
-            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5"
-          },
-          {
-            "type": "headline_discovery",
-            "title": "Is Apple Stock a Buy Right Now? - The Motley Fool",
-            "as_of": "Sat, 14 Nov 2026 00:07:00 GMT",
-            "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZZzd4WHdhQ2gyRU5BckJfY21JTWhSdXYyZC1sZGlmb0FyZEZUSzVDeWVkbUloU19hR2ItYVhiaXBodGVIUVZTODZtQ1lkdWV1RVlOcDhZOFpJR1Z6bld4TG1YN3BPTUY3ZXhLeGlEaUFOTzNmN3FNbjI3VDVYdw?oc=5"
-          }
-        ],
+        "evidence_count": 0,
+        "evidence_citations": [],
         "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
       },
+      "missing_data": [
+        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
+        "Primary US SEC EDGAR filings (10-K, 10-Q, 8-K).",
+        "Verified US-GAAP XBRL companyfacts numerical accounting metrics.",
+        "Recent company-specific news headlines."
+      ],
+      "unsupported_conclusions": [
+        "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
+        "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
+        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
+        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+      ],
       "pillars": {
         "technical": {
-          "status": "NOT_CONFIGURED",
+          "status": "QUOTA_BLOCKED",
           "as_of": null,
           "currency": "USD",
           "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
@@ -199,24 +2982,25 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "HEADLINE_DISCOVERY_ONLY",
-          "headlines_count": 6,
-          "latest_published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
           "annualized_volatility_20d_pct": null,
-          "data_quality_tier": "PARTIAL_EVIDENCE",
-          "research_outcome": "PARTIAL",
+          "data_quality_tier": "INSUFFICIENT_EVIDENCE",
+          "research_outcome": "FAILED",
           "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (NOT_CONFIGURED).",
-            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset).",
+            "No recent company-specific news headlines retrieved."
           ]
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "NOT_CONFIGURED",
+          "status": "QUOTA_BLOCKED",
           "as_of": null,
           "currency": "USD",
           "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
@@ -235,36 +3019,44 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "HEADLINE_DISCOVERY_ONLY",
-          "headlines_count": 6,
-          "latest_published": "Wed, 11 Nov 2026 21:15:00 GMT",
+          "status": "NO_HEADLINES_FETCHED",
+          "headlines_count": 0,
+          "latest_published": null,
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
           "annualized_volatility_20d_pct": null,
-          "data_quality_tier": "PARTIAL_EVIDENCE",
-          "research_outcome": "PARTIAL",
+          "data_quality_tier": "INSUFFICIENT_EVIDENCE",
+          "research_outcome": "FAILED",
           "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (NOT_CONFIGURED).",
-            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
+            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset).",
+            "No recent company-specific news headlines retrieved."
           ]
         }
       },
-      "finished_at": "2026-11-15T01:45:44.826381+00:00"
+      "finished_at": "2026-11-17T04:44:45.049507+00:00"
     }
   ],
   "status": "PARTIAL",
-  "finished_at": "2026-11-15T01:45:44.827775+00:00",
+  "price_quota_blocked": true,
+  "finished_at": "2026-11-17T04:44:45.051797+00:00",
   "outcome_counts": {
     "COMPLETE": 0,
-    "PARTIAL": 1,
-    "FAILED": 0
+    "PARTIAL": 5,
+    "FAILED": 1
   },
   "outcomes_by_symbol": {
     "COMPLETE": [],
     "PARTIAL": [
-      "AAPL"
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "GOOGL"
     ],
-    "FAILED": []
+    "FAILED": [
+      "SPY"
+    ]
   }
 }

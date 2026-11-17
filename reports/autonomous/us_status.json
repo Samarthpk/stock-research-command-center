@@ -2,18 +2,24 @@
   "status": "PARTIAL",
   "outcome_counts": {
     "COMPLETE": 0,
-    "PARTIAL": 1,
-    "FAILED": 0
+    "PARTIAL": 5,
+    "FAILED": 1
   },
   "outcomes_by_symbol": {
     "COMPLETE": [],
     "PARTIAL": [
-      "AAPL"
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "GOOGL"
     ],
-    "FAILED": []
+    "FAILED": [
+      "SPY"
+    ]
   },
   "market": "US",
-  "market_session_date": "2026-11-13",
-  "completed_at": "2026-11-15T01:45:44.827775+00:00",
-  "mission_id": "20261115T014543Z-US"
+  "market_session_date": "2026-11-16",
+  "completed_at": "2026-11-17T04:44:45.051797+00:00",
+  "mission_id": "20261117T044336Z-US"
 }
