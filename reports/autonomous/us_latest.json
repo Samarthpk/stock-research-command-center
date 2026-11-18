@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "mission_id": "20261117T044336Z-US",
+  "mission_id": "20261118T034919Z-US",
   "market": "US",
   "currency": "USD",
-  "market_session_date": "2026-11-16",
+  "market_session_date": "2026-11-17",
   "market_schedule": {
     "market": "US",
     "market_name": "United States (NYSE / NASDAQ)",
@@ -12,9 +12,9 @@
     "timezone": "America/New_York",
     "tz_abbrev": "EST",
     "is_dst": false,
-    "local_time": "2026-11-16 23:43 EST",
-    "local_time_iso": "2026-11-16T23:43:36.249378-05:00",
-    "local_date": "2026-11-16",
+    "local_time": "2026-11-17 22:49 EST",
+    "local_time_iso": "2026-11-17T22:49:19.440139-05:00",
+    "local_date": "2026-11-17",
     "is_weekend": false,
     "is_holiday": false,
     "holiday_name": null,
@@ -23,9 +23,9 @@
     "is_open_now": false,
     "market_phase": "POST_CLOSE",
     "ready_for_post_close_run": true,
-    "latest_completed_session": "2026-11-16"
+    "latest_completed_session": "2026-11-17"
   },
-  "started_at": "2026-11-17T04:43:36.249779+00:00",
+  "started_at": "2026-11-18T03:49:19.440913+00:00",
   "data_policy": "historical and public sources; native currencies preserved (USD/INR); no trading",
   "symbols": [
     "AAPL",
@@ -62,23 +62,23 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-17T04:43:36.417253+00:00",
+      "started_at": "2026-11-18T03:49:19.929625+00:00",
       "agents": {
         "news": {
-          "status": "FAILED",
-          "reason": "HTTP 503"
+          "status": "COMPLETE",
+          "at": "2026-11-18T03:49:20.232004+00:00"
         },
         "filings": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:43:52.617429+00:00"
+          "at": "2026-11-18T03:49:20.403597+00:00"
         },
         "fundamentals": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:43:52.694657+00:00"
+          "at": "2026-11-18T03:49:20.634436+00:00"
         },
         "market_data": {
-          "status": "SKIPPED",
-          "reason": "RATE_LIMITED",
+          "status": "COMPLETE",
+          "reason": "OK",
           "currency": "USD"
         },
         "ai_analyst": {
@@ -88,10 +88,65 @@
         "validator": {
           "status": "COMPLETE",
           "quality": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL"
+          "research_outcome": "COMPLETE"
         }
       },
-      "news": [],
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple Inc. (AAPL) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TSWlVaERqVVBsb2hTVzZaa3l2bkpRTGZVT0lzaGo2TDNNRzVKMkttcFRXV2U1T1RDLVBLNktsRmxVcTNtbXpmTGFLUHdsT3VmR1E?oc=5",
+          "published": "Tue, 17 Nov 2026 01:07:07 GMT",
+          "retrieved_at": "2026-11-18T03:49:20.231948+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5",
+          "published": "Thu, 12 Nov 2026 11:12:44 GMT",
+          "retrieved_at": "2026-11-18T03:49:20.231973+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Is Apple Stock a Buy Right Now? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNzVxdVpEWlYtU092N3BWN0hXNXFLRlpHYmY0QmJRcTdOcXFsdUdZMWtSeHd5cWI1YW5LRU0xcHlkaDlmRDVQZzdaUld4SVBWLVBtZTZvTUVXVjRwaHpKZkhHenZvX2ZNc05qclU5bllkMlljWS15Q3FobDhjYWxvT1psdnctT3JWXy01Sg?oc=5",
+          "published": "Sat, 14 Nov 2026 00:27:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:20.231980+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "What Could Still Send Apple Stock Higher? - Trefis",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOVHl5c3pweVhReE81T3FnaXpfMGYwUDdlTjdnR2I3aTJiRzU4akg5YWZiRzdncGdOdmFEWVhZSWFhQTN2d3ZnSjU5eHdFR3J0M05VMVM3X3hIXzRTNmJsblBLb0R4ZkdVYkcyaUczUU9GbU1fRlJ0Y3FuWlY0R1l6UDBobGRuTW5ncTJRQUtqVllhOUlnVW5LajZibFhWZldSbDJJ?oc=5",
+          "published": "Fri, 13 Nov 2026 16:25:19 GMT",
+          "retrieved_at": "2026-11-18T03:49:20.231984+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Why Apple Stock Fell Despite a Record Quarter - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPS1BOLVV1UEc5ZXI2UUtCUWFYb2E1R0tpU09tQkQwdnp1Y0xmVUpWYmYwWTMyMVAzRlk2akV3aE1SOWM4SkY1T0s3RGptVFBXZFJiRXN4eGpIckpib0tfUE9GcURjbm1nQ29vMURSamo1OUcwbVphalIzYXBiNjZXZGlDQUpJQUQ5NkdLVGpGdGtUdw?oc=5",
+          "published": "Wed, 11 Nov 2026 19:00:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:20.231988+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "AAPL is Trading at a Premium at 36.15X P/E: Is the Stock Still a Hold? - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOd2w4eFVvRVZ1NXBJTTZ5elZCNTVFM3ptb0tzcU9Rc2NvbkVnbTROTzEwYTh2QnBhemZNbkV2RzR6UnFaa0Q1M0Y1VHM3XzZmUVNmY3psWFhkVzE3YmV6MWxjRllobHRmX2dqME53V0RJLUs2U2w0bjJKX0hFUmQtb2RlRGhBTk9mZVZNVWF6LTJRY1RPTmZaVlloRzVGX0FsZXlqVU9fV19JYy0xSmNmS05IRVNSWHJVM1VvVWM3Q08?oc=5",
+          "published": "Sat, 14 Nov 2026 06:14:46 GMT",
+          "retrieved_at": "2026-11-18T03:49:20.231991+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
       "filings": {
         "company": "Apple Inc.",
         "cik": 320193,
@@ -101,7 +156,7 @@
             "title": "8-K \u2014 Apple Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126042798/ef20085077_8k.htm",
             "published": "2026-11-09",
-            "retrieved_at": "2026-11-17T04:43:52.617224+00:00",
+            "retrieved_at": "2026-11-18T03:49:20.403484+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001140361-26-042798 | Period End: 2026-11-05 | 8-K Items: 8.01,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001140361-26-042798",
@@ -116,7 +171,7 @@
             "title": "10-K \u2014 Apple Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
             "published": "2026-11-03",
-            "retrieved_at": "2026-11-17T04:43:52.617271+00:00",
+            "retrieved_at": "2026-11-18T03:49:20.403508+00:00",
             "summary": "Official SEC EDGAR 10-K filing metadata (Accn: 0000320193-26-000026 | Period End: 2026-09-26); full narrative document not parsed",
             "form": "10-K",
             "accession_number": "0000320193-26-000026",
@@ -131,7 +186,7 @@
             "title": "8-K \u2014 Apple Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm",
             "published": "2026-11-02",
-            "retrieved_at": "2026-11-17T04:43:52.617281+00:00",
+            "retrieved_at": "2026-11-18T03:49:20.403516+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0000320193-26-000024 | Period End: 2026-11-02 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0000320193-26-000024",
@@ -146,7 +201,7 @@
             "title": "10-Q \u2014 Apple Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
             "published": "2026-07-31",
-            "retrieved_at": "2026-11-17T04:43:52.617290+00:00",
+            "retrieved_at": "2026-11-18T03:49:20.403523+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0000320193-26-000020 | Period End: 2026-06-27); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0000320193-26-000020",
@@ -161,7 +216,7 @@
             "title": "8-K \u2014 Apple Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm",
             "published": "2026-07-30",
-            "retrieved_at": "2026-11-17T04:43:52.617297+00:00",
+            "retrieved_at": "2026-11-18T03:49:20.403528+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0000320193-26-000018 | Period End: 2026-07-30 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0000320193-26-000018",
@@ -176,7 +231,7 @@
             "title": "10-Q \u2014 Apple Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
             "published": "2026-05-01",
-            "retrieved_at": "2026-11-17T04:43:52.617303+00:00",
+            "retrieved_at": "2026-11-18T03:49:20.403533+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0000320193-26-000013 | Period End: 2026-03-28); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0000320193-26-000013",
@@ -288,27 +343,49 @@
         "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
       },
       "price": {
-        "status": "RATE_LIMITED",
-        "reason": "Provider quota/response unavailable",
+        "status": "OK",
         "market": "US",
         "currency": "USD",
         "provider_symbol": "AAPL",
         "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
-        "ohlcv_verified": false
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 352.83,
+          "high": 355.36,
+          "low": 349.67,
+          "close": 351.91,
+          "volume": 37407537
+        },
+        "as_of": "2026-11-17",
+        "close": 351.91,
+        "ma20": 347.2627,
+        "ma50": 340.4063,
+        "return20_pct": 3.655,
+        "volatility_pct": 28.3,
+        "trend": "POSITIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-18T03:49:19.918119+00:00",
+        "is_realtime": false
       },
       "quality": "PRIMARY_EVIDENCE_PRESENT",
-      "research_outcome": "PARTIAL",
+      "research_outcome": "COMPLETE",
       "ai": {
         "status": "NOT_CONFIGURED"
       },
       "signal": {
-        "label": "INSUFFICIENT_EVIDENCE",
-        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "label": "INVESTIGATE",
+        "reason": "Historical moving-average trend (USD) backed by verified primary filings and official financial metrics; not investment advice",
         "market": "US",
         "currency": "USD",
-        "as_of": "unavailable",
-        "evidence_count": 4,
+        "as_of": "2026-11-17",
+        "evidence_count": 8,
         "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (AAPL)",
+            "as_of": "2026-11-17",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
           {
             "type": "regulatory_filing",
             "title": "8-K \u2014 Apple Inc.",
@@ -332,26 +409,51 @@
             "title": "10-Q \u2014 Apple Inc.",
             "as_of": "2026-07-31",
             "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Apple Inc. (AAPL) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+            "as_of": "Tue, 17 Nov 2026 01:07:07 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TSWlVaERqVVBsb2hTVzZaa3l2bkpRTGZVT0lzaGo2TDNNRzVKMkttcFRXV2U1T1RDLVBLNktsRmxVcTNtbXpmTGFLUHdsT3VmR1E?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Apple Earnings Review: Revenue Beats Estimates as Memory Crunch Threatens Margins - Morningstar",
+            "as_of": "Thu, 12 Nov 2026 11:12:44 GMT",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdVF4eXZaLS1EbzQ5N2x5QXVXeTV0YTluazBQLVFnbDJpWklYZjlSNEF0UnBzM2Rkd25yU2lDWU5iV1czd2JuX2lITFlVSXRVMEM3dzI3Y1BSQlhOeW5aVWd2c2hOcXhTaFJFODBXNGdEMXVpQktNMTZmYlVjcnZDeWk3ZV9zYmpZcHZ3ODRadl9LU01oSC0wU2FTaUpwTnRYUzU2MVgtMlB0TEpHbjk4dU1B?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Is Apple Stock a Buy Right Now? - Yahoo Finance",
+            "as_of": "Sat, 14 Nov 2026 00:27:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNzVxdVpEWlYtU092N3BWN0hXNXFLRlpHYmY0QmJRcTdOcXFsdUdZMWtSeHd5cWI1YW5LRU0xcHlkaDlmRDVQZzdaUld4SVBWLVBtZTZvTUVXVjRwaHpKZkhHenZvX2ZNc05qclU5bllkMlljWS15Q3FobDhjYWxvT1psdnctT3JWXy01Sg?oc=5"
           }
         ],
-        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+        "uncertainty": "Historical end-of-day technicals (USD) and point-in-time reported accounting facts only; no forward earnings estimates or valuation multiples are fabricated."
       },
-      "missing_data": [
-        "Verified historical daily OHLCV market data (status: RATE_LIMITED).",
-        "Recent company-specific news headlines."
-      ],
+      "missing_data": [],
       "unsupported_conclusions": [
         "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
         "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
-        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
-        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+        "Treating general news headlines or secondary media articles as primary regulatory evidence."
       ],
       "pillars": {
         "technical": {
-          "status": "RATE_LIMITED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $351.91",
+          "ma20_formatted": "USD $347.26",
+          "ma50_formatted": "USD $340.41",
+          "return20_pct": 3.655,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 352.83,
+            "high": 355.36,
+            "low": 349.67,
+            "close": 351.91,
+            "volume": 37407537
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -459,27 +561,35 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Tue, 17 Nov 2026 01:07:07 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 28.3,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (RATE_LIMITED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "RATE_LIMITED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $351.91",
+          "ma20_formatted": "USD $347.26",
+          "ma50_formatted": "USD $340.41",
+          "return20_pct": 3.655,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 352.83,
+            "high": 355.36,
+            "low": 349.67,
+            "close": 351.91,
+            "volume": 37407537
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -587,22 +697,19 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Tue, 17 Nov 2026 01:07:07 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 28.3,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (RATE_LIMITED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
-      "finished_at": "2026-11-17T04:43:52.694833+00:00"
+      "finished_at": "2026-11-18T03:49:20.634594+00:00"
     },
     {
       "ticker": "MSFT",
@@ -630,23 +737,23 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-17T04:43:52.695456+00:00",
+      "started_at": "2026-11-18T03:49:22.521933+00:00",
       "agents": {
         "news": {
-          "status": "FAILED",
-          "reason": "HTTP 503"
+          "status": "COMPLETE",
+          "at": "2026-11-18T03:49:22.820753+00:00"
         },
         "filings": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:08.880943+00:00"
+          "at": "2026-11-18T03:49:22.939197+00:00"
         },
         "fundamentals": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:08.977394+00:00"
+          "at": "2026-11-18T03:49:23.195198+00:00"
         },
         "market_data": {
-          "status": "SKIPPED",
-          "reason": "QUOTA_BLOCKED",
+          "status": "COMPLETE",
+          "reason": "OK",
           "currency": "USD"
         },
         "ai_analyst": {
@@ -656,10 +763,65 @@
         "validator": {
           "status": "COMPLETE",
           "quality": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL"
+          "research_outcome": "COMPLETE"
         }
       },
-      "news": [],
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Microsoft Corporation (MSFT) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9uOUNhWEIyM0RRVERRZVRjUWx6dFJ2N2tGYXBpVWl2RVI3MjM2b3kzVmtabzNDRjdGMGw2Z2hJSTB0S2Q5YWRWT1dab25WVERnZlE?oc=5",
+          "published": "Tue, 17 Nov 2026 16:59:19 GMT",
+          "retrieved_at": "2026-11-18T03:49:22.820707+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Microsoft Corporation (MSFT) stock price, news, quote and history - Yahoo Finance UK",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE41d2UzenppWG9mNk9od2RxVTIxSzNxTFJIYlV1U3lBX284NVY2NTBSSnRVclctbDNIODhyRTZPTFVYZ25YcHlYdVdOYUJXc3dvdnc?oc=5",
+          "published": "Tue, 17 Nov 2026 18:47:07 GMT",
+          "retrieved_at": "2026-11-18T03:49:22.820726+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Microsoft (MSFT) stock price forecast: Wall Street analysts see 22% upside - Beinsure",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQYXJNSTlyS19oSERrUGpmR2pyQ0F4Y1FDZ0hqY0d5R2c4U1o3QlBaRnVJOHZOSmFqMW1kNGYwSGZhY0lZMU4zN3JTZlBzWVFtdWlXSFpYUGE0VWlZVHlwbzVOM1BlQUVjdzJ0alZIc0pXV2dPOXZrN0hxSlE4aEpFTWtlUlpSVFl2MGNsRHQxOHBubVBkbFY0N1VuT05UZw?oc=5",
+          "published": "Fri, 13 Nov 2026 09:04:05 GMT",
+          "retrieved_at": "2026-11-18T03:49:22.820730+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "MSFT Stock Quote Price and Forecast - CNN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBQX3dUSG5UYjhqVm1nRmNzS2pFY0VvMjFRVlQ0WWk0RzFlM2NQZ1lnR2M0b1JKOUlFRU1KZTllYnJfODBUd0RKQ0FzT2o2SmFJ?oc=5",
+          "published": "Sun, 15 Nov 2026 08:02:04 GMT",
+          "retrieved_at": "2026-11-18T03:49:22.820733+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Has Microsoft Stock Become A Different Bet? - Trefis",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPenQ0X1kweC0yd1FQelFMQXdjMjFMbklTbWxMOXRzb056WElTbVZzVS0wUmVlVHVzYmNmUnlqSktuV1pON3ZwU2RabWpDV001clNIYW1fWDNSbEUtUkFDdHcyUHVpb3lxWFBQQ2c2bFF0VWxaczB6eklrZkZwSHd5YktyV1g3Q3p0SDZzVW5PcFl4TnZwbHBzMzFkb0lQampwWElEZ0FB?oc=5",
+          "published": "Mon, 16 Nov 2026 07:19:02 GMT",
+          "retrieved_at": "2026-11-18T03:49:22.820736+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Microsoft (NasdaqGS:MSFT) Stock Forecast & Analyst Predictions - Simply Wall St",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE43aFRLX2kycEp5MDJvbkQtMVBjTDdXSVlCWlVCNER5elNWVVN1NV9EU0FPTkU4RVF6cG9VWVVrWXRSOFZFdWd4MGp3eGRRZ2hFbVNhb3hPNEp0aU1Fbzc4X2NISFdXRVo0NDVVb1Y2MkNwMjhhTVJVSg?oc=5",
+          "published": "Fri, 13 Nov 2026 08:00:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:22.820740+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
       "filings": {
         "company": "MICROSOFT CORP",
         "cik": 789019,
@@ -669,7 +831,7 @@
             "title": "8-K \u2014 MICROSOFT CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm",
             "published": "2026-11-05",
-            "retrieved_at": "2026-11-17T04:44:08.880795+00:00",
+            "retrieved_at": "2026-11-18T03:49:22.939095+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-448357 | Period End: 2026-11-04 | 8-K Items: 5.02); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001193125-26-448357",
@@ -684,7 +846,7 @@
             "title": "8-K \u2014 MICROSOFT CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm",
             "published": "2026-11-04",
-            "retrieved_at": "2026-11-17T04:44:08.880828+00:00",
+            "retrieved_at": "2026-11-18T03:49:22.939113+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-447173 | Period End: 2026-10-29 | 8-K Items: 8.01,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001193125-26-447173",
@@ -699,7 +861,7 @@
             "title": "8-K \u2014 MICROSOFT CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm",
             "published": "2026-10-28",
-            "retrieved_at": "2026-11-17T04:44:08.880835+00:00",
+            "retrieved_at": "2026-11-18T03:49:22.939119+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-436149 | Period End: 2026-10-28 | 8-K Items: 8.01,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001193125-26-436149",
@@ -714,7 +876,7 @@
             "title": "10-Q \u2014 MICROSOFT CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
             "published": "2026-10-28",
-            "retrieved_at": "2026-11-17T04:44:08.880840+00:00",
+            "retrieved_at": "2026-11-18T03:49:22.939124+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001193125-26-436133 | Period End: 2026-09-30); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0001193125-26-436133",
@@ -729,7 +891,7 @@
             "title": "8-K \u2014 MICROSOFT CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
             "published": "2026-10-28",
-            "retrieved_at": "2026-11-17T04:44:08.880845+00:00",
+            "retrieved_at": "2026-11-18T03:49:22.939128+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-436122 | Period End: 2026-10-28 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001193125-26-436122",
@@ -744,7 +906,7 @@
             "title": "8-K \u2014 MICROSOFT CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526380280/d291965d8k.htm",
             "published": "2026-09-02",
-            "retrieved_at": "2026-11-17T04:44:08.880853+00:00",
+            "retrieved_at": "2026-11-18T03:49:22.939135+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-380280 | Period End: 2026-09-02 | 8-K Items: 7.01,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001193125-26-380280",
@@ -856,24 +1018,49 @@
         "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
       },
       "price": {
-        "status": "QUOTA_BLOCKED",
+        "status": "OK",
         "market": "US",
         "currency": "USD",
-        "ohlcv_verified": false
+        "provider_symbol": "MSFT",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 514.565,
+          "high": 515.64,
+          "low": 496.51,
+          "close": 506.24,
+          "volume": 27992837
+        },
+        "as_of": "2026-11-17",
+        "close": 506.24,
+        "ma20": 527.3278,
+        "ma50": 519.6087,
+        "return20_pct": -4.819,
+        "volatility_pct": 38.73,
+        "trend": "MIXED",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-18T03:49:22.521255+00:00",
+        "is_realtime": false
       },
       "quality": "PRIMARY_EVIDENCE_PRESENT",
-      "research_outcome": "PARTIAL",
+      "research_outcome": "COMPLETE",
       "ai": {
         "status": "NOT_CONFIGURED"
       },
       "signal": {
-        "label": "INSUFFICIENT_EVIDENCE",
-        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "label": "WATCH",
+        "reason": "Historical moving-average trend (USD) backed by verified primary filings and official financial metrics; not investment advice",
         "market": "US",
         "currency": "USD",
-        "as_of": "unavailable",
-        "evidence_count": 4,
+        "as_of": "2026-11-17",
+        "evidence_count": 8,
         "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (MSFT)",
+            "as_of": "2026-11-17",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
           {
             "type": "regulatory_filing",
             "title": "8-K \u2014 MICROSOFT CORP",
@@ -897,26 +1084,51 @@
             "title": "10-Q \u2014 MICROSOFT CORP",
             "as_of": "2026-10-28",
             "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Microsoft Corporation (MSFT) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+            "as_of": "Tue, 17 Nov 2026 16:59:19 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9uOUNhWEIyM0RRVERRZVRjUWx6dFJ2N2tGYXBpVWl2RVI3MjM2b3kzVmtabzNDRjdGMGw2Z2hJSTB0S2Q5YWRWT1dab25WVERnZlE?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Microsoft Corporation (MSFT) stock price, news, quote and history - Yahoo Finance UK",
+            "as_of": "Tue, 17 Nov 2026 18:47:07 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE41d2UzenppWG9mNk9od2RxVTIxSzNxTFJIYlV1U3lBX284NVY2NTBSSnRVclctbDNIODhyRTZPTFVYZ25YcHlYdVdOYUJXc3dvdnc?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Microsoft (MSFT) stock price forecast: Wall Street analysts see 22% upside - Beinsure",
+            "as_of": "Fri, 13 Nov 2026 09:04:05 GMT",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQYXJNSTlyS19oSERrUGpmR2pyQ0F4Y1FDZ0hqY0d5R2c4U1o3QlBaRnVJOHZOSmFqMW1kNGYwSGZhY0lZMU4zN3JTZlBzWVFtdWlXSFpYUGE0VWlZVHlwbzVOM1BlQUVjdzJ0alZIc0pXV2dPOXZrN0hxSlE4aEpFTWtlUlpSVFl2MGNsRHQxOHBubVBkbFY0N1VuT05UZw?oc=5"
           }
         ],
-        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+        "uncertainty": "Historical end-of-day technicals (USD) and point-in-time reported accounting facts only; no forward earnings estimates or valuation multiples are fabricated."
       },
-      "missing_data": [
-        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
-        "Recent company-specific news headlines."
-      ],
+      "missing_data": [],
       "unsupported_conclusions": [
         "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
         "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
-        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
-        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+        "Treating general news headlines or secondary media articles as primary regulatory evidence."
       ],
       "pillars": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $506.24",
+          "ma20_formatted": "USD $527.33",
+          "ma50_formatted": "USD $519.61",
+          "return20_pct": -4.819,
+          "trend": "MIXED",
+          "latest_ohlcv": {
+            "open": 514.565,
+            "high": 515.64,
+            "low": 496.51,
+            "close": 506.24,
+            "volume": 27992837
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -1024,27 +1236,35 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Tue, 17 Nov 2026 16:59:19 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 38.73,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $506.24",
+          "ma20_formatted": "USD $527.33",
+          "ma50_formatted": "USD $519.61",
+          "return20_pct": -4.819,
+          "trend": "MIXED",
+          "latest_ohlcv": {
+            "open": 514.565,
+            "high": 515.64,
+            "low": 496.51,
+            "close": 506.24,
+            "volume": 27992837
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -1152,22 +1372,19 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Tue, 17 Nov 2026 16:59:19 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 38.73,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
-      "finished_at": "2026-11-17T04:44:08.977579+00:00"
+      "finished_at": "2026-11-18T03:49:23.195852+00:00"
     },
     {
       "ticker": "NVDA",
@@ -1195,23 +1412,23 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-17T04:44:08.978673+00:00",
+      "started_at": "2026-11-18T03:49:25.057648+00:00",
       "agents": {
         "news": {
-          "status": "FAILED",
-          "reason": "HTTP 503"
+          "status": "COMPLETE",
+          "at": "2026-11-18T03:49:25.461411+00:00"
         },
         "filings": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:24.977777+00:00"
+          "at": "2026-11-18T03:49:25.550049+00:00"
         },
         "fundamentals": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:25.145167+00:00"
+          "at": "2026-11-18T03:49:25.750623+00:00"
         },
         "market_data": {
-          "status": "SKIPPED",
-          "reason": "QUOTA_BLOCKED",
+          "status": "COMPLETE",
+          "reason": "OK",
           "currency": "USD"
         },
         "ai_analyst": {
@@ -1221,10 +1438,65 @@
         "validator": {
           "status": "COMPLETE",
           "quality": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL"
+          "research_outcome": "COMPLETE"
         }
       },
-      "news": [],
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Nvidia to report Q3 earnings amid Huang scandal - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUGhYaS1ZSloxYlVnRV9hQ0MyWVdfZU44cnI3dmRqRXAwSURBS2VxeGJZcExTV003YUxoMjNrelRscG9mWGVZM19yRmpRN0JhU09OWWc1bUZYZU1vRlBFeG0xM2VfVGRiLXBIS0lwZTZLd0ZBaldWVVJUS05BWU1sQkdFTU1yM3lIaTMzVnh3cVo0MmpRS2s3WDFmbGpTNzhWaVdGdlB0LW9JVUE?oc=5",
+          "published": "Tue, 17 Nov 2026 12:37:18 GMT",
+          "retrieved_at": "2026-11-18T03:49:25.461339+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Nvidia Earnings: Wolfe Research Says Stock Already Prices In Guidance Cut, Shareholder Flags Succession Risk - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWGx0bGQ5WjgxYUZibjFaZTgyV1VwZWdxQ3RDSVN5cm15Sl9oZEtuV1dnUDlYRHZ5U25rTmxHMlhPaE95YWcxWmhRWTRoZG5NWVdLRGl2NnZVUVZuVnNSLXJQSWs1YnpoV0pub1FVbG9oNGswMVhNVEx1OHFCMHRfb1RqQ0JrblExU1VneS13NTd6ZE85VnlXb3JUSmQtNU5LNUE?oc=5",
+          "published": "Tue, 17 Nov 2026 17:20:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:25.461359+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "What the Nvidia scandal means for the company's earnings next week - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQamtxZ1JjdTA3UF8zODVhLVE4NDNCZWczZmE1REtITGRpTURvLVpGemMtaGJIRy15U1lQal9CVFBjanlXLW5xUzNuS2x0NVM4REhHVVZadGVrejN2bkdUVHZzTjhDWEpvWnl2RWdGM2Q0UDVGWjZ5TkJCZFB3YlJsa3RPV25LNWxUOGFpNEJRdm9iN3hrbm0tNHphZmRRTGxjV1M4UUJkODdKM21kcktzeUtsREptZDhiRmVmLXd5UmQ2bFk?oc=5",
+          "published": "Fri, 13 Nov 2026 15:59:03 GMT",
+          "retrieved_at": "2026-11-18T03:49:25.461364+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "AMD, Broadcom, and TSMC stocks rise on Nvidia earnings beat - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPajBIQVJwYUNFRGNGRE43Zm9HQlVqZUp2X0l4OThSWGk1R0JfbHdWLW9MQWNib0otSzBya3YybmJPOXlwSjRrRi14QmkxWklOV1JsZEhpc1BDNkphOUdPTmVZT0ZiZUhfXzNNNmZWM21oY04weVJNY2VfOU1TRHJERElfYllUWVNJMHdkS291b2ZuQTlhSGpqZXVaeks4cF82bjZfVlJyWUJRWS13X3RCNkxlMVRob2JnNUNPMWdUT05xX1prUjF6NURIZ3JoNjhaM1EwT3BMRXVwb09zTGNZTA?oc=5",
+          "published": "Tue, 17 Nov 2026 22:01:59 GMT",
+          "retrieved_at": "2026-11-18T03:49:25.461367+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Nvidia\u2019s First Report Without Jensen Huang: $115.8 Billion in Revenue, a $130 Billion Forecast, and the Stock Is Up 2.3% After Hours - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPM0taRWswaHNxR25hZy1YTTJ3cDNod2psd3laZXZ0ZVV4OVdLVmJoWUhfa1RxNVFQdnBPNENzb25CV1VzZ0xIYlQtdENSdVJRYWFnSV9NeWJ3MUNPYTdCTEpXUk5KTUg5VlJmUEhaakN1Z0kwdVl6dERyTTRJTmlsUjJCRFlSMkk5dmhMSVNsZ2dKanpkQmVPaG5GWFkwR3NH?oc=5",
+          "published": "Tue, 17 Nov 2026 21:26:43 GMT",
+          "retrieved_at": "2026-11-18T03:49:25.461371+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Jensen Huang started closing the Bank of Nvidia months before he left \u2014 here\u2019s what\u2019s still open: Chart of the Day - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPTkJMV1dJOFlYSDA4ME9vMkxDUzhDdWVVRnNOeEpqdU5vUGxqNEFZZFloRUgzWVZrcnp5bnZySzlLY0RwaGJaUE1JWjhRd0dmZU1INDFMSWxqekFLRGZuZmthUndMaUZSMU5kUkluX1NSODRSSVQ0OWYxTnd5OXg4djl4X2djYzF5TUhxZXRmNzFUa2tySUZHaFJQMm1OaXhkM3BCOTNIa0JkcWdZdmZZVlRLYk9UbGlYNmRqaTJpZU5CWFhMV2tKZTltdklwYVJL?oc=5",
+          "published": "Tue, 17 Nov 2026 12:58:50 GMT",
+          "retrieved_at": "2026-11-18T03:49:25.461374+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
       "filings": {
         "company": "NVIDIA CORP",
         "cik": 1045810,
@@ -1232,9 +1504,24 @@
           {
             "source": "SEC EDGAR",
             "title": "8-K \u2014 NVIDIA CORP",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm",
+            "published": "2026-11-17",
+            "retrieved_at": "2026-11-18T03:49:25.549941+00:00",
+            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000088 | Period End: 2026-11-17 | 8-K Items: 2.02,9.01); full narrative document not parsed",
+            "form": "8-K",
+            "accession_number": "0001045810-26-000088",
+            "report_date": "2026-11-17",
+            "items": "2.02,9.01",
+            "is_xbrl": true,
+            "is_primary_regulatory_evidence": true,
+            "document_analyzed": false
+          },
+          {
+            "source": "SEC EDGAR",
+            "title": "8-K \u2014 NVIDIA CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
             "published": "2026-11-12",
-            "retrieved_at": "2026-11-17T04:44:24.977603+00:00",
+            "retrieved_at": "2026-11-18T03:49:25.549960+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000082 | Period End: 2026-11-11 | 8-K Items: 5.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001045810-26-000082",
@@ -1249,7 +1536,7 @@
             "title": "8-K \u2014 NVIDIA CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm",
             "published": "2026-09-03",
-            "retrieved_at": "2026-11-17T04:44:24.977646+00:00",
+            "retrieved_at": "2026-11-18T03:49:25.549967+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000078 | Period End: 2026-09-02 | 8-K Items: 8.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001045810-26-000078",
@@ -1264,7 +1551,7 @@
             "title": "10-Q \u2014 NVIDIA CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
             "published": "2026-08-26",
-            "retrieved_at": "2026-11-17T04:44:24.977654+00:00",
+            "retrieved_at": "2026-11-18T03:49:25.549972+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001045810-26-000075 | Period End: 2026-07-26); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0001045810-26-000075",
@@ -1279,7 +1566,7 @@
             "title": "8-K \u2014 NVIDIA CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
             "published": "2026-08-26",
-            "retrieved_at": "2026-11-17T04:44:24.977660+00:00",
+            "retrieved_at": "2026-11-18T03:49:25.549976+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000073 | Period End: 2026-08-26 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001045810-26-000073",
@@ -1294,27 +1581,12 @@
             "title": "8-K \u2014 NVIDIA CORP",
             "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm",
             "published": "2026-08-17",
-            "retrieved_at": "2026-11-17T04:44:24.977666+00:00",
+            "retrieved_at": "2026-11-18T03:49:25.549981+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000069 | Period End: 2026-08-17 | 8-K Items: 1.01,2.03,7.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001045810-26-000069",
             "report_date": "2026-08-17",
             "items": "1.01,2.03,7.01",
-            "is_xbrl": true,
-            "is_primary_regulatory_evidence": true,
-            "document_analyzed": false
-          },
-          {
-            "source": "SEC EDGAR",
-            "title": "8-K \u2014 NVIDIA CORP",
-            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
-            "published": "2026-07-02",
-            "retrieved_at": "2026-11-17T04:44:24.977672+00:00",
-            "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001045810-26-000060 | Period End: 2026-06-28 | 8-K Items: 5.02); full narrative document not parsed",
-            "form": "8-K",
-            "accession_number": "0001045810-26-000060",
-            "report_date": "2026-06-28",
-            "items": "5.02",
             "is_xbrl": true,
             "is_primary_regulatory_evidence": true,
             "document_analyzed": false
@@ -1421,24 +1693,55 @@
         "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
       },
       "price": {
-        "status": "QUOTA_BLOCKED",
+        "status": "OK",
         "market": "US",
         "currency": "USD",
-        "ohlcv_verified": false
+        "provider_symbol": "NVDA",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 156.895,
+          "high": 158.19,
+          "low": 150.3301,
+          "close": 155.46,
+          "volume": 358153146
+        },
+        "as_of": "2026-11-17",
+        "close": 155.46,
+        "ma20": 192.5905,
+        "ma50": 211.7574,
+        "return20_pct": -28.184,
+        "volatility_pct": 51.7,
+        "trend": "NEGATIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-18T03:49:25.056965+00:00",
+        "is_realtime": false
       },
       "quality": "PRIMARY_EVIDENCE_PRESENT",
-      "research_outcome": "PARTIAL",
+      "research_outcome": "COMPLETE",
       "ai": {
         "status": "NOT_CONFIGURED"
       },
       "signal": {
-        "label": "INSUFFICIENT_EVIDENCE",
-        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "label": "CAUTION",
+        "reason": "Historical moving-average trend (USD) backed by verified primary filings and official financial metrics; not investment advice",
         "market": "US",
         "currency": "USD",
-        "as_of": "unavailable",
-        "evidence_count": 4,
+        "as_of": "2026-11-17",
+        "evidence_count": 8,
         "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (NVDA)",
+            "as_of": "2026-11-17",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
+          {
+            "type": "regulatory_filing",
+            "title": "8-K \u2014 NVIDIA CORP",
+            "as_of": "2026-11-17",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm"
+          },
           {
             "type": "regulatory_filing",
             "title": "8-K \u2014 NVIDIA CORP",
@@ -1458,30 +1761,49 @@
             "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
           },
           {
-            "type": "regulatory_filing",
-            "title": "8-K \u2014 NVIDIA CORP",
-            "as_of": "2026-08-26",
-            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm"
+            "type": "headline_discovery",
+            "title": "Nvidia to report Q3 earnings amid Huang scandal - Yahoo Finance",
+            "as_of": "Tue, 17 Nov 2026 12:37:18 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUGhYaS1ZSloxYlVnRV9hQ0MyWVdfZU44cnI3dmRqRXAwSURBS2VxeGJZcExTV003YUxoMjNrelRscG9mWGVZM19yRmpRN0JhU09OWWc1bUZYZU1vRlBFeG0xM2VfVGRiLXBIS0lwZTZLd0ZBaldWVVJUS05BWU1sQkdFTU1yM3lIaTMzVnh3cVo0MmpRS2s3WDFmbGpTNzhWaVdGdlB0LW9JVUE?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Nvidia Earnings: Wolfe Research Says Stock Already Prices In Guidance Cut, Shareholder Flags Succession Risk - Yahoo Finance",
+            "as_of": "Tue, 17 Nov 2026 17:20:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWGx0bGQ5WjgxYUZibjFaZTgyV1VwZWdxQ3RDSVN5cm15Sl9oZEtuV1dnUDlYRHZ5U25rTmxHMlhPaE95YWcxWmhRWTRoZG5NWVdLRGl2NnZVUVZuVnNSLXJQSWs1YnpoV0pub1FVbG9oNGswMVhNVEx1OHFCMHRfb1RqQ0JrblExU1VneS13NTd6ZE85VnlXb3JUSmQtNU5LNUE?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "What the Nvidia scandal means for the company's earnings next week - Yahoo Finance",
+            "as_of": "Fri, 13 Nov 2026 15:59:03 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQamtxZ1JjdTA3UF8zODVhLVE4NDNCZWczZmE1REtITGRpTURvLVpGemMtaGJIRy15U1lQal9CVFBjanlXLW5xUzNuS2x0NVM4REhHVVZadGVrejN2bkdUVHZzTjhDWEpvWnl2RWdGM2Q0UDVGWjZ5TkJCZFB3YlJsa3RPV25LNWxUOGFpNEJRdm9iN3hrbm0tNHphZmRRTGxjV1M4UUJkODdKM21kcktzeUtsREptZDhiRmVmLXd5UmQ2bFk?oc=5"
           }
         ],
-        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+        "uncertainty": "Historical end-of-day technicals (USD) and point-in-time reported accounting facts only; no forward earnings estimates or valuation multiples are fabricated."
       },
-      "missing_data": [
-        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
-        "Recent company-specific news headlines."
-      ],
+      "missing_data": [],
       "unsupported_conclusions": [
         "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
         "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
-        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
-        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+        "Treating general news headlines or secondary media articles as primary regulatory evidence."
       ],
       "pillars": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $155.46",
+          "ma20_formatted": "USD $192.59",
+          "ma50_formatted": "USD $211.76",
+          "return20_pct": -28.184,
+          "trend": "NEGATIVE",
+          "latest_ohlcv": {
+            "open": 156.895,
+            "high": 158.19,
+            "low": 150.3301,
+            "close": 155.46,
+            "volume": 358153146
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -1589,27 +1911,35 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Tue, 17 Nov 2026 12:37:18 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 51.7,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $155.46",
+          "ma20_formatted": "USD $192.59",
+          "ma50_formatted": "USD $211.76",
+          "return20_pct": -28.184,
+          "trend": "NEGATIVE",
+          "latest_ohlcv": {
+            "open": 156.895,
+            "high": 158.19,
+            "low": 150.3301,
+            "close": 155.46,
+            "volume": 358153146
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -1717,22 +2047,19 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Tue, 17 Nov 2026 12:37:18 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 51.7,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
-      "finished_at": "2026-11-17T04:44:25.145298+00:00"
+      "finished_at": "2026-11-18T03:49:25.750759+00:00"
     },
     {
       "ticker": "AMZN",
@@ -1760,23 +2087,23 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-17T04:44:25.146666+00:00",
+      "started_at": "2026-11-18T03:49:27.656876+00:00",
       "agents": {
         "news": {
-          "status": "FAILED",
-          "reason": "HTTP 429"
+          "status": "COMPLETE",
+          "at": "2026-11-18T03:49:27.963299+00:00"
         },
         "filings": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:32.152465+00:00"
+          "at": "2026-11-18T03:49:28.056995+00:00"
         },
         "fundamentals": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:32.311855+00:00"
+          "at": "2026-11-18T03:49:28.319525+00:00"
         },
         "market_data": {
-          "status": "SKIPPED",
-          "reason": "QUOTA_BLOCKED",
+          "status": "COMPLETE",
+          "reason": "OK",
           "currency": "USD"
         },
         "ai_analyst": {
@@ -1786,10 +2113,65 @@
         "validator": {
           "status": "COMPLETE",
           "quality": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL"
+          "research_outcome": "COMPLETE"
         }
       },
-      "news": [],
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "What's Wrong With Amazon.com (AMZN) Stock, and Is It a Buy in November? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMFl3MDR4U2RDeG1zaEdBOFNtN2dHYnVZYTNwdkIwVk1YaVVEaFFJR0dSM19kaUVzbU1PQVVRcHZIWEZLb0czYXZlUXJzOU1ybWtlTWRyR3ducktjeG5NS08xTXJTTkNfMjNrM2h6UHk3ekNvNWNwTHhrQzBwd1JLZjdKSzdrYWhQZXZPNjBFZGJhemlUMlE4?oc=5",
+          "published": "Fri, 13 Nov 2026 12:57:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:27.963254+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Amazon Has Quietly Recouped Its Post Q3 Earnings Losses. AMZN Stock Could Hit $300 Next. - Barchart.com",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNVDFMMWpzTHFWNVpraFphOVZad0Rza2psdnFrb3UwU2FES3JEZ2VaNHNudE80T2NOejIwTDJUaXJBMFdFSzNQZjFNYXZmc2tucTlPUXFobVpRLUJva2lGb0ItbVR1SkktLWhuaXRaUDA2VVV5SlJpSE5zaldBd19fSE5LNDFRbWZuLUZNT3l4VkRtTVRjRFIwNy15ZzdNWXZSSkg2TVFtUmN6Y2ZwbF9oaFJoby1ORER1UmRXVkNhQjRVaTF6b3dqMg?oc=5",
+          "published": "Thu, 12 Nov 2026 12:30:03 GMT",
+          "retrieved_at": "2026-11-18T03:49:27.963273+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "If Nvidia's Earnings Show Tightness, Alphabet and Amazon Could Rise 40% and 33% By The End of 2026, Respectively - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPaGJtUUZscVdGTUVJVDVweUNnWkxrQ055TklGOG1yd1R6RW5hejhtblotQ2VsZ1pZRTV4M2lvMENMaXZaMTJFSi1TQk8xbnc5STZQLVdWRVNGbjlnckpUVk9tWjE1WUpLSjdYajFYajIxb253TGp5Q1RVVkE2V2d2YWwxR3UzeGVEMDVvRjVtalY4RkFfZGNheFFiSU9fd2NpT1QzNlAxajdwOU9LTkJGY2M2Rm9GWDFWajBVbWNORVBjZXhvOW14b2phcHN6Yldwd3Z5OWlQaUYxQl9UaXJwVjdLdGVidw?oc=5",
+          "published": "Tue, 17 Nov 2026 15:45:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:27.963277+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Amazon Stock At $266: How Much Of Its Profit Is Anthropic? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUFpVWlRKLWZUczJfNzFNX3ZWNi1JT1QyelFwMmdKazBvck5hOWlHaTVCd25jaS05VzUwbGhDQkxaSzNZZTRsdUdZc0FwUlFJZnk2SldjeGZwSFVjeEdEdXVINl9PYnFhVDliTElaNkhCRzdEekJRTnJRaXpkNEdnWHp6SmMzWFlrdGhHV0FFN0RnOFFjdFhFWQ?oc=5",
+          "published": "Thu, 12 Nov 2026 12:02:22 GMT",
+          "retrieved_at": "2026-11-18T03:49:27.963280+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "What Could Lift Amazon Stock From Here? - Trefis",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdnhpdEhzanE4RkFZb3FsR1hjYl93aktwY3hjV0NCQ1EtQzBBbDRMSzgzYjZoVEdKS2c1ZWU0RTRoMVd5Si1pSlR5R0VaOXQwRVByX1YzdUhLV1djN2ZoSmF1OTAycm5kanF1Y014ZXBSbVp0Q3Nqd0RmWjdJaEFtM3ptUDZsT25temNOTEY3YncxMU1SOHpzSU5fU0JNbjRT?oc=5",
+          "published": "Mon, 16 Nov 2026 07:02:06 GMT",
+          "retrieved_at": "2026-11-18T03:49:27.963283+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "A Major Catalyst Could Send Amazon Stock to New Highs - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOY0VmM0xVNFNSMnJQVjd6UUhRdXVnY25PNzNfclFRUU1UWG03S1IwRkJlNUV0QlhnVkdpYndpVmdXODNJcFhlY003UzlIY1k0c2tPN2VxbjJtNFBUcE9yTTBLMnNKalF1QWg4NWVqWGlNd3V3U1IxMjBCOG1FaUFjd1hTNlhhVG9aeXIxQXR2S2F0WXFvNXBoaExPRjlqZw?oc=5",
+          "published": "Wed, 11 Nov 2026 16:35:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:27.963286+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
       "filings": {
         "company": "AMAZON COM INC",
         "cik": 1018724,
@@ -1799,7 +2181,7 @@
             "title": "10-Q \u2014 AMAZON COM INC",
             "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm",
             "published": "2026-10-30",
-            "retrieved_at": "2026-11-17T04:44:32.152272+00:00",
+            "retrieved_at": "2026-11-18T03:49:28.056887+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001018724-26-000040 | Period End: 2026-09-30); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0001018724-26-000040",
@@ -1814,7 +2196,7 @@
             "title": "8-K \u2014 AMAZON COM INC",
             "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm",
             "published": "2026-10-29",
-            "retrieved_at": "2026-11-17T04:44:32.152310+00:00",
+            "retrieved_at": "2026-11-18T03:49:28.056905+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001018724-26-000038 | Period End: 2026-10-29 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001018724-26-000038",
@@ -1829,7 +2211,7 @@
             "title": "8-K \u2014 AMAZON COM INC",
             "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm",
             "published": "2026-09-14",
-            "retrieved_at": "2026-11-17T04:44:32.152317+00:00",
+            "retrieved_at": "2026-11-18T03:49:28.056912+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001104659-26-107526 | Period End: 2026-09-14 | 8-K Items: 8.01,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001104659-26-107526",
@@ -1844,7 +2226,7 @@
             "title": "8-K \u2014 AMAZON COM INC",
             "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
             "published": "2026-09-09",
-            "retrieved_at": "2026-11-17T04:44:32.152323+00:00",
+            "retrieved_at": "2026-11-18T03:49:28.056917+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001018724-26-000036 | Period End: 2026-09-08 | 8-K Items: 5.02); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001018724-26-000036",
@@ -1859,7 +2241,7 @@
             "title": "10-Q \u2014 AMAZON COM INC",
             "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
             "published": "2026-07-31",
-            "retrieved_at": "2026-11-17T04:44:32.152330+00:00",
+            "retrieved_at": "2026-11-18T03:49:28.056923+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001018724-26-000026 | Period End: 2026-06-30); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0001018724-26-000026",
@@ -1874,7 +2256,7 @@
             "title": "8-K \u2014 AMAZON COM INC",
             "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm",
             "published": "2026-07-30",
-            "retrieved_at": "2026-11-17T04:44:32.152336+00:00",
+            "retrieved_at": "2026-11-18T03:49:28.056927+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001018724-26-000024 | Period End: 2026-07-30 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001018724-26-000024",
@@ -1986,24 +2368,49 @@
         "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
       },
       "price": {
-        "status": "QUOTA_BLOCKED",
+        "status": "OK",
         "market": "US",
         "currency": "USD",
-        "ohlcv_verified": false
+        "provider_symbol": "AMZN",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 257.55,
+          "high": 259.9,
+          "low": 254.0,
+          "close": 257.89,
+          "volume": 38685222
+        },
+        "as_of": "2026-11-17",
+        "close": 257.89,
+        "ma20": 256.8625,
+        "ma50": 254.8148,
+        "return20_pct": -1.805,
+        "volatility_pct": 41.26,
+        "trend": "POSITIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-18T03:49:27.656217+00:00",
+        "is_realtime": false
       },
       "quality": "PRIMARY_EVIDENCE_PRESENT",
-      "research_outcome": "PARTIAL",
+      "research_outcome": "COMPLETE",
       "ai": {
         "status": "NOT_CONFIGURED"
       },
       "signal": {
-        "label": "INSUFFICIENT_EVIDENCE",
-        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "label": "INVESTIGATE",
+        "reason": "Historical moving-average trend (USD) backed by verified primary filings and official financial metrics; not investment advice",
         "market": "US",
         "currency": "USD",
-        "as_of": "unavailable",
-        "evidence_count": 4,
+        "as_of": "2026-11-17",
+        "evidence_count": 8,
         "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (AMZN)",
+            "as_of": "2026-11-17",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
           {
             "type": "regulatory_filing",
             "title": "10-Q \u2014 AMAZON COM INC",
@@ -2027,26 +2434,51 @@
             "title": "8-K \u2014 AMAZON COM INC",
             "as_of": "2026-09-09",
             "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "What's Wrong With Amazon.com (AMZN) Stock, and Is It a Buy in November? - Yahoo Finance",
+            "as_of": "Fri, 13 Nov 2026 12:57:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMFl3MDR4U2RDeG1zaEdBOFNtN2dHYnVZYTNwdkIwVk1YaVVEaFFJR0dSM19kaUVzbU1PQVVRcHZIWEZLb0czYXZlUXJzOU1ybWtlTWRyR3ducktjeG5NS08xTXJTTkNfMjNrM2h6UHk3ekNvNWNwTHhrQzBwd1JLZjdKSzdrYWhQZXZPNjBFZGJhemlUMlE4?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Amazon Has Quietly Recouped Its Post Q3 Earnings Losses. AMZN Stock Could Hit $300 Next. - Barchart.com",
+            "as_of": "Thu, 12 Nov 2026 12:30:03 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNVDFMMWpzTHFWNVpraFphOVZad0Rza2psdnFrb3UwU2FES3JEZ2VaNHNudE80T2NOejIwTDJUaXJBMFdFSzNQZjFNYXZmc2tucTlPUXFobVpRLUJva2lGb0ItbVR1SkktLWhuaXRaUDA2VVV5SlJpSE5zaldBd19fSE5LNDFRbWZuLUZNT3l4VkRtTVRjRFIwNy15ZzdNWXZSSkg2TVFtUmN6Y2ZwbF9oaFJoby1ORER1UmRXVkNhQjRVaTF6b3dqMg?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "If Nvidia's Earnings Show Tightness, Alphabet and Amazon Could Rise 40% and 33% By The End of 2026, Respectively - 24/7 Wall St.",
+            "as_of": "Tue, 17 Nov 2026 15:45:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPaGJtUUZscVdGTUVJVDVweUNnWkxrQ055TklGOG1yd1R6RW5hejhtblotQ2VsZ1pZRTV4M2lvMENMaXZaMTJFSi1TQk8xbnc5STZQLVdWRVNGbjlnckpUVk9tWjE1WUpLSjdYajFYajIxb253TGp5Q1RVVkE2V2d2YWwxR3UzeGVEMDVvRjVtalY4RkFfZGNheFFiSU9fd2NpT1QzNlAxajdwOU9LTkJGY2M2Rm9GWDFWajBVbWNORVBjZXhvOW14b2phcHN6Yldwd3Z5OWlQaUYxQl9UaXJwVjdLdGVidw?oc=5"
           }
         ],
-        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+        "uncertainty": "Historical end-of-day technicals (USD) and point-in-time reported accounting facts only; no forward earnings estimates or valuation multiples are fabricated."
       },
-      "missing_data": [
-        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
-        "Recent company-specific news headlines."
-      ],
+      "missing_data": [],
       "unsupported_conclusions": [
         "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
         "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
-        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
-        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+        "Treating general news headlines or secondary media articles as primary regulatory evidence."
       ],
       "pillars": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $257.89",
+          "ma20_formatted": "USD $256.86",
+          "ma50_formatted": "USD $254.81",
+          "return20_pct": -1.805,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 257.55,
+            "high": 259.9,
+            "low": 254.0,
+            "close": 257.89,
+            "volume": 38685222
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -2154,27 +2586,35 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Fri, 13 Nov 2026 12:57:00 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 41.26,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $257.89",
+          "ma20_formatted": "USD $256.86",
+          "ma50_formatted": "USD $254.81",
+          "return20_pct": -1.805,
+          "trend": "POSITIVE",
+          "latest_ohlcv": {
+            "open": 257.55,
+            "high": 259.9,
+            "low": 254.0,
+            "close": 257.89,
+            "volume": 38685222
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -2282,22 +2722,19 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Fri, 13 Nov 2026 12:57:00 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 41.26,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
-      "finished_at": "2026-11-17T04:44:32.311987+00:00"
+      "finished_at": "2026-11-18T03:49:28.319665+00:00"
     },
     {
       "ticker": "GOOGL",
@@ -2326,23 +2763,23 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-17T04:44:32.313720+00:00",
+      "started_at": "2026-11-18T03:49:30.168731+00:00",
       "agents": {
         "news": {
-          "status": "FAILED",
-          "reason": "HTTP 503"
+          "status": "COMPLETE",
+          "at": "2026-11-18T03:49:30.421126+00:00"
         },
         "filings": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:44.476220+00:00"
+          "at": "2026-11-18T03:49:30.538194+00:00"
         },
         "fundamentals": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:44.623701+00:00"
+          "at": "2026-11-18T03:49:30.754763+00:00"
         },
         "market_data": {
-          "status": "SKIPPED",
-          "reason": "QUOTA_BLOCKED",
+          "status": "COMPLETE",
+          "reason": "OK",
           "currency": "USD"
         },
         "ai_analyst": {
@@ -2352,10 +2789,65 @@
         "validator": {
           "status": "COMPLETE",
           "quality": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL"
+          "research_outcome": "COMPLETE"
         }
       },
-      "news": [],
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Alphabet (GOOGL) Just Moved, What Is Driving Attention Now? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTlRyeDhYRHNIeWxaZHR6S0R0eFZudlBGQm1GY2VmdmtHNVpkNlJDdENocVlvLUZxeTBQcUUyZWZNN21ORE1KVHIzdjIwZ0ZHU3JnbkFCdUFjSjRnbkM2LXBWbWZVbFhSU1R4YkFWdTAyUHFna0haaHhiRDlneHdvcUk5U0RjWEtPRjNyN3FLU2J3cjlZRU80SVF1amxZRms?oc=5",
+          "published": "Thu, 12 Nov 2026 16:13:05 GMT",
+          "retrieved_at": "2026-11-18T03:49:30.421079+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "GOOG Stock Quote Price and Forecast - CNN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9tN3FRTUJqdzR0OHRfby0zMld6YVhBbml5OFV4SlVRejVlVDhnVDd1YVVReGw2UWFvR2YzeEdxV0I1bUFQRXRjeWhyMkZHLW9N?oc=5",
+          "published": "Sun, 15 Nov 2026 08:02:09 GMT",
+          "retrieved_at": "2026-11-18T03:49:30.421098+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "If Nvidia's Earnings Show Tightness, Alphabet and Amazon Could Rise 40% and 33% By The End of 2026, Respectively - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPaGJtUUZscVdGTUVJVDVweUNnWkxrQ055TklGOG1yd1R6RW5hejhtblotQ2VsZ1pZRTV4M2lvMENMaXZaMTJFSi1TQk8xbnc5STZQLVdWRVNGbjlnckpUVk9tWjE1WUpLSjdYajFYajIxb253TGp5Q1RVVkE2V2d2YWwxR3UzeGVEMDVvRjVtalY4RkFfZGNheFFiSU9fd2NpT1QzNlAxajdwOU9LTkJGY2M2Rm9GWDFWajBVbWNORVBjZXhvOW14b2phcHN6Yldwd3Z5OWlQaUYxQl9UaXJwVjdLdGVidw?oc=5",
+          "published": "Tue, 17 Nov 2026 15:45:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:30.421102+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "5 Stocks to Buy After Earnings - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQTGxUWUNfS2c1N0diSGVCblBlQlZIM3JTQ2NCaHYxUHBveXZUZzRhS2w1RDBJWE5jWmJYLU5LQXRlMWVISlg4ejBDd3NXSmhQQWloQTVSZWp2M2VmOHB3ZXR4SVRHNFNQc0xqQm9HcDBKOGdaRllpRVg2aTY5YmlNaHBZSjhJWnJFbS13?oc=5",
+          "published": "Mon, 16 Nov 2026 20:20:46 GMT",
+          "retrieved_at": "2026-11-18T03:49:30.421106+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Market is Aware of Alphabet\u2019s (GOOGL) Successful Founder Transition: Now What Lies Ahead? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOOC0tNEEybTRHemxLa1h0YWZNX05lVnRDdndlV2tDNk1DaEduR05fWlMyQ2d3ak9MNl9ibnhiVThMVFZvS3E3Tzl3Q20waE5hQUVVNi10azBMZHhqelEzQXA0ZWpPa3gtT3Q0dXFycWVvRWl3RWw3VEFIMkNZVXEtSm9KUnpaeC0yV2R0UERpd1JXWXlGZmpubGg0MWNFbVVBSkVVcnZB?oc=5",
+          "published": "Tue, 17 Nov 2026 13:49:34 GMT",
+          "retrieved_at": "2026-11-18T03:49:30.421109+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "RDDT vs. GOOGL: Which Digital Advertising Stock Has an Edge Right Now? - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZU5HdVYtMDE4TjVTenFhb1NibU05NkVRR3BtVmF4WDNrd1hOOWFCdXR3ZFV5NlZEc2hMbGpSRzVvSW42eDZBRHVHSHowMnpILWYxa3lkdGplUnVPX2trVUNxSVFod0RDUzJ6RzE0akZBeDl5Ujk1dlpFVFJsVHRlNVhQVlJ1bGQyTHhxMlFTQWFMWFdxQk1YRHdTUDhwZ3hDbGFWQU5LQUZtOUs5MTV2OXUzVU1aRkpzSGJBTlNTUzc?oc=5",
+          "published": "Tue, 17 Nov 2026 17:57:39 GMT",
+          "retrieved_at": "2026-11-18T03:49:30.421112+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
       "filings": {
         "company": "Alphabet Inc.",
         "cik": 1652044,
@@ -2365,7 +2857,7 @@
             "title": "8-K \u2014 Alphabet Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm",
             "published": "2026-11-05",
-            "retrieved_at": "2026-11-17T04:44:44.476058+00:00",
+            "retrieved_at": "2026-11-18T03:49:30.538078+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-449835 | Period End: 2026-11-05 | 8-K Items: 8.01,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001193125-26-449835",
@@ -2380,7 +2872,7 @@
             "title": "10-Q \u2014 Alphabet Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
             "published": "2026-10-29",
-            "retrieved_at": "2026-11-17T04:44:44.476101+00:00",
+            "retrieved_at": "2026-11-18T03:49:30.538100+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001652044-26-000084 | Period End: 2026-09-30); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0001652044-26-000084",
@@ -2395,7 +2887,7 @@
             "title": "8-K \u2014 Alphabet Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm",
             "published": "2026-10-28",
-            "retrieved_at": "2026-11-17T04:44:44.476109+00:00",
+            "retrieved_at": "2026-11-18T03:49:30.538107+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001652044-26-000080 | Period End: 2026-10-28 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001652044-26-000080",
@@ -2410,7 +2902,7 @@
             "title": "8-K \u2014 Alphabet Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526342390/d171253d8k.htm",
             "published": "2026-08-10",
-            "retrieved_at": "2026-11-17T04:44:44.476117+00:00",
+            "retrieved_at": "2026-11-18T03:49:30.538114+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001193125-26-342390 | Period End: 2026-08-10 | 8-K Items: 8.01,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001193125-26-342390",
@@ -2425,7 +2917,7 @@
             "title": "10-Q \u2014 Alphabet Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
             "published": "2026-07-23",
-            "retrieved_at": "2026-11-17T04:44:44.476124+00:00",
+            "retrieved_at": "2026-11-18T03:49:30.538119+00:00",
             "summary": "Official SEC EDGAR 10-Q filing metadata (Accn: 0001652044-26-000071 | Period End: 2026-06-30); full narrative document not parsed",
             "form": "10-Q",
             "accession_number": "0001652044-26-000071",
@@ -2440,7 +2932,7 @@
             "title": "8-K \u2014 Alphabet Inc.",
             "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm",
             "published": "2026-07-22",
-            "retrieved_at": "2026-11-17T04:44:44.476129+00:00",
+            "retrieved_at": "2026-11-18T03:49:30.538124+00:00",
             "summary": "Official SEC EDGAR 8-K filing metadata (Accn: 0001652044-26-000066 | Period End: 2026-07-22 | 8-K Items: 2.02,9.01); full narrative document not parsed",
             "form": "8-K",
             "accession_number": "0001652044-26-000066",
@@ -2552,24 +3044,49 @@
         "warning": "Point-in-time reported values; different period lengths, filing dates and accounting tags may not be comparable. Not a valuation."
       },
       "price": {
-        "status": "QUOTA_BLOCKED",
+        "status": "OK",
         "market": "US",
         "currency": "USD",
-        "ohlcv_verified": false
+        "provider_symbol": "GOOGL",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 283.4,
+          "high": 284.09,
+          "low": 278.46,
+          "close": 280.2,
+          "volume": 32175891
+        },
+        "as_of": "2026-11-17",
+        "close": 280.2,
+        "ma20": 297.3895,
+        "ma50": 325.9277,
+        "return20_pct": -17.655,
+        "volatility_pct": 53.84,
+        "trend": "NEGATIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-18T03:49:30.168053+00:00",
+        "is_realtime": false
       },
       "quality": "PRIMARY_EVIDENCE_PRESENT",
-      "research_outcome": "PARTIAL",
+      "research_outcome": "COMPLETE",
       "ai": {
         "status": "NOT_CONFIGURED"
       },
       "signal": {
-        "label": "INSUFFICIENT_EVIDENCE",
-        "reason": "No usable technical price data; rankings remain INSUFFICIENT_EVIDENCE until both primary evidence and market data are verified",
+        "label": "CAUTION",
+        "reason": "Historical moving-average trend (USD) backed by verified primary filings and official financial metrics; not investment advice",
         "market": "US",
         "currency": "USD",
-        "as_of": "unavailable",
-        "evidence_count": 4,
+        "as_of": "2026-11-17",
+        "evidence_count": 8,
         "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (GOOGL)",
+            "as_of": "2026-11-17",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
           {
             "type": "regulatory_filing",
             "title": "8-K \u2014 Alphabet Inc.",
@@ -2593,26 +3110,51 @@
             "title": "8-K \u2014 Alphabet Inc.",
             "as_of": "2026-08-10",
             "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526342390/d171253d8k.htm"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Alphabet (GOOGL) Just Moved, What Is Driving Attention Now? - Yahoo Finance",
+            "as_of": "Thu, 12 Nov 2026 16:13:05 GMT",
+            "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTlRyeDhYRHNIeWxaZHR6S0R0eFZudlBGQm1GY2VmdmtHNVpkNlJDdENocVlvLUZxeTBQcUUyZWZNN21ORE1KVHIzdjIwZ0ZHU3JnbkFCdUFjSjRnbkM2LXBWbWZVbFhSU1R4YkFWdTAyUHFna0haaHhiRDlneHdvcUk5U0RjWEtPRjNyN3FLU2J3cjlZRU80SVF1amxZRms?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "GOOG Stock Quote Price and Forecast - CNN",
+            "as_of": "Sun, 15 Nov 2026 08:02:09 GMT",
+            "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9tN3FRTUJqdzR0OHRfby0zMld6YVhBbml5OFV4SlVRejVlVDhnVDd1YVVReGw2UWFvR2YzeEdxV0I1bUFQRXRjeWhyMkZHLW9N?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "If Nvidia's Earnings Show Tightness, Alphabet and Amazon Could Rise 40% and 33% By The End of 2026, Respectively - 24/7 Wall St.",
+            "as_of": "Tue, 17 Nov 2026 15:45:00 GMT",
+            "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPaGJtUUZscVdGTUVJVDVweUNnWkxrQ055TklGOG1yd1R6RW5hejhtblotQ2VsZ1pZRTV4M2lvMENMaXZaMTJFSi1TQk8xbnc5STZQLVdWRVNGbjlnckpUVk9tWjE1WUpLSjdYajFYajIxb253TGp5Q1RVVkE2V2d2YWwxR3UzeGVEMDVvRjVtalY4RkFfZGNheFFiSU9fd2NpT1QzNlAxajdwOU9LTkJGY2M2Rm9GWDFWajBVbWNORVBjZXhvOW14b2phcHN6Yldwd3Z5OWlQaUYxQl9UaXJwVjdLdGVidw?oc=5"
           }
         ],
-        "uncertainty": "Primary filings and metrics exist, but historical daily price series was unavailable or unsupported."
+        "uncertainty": "Historical end-of-day technicals (USD) and point-in-time reported accounting facts only; no forward earnings estimates or valuation multiples are fabricated."
       },
-      "missing_data": [
-        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
-        "Recent company-specific news headlines."
-      ],
+      "missing_data": [],
       "unsupported_conclusions": [
         "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
         "Forward earnings/revenue guidance or management commentary (full narrative filing bodies are not automatically parsed).",
-        "Treating general news headlines or secondary media articles as primary regulatory evidence.",
-        "Directional research priority ranking (INVESTIGATE / WATCH / CAUTION) \u2014 withheld until primary filings, official financial metrics, and consistent market data are all verified."
+        "Treating general news headlines or secondary media articles as primary regulatory evidence."
       ],
       "pillars": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $280.20",
+          "ma20_formatted": "USD $297.39",
+          "ma50_formatted": "USD $325.93",
+          "return20_pct": -17.655,
+          "trend": "NEGATIVE",
+          "latest_ohlcv": {
+            "open": 283.4,
+            "high": 284.09,
+            "low": 278.46,
+            "close": 280.2,
+            "volume": 32175891
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -2720,27 +3262,35 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Thu, 12 Nov 2026 16:13:05 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 53.84,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $280.20",
+          "ma20_formatted": "USD $297.39",
+          "ma50_formatted": "USD $325.93",
+          "return20_pct": -17.655,
+          "trend": "NEGATIVE",
+          "latest_ohlcv": {
+            "open": 283.4,
+            "high": 284.09,
+            "low": 278.46,
+            "close": 280.2,
+            "volume": 32175891
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -2848,22 +3398,19 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Thu, 12 Nov 2026 16:13:05 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
+          "annualized_volatility_20d_pct": 53.84,
           "data_quality_tier": "PRIMARY_EVIDENCE_PRESENT",
-          "research_outcome": "PARTIAL",
-          "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No recent company-specific news headlines retrieved."
-          ]
+          "research_outcome": "COMPLETE",
+          "uncertainties": []
         }
       },
-      "finished_at": "2026-11-17T04:44:44.623884+00:00"
+      "finished_at": "2026-11-18T03:49:30.754890+00:00"
     },
     {
       "ticker": "SPY",
@@ -2891,23 +3438,23 @@
         "isin": null,
         "nse_bse_interchangeable": false
       },
-      "started_at": "2026-11-17T04:44:44.625888+00:00",
+      "started_at": "2026-11-18T03:49:32.621203+00:00",
       "agents": {
         "news": {
-          "status": "FAILED",
-          "reason": "HTTP 429"
+          "status": "COMPLETE",
+          "at": "2026-11-18T03:49:32.913336+00:00"
         },
         "filings": {
           "status": "COMPLETE",
-          "at": "2026-11-17T04:44:44.947100+00:00"
+          "at": "2026-11-18T03:49:33.030678+00:00"
         },
         "fundamentals": {
           "status": "FAILED",
           "reason": "HTTP 404"
         },
         "market_data": {
-          "status": "SKIPPED",
-          "reason": "QUOTA_BLOCKED",
+          "status": "COMPLETE",
+          "reason": "OK",
           "currency": "USD"
         },
         "ai_analyst": {
@@ -2916,11 +3463,66 @@
         },
         "validator": {
           "status": "COMPLETE",
-          "quality": "INSUFFICIENT_EVIDENCE",
-          "research_outcome": "FAILED"
+          "quality": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL"
         }
       },
-      "news": [],
+      "news": [
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Nvidia stock rebounds, chip stocks surge as CoreWeave earnings boost AI trade - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPZWdSbHUwUHp3b2d6LXhNcWR5NGpEeC1Nd2hsN2pUNHl3aVRrR09oSFhYdGQyNFVSdXVxZkZadDA1TTNwcV9ycF9jUlRJcnpSaUFnenIwdzlpM1g1V0lERE1ScEIwalZZb1JrYXVvVXZySUJyRmZXMmZWYmE5TlFUR2hmcy1Id20ydlB0dElabUtPU0l2WGI1dHZqNExXSmNZSEJCUmZhdnk2SklpeUlENWdwanVtZGFIdndGVXBQSUQ3V0dLbW5JZlktYWRSWlp3RVVnM3R2UlNuUTBqbG5kc0lnZzJpWmJaNFlITExJLVpkM1ZKUTQ4bWU4ekl4eVhod3h5Q0pUUmhobGZHRG05MUFoVU15OG5IUG9Xaw?oc=5",
+          "published": "Wed, 11 Nov 2026 13:54:39 GMT",
+          "retrieved_at": "2026-11-18T03:49:32.913291+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "SPY, AMD And Google Stock Fall Premarket Ahead Of Nvidia Earnings - Coinpedia",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPbXBjT3lROWdLd0ROWUd3a3BnNGd3WDdLSmdXejRWVGxDZlQ5VkVZeWc3WWkxTHBVQkVNQ1lHVDVYWXBBRnVQZktMV182UzNwcVhRX2xhQUk1b2JxVDlWREowLUJYX1MwNDNmeGg3NUNMY2J4OU9ETjF1Nkd6bzAzeDlmdkhUcFB6SldHMk9GSEgtbmFZbkdXblpkU0VJSGVwMGduMTg3a9IBrAFBVV95cUxORjA4UFQ5em1WQlBSVXMyVGlMYUxRbnJjc1p2RGxBelVnR2Rpb3VBeThZRjZRcm56OXBMZ1BVc1JSNUgxM1gzdWFvRmp3aXFSaF9kQVFKNlhBSXFydTV2dU9SR05aNFRPb2VyOE5JeFlnQXl0OUs4bWZyUEhIZ2s2Ykw0dzY3bWdkSDItSHlaa0IyNExWQzJfaWc2Ulp4NEdpOGZDNlBXMm9NemNy?oc=5",
+          "published": "Mon, 16 Nov 2026 21:04:01 GMT",
+          "retrieved_at": "2026-11-18T03:49:32.913311+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Nvidia Earnings Are Sideshow as Huang\u2019s Ouster Looms Over Market - Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORlNRWmc0N3Uyc21OQ3RMb2x2U3VDbkxlLWk0SGdyd0xncEpzYTk4SDZKZzEzWWlNcHU2Snl6UXpiYXV4MzJ0aWl6SmdrVzVyb1B3XzVIYko0UGhGTVFtUml3SlpxTnE5MWZZVzl4VTN1WjQ4bDBUYmJvdVFTYkhISnNneENiNG1VMllvNGJqMDR2cHZNS0xWanY4VVV3aVlwLWRlU2ZRUUJvRDVxbEptcmNoazdZUQ?oc=5",
+          "published": "Tue, 17 Nov 2026 19:11:04 GMT",
+          "retrieved_at": "2026-11-18T03:49:32.913316+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Nvidia shuts door on Jensen Huang\u2019s return as stock pops on earnings - The Independent",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPeHZZZ1ZVcDJTVUU3VGtLQlQ0ZVN6cXdCV0ZvVzdjZUJReXYwbG9KQk9uUDFWd0dWZ0RMR1ZUWXhXQ0hVTE9YZ25RS3pjSXFJZFg1Zk1Gc01vSXFwTUxBcTRpd0RuZ0JTYzlrNkViT3RpeU1Ydm9KaVB1NS0tQXFKWjFsZEJlX25FQU85Y1MzYUhjY0Y1X25ETVhGNXdhWUJOTjRBYXNBanI?oc=5",
+          "published": "Tue, 17 Nov 2026 23:22:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:32.913319+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Consumer Defensive Stocks Extend Winning Streak To 6 Weeks As SPY, QQQ Rebound: TTD, CHTR, TSLA Lead Gains - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQclc5ZnhaMXdOV3VWbUVJQkpXTmNUVHhGSVBLWE5RSFpJYUhSNXppb0o4SmsyZ0U3azJDOWdNN3lzMWNYTC1CUnBqeVFLbjQ3dnVyamJGX2wzRFBhenU2X2hXdEFzRDFlTzFieTRObmU4Zzh6ZWpyZktpamQza1JsX3c0Qi1vTGhIamcwa0FiRnhjM0hFVWNtTUVTWjFXZWN4dWZJMUhjT00?oc=5",
+          "published": "Mon, 16 Nov 2026 01:13:00 GMT",
+          "retrieved_at": "2026-11-18T03:49:32.913322+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        },
+        {
+          "source": "Google News RSS (headline only)",
+          "title": "Stocks down ahead of Nvidia's post-scandal earnings report - France 24",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNNWx2SzN2LWo2WUs2ZkRxM1VKVjFIYTdYZGFXYUFsNndwbUhnUlM2UTcwTXFfN1NvQnl2c2h2RWw1R3RERUI2TTFwQTdfbVFWZEZUTktlNFdaX0hTQTlleHI5TG5KSlJZZm4xNS15TFY0dkdHY2JwaGtqMF9GUG5fdXpBek1TRmFZUkZQRUtEV2dFdG5hOGdCd3J3TFlBQVhKSzZsUFVTcGxqbkxQ?oc=5",
+          "published": "Tue, 17 Nov 2026 02:41:21 GMT",
+          "retrieved_at": "2026-11-18T03:49:32.913325+00:00",
+          "summary": "Headline discovery only; article content and claim unverified; never treated as primary regulatory evidence",
+          "is_primary_regulatory_evidence": false
+        }
+      ],
       "filings": {
         "company": "SPDR S&P 500 ETF TRUST",
         "cik": 884394,
@@ -2929,13 +3531,32 @@
       },
       "fundamentals": {},
       "price": {
-        "status": "QUOTA_BLOCKED",
+        "status": "OK",
         "market": "US",
         "currency": "USD",
-        "ohlcv_verified": false
+        "provider_symbol": "SPY",
+        "price_basis": "UNADJUSTED_DAILY_OHLCV (Alpha Vantage TIME_SERIES_DAILY)",
+        "ohlcv_verified": true,
+        "latest_ohlcv": {
+          "open": 738.39,
+          "high": 739.76,
+          "low": 727.0,
+          "close": 732.44,
+          "volume": 71636294
+        },
+        "as_of": "2026-11-17",
+        "close": 732.44,
+        "ma20": 755.8645,
+        "ma50": 763.1526,
+        "return20_pct": -4.76,
+        "volatility_pct": 23.51,
+        "trend": "NEGATIVE",
+        "source_url": "https://www.alphavantage.co/documentation/",
+        "retrieved_at": "2026-11-18T03:49:32.620572+00:00",
+        "is_realtime": false
       },
-      "quality": "INSUFFICIENT_EVIDENCE",
-      "research_outcome": "FAILED",
+      "quality": "PARTIAL_EVIDENCE",
+      "research_outcome": "PARTIAL",
       "ai": {
         "status": "NOT_CONFIGURED"
       },
@@ -2944,16 +3565,39 @@
         "reason": "Primary filings and comparable filed metrics not both present",
         "market": "US",
         "currency": "USD",
-        "as_of": "unavailable",
-        "evidence_count": 0,
-        "evidence_citations": [],
+        "as_of": "2026-11-17",
+        "evidence_count": 4,
+        "evidence_citations": [
+          {
+            "type": "market_data",
+            "title": "Alpha Vantage Daily OHLCV Close (SPY)",
+            "as_of": "2026-11-17",
+            "url": "https://www.alphavantage.co/documentation/"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Nvidia stock rebounds, chip stocks surge as CoreWeave earnings boost AI trade - Yahoo Finance",
+            "as_of": "Wed, 11 Nov 2026 13:54:39 GMT",
+            "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPZWdSbHUwUHp3b2d6LXhNcWR5NGpEeC1Nd2hsN2pUNHl3aVRrR09oSFhYdGQyNFVSdXVxZkZadDA1TTNwcV9ycF9jUlRJcnpSaUFnenIwdzlpM1g1V0lERE1ScEIwalZZb1JrYXVvVXZySUJyRmZXMmZWYmE5TlFUR2hmcy1Id20ydlB0dElabUtPU0l2WGI1dHZqNExXSmNZSEJCUmZhdnk2SklpeUlENWdwanVtZGFIdndGVXBQSUQ3V0dLbW5JZlktYWRSWlp3RVVnM3R2UlNuUTBqbG5kc0lnZzJpWmJaNFlITExJLVpkM1ZKUTQ4bWU4ekl4eVhod3h5Q0pUUmhobGZHRG05MUFoVU15OG5IUG9Xaw?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "SPY, AMD And Google Stock Fall Premarket Ahead Of Nvidia Earnings - Coinpedia",
+            "as_of": "Mon, 16 Nov 2026 21:04:01 GMT",
+            "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPbXBjT3lROWdLd0ROWUd3a3BnNGd3WDdLSmdXejRWVGxDZlQ5VkVZeWc3WWkxTHBVQkVNQ1lHVDVYWXBBRnVQZktMV182UzNwcVhRX2xhQUk1b2JxVDlWREowLUJYX1MwNDNmeGg3NUNMY2J4OU9ETjF1Nkd6bzAzeDlmdkhUcFB6SldHMk9GSEgtbmFZbkdXblpkU0VJSGVwMGduMTg3a9IBrAFBVV95cUxORjA4UFQ5em1WQlBSVXMyVGlMYUxRbnJjc1p2RGxBelVnR2Rpb3VBeThZRjZRcm56OXBMZ1BVc1JSNUgxM1gzdWFvRmp3aXFSaF9kQVFKNlhBSXFydTV2dU9SR05aNFRPb2VyOE5JeFlnQXl0OUs4bWZyUEhIZ2s2Ykw0dzY3bWdkSDItSHlaa0IyNExWQzJfaWc2Ulp4NEdpOGZDNlBXMm9NemNy?oc=5"
+          },
+          {
+            "type": "headline_discovery",
+            "title": "Nvidia Earnings Are Sideshow as Huang\u2019s Ouster Looms Over Market - Bloomberg.com",
+            "as_of": "Tue, 17 Nov 2026 19:11:04 GMT",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORlNRWmc0N3Uyc21OQ3RMb2x2U3VDbkxlLWk0SGdyd0xncEpzYTk4SDZKZzEzWWlNcHU2Snl6UXpiYXV4MzJ0aWl6SmdrVzVyb1B3XzVIYko0UGhGTVFtUml3SlpxTnE5MWZZVzl4VTN1WjQ4bDBUYmJvdVFTYkhISnNneENiNG1VMllvNGJqMDR2cHZNS0xWanY4VVV3aVlwLWRlU2ZRUUJvRDVxbEptcmNoazdZUQ?oc=5"
+          }
+        ],
         "uncertainty": "Incomplete primary financial evidence: verified official filing documents and company-specific accounting metrics are required before issuing a research ranking."
       },
       "missing_data": [
-        "Verified historical daily OHLCV market data (status: QUOTA_BLOCKED).",
         "Primary US SEC EDGAR filings (10-K, 10-Q, 8-K).",
-        "Verified US-GAAP XBRL companyfacts numerical accounting metrics.",
-        "Recent company-specific news headlines."
+        "Verified US-GAAP XBRL companyfacts numerical accounting metrics."
       ],
       "unsupported_conclusions": [
         "Valuation multiples (P/E, P/B, EV/EBITDA) and intrinsic value price targets (not computed without verified diluted share counts and period-aligned earnings).",
@@ -2963,10 +3607,21 @@
       ],
       "pillars": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $732.44",
+          "ma20_formatted": "USD $755.86",
+          "ma50_formatted": "USD $763.15",
+          "return20_pct": -4.76,
+          "trend": "NEGATIVE",
+          "latest_ohlcv": {
+            "open": 738.39,
+            "high": 739.76,
+            "low": 727.0,
+            "close": 732.44,
+            "volume": 71636294
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -2982,28 +3637,37 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Wed, 11 Nov 2026 13:54:39 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
-          "data_quality_tier": "INSUFFICIENT_EVIDENCE",
-          "research_outcome": "FAILED",
+          "annualized_volatility_20d_pct": 23.51,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
           "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset).",
-            "No recent company-specific news headlines retrieved."
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
           ]
         }
       },
       "five_pillar_summary": {
         "technical": {
-          "status": "QUOTA_BLOCKED",
-          "as_of": null,
+          "status": "VERIFIED_HISTORICAL_OHLCV",
+          "as_of": "2026-11-17",
           "currency": "USD",
-          "note": "Historical daily OHLCV series not verified for this run; no prices fabricated."
+          "close_formatted": "USD $732.44",
+          "ma20_formatted": "USD $755.86",
+          "ma50_formatted": "USD $763.15",
+          "return20_pct": -4.76,
+          "trend": "NEGATIVE",
+          "latest_ohlcv": {
+            "open": 738.39,
+            "high": 739.76,
+            "low": 727.0,
+            "close": 732.44,
+            "volume": 71636294
+          }
         },
         "fundamental": {
           "accounting_standard": "US-GAAP (SEC EDGAR)",
@@ -3019,44 +3683,41 @@
           "note": "Valuation multiples (P/E, P/B, EV/EBITDA) and target prices are never invented; computing verified multiples requires diluted share count and period-aligned earnings."
         },
         "sentiment": {
-          "status": "NO_HEADLINES_FETCHED",
-          "headlines_count": 0,
-          "latest_published": null,
+          "status": "HEADLINE_DISCOVERY_ONLY",
+          "headlines_count": 6,
+          "latest_published": "Wed, 11 Nov 2026 13:54:39 GMT",
           "note": "Company-filtered RSS headlines indicate topic activity only; article claims are unverified and never used alone to rank stocks."
         },
         "risk": {
-          "annualized_volatility_20d_pct": null,
-          "data_quality_tier": "INSUFFICIENT_EVIDENCE",
-          "research_outcome": "FAILED",
+          "annualized_volatility_20d_pct": 23.51,
+          "data_quality_tier": "PARTIAL_EVIDENCE",
+          "research_outcome": "PARTIAL",
           "uncertainties": [
-            "Market OHLCV price series unavailable/unverified (QUOTA_BLOCKED).",
-            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset).",
-            "No recent company-specific news headlines retrieved."
+            "No US-GAAP XBRL metrics extracted (common for ETFs like SPY or when SEC_USER_AGENT is unset)."
           ]
         }
       },
-      "finished_at": "2026-11-17T04:44:45.049507+00:00"
+      "finished_at": "2026-11-18T03:49:33.160684+00:00"
     }
   ],
   "status": "PARTIAL",
-  "price_quota_blocked": true,
-  "finished_at": "2026-11-17T04:44:45.051797+00:00",
+  "finished_at": "2026-11-18T03:49:33.162757+00:00",
   "outcome_counts": {
-    "COMPLETE": 0,
-    "PARTIAL": 5,
-    "FAILED": 1
+    "COMPLETE": 5,
+    "PARTIAL": 1,
+    "FAILED": 0
   },
   "outcomes_by_symbol": {
-    "COMPLETE": [],
-    "PARTIAL": [
+    "COMPLETE": [
       "AAPL",
       "MSFT",
       "NVDA",
       "AMZN",
       "GOOGL"
     ],
-    "FAILED": [
+    "PARTIAL": [
       "SPY"
-    ]
+    ],
+    "FAILED": []
   }
 }
