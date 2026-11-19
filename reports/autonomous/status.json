@@ -1,23 +1,25 @@
 {
   "status": "PARTIAL",
   "outcome_counts": {
-    "COMPLETE": 0,
-    "PARTIAL": 5,
+    "COMPLETE": 5,
+    "PARTIAL": 1,
     "FAILED": 0
   },
   "outcomes_by_symbol": {
-    "COMPLETE": [],
+    "COMPLETE": [
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "GOOGL"
+    ],
     "PARTIAL": [
-      "RELIANCE",
-      "TCS",
-      "HDFCBANK",
-      "INFY",
-      "ICICIBANK"
+      "SPY"
     ],
     "FAILED": []
   },
-  "market": "IN",
+  "market": "US",
   "market_session_date": "2026-11-18",
-  "completed_at": "2026-11-18T19:16:31.245903+00:00",
-  "mission_id": "20261118T191617Z-IN"
+  "completed_at": "2026-11-19T03:48:01.105687+00:00",
+  "mission_id": "20261119T034747Z-US"
 }
